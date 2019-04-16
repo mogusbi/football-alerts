@@ -1,0 +1,14 @@
+{
+  "version": "2017-02-28",
+  "operation": "PutItem",
+  "key" : {
+    "id": $util.dynamodb.toDynamoDBJson($util.autoId())
+  },
+  "attributeValues": {
+    "emailAddress": $util.dynamodb.toDynamoDBJson($ctx.args.user.emailAddress),
+    "forename": $util.dynamodb.toDynamoDBJson($ctx.args.user.forename),
+    "surname": $util.dynamodb.toDynamoDBJson($ctx.args.user.surname),
+    "twitterHandle": $util.dynamodb.toDynamoDBJson($ctx.args.user.twitterHandle),
+    "website": $util.dynamodb.toDynamoDBJson($ctx.args.user.website)
+  }
+}

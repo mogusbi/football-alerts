@@ -165,4 +165,5 @@ awsmobilejs/\#current-backend-info
 # Project files
 build
 .build
+.dynamodb
 .serverless

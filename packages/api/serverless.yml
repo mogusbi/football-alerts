@@ -1,0 +1,245 @@
+service:
+  name: ${env:APP_NAME, 'football-alerts'}
+  publish: false
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ${opt:region, 'eu-west-1'}
+  stage: ${opt:stage, 'local'}
+  environment:
+    STAGE: ${self:provider.stage}
+    NODE_ENV: ${env:NODE_ENV, 'production'}
+
+package:
+  individually: true
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-appsync-plugin
+
+custom:
+  appSync:
+    -
+      name: ${self:service}-${self:provider.stage}-private
+      authenticationType: AMAZON_COGNITO_USER_POOLS
+      userPoolConfig:
+        awsRegion: ${self:provider.region}
+        defaultAction: ALLOW
+        userPoolId: !Ref CognitoUserPool
+      mappingTemplates:
+        -
+          dataSource: Users
+          type: Query
+          field: createUser
+          request: createUser/request.vtl
+          response: createUser/response.vtl
+        -
+          dataSource: Users
+          type: Query
+          field: getUser
+          request: getUser/request.vtl
+          response: getUser/response.vtl
+      dataSources:
+        -
+          type: AMAZON_DYNAMODB
+          name: Users
+          description: User table
+          config:
+            tableName: !Ref UserTable
+            serviceRoleArn: !GetAtt DynamoDbServiceRole.Arn
+
+  appsync-offline:
+    port: 62222
+    dynamodb:
+      server:
+        port: 8000
+
+  cognito-transformations:
+    develop: Develop
+    local: Local
+    production: Production
+
+resources:
+  Resources:
+    # Cognito
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: ${self:service}-${self:provider.stage}-user-pool
+        AdminCreateUserConfig:
+          AllowAdminCreateUserOnly: true
+        Schema:
+          -
+            Name: given_name
+            AttributeDataType: String
+            Mutable: true
+            Required: true
+          -
+            Name: family_name
+            AttributeDataType: String
+            Mutable: true
+            Required: true
+          -
+            Name: twitter_handle
+            AttributeDataType: String
+            Mutable: true
+            Required: false
+          -
+            Name: website
+            AttributeDataType: String
+            Mutable: true
+            Required: false
+        UsernameAttributes:
+          - email
+#        TODO: Cognito lambda functions
+#        LambdaConfig:
+#          PostAuthentication: !GetAtt AuthorRegisterLambdaFunction.Arn
+#          PostConfirmation: !GetAtt AuthorRegisterLambdaFunction.Arn
+
+    CognitoUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        ClientName: ${self:service}-${self:provider.stage}-user-pool-client
+        UserPoolId:
+          Ref: CognitoUserPool
+
+    CognitoIdentityPool:
+      Type: AWS::Cognito::IdentityPool
+      Properties:
+        IdentityPoolName: FootballAlerts${self:custom.cognito-transformations.${self:provider.stage}}IdentityPool
+        AllowUnauthenticatedIdentities: false
+        CognitoIdentityProviders:
+          -
+            ClientId: !Ref CognitoUserPoolClient
+            ProviderName: !GetAtt CognitoUserPool.ProviderName
+
+    CognitoIdentityPoolRoles:
+      Type: AWS::Cognito::IdentityPoolRoleAttachment
+      Properties:
+        IdentityPoolId:
+          Ref: CognitoIdentityPool
+        Roles:
+          authenticated: !GetAtt CognitoAuthRole.Arn
+          unauthenticated: !GetAtt CognitoUnauthRole.Arn
+
+    CognitoAuthRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:service}-${self:provider.stage}-auth-role
+        Path: /
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Federated: cognito-identity.amazonaws.com
+              Action:
+                - sts:AssumeRoleWithWebIdentity
+              Condition:
+                StringEquals:
+                  "cognito-identity.amazonaws.com:aud":
+                    Ref: CognitoIdentityPool
+                "ForAnyValue:StringLike":
+                  "cognito-identity.amazonaws.com:amr": authenticated
+        Policies:
+          -
+            PolicyName: ${self:service}-${self:provider.stage}-auth-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - mobileanalytics:PutEvents
+                    - cognito-sync:*
+                    - cognito-identity:*
+                  Resource: '*'
+                -
+                  Effect: Allow
+                  Action:
+                    - execute-api:Invoke
+                  Resource: '*'
+
+    CognitoUnauthRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:service}-${self:provider.stage}-unauth-role
+        Path: /
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Federated: cognito-identity.amazonaws.com
+              Action:
+                - sts:AssumeRoleWithWebIdentity
+              Condition:
+                StringEquals:
+                  "cognito-identity.amazonaws.com:aud":
+                    Ref: CognitoIdentityPool
+                "ForAnyValue:StringLike":
+                  "cognito-identity.amazonaws.com:amr": unauthenticated
+        Policies:
+          -
+            PolicyName: ${self:service}-${self:provider.stage}-unauth-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - mobileanalytics:PutEvents
+                    - cognito-sync:*
+                    - cognito-identity:*
+                  Resource: '*'
+
+    # DynamoDb
+    UserTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:service}_${self:provider.stage}_users
+
+    DynamoDbServiceRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:service}-${self:provider.stage}-dynamodb-service-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - appsync.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: ${self:service}-${self:provider.stage}-dynamodb-service-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:DeleteItem
+                    - dynamodb:GetItem
+                    - dynamodb:PutItem
+                    - dynamodb:Query
+                    - dynamodb:UpdateItem
+                  Resource:
+                    - !GetAtt UserTable.Arn
