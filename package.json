@@ -1,0 +1,23 @@
+{
+  "name": "football-alerts",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.13.2"
+  },
+  "scripts": {
+    "add": "lerna add",
+    "bootstrap": "lerna bootstrap",
+    "create": "lerna create",
+    "deploy": "lerna run deploy --stream",
+    "lerna": "lerna",
+    "lint": "lerna run lint",
+    "start": "lerna run start  --stream",
+    "test": "lerna run test",
+    "test:ci": "lerna run test:ci"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint -- --fix"
+    }
+  }
+}
