@@ -1,7 +1,4 @@
 {
-  "compilerOptions": {
-    "outDir": "./lib"
-  },
   "exclude": [
     "./src/**/*.spec.ts"
   ],
