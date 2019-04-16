@@ -5,10 +5,11 @@ schema {
 
 type User {
   id: ID!
-  emailAddress: String!
-  forename: String!
-  lastUpdate: String!
-  surname: String!
+  emailAddress: String
+  forename: String
+  lastUpdate: String
+  name: String!
+  surname: String
   twitterHandle: String
   website: String
 }
@@ -18,9 +19,10 @@ type Query {
 }
 
 input UserInput {
-  emailAddress: String!
-  forename: String!
-  surname: String!
+  emailAddress: String
+  forename: String
+  name: String!
+  surname: String
   twitterHandle: String
   website: String
 }

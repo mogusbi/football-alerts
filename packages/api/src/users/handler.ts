@@ -20,10 +20,14 @@ export const register: Handler = async (event: CognitoUserPoolEvent): Promise<Co
 
     await documentClient
       .update({
+        ExpressionAttributeNames: {
+          '#name': 'name'
+        },
         ExpressionAttributeValues: {
           ':emailAddress': event.request.userAttributes.email,
           ':forename': event.request.userAttributes.given_name,
           ':lastUpdate': lastUpdate.toUTCString(),
+          ':name': `${event.request.userAttributes.given_name} ${event.request.userAttributes.family_name}`,
           ':surname': event.request.userAttributes.family_name,
           ':twitterHandle': conditionalValue(event.request.userAttributes.twitter_handle),
           ':website': conditionalValue(event.request.userAttributes.website)
@@ -36,6 +40,7 @@ export const register: Handler = async (event: CognitoUserPoolEvent): Promise<Co
           set emailAddress = :emailAddress,
           forename = :forename,
           lastUpdate = :lastUpdate,
+          #name = :name,
           surname = :surname,
           twitterHandle = :twitterHandle,
           website = :website
