@@ -1,0 +1,68 @@
+{
+  "extends": "tslint-microsoft-contrib",
+  "rules": {
+    "completed-docs": false,
+    "export-name": false,
+    "function-name": [
+      true,
+      {
+        "method-regex": "^[a-z][\\w\\d]+$",
+        "private-method-regex": "^[a-z][\\w\\d]+$",
+        "protected-method-regex": "^[a-z][\\w\\d]+$",
+        "static-method-regex": "^[A-Z_\\d]+$",
+        "function-regex": "^[A-Za-z][\\w\\d]+$"
+      }
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "max-classes-per-file": [false],
+    "max-func-body-length": false,
+    "max-line-length": [
+      true,
+      140
+    ],
+    "no-backbone-get-set-outside-model": false,
+    "no-console": [
+      true,
+      "log"
+    ],
+    "no-implicit-dependencies": false,
+    "no-multiline-string": false,
+    "no-parameter-properties": false,
+    "no-relative-imports": false,
+    "no-stateless-class": false,
+    "no-string-based-set-timeout": false,
+    "no-submodule-imports": false,
+    "no-suspicious-comment": false,
+    "no-unnecessary-class": false,
+    "no-unsafe-any": false,
+    "object-literal-sort-keys": true,
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+    "one-variable-per-declaration": true,
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "space-before-function-paren": [
+      true,
+      "always"
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-microsoft-contrib"
+  ]
+}

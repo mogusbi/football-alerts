@@ -1,0 +1,18 @@
+{
+  "name": "@football-alerts/api",
+  "version": "0.0.0",
+  "author": "Mo Gusbi <me@mogusbi.co.uk>",
+  "homepage": "https://github.com/mogusbi/football-alerts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mogusbi/football-alerts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mogusbi/football-alerts/issues"
+  },
+  "scripts": {
+    "deploy": "serverless deploy --verbose",
+    "lint": "tslint -c ../../tslint.json -p tsconfig.json",
+    "remove": "serverless remove --verbose"
+  }
+}

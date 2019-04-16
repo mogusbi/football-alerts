@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2017"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5",
+    "types": [
+      "jest",
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}
