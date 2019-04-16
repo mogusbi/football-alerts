@@ -1,8 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Start" type="js.build_tools.npm" factoryName="npm">
+  <configuration default="false" name="Start: All" type="js.build_tools.npm" factoryName="npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="start" />
-    <arguments value="-- -- -- --region eu-west-2 --stage local" />
     <node-interpreter value="project" />
     <envs />
     <method />

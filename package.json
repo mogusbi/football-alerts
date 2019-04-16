@@ -25,7 +25,7 @@
     "add": "lerna add",
     "bootstrap": "lerna bootstrap",
     "create": "lerna create",
-    "deploy": "lerna run deploy --stream",
+    "deploy": "lerna run deploy --scope @football-alerts/api --stream",
     "lerna": "lerna",
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",

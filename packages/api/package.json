@@ -13,7 +13,6 @@
   "scripts": {
     "deploy": "serverless deploy --verbose",
     "lint": "tslint -c ../../tslint.json -p tsconfig.json",
-    "remove": "serverless remove --verbose",
-    "start": "serverless appsync-offline start"
+    "remove": "serverless remove --verbose"
   }
 }

@@ -1,5 +1,5 @@
 service:
-  name: ${env:APP_NAME, 'football-alerts'}
+  name: ${opt:appName, 'football-alerts'}
   publish: false
 
 provider:
@@ -30,7 +30,7 @@ custom:
       mappingTemplates:
         -
           dataSource: Users
-          type: Query
+          type: Mutation
           field: createUser
           request: createUser/request.vtl
           response: createUser/response.vtl
