@@ -7,7 +7,7 @@ type User {
   id: ID!
   emailAddress: String
   forename: String
-  lastUpdate: String
+  lastUpdated: String
   name: String!
   surname: String
   twitterHandle: String
@@ -29,4 +29,6 @@ input UserInput {
 
 type Mutation {
   createUser (user: UserInput!): User!
+  deleteUser (id: ID!): User!
+  updateUser (id: ID!, user: UserInput!): User!
 }

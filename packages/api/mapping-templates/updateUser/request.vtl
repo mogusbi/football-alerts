@@ -1,0 +1,22 @@
+{
+  "version": "2017-02-28",
+  "operation": "UpdateItem",
+  "key" : {
+    "id": $util.dynamodb.toDynamoDBJson($ctx.args.id)
+  },
+  "update": {
+    "expression": "SET emailAddress = :emailAddress, forename = :forename, lastUpdated = :lastUpdated, #name = :name, surname = :surname, twitterHandle = :twitterHandle, website = :website",
+    "expressionNames": {
+      "#name": "name"
+    },
+    "expressionValues": {
+      ":emailAddress": $util.dynamodb.toDynamoDBJson($ctx.args.user.emailAddress),
+      ":forename": $util.dynamodb.toDynamoDBJson($ctx.args.user.forename),
+      ":lastUpdated": $util.dynamodb.toDynamoDBJson($util.time.nowISO8601()),
+      ":name": $util.dynamodb.toDynamoDBJson($ctx.args.user.name),
+      ":surname": $util.dynamodb.toDynamoDBJson($ctx.args.user.surname),
+      ":twitterHandle": $util.dynamodb.toDynamoDBJson($ctx.args.user.twitterHandle),
+      ":website": $util.dynamodb.toDynamoDBJson($ctx.args.user.website)
+    }
+  }
+}

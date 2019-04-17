@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "declaration": false
+  },
   "exclude": [
     "./src/**/*.spec.ts"
   ],

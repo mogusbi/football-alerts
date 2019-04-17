@@ -5,11 +5,12 @@
     "id": $util.dynamodb.toDynamoDBJson($util.autoId())
   },
   "attributeValues": {
-    "name": $util.dynamodb.toDynamoDBJson($ctx.args.user.name)
-    #if($ctx.args.user.emailAddress) ,"emailAddress": $util.dynamodb.toDynamoDBJson($ctx.args.user.emailAddress) #end
-    #if($ctx.args.user.forename) ,"forename": $util.dynamodb.toDynamoDBJson($ctx.args.user.forename) #end
-    #if($ctx.args.user.surname) ,"surname": $util.dynamodb.toDynamoDBJson($ctx.args.user.surname) #end
-    #if($ctx.args.user.twitterHandle) ,"twitterHandle": $util.dynamodb.toDynamoDBJson($ctx.args.user.twitterHandle) #end
-    #if($ctx.args.user.website) ,"website": $util.dynamodb.toDynamoDBJson($ctx.args.user.website) #end
+    "emailAddress": $util.dynamodb.toDynamoDBJson($ctx.args.user.emailAddress),
+    "forename": $util.dynamodb.toDynamoDBJson($ctx.args.user.forename),
+    "lastUpdated": $util.dynamodb.toDynamoDBJson($util.time.nowISO8601()),
+    "name": $util.dynamodb.toDynamoDBJson($ctx.args.user.name),
+    "surname": $util.dynamodb.toDynamoDBJson($ctx.args.user.surname),
+    "twitterHandle": $util.dynamodb.toDynamoDBJson($ctx.args.user.twitterHandle),
+    "website": $util.dynamodb.toDynamoDBJson($ctx.args.user.website)
   }
 }

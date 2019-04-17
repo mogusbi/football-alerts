@@ -21,7 +21,7 @@ plugins:
 
 functions:
   usersRegister:
-    handler: src/users/handler.register
+    handler: src/users/register.handler
     role: UsersRegisterRole
     timeout: 60
     environment:
@@ -48,10 +48,22 @@ custom:
           response: createUser/response.vtl
         -
           dataSource: Users
+          type: Mutation
+          field: deleteUser
+          request: deleteUser/request.vtl
+          response: deleteUser/response.vtl
+        -
+          dataSource: Users
           type: Query
           field: getUser
           request: getUser/request.vtl
           response: getUser/response.vtl
+        -
+          dataSource: Users
+          type: Mutation
+          field: updateUser
+          request: updateUser/request.vtl
+          response: updateUser/response.vtl
       dataSources:
         -
           type: AMAZON_DYNAMODB

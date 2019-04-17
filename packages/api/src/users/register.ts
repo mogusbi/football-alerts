@@ -12,11 +12,11 @@ function conditionalValue (input: string): string {
   return input;
 }
 
-export const register: Handler = async (event: CognitoUserPoolEvent): Promise<CognitoUserPoolEvent> => {
+export const handler: Handler = async (event: CognitoUserPoolEvent): Promise<CognitoUserPoolEvent> => {
   switch (event.triggerSource) {
   case 'PostAuthentication_Authentication':
   case 'PostConfirmation_ConfirmSignUp':
-    const lastUpdate: Date = new Date();
+    const now: Date = new Date();
 
     await documentClient
       .update({
@@ -26,7 +26,7 @@ export const register: Handler = async (event: CognitoUserPoolEvent): Promise<Co
         ExpressionAttributeValues: {
           ':emailAddress': event.request.userAttributes.email,
           ':forename': event.request.userAttributes.given_name,
-          ':lastUpdate': lastUpdate.toUTCString(),
+          ':lastUpdated': now.toISOString(),
           ':name': `${event.request.userAttributes.given_name} ${event.request.userAttributes.family_name}`,
           ':surname': event.request.userAttributes.family_name,
           ':twitterHandle': conditionalValue(event.request.userAttributes.twitter_handle),
@@ -37,9 +37,9 @@ export const register: Handler = async (event: CognitoUserPoolEvent): Promise<Co
         },
         TableName,
         UpdateExpression: `
-          set emailAddress = :emailAddress,
+          SET emailAddress = :emailAddress,
           forename = :forename,
-          lastUpdate = :lastUpdate,
+          lastUpdated = :lastUpdated,
           #name = :name,
           surname = :surname,
           twitterHandle = :twitterHandle,
