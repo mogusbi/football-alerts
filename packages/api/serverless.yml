@@ -60,6 +60,12 @@ custom:
           response: getUser/response.vtl
         -
           dataSource: Users
+          type: Query
+          field: getUsers
+          request: getUsers/request.vtl
+          response: getUsers/response.vtl
+        -
+          dataSource: Users
           type: Mutation
           field: updateUser
           request: updateUser/request.vtl
@@ -223,18 +229,24 @@ resources:
     UserTable:
       Type: AWS::DynamoDB::Table
       Properties:
+        TableName: ${self:service}-${self:provider.stage}-users
         AttributeDefinitions:
           -
             AttributeName: id
+            AttributeType: S
+          -
+            AttributeName: lastUpdated
             AttributeType: S
         KeySchema:
           -
             AttributeName: id
             KeyType: HASH
+          -
+            AttributeName: lastUpdated
+            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:service}_${self:provider.stage}_users
 
     DynamoDbServiceRole:
       Type: AWS::IAM::Role
@@ -263,6 +275,7 @@ resources:
                     - dynamodb:GetItem
                     - dynamodb:PutItem
                     - dynamodb:Query
+                    - dynamodb:Scan
                     - dynamodb:UpdateItem
                   Resource:
                     - !GetAtt UserTable.Arn

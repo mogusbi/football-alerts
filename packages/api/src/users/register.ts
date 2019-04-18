@@ -1,7 +1,7 @@
 import {CognitoUserPoolEvent, Handler} from 'aws-lambda';
-import {DynamoDB} from 'aws-sdk';
+import {DocumentClient} from 'aws-sdk/clients/dynamodb';
 
-const documentClient: DynamoDB.DocumentClient = new DynamoDB.DocumentClient();
+const documentClient: DocumentClient = new DocumentClient();
 const TableName: string = process.env.TABLE_NAME;
 
 function conditionalValue (input: string): string {
@@ -26,20 +26,19 @@ export const handler: Handler = async (event: CognitoUserPoolEvent): Promise<Cog
         ExpressionAttributeValues: {
           ':emailAddress': event.request.userAttributes.email,
           ':forename': event.request.userAttributes.given_name,
-          ':lastUpdated': now.toISOString(),
           ':name': `${event.request.userAttributes.given_name} ${event.request.userAttributes.family_name}`,
           ':surname': event.request.userAttributes.family_name,
           ':twitterHandle': conditionalValue(event.request.userAttributes.twitter_handle),
           ':website': conditionalValue(event.request.userAttributes.website)
         },
         Key: {
-          id: event.request.userAttributes.sub
+          id: event.request.userAttributes.sub,
+          lastUpdated: now.toISOString()
         },
         TableName,
         UpdateExpression: `
           SET emailAddress = :emailAddress,
           forename = :forename,
-          lastUpdated = :lastUpdated,
           #name = :name,
           surname = :surname,
           twitterHandle = :twitterHandle,

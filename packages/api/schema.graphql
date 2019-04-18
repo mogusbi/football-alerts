@@ -7,15 +7,21 @@ type User {
   id: ID!
   emailAddress: String
   forename: String
-  lastUpdated: String
+  lastUpdated: String!
   name: String!
   surname: String
   twitterHandle: String
   website: String
 }
 
+type PaginatedUsers {
+  users: [User!]!
+  nextToken: String
+}
+
 type Query {
   getUser (id: ID!): User!
+  getUsers (limit: Int, nextToken: String): PaginatedUsers!
 }
 
 input UserInput {
