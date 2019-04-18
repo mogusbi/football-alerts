@@ -1,0 +1,58 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "start"
+      ],
+      "noDebug": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Deploy to development environment",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "deploy",
+        "--",
+        "--",
+        "--",
+        "--appName",
+        "fcbarcelonaweb",
+        "--aws-profile",
+        "FOOTBALL-ALERTS",
+        "--stage",
+        "develop"
+      ],
+      "noDebug": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Remove development environment",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "remove",
+        "--",
+        "--",
+        "--",
+        "--appName",
+        "fcbarcelonaweb",
+        "--aws-profile",
+        "FOOTBALL-ALERTS",
+        "--stage",
+        "develop"
+      ],
+      "noDebug": true
+    }
+  ]
+}

@@ -28,6 +28,7 @@
     "lerna": "lerna",
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
+    "remove": "lerna run remove --scope @football-alerts/api --stream",
     "start": "lerna run start  --stream",
     "test": "lerna run test",
     "test:ci": "lerna run test:ci"

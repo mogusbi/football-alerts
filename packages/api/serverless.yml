@@ -241,12 +241,24 @@ resources:
           -
             AttributeName: id
             KeyType: HASH
-          -
-            AttributeName: lastUpdated
-            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+        GlobalSecondaryIndexes:
+          -
+            IndexName: id-lastUpdated-index
+            KeySchema:
+              -
+                AttributeName: id
+                KeyType: HASH
+              -
+                AttributeName: lastUpdated
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
 
     DynamoDbServiceRole:
       Type: AWS::IAM::Role

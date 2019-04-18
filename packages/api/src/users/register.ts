@@ -26,19 +26,20 @@ export const handler: Handler = async (event: CognitoUserPoolEvent): Promise<Cog
         ExpressionAttributeValues: {
           ':emailAddress': event.request.userAttributes.email,
           ':forename': event.request.userAttributes.given_name,
+          ':lastUpdated': now.toISOString(),
           ':name': `${event.request.userAttributes.given_name} ${event.request.userAttributes.family_name}`,
           ':surname': event.request.userAttributes.family_name,
           ':twitterHandle': conditionalValue(event.request.userAttributes.twitter_handle),
           ':website': conditionalValue(event.request.userAttributes.website)
         },
         Key: {
-          id: event.request.userAttributes.sub,
-          lastUpdated: now.toISOString()
+          id: event.request.userAttributes.sub
         },
         TableName,
         UpdateExpression: `
           SET emailAddress = :emailAddress,
           forename = :forename,
+          lastUpdated = :lastUpdated,
           #name = :name,
           surname = :surname,
           twitterHandle = :twitterHandle,

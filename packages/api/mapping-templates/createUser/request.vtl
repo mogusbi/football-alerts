@@ -1,3 +1,27 @@
+#if ($ctx.args.user.emailAddress)
+  #set($validEmailAddress = $util.matches("^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$", $ctx.args.user.emailAddress))
+
+  #if (!$validEmailAddress)
+    $util.error("Invalid email address.")
+  #end
+#end
+
+#if ($ctx.args.user.twitterHandle)
+  #set($validTwitterHandle = $util.matches("^[A-Za-z0-9_]{1,15}$", $ctx.args.user.twitterHandle))
+
+  #if (!$validTwitterHandle)
+    $util.error("Invalid Twitter handle.")
+  #end
+#end
+
+#if ($ctx.args.user.website)
+  #set($validWebsite = $util.matches("^(http(s)?:\/\/.)(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$", $ctx.args.user.website))
+
+  #if (!$validWebsite)
+    $util.error("Invalid website.")
+  #end
+#end
+
 {
   "version": "2017-02-28",
   "operation": "PutItem",
