@@ -57,10 +57,10 @@ stepFunctions:
           MakeRequest:
             Type: Task
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importMakeRequest
-            Next: DeleteCache
-          DeleteCache:
-            Type: Task
-            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importDeleteCache
+#            Next: DeleteCache
+#          DeleteCache:
+#            Type: Task
+#            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importDeleteCache
             End: true
 
 custom:
@@ -262,6 +262,37 @@ resources:
                   Resource: '*'
 
     # DynamoDb
+    ArticlesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${self:provider.stage}-articles
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+          -
+            AttributeName: link
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        GlobalSecondaryIndexes:
+          -
+            IndexName: link-index
+            KeySchema:
+              -
+                AttributeName: link
+                KeyType: HASH
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
+
     UsersTable:
       Type: AWS::DynamoDB::Table
       Properties:
