@@ -21,6 +21,12 @@ plugins:
   - serverless-webpack
 
 functions:
+  importDeleteCache:
+    handler: src/import/deleteCache.handler
+    role: ImportDeleteCacheRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+
   importGetPublishers:
     handler: src/import/getPublishers.handler
     role: ImportGetPublishersRole
@@ -51,6 +57,10 @@ stepFunctions:
           MakeRequest:
             Type: Task
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importMakeRequest
+            Next: DeleteCache
+          DeleteCache:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importDeleteCache
             End: true
 
 custom:
@@ -301,6 +311,36 @@ resources:
                     - !GetAtt UsersTable.Arn
 
     # Lambda
+    ImportDeleteCacheRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: import-delete-cache-lambda-${self:service}-${self:provider.stage}-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: import-delete-cache-lambda-${self:service}-${self:provider.stage}-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:DeleteObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
+
     ImportGetPublishersRole:
       Type: AWS::IAM::Role
       Properties:

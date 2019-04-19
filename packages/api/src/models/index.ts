@@ -1,2 +1,3 @@
+export * from './make-request-result.model';
 export * from './user.model';
-export * from './user-settings-import';
+export * from './user-settings-import.model';

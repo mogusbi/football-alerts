@@ -16,12 +16,12 @@ export const handler: Handler = async (): Promise<APIGatewayProxyResult> => {
       })
       .promise();
 
-    const publishers: UserSettingsImport[] = Items
+    const publishers: User<UserSettingsImport>[] = Items
       .filter(
         (publisher: User<UserSettingsImport>): boolean => Boolean(publisher.settings) && publisher.settings.import !== null
       )
       .map(
-        (publisher: User<UserSettingsImport>): UserSettingsImport => publisher.settings
+        (publisher: User<UserSettingsImport>): User<UserSettingsImport> => publisher
       );
 
     for (const publisher of publishers) {
