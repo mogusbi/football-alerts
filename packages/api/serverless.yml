@@ -25,7 +25,7 @@ functions:
     role: UsersRegisterRole
     timeout: 60
     environment:
-      TABLE_NAME: !Ref UserTable
+      TABLE_NAME: !Ref UsersTable
 
 custom:
   webpack:
@@ -76,7 +76,7 @@ custom:
           name: Users
           description: User table
           config:
-            tableName: !Ref UserTable
+            tableName: !Ref UsersTable
             serviceRoleArn: !GetAtt DynamoDbServiceRole.Arn
 
   appsync-offline:
@@ -226,7 +226,7 @@ resources:
                   Resource: '*'
 
     # DynamoDb
-    UserTable:
+    UsersTable:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: ${self:service}-${self:provider.stage}-users
@@ -272,7 +272,7 @@ resources:
                     - dynamodb:Scan
                     - dynamodb:UpdateItem
                   Resource:
-                    - !GetAtt UserTable.Arn
+                    - !GetAtt UsersTable.Arn
 
     # Lambda
     UsersRegisterRole:
@@ -300,7 +300,7 @@ resources:
                   Action:
                     - dynamodb:UpdateItem
                   Resource:
-                    - !GetAtt UserTable.Arn
+                    - !GetAtt UsersTable.Arn
 
     UsersRegisterLambdaFunctionInvokePermission:
       Type: AWS::Lambda::Permission

@@ -33,6 +33,7 @@
     "forename": $util.dynamodb.toDynamoDBJson($ctx.args.user.forename),
     "lastUpdated": $util.dynamodb.toDynamoDBJson($util.time.nowISO8601()),
     "name": $util.dynamodb.toDynamoDBJson($ctx.args.user.name),
+    "settings": $util.dynamodb.toDynamoDBJson($ctx.args.user.settings),
     "surname": $util.dynamodb.toDynamoDBJson($ctx.args.user.surname),
     "twitterHandle": $util.dynamodb.toDynamoDBJson($ctx.args.user.twitterHandle),
     "website": $util.dynamodb.toDynamoDBJson($ctx.args.user.website)

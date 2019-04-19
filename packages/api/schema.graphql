@@ -3,12 +3,33 @@ schema {
   mutation: Mutation
 }
 
+type ImportImage {
+  attribute: String!
+  property: String!
+  test: String!
+  value: String!
+}
+
+type Import {
+  description: String!
+  feed: String!
+  image: ImportImage!
+  link: String!
+  publishDate: String!
+  title: String!
+}
+
+type Settings {
+  import: Import
+}
+
 type User {
   id: ID!
   emailAddress: String
   forename: String
   lastUpdated: String!
   name: String!
+  settings: Settings
   surname: String
   twitterHandle: String
   website: String
@@ -24,10 +45,31 @@ type Query {
   getUsers (limit: Int, nextToken: String): PaginatedUsers!
 }
 
+input ImportImageInput {
+  attribute: String!
+  property: String!
+  test: String!
+  value: String!
+}
+
+input ImportInput {
+  description: String!
+  feed: String!
+  image: ImportImageInput!
+  link: String!
+  publishDate: String!
+  title: String!
+}
+
+input SettingsInput {
+  import: ImportInput
+}
+
 input UserInput {
   emailAddress: String
   forename: String
   name: String!
+  settings: SettingsInput
   surname: String
   twitterHandle: String
   website: String
