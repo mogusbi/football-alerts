@@ -27,6 +27,13 @@ functions:
     environment:
       BUCKET: !Ref ArticleImportsBucket
 
+  importFilter:
+    handler: src/import/filter.handler
+    role: ImportFilterRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+      TABLE_NAME: !Ref ArticlesTable
+
   importGetPublishers:
     handler: src/import/getPublishers.handler
     role: ImportGetPublishersRole
@@ -57,10 +64,14 @@ stepFunctions:
           MakeRequest:
             Type: Task
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importMakeRequest
-#            Next: DeleteCache
-#          DeleteCache:
-#            Type: Task
-#            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importDeleteCache
+            Next: Filter
+          Filter:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importFilter
+            Next: DeleteCache
+          DeleteCache:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importDeleteCache
             End: true
 
 custom:
@@ -275,17 +286,17 @@ resources:
             AttributeType: S
         KeySchema:
           -
-            AttributeName: id
+            AttributeName: link
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         GlobalSecondaryIndexes:
           -
-            IndexName: link-index
+            IndexName: id-index
             KeySchema:
               -
-                AttributeName: link
+                AttributeName: id
                 KeyType: HASH
             Projection:
               ProjectionType: KEYS_ONLY
@@ -342,6 +353,43 @@ resources:
                     - !GetAtt UsersTable.Arn
 
     # Lambda
+    ImportFilterRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: import-filter-lambda-${self:service}-${self:provider.stage}-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: import-filter-lambda-${self:service}-${self:provider.stage}-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:BatchGetItem
+                  Resource:
+                    - !GetAtt ArticlesTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                    - s3:PutObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
+
     ImportDeleteCacheRole:
       Type: AWS::IAM::Role
       Properties:
