@@ -14,5 +14,9 @@
     "deploy": "serverless deploy --verbose",
     "lint": "tslint -c ../../tslint.json -p tsconfig.json",
     "remove": "serverless remove --verbose"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "rss-parser": "^3.7.0"
   }
 }

@@ -15,17 +15,43 @@ package:
   individually: true
 
 plugins:
+  - serverless-step-functions
   - serverless-pseudo-parameters
   - serverless-appsync-plugin
   - serverless-webpack
 
 functions:
+  importGetPublishers:
+    handler: src/import/getPublishers.handler
+    role: ImportGetPublishersRole
+    environment:
+      STATE_MACHINE_ARN: arn:aws:states:#{AWS::Region}:#{AWS::AccountId}:stateMachine:${self:service}-${opt:stage}-import-articles
+      TABLE_NAME: !Ref UsersTable
+
+  importMakeRequest:
+    handler: src/import/makeRequest.handler
+    role: ImportMakeRequestRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+
   usersRegister:
     handler: src/users/register.handler
     role: UsersRegisterRole
-    timeout: 60
     environment:
       TABLE_NAME: !Ref UsersTable
+
+stepFunctions:
+  stateMachines:
+    importArticles:
+      name: ${self:service}-${opt:stage}-import-articles
+      definition:
+        Comment: Imports articles from RSS feeds
+        StartAt: MakeRequest
+        States:
+          MakeRequest:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importMakeRequest
+            End: true
 
 custom:
   webpack:
@@ -275,6 +301,69 @@ resources:
                     - !GetAtt UsersTable.Arn
 
     # Lambda
+    ImportGetPublishersRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: import-get-publishers-lambda-${self:service}-${self:provider.stage}-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: import-get-publishers-lambda-${self:service}-${self:provider.stage}-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:Scan
+                  Resource:
+                    - !GetAtt UsersTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - states:StartExecution
+                  Resource:
+                    - arn:aws:states:#{AWS::Region}:#{AWS::AccountId}:stateMachine:${self:service}-${opt:stage}-import-articles
+
+    ImportMakeRequestRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: import-make-request-lambda-${self:service}-${self:provider.stage}-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: import-make-request-lambda-${self:service}-${self:provider.stage}-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:PutObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
+
     UsersRegisterRole:
       Type: AWS::IAM::Role
       Properties:
@@ -309,3 +398,9 @@ resources:
         FunctionName: !GetAtt UsersRegisterLambdaFunction.Arn
         SourceArn: !GetAtt CognitoUserPool.Arn
         Action: lambda:InvokeFunction
+
+    # S3
+    ArticleImportsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${self:provider.stage}-article-imports

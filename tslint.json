@@ -18,6 +18,7 @@
       "spaces",
       2
     ],
+    "import-name": false,
     "max-classes-per-file": [false],
     "max-func-body-length": false,
     "max-line-length": [
@@ -34,6 +35,7 @@
     "no-null-keyword": false,
     "no-parameter-properties": false,
     "no-relative-imports": false,
+    "no-reserved-keywords": false,
     "no-stateless-class": false,
     "no-string-based-set-timeout": false,
     "no-submodule-imports": false,
