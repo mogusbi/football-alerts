@@ -37,9 +37,19 @@ functions:
   importGetPublishers:
     handler: src/import/getPublishers.handler
     role: ImportGetPublishersRole
+    events:
+      -
+        schedule: rate(6 hours)
     environment:
       STATE_MACHINE_ARN: arn:aws:states:#{AWS::Region}:#{AWS::AccountId}:stateMachine:${self:service}-${opt:stage}-import-articles
       TABLE_NAME: !Ref UsersTable
+
+  importInsertArticles:
+    handler: src/import/insertArticles.handler
+    role: ImportInsertArticlesRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+      TABLE_NAME: !Ref ArticlesTable
 
   importMakeRequest:
     handler: src/import/makeRequest.handler
@@ -68,6 +78,10 @@ stepFunctions:
           Filter:
             Type: Task
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importFilter
+            Next: InsertArticles
+          InsertArticles:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importInsertArticles
             Next: DeleteCache
           DeleteCache:
             Type: Task
@@ -353,6 +367,42 @@ resources:
                     - !GetAtt UsersTable.Arn
 
     # Lambda
+    ImportInsertArticlesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: import-insert-articles-lambda-${self:service}-${self:provider.stage}-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: import-insert-articles-lambda-${self:service}-${self:provider.stage}-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:BatchWriteItem
+                  Resource:
+                    - !GetAtt ArticlesTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
+
     ImportFilterRole:
       Type: AWS::IAM::Role
       Properties:
