@@ -22,8 +22,14 @@ plugins:
 
 functions:
   importDeleteCache:
-    handler: src/import/deleteCache.handler
+    handler: src/import/delete-cache.handler
     role: ImportDeleteCacheRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+
+  importDownloadImages:
+    handler: src/import/download-images.handler
+    role: ImportDownloadImagesRole
     environment:
       BUCKET: !Ref ArticleImportsBucket
 
@@ -35,7 +41,7 @@ functions:
       TABLE_NAME: !Ref ArticlesTable
 
   importGetPublishers:
-    handler: src/import/getPublishers.handler
+    handler: src/import/get-publishers.handler
     role: ImportGetPublishersRole
     events:
       -
@@ -45,14 +51,14 @@ functions:
       TABLE_NAME: !Ref UsersTable
 
   importInsertArticles:
-    handler: src/import/insertArticles.handler
+    handler: src/import/insert-articles.handler
     role: ImportInsertArticlesRole
     environment:
       BUCKET: !Ref ArticleImportsBucket
       TABLE_NAME: !Ref ArticlesTable
 
   importMakeRequest:
-    handler: src/import/makeRequest.handler
+    handler: src/import/make-request.handler
     role: ImportMakeRequestRole
     environment:
       BUCKET: !Ref ArticleImportsBucket
@@ -78,6 +84,10 @@ stepFunctions:
           Filter:
             Type: Task
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importFilter
+            Next: DownloadImages
+          DownloadImages:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-importDownloadImages
             Next: InsertArticles
           InsertArticles:
             Type: Task
@@ -484,6 +494,37 @@ resources:
                       - - !GetAtt ArticleImportsBucket.Arn
                         - '/*'
 
+    ImportDownloadImagesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: import-download-images-lambda-${self:service}-${self:provider.stage}-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: import-download-images-lambda-${self:service}-${self:provider.stage}-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                    - s3:PutObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
+
     ImportGetPublishersRole:
       Type: AWS::IAM::Role
       Properties:
@@ -587,3 +628,8 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:service}-${self:provider.stage}-article-imports
+
+    AssetsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${self:provider.stage}-assets
