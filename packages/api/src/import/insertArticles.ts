@@ -11,45 +11,38 @@ const documentClient: DocumentClient = new DocumentClient();
 const s3: S3 = new S3();
 
 export const handler: Handler = async ({body}: APIGatewayEvent): Promise<APIGatewayProxyResult> => {
-  try {
-    const {Key}: MakeRequestResult = JSON.parse(body);
-    const {Body}: GetObjectOutput = await s3
-      .getObject({
-        Bucket,
-        Key
-      })
-      .promise();
-    const articles: Article[] = JSON.parse(<string>Body);
+  const {Key}: MakeRequestResult = JSON.parse(body);
+  const {Body}: GetObjectOutput = await s3
+    .getObject({
+      Bucket,
+      Key
+    })
+    .promise();
+  const articles: Article[] = JSON.parse(<string>Body);
 
-    if (articles.length > 0) {
-      const batchWrite: DocumentClient.BatchWriteItemInput = {
-        RequestItems: {}
-      };
+  if (articles.length > 0) {
+    const batchWrite: DocumentClient.BatchWriteItemInput = {
+      RequestItems: {}
+    };
 
-      batchWrite.RequestItems[TableName] = articles.map(
-        (article: Article): DocumentClient.WriteRequest => ({
-          PutRequest: {
-            Item: {
-              ...article,
-              id: v4()
-            }
+    batchWrite.RequestItems[TableName] = articles.map(
+      (article: Article): DocumentClient.WriteRequest => ({
+        PutRequest: {
+          Item: {
+            ...article,
+            id: v4()
           }
-        })
-      );
+        }
+      })
+    );
 
-      await documentClient
-        .batchWrite(batchWrite)
-        .promise();
-    }
-
-    return {
-      body,
-      statusCode: 200
-    };
-  } catch (e) {
-    return {
-      body: e.message,
-      statusCode: 500
-    };
+    await documentClient
+      .batchWrite(batchWrite)
+      .promise();
   }
+
+  return {
+    body,
+    statusCode: 200
+  };
 };

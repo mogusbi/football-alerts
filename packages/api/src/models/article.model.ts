@@ -4,4 +4,5 @@ export class Article {
   public link: string;
   public publishDate: string;
   public title: string;
+  public userId: string;
 }

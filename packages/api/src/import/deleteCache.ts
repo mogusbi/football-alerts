@@ -6,24 +6,17 @@ const Bucket: string = process.env.BUCKET;
 const s3: S3 = new S3();
 
 export const handler: Handler = async ({body}: APIGatewayEvent): Promise<APIGatewayProxyResult> => {
-  try {
-    const {Key}: MakeRequestResult = JSON.parse(body);
+  const {Key}: MakeRequestResult = JSON.parse(body);
 
-    await s3
-      .deleteObject({
-        Bucket,
-        Key
-      })
-      .promise();
+  await s3
+    .deleteObject({
+      Bucket,
+      Key
+    })
+    .promise();
 
-    return {
-      body: 'success',
-      statusCode: 200
-    };
-  } catch (e) {
-    return {
-      body: e.message,
-      statusCode: 500
-    };
-  }
+  return {
+    body: 'success',
+    statusCode: 200
+  };
 };
