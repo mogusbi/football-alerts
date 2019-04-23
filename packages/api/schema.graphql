@@ -3,44 +3,80 @@ schema {
   mutation: Mutation
 }
 
-type ImportImage {
-  attribute: String!
-  property: String!
-  test: String!
-  value: String!
+# Articles
+type ArticleImage {
+  name: String
+  src: String
 }
 
-type Import {
-  description: String!
-  feed: String!
-  image: ImportImage!
-  link: String!
-  publishDate: String!
-  title: String!
+type Article {
+  id: ID
+  description: String
+  image: [ArticleImage]
+  link: String
+  publishDate: String
+  title: String
+  user: User
+}
+
+type PaginatedArticles {
+  articles: [Article]
+  nextToken: String
+}
+
+# Settings
+type SettingsImage {
+  height: Int
+  name: String
+  width: Int
 }
 
 type Settings {
-  import: Import
+  image: [SettingsImage]
+}
+
+# Users
+type UserSettingsImportImage {
+  attribute: String
+  property: String
+  test: String
+  value: String
+}
+
+type UserSettingsImport {
+  description: String
+  feed: String
+  image: UserSettingsImportImage
+  link: String
+  publishDate: String
+  title: String
+}
+
+type UserSettings {
+  import: UserSettingsImport
 }
 
 type User {
   id: ID!
+  articles: [Article]
   emailAddress: String
   forename: String
-  lastUpdated: String!
-  name: String!
-  settings: Settings
+  lastUpdated: String
+  name: String
+  settings: UserSettings
   surname: String
   twitterHandle: String
   website: String
 }
 
 type PaginatedUsers {
-  users: [User!]!
+  users: [User]
   nextToken: String
 }
 
 type Query {
+  getArticle (id: ID!): Article!
+  getArticles (limit: Int, nextToken: String): PaginatedArticles!
   getUser (id: ID!): User!
   getUsers (limit: Int, nextToken: String): PaginatedUsers!
 }

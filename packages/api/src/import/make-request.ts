@@ -36,7 +36,7 @@ export const handler: Handler = async ({id, settings}: User<UserSettingsImport>)
 
         return {
           description: item[settings.import.description],
-          image: get(item[settings.import.image.property], settings.import.image.value),
+          imageId: get(item[settings.import.image.property], settings.import.image.value),
           link: item[settings.import.link],
           publishDate: publishDate.toISOString(),
           title: item[settings.import.title],

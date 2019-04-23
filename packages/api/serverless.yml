@@ -111,6 +111,27 @@ custom:
         defaultAction: ALLOW
         userPoolId: !Ref CognitoUserPool
       mappingTemplates:
+        # Articles
+        -
+          dataSource: Articles
+          type: Query
+          field: getArticle
+          request: getArticle/request.vtl
+          response: getArticle/response.vtl
+        -
+          dataSource: Articles
+          type: Query
+          field: getArticles
+          request: getArticles/request.vtl
+          response: getArticles/response.vtl
+        -
+          dataSource: Users
+          type: Article
+          field: user
+          request: articleUser/request.vtl
+          response: articleUser/response.vtl
+
+        # Users
         -
           dataSource: Users
           type: Mutation
@@ -141,7 +162,20 @@ custom:
           field: updateUser
           request: updateUser/request.vtl
           response: updateUser/response.vtl
+        -
+          dataSource: Articles
+          type: User
+          field: articles
+          request: userArticles/request.vtl
+          response: userArticles/response.vtl
       dataSources:
+        -
+          type: AMAZON_DYNAMODB
+          name: Articles
+          description: Articles table
+          config:
+            tableName: !Ref ArticlesTable
+            serviceRoleArn: !GetAtt DynamoDbServiceRole.Arn
         -
           type: AMAZON_DYNAMODB
           name: Users
@@ -149,12 +183,6 @@ custom:
           config:
             tableName: !Ref UsersTable
             serviceRoleArn: !GetAtt DynamoDbServiceRole.Arn
-
-  appsync-offline:
-    port: 62222
-    dynamodb:
-      server:
-        port: 8000
 
   cognito-transformations:
     develop: Develop
@@ -311,6 +339,9 @@ resources:
           -
             AttributeName: publishDate
             AttributeType: S
+          -
+            AttributeName: userId
+            AttributeType: S
         KeySchema:
           -
             AttributeName: link
@@ -341,6 +372,49 @@ resources:
             ProvisionedThroughput:
               ReadCapacityUnits: 1
               WriteCapacityUnits: 1
+          -
+            IndexName: userId-index
+            KeySchema:
+              -
+                AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
+
+    ImagesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${self:provider.stage}-images
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
+    SettingsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${self:provider.stage}-settings
+        AttributeDefinitions:
+          -
+            AttributeName: name
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: name
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
 
     UsersTable:
       Type: AWS::DynamoDB::Table
@@ -388,7 +462,22 @@ resources:
                     - dynamodb:Scan
                     - dynamodb:UpdateItem
                   Resource:
-                    - !GetAtt UsersTable.Arn
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticlesTable.Arn
+                        - '*'
+                    - !Join
+                      - ''
+                      - - !GetAtt ImagesTable.Arn
+                        - '*'
+                    - !Join
+                      - ''
+                      - - !GetAtt SettingsTable.Arn
+                        - '*'
+                    - !Join
+                      - ''
+                      - - !GetAtt UsersTable.Arn
+                        - '*'
 
     # Lambda
     ImportInsertArticlesRole:

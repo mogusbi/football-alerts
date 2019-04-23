@@ -22,22 +22,22 @@ export const handler: Handler = async ({body}: APIGatewayEvent): Promise<APIGate
 
   if (articles.length > 0) {
     for (const article of articles) {
-      const url: URL = new URL(article.image);
+      const url: URL = new URL(article.imageId);
       const extension: string = extname(url.pathname);
-      const {data}: AxiosResponse = await Axios.get(article.image, {
+      const {data}: AxiosResponse = await Axios.get(article.imageId, {
         responseType: 'arraybuffer'
       });
-      const image: string = v4();
+      const imageId: string = v4();
 
       await s3
         .putObject({
           Body: new Buffer(data, 'binary'),
           Bucket,
-          Key: `media/${image}${extension}`
+          Key: `media/${imageId}${extension}`
         })
         .promise();
 
-      article.image = image;
+      article.imageId = imageId;
     }
 
     await s3
