@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.dynamodb" />
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.serverless" />
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.webpack" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/serverless-aws-exports/lib" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

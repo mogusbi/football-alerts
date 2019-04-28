@@ -1,0 +1,43 @@
+{
+  "name": "@football-alerts/serverless-aws-exports",
+  "version": "0.0.0",
+  "author": "Mo Gusbi <me@mogusbi.co.uk>",
+  "homepage": "https://github.com/mogusbi/football-alerts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mogusbi/football-alerts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mogusbi/football-alerts/issues"
+  },
+  "main": "lib/aws-exports-plugin.js",
+  "typings": "lib/aws-exports-plugin.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "assert": "^1.4.1"
+  },
+  "devDependencies": {
+    "@types/assert": "^1.4.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ],
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  }
+}

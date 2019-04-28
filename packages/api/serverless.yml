@@ -19,6 +19,7 @@ plugins:
   - serverless-pseudo-parameters
   - serverless-appsync-plugin
   - serverless-webpack
+  - '@football-alerts/serverless-aws-exports'
 
 functions:
   importDeleteCache:
@@ -101,6 +102,11 @@ stepFunctions:
 custom:
   webpack:
     includeModules: true
+
+  output:
+    files:
+      - test.js
+    graphQlApiUrlName: FcbarcelonawebdevelopprivateGraphQlApiUrl
 
   appSync:
     -
@@ -722,3 +728,13 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:service}-${self:provider.stage}-assets
+
+  Outputs:
+    IdentityPoolId:
+      Value: !Ref CognitoIdentityPool
+    Region:
+      Value: ${self:provider.region}
+    UserPoolClientId:
+      Value: !Ref CognitoUserPoolClient
+    UserPoolId:
+      Value: !Ref CognitoUserPool

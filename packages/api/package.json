@@ -22,6 +22,7 @@
     "rss-parser": "^3.7.0"
   },
   "devDependencies": {
+    "@football-alerts/serverless-aws-exports": "^0.0.0",
     "@types/lodash": "^4.14.123"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "extends": "tslint-microsoft-contrib",
+  "extends": "tslint-microsoft-contrib/recommended",
   "rules": {
     "completed-docs": false,
     "export-name": false,
