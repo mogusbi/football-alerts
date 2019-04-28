@@ -19,7 +19,7 @@ plugins:
   - serverless-pseudo-parameters
   - serverless-appsync-plugin
   - serverless-webpack
-#  - '@football-alerts/serverless-aws-exports'
+  - '@football-alerts/serverless-aws-exports'
 
 custom:
   prefix: ${self:service}-${self:provider.stage}
@@ -27,6 +27,14 @@ custom:
   cognito-transformations:
     develop: Develop
     production: Production
+
+  output:
+    files:
+      - ../admin/src/aws-exports.js
+#    graphQlApiUrlName: FcbarcelonawebdevelopprivateGraphQlApiUrl
+
+  webpack:
+    includeModules: true
 
 functions:
   UsersRegister:
@@ -200,6 +208,14 @@ resources:
           WriteCapacityUnits: 1
 
     # IAM
+    UsersRegisterLambdaFunctionInvokePermission:
+      Type: AWS::Lambda::Permission
+      Properties:
+        Principal: cognito-idp.amazonaws.com
+        FunctionName: !GetAtt UsersRegisterLambdaFunction.Arn
+        SourceArn: !GetAtt CognitoUserPool.Arn
+        Action: lambda:InvokeFunction
+
     UsersRegisterRole:
       Type: AWS::IAM::Role
       Properties:

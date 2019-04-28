@@ -1,0 +1,39 @@
+{
+  "name": "@football-alerts/admin",
+  "version": "0.0.0",
+  "author": "Mo Gusbi <me@mogusbi.co.uk>",
+  "homepage": "https://github.com/mogusbi/football-alerts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mogusbi/football-alerts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mogusbi/football-alerts/issues"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "dependencies": {
+    "aws-amplify": "^1.1.26",
+    "aws-amplify-react": "^2.3.6",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
