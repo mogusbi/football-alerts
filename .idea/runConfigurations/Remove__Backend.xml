@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Remove: API" type="js.build_tools.npm" factoryName="npm">
+  <configuration default="false" name="Remove: Backend" type="js.build_tools.npm" factoryName="npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
       <script value="remove" />
     </scripts>
-    <arguments value="-- -- -- --appName fcbarcelonaweb --aws-profile FOOTBALL-ALERTS --stage develop" />
+    <arguments value="-- -- -- --aws-profile FOOTBALL-ALERTS --stage develop" />
     <node-interpreter value="project" />
     <envs />
     <method />

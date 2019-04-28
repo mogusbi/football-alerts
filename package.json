@@ -31,11 +31,11 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "create": "lerna create",
-    "deploy": "lerna run deploy --scope @football-alerts/api --stream",
+    "deploy": "lerna run deploy --scope @football-alerts/backend --stream",
     "lerna": "lerna",
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
-    "remove": "lerna run remove --scope @football-alerts/api --stream",
+    "remove": "lerna run remove --scope @football-alerts/backend --stream",
     "start": "lerna run start  --stream",
     "test": "lerna run test --stream",
     "test:ci": "lerna run test:ci"

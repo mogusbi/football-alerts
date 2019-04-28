@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/applications/backend/.serverless" />
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.dynamodb" />
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.serverless" />
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.webpack" />
