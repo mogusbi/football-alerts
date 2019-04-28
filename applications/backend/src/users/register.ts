@@ -1,8 +1,8 @@
 import {CognitoUserPoolEvent, Handler} from 'aws-lambda';
 import {DocumentClient} from 'aws-sdk/clients/dynamodb';
+import moment, {Moment} from 'moment';
 
 const documentClient: DocumentClient = new DocumentClient();
-const TableName: string = process.env.TABLE_NAME;
 
 function conditionalValue (input: string): string {
   if (input === undefined) {
@@ -13,10 +13,12 @@ function conditionalValue (input: string): string {
 }
 
 export const handler: Handler = async (event: CognitoUserPoolEvent): Promise<CognitoUserPoolEvent> => {
+  const TableName: string = process.env.TABLE_NAME;
+
   switch (event.triggerSource) {
   case 'PostAuthentication_Authentication':
   case 'PostConfirmation_ConfirmSignUp':
-    const now: Date = new Date();
+    const now: Moment = moment.utc();
 
     await documentClient
       .update({
