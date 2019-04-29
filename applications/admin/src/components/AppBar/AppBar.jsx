@@ -68,14 +68,14 @@ function AppBar ({handleDrawer, handleSignOut}) {
                   id='menu-appbar'
                   anchorEl={anchorEl}
                   anchorOrigin={{
-                    vertical: 'top',
                     horizontal: 'right',
+                    vertical: 'top'
                   }}
                   onClose={handleClose}
                   open={open}
                   transformOrigin={{
-                    vertical: 'top',
                     horizontal: 'right',
+                    vertical: 'top'
                   }}
                 >
                   <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
@@ -90,8 +90,8 @@ function AppBar ({handleDrawer, handleSignOut}) {
 }
 
 AppBar.propTypes = {
-  handleDrawer: PropTypes.func,
-  handleSignOut: PropTypes.func
+  handleDrawer: PropTypes.func.isRequired,
+  handleSignOut: PropTypes.func.isRequired
 };
 
 export default memo(AppBar);

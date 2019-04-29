@@ -27,7 +27,7 @@ function ListItemLink ({icon, primary, to}) {
 ListItemLink.propTypes = {
   icon: PropTypes.node.isRequired,
   primary: PropTypes.node.isRequired,
-  to: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired
 };
 
 export default memo(ListItemLink);

@@ -1,0 +1,44 @@
+root: true
+
+extends:
+  - airbnb
+  - eslint:recommended
+  - react-app
+
+rules:
+  arrow-parens:
+    - error
+    - always
+  comma-dangle:
+    - error
+    - never
+  import/named: off
+  max-len:
+    - error
+    - 140
+    - 4
+  object-curly-spacing:
+    - error
+    - never
+  sort-keys:
+    - error
+  space-before-function-paren:
+    - error
+    - always
+  quotes:
+    - error
+    - single
+
+overrides:
+  -
+    files:
+      - '**/*.stories.{js,jsx}'
+      - setupProxy.js
+      - setupTests.js
+    rules:
+      import/no-extraneous-dependencies: off
+  -
+    files:
+      - serviceWorker.js
+    rules:
+      no-console: off

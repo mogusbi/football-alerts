@@ -17,7 +17,7 @@ document.head.insertBefore(styleNode, document.head.firstChild);
 const generateClassName = createGenerateClassName();
 const jss = create({
   ...jssPreset(),
-  insertionPoint: "insertion-point-jss"
+  insertionPoint: 'insertion-point-jss'
 });
 
 render(

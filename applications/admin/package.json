@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "lint": "eslint --config ../../.eslintrc.yml --ext .jsx,.js src/",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },

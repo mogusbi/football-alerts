@@ -34,7 +34,9 @@ function Layout ({children, closeDrawerHandler, open, openDrawerHandler}) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  open: PropTypes.bool.isRequired
+  closeDrawerHandler: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  openDrawerHandler: PropTypes.func.isRequired
 };
 
 function mapStateToProps ({drawer: {open}}) {
