@@ -1,31 +1,20 @@
-import Amplify from 'aws-amplify';
 import {withAuthenticator} from 'aws-amplify-react';
+import {ConnectedRouter} from 'connected-react-router';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import awsconfig from './aws-exports';
+import {Provider} from 'react-redux';
+import Layout from './containers/Layout';
+import store, {history} from './store';
 
-Amplify.configure(awsconfig);
-
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store()}>
+      <ConnectedRouter history={history}>
+        <Layout>
+          <p>Hello world</p>
+        </Layout>
+      </ConnectedRouter>
+    </Provider>
   );
 }
 
-export default withAuthenticator(App, true);
+export default withAuthenticator(App);
