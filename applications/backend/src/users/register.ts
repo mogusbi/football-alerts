@@ -35,7 +35,7 @@ export const handler: Handler = async (event: CognitoUserPoolEvent): Promise<Cog
           ':website': conditionalValue(event.request.userAttributes.website)
         },
         Key: {
-          _id: event.request.userAttributes.sub
+          id: event.request.userAttributes.sub
         },
         TableName,
         UpdateExpression: `

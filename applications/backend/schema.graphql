@@ -1,0 +1,30 @@
+# Clubs
+type Club {
+  createdAt: AWSDateTime
+  id: ID!
+  name: String
+  twitterHandle: String
+  updatedAt: AWSDateTime
+  website: AWSURL
+}
+
+input ClubInput {
+  name: String!
+  twitterHandle: String
+  website: AWSURL
+}
+
+type Mutation {
+  # Clubs
+  createClub(input: ClubInput): Club
+}
+
+type Query {
+  # Clubs
+  getClub(id: ID): Club
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

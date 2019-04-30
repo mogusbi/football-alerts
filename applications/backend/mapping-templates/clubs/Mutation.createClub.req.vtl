@@ -1,0 +1,21 @@
+#if ($ctx.args.user.twitterHandle)
+  #set($validTwitterHandle = $util.matches("^[A-Za-z0-9_]{1,15}$", $ctx.args.user.twitterHandle))
+
+  #if (!$validTwitterHandle)
+    $util.error("Invalid Twitter handle.")
+  #end
+#end
+
+{
+  "version": "2017-02-28",
+  "operation": "PutItem",
+  "key" : {
+    "id": $util.dynamodb.toDynamoDBJson($util.autoId())
+  },
+  "attributeValues": {
+    "createdAt": $util.dynamodb.toDynamoDBJson($util.time.nowISO8601()),
+    "name": $util.dynamodb.toDynamoDBJson($ctx.args.user.name),
+    "twitterHandle": $util.dynamodb.toDynamoDBJson($ctx.args.user.twitterHandle),
+    "website": $util.dynamodb.toDynamoDBJson($ctx.args.user.website)
+  }
+}

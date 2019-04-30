@@ -24,6 +24,37 @@ plugins:
 custom:
   prefix: ${self:service}-${self:provider.stage}
 
+  appSync:
+    -
+      name: ${self:custom.prefix}-private
+      authenticationType: AMAZON_COGNITO_USER_POOLS
+      userPoolConfig:
+        awsRegion: ${self:provider.region}
+        defaultAction: ALLOW
+        userPoolId: !Ref CognitoUserPool
+      mappingTemplates:
+        # Clubs
+        -
+          dataSource: Clubs
+          type: Query
+          field: getClub
+          request: clubs/Query.getClub.req.vtl
+          response: clubs/Query.getClub.req.vtl
+        -
+          dataSource: Clubs
+          type: Mutation
+          field: createClub
+          request: clubs/Mutation.createClub.req.vtl
+          response: clubs/Mutation.createClub.req.vtl
+      dataSources:
+        -
+          type: AMAZON_DYNAMODB
+          name: Clubs
+          description: Clubs table
+          config:
+            tableName: !Ref ClubsTable
+            serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
+
   cognito-transformations:
     develop: Develop
     production: Production
@@ -31,7 +62,7 @@ custom:
   output:
     files:
       - ../admin/src/aws-exports.js
-#    graphQlApiUrlName: FcbarcelonawebdevelopprivateGraphQlApiUrl
+    graphQlApiUrlName: FootballalertsdevelopprivateGraphQlApiUrl
 
   webpack:
     includeModules: true
@@ -181,11 +212,11 @@ resources:
         TableName: ${self:custom.prefix}-clubs
         AttributeDefinitions:
           -
-            AttributeName: _id
+            AttributeName: id
             AttributeType: S
         KeySchema:
           -
-            AttributeName: _id
+            AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
@@ -197,17 +228,49 @@ resources:
         TableName: ${self:custom.prefix}-users
         AttributeDefinitions:
           -
-            AttributeName: _id
+            AttributeName: id
             AttributeType: S
         KeySchema:
           -
-            AttributeName: _id
+            AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
 
     # IAM
+    AppSyncDynamoDbServiceRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-appsync-dynamodb-service-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - appsync.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: ${self:custom.prefix}-appsync-dynamodb-service-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:DeleteItem
+                    - dynamodb:GetItem
+                    - dynamodb:PutItem
+                    - dynamodb:Query
+                    - dynamodb:Scan
+                    - dynamodb:UpdateItem
+                  Resource:
+                    - !GetAtt ClubsTable.Arn
+
     UsersRegisterLambdaFunctionInvokePermission:
       Type: AWS::Lambda::Permission
       Properties:

@@ -90,7 +90,7 @@ describe('register', (): void => {
           ':website': 'https://mogusbi.co.uk'
         },
         Key: {
-          _id: 'USER-ID'
+          id: 'USER-ID'
         },
         TableName: 'USER_TABLE',
         UpdateExpression: `
@@ -132,7 +132,7 @@ describe('register', (): void => {
           ':website': 'https://mogusbi.co.uk'
         },
         Key: {
-          _id: 'USER-ID'
+          id: 'USER-ID'
         },
         TableName: 'USER_TABLE',
         UpdateExpression: `
