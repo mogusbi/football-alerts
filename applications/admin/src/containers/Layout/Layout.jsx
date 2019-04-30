@@ -3,9 +3,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import PropTypes from 'prop-types';
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
 import {closeDrawer, openDrawer} from '../../actions/DrawerActions';
 import AppBar from '../../components/AppBar';
 import AppDrawer from '../../components/AppDrawer';
+
+const Main = styled.main`
+  flex-grow: 1;
+  overflow: auto;
+  padding: 24px;
+`;
 
 function Layout ({children, closeDrawerHandler, open, openDrawerHandler}) {
   async function signOutHandler () {
@@ -27,7 +34,9 @@ function Layout ({children, closeDrawerHandler, open, openDrawerHandler}) {
 
       <CssBaseline />
 
-      {children}
+      <Main>
+        {children}
+      </Main>
     </Fragment>
   );
 }

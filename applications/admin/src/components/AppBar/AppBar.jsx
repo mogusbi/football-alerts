@@ -44,13 +44,24 @@ function AppBar ({handleDrawer, handleSignOut}) {
         <Toolbar>
           {
             handleDrawer && (
-              <MenuButton color='inherit' edge='start' aria-label='Menu' onClick={handleDrawer}>
+              <MenuButton
+                aria-label='Menu'
+                color='inherit'
+                edge='start'
+                onClick={handleDrawer}
+              >
                 <MenuIcon />
               </MenuButton>
             )
           }
 
-          <Title color='inherit' variant='h6'>Football Alerts</Title>
+          <Title
+            color='inherit'
+            component='h1'
+            variant='h6'
+          >
+            Football Alerts
+          </Title>
 
           {
             handleSignOut && (
