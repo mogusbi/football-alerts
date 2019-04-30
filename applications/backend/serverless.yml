@@ -39,13 +39,13 @@ custom:
           type: Query
           field: getClub
           request: clubs/Query.getClub.req.vtl
-          response: clubs/Query.getClub.req.vtl
+          response: clubs/Query.getClub.res.vtl
         -
           dataSource: Clubs
           type: Mutation
           field: createClub
           request: clubs/Mutation.createClub.req.vtl
-          response: clubs/Mutation.createClub.req.vtl
+          response: clubs/Mutation.createClub.res.vtl
       dataSources:
         -
           type: AMAZON_DYNAMODB

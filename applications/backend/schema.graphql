@@ -1,7 +1,7 @@
 # Clubs
 type Club {
   createdAt: AWSDateTime
-  id: ID!
+  id: ID
   name: String
   twitterHandle: String
   updatedAt: AWSDateTime
@@ -16,12 +16,12 @@ input ClubInput {
 
 type Mutation {
   # Clubs
-  createClub(input: ClubInput): Club
+  createClub(input: ClubInput!): Club!
 }
 
 type Query {
   # Clubs
-  getClub(id: ID): Club
+  getClub(id: ID!): Club!
 }
 
 schema {
