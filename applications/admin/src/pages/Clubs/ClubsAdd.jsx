@@ -1,30 +1,25 @@
-// import {API, graphqlOperation} from 'aws-amplify';
+import PropTypes from 'prop-types';
 import React from 'react';
+import {connect} from 'react-redux';
+import {createClub} from '../../actions/ClubActions';
 import ClubsForm from './ClubsForm';
 
-// const mutation = `mutation CreateClub($input: ClubInput!) {
-//   createClub(input: $input) {
-//     id
-//     name
-//   }
-// }`;
-
-function ClubsAdd () {
-  async function submit (input) {
-    // try {
-    //   const club = await API.graphql(graphqlOperation(mutation, {
-    //     input
-    //   }));
-    //
-    //   console.log(club);
-    // } catch (e) {
-    //   console.log(e);
-    // }
-  }
-
+function ClubsAdd ({submitHandler}) {
   return (
-    <ClubsForm onSubmit={submit} />
+    <ClubsForm onSubmit={submitHandler} />
   );
 }
 
-export default ClubsAdd;
+ClubsAdd.propTypes = {
+  submitHandler: PropTypes.func.isRequired
+};
+
+function mapDispatchToProps (dispatch) {
+  return {
+    submitHandler (input) {
+      return dispatch(createClub(input));
+    }
+  };
+}
+
+export default connect(null, mapDispatchToProps)(ClubsAdd);

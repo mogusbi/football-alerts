@@ -10,8 +10,8 @@ import LinkButton from '../../components/LinkButton';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Club name is required'),
-  twitterHandle: Yup.string(),
-  website: Yup.string()
+  twitterHandle: Yup.string().matches(/^[A-Za-z0-9_]{1,15}$/, 'Invalid Twitter handle'),
+  website: Yup.string().url('Invalid URL')
 });
 
 function ClubsForm ({name, onSubmit, twitterHandle, website}) {
