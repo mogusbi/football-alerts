@@ -114,3 +114,35 @@ export function nextClubs (limit, next) {
     dispatch(loadingComplete());
   }
 }
+
+export function updateClub (id, input) {
+  return async function (dispatch) {
+    const mutation = `mutation UpdateClub($id: ID!, $input: ClubInput!) {
+      updateClub(id: $id, input: $input) {
+        name
+      }
+    }`;
+
+    dispatch(loadingStart());
+
+    try {
+      const {data: {updateClub: {name}}} = await API.graphql(graphqlOperation(mutation, {
+        id,
+        input
+      }));
+
+      dispatch(setMessage({
+        message: `${name} has been updated!`
+      }));
+
+      history.push('/clubs');
+    } catch (e) {
+      dispatch(setAlert({
+        message: e.errors.map(({message}) => message),
+        title: 'Unable to update club'
+      }));
+    }
+
+    dispatch(loadingComplete());
+  };
+}

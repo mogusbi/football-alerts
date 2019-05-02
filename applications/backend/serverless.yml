@@ -36,6 +36,18 @@ custom:
         # Clubs
         -
           dataSource: Clubs
+          type: Mutation
+          field: createClub
+          request: clubs/Mutation.createClub.req.vtl
+          response: clubs/Mutation.createClub.res.vtl
+        -
+          dataSource: Clubs
+          type: Mutation
+          field: updateClub
+          request: clubs/Mutation.updateClub.req.vtl
+          response: clubs/Mutation.updateClub.res.vtl
+        -
+          dataSource: Clubs
           type: Query
           field: getClub
           request: clubs/Query.getClub.req.vtl
@@ -46,12 +58,6 @@ custom:
           field: getClubs
           request: clubs/Query.getClubs.req.vtl
           response: clubs/Query.getClubs.res.vtl
-        -
-          dataSource: Clubs
-          type: Mutation
-          field: createClub
-          request: clubs/Mutation.createClub.req.vtl
-          response: clubs/Mutation.createClub.res.vtl
       dataSources:
         -
           type: AMAZON_DYNAMODB
