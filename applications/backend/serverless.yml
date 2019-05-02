@@ -42,6 +42,12 @@ custom:
           response: clubs/Query.getClub.res.vtl
         -
           dataSource: Clubs
+          type: Query
+          field: getClubs
+          request: clubs/Query.getClubs.req.vtl
+          response: clubs/Query.getClubs.res.vtl
+        -
+          dataSource: Clubs
           type: Mutation
           field: createClub
           request: clubs/Mutation.createClub.req.vtl

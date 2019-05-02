@@ -8,6 +8,11 @@ type Club {
   website: AWSURL
 }
 
+type Clubs {
+  clubs: [Club]
+  nextToken: String
+}
+
 input ClubInput {
   name: String!
   twitterHandle: String
@@ -22,6 +27,7 @@ type Mutation {
 type Query {
   # Clubs
   getClub(id: ID!): Club!
+  getClubs(limit: Int, nextToken: String): Clubs!
 }
 
 schema {

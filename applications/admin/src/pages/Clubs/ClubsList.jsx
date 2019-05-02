@@ -1,14 +1,89 @@
-import React, {Fragment, memo} from 'react';
+import React, {Fragment, memo, useEffect} from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {getClubs, nextClubs} from '../../actions/ClubActions';
+import DataTable from '../../components/DataTable';
+import DataTableCell from '../../components/DataTableCell';
+import DataTableRow from '../../components/DataTableRow';
 import LinkButton from '../../components/LinkButton';
 
-function ClubsList () {
+function ClubsList ({club, getClubsHandler, nextClubsHandler}) {
+  const limit = 10;
+
+  useEffect(() => {
+    getClubsHandler(limit);
+  }, [
+    getClubsHandler
+  ]);
+
   return (
     <Fragment>
       <LinkButton to='/clubs/add'>
         Add new club
       </LinkButton>
+
+      <DataTable
+        headings={[
+          'Name',
+          ''
+        ]}
+        loadMore={club.nextToken}
+        loadMoreHandler={() => nextClubsHandler(limit, club.nextToken)}
+      >
+        {
+          club.clubs.map(
+            ({id, name}) => (
+              <DataTableRow key={id}>
+                <DataTableCell>
+                  {name}
+                </DataTableCell>
+                <DataTableCell align='right'>
+                  <LinkButton
+                    color='primary'
+                    size='small'
+                    to={`/clubs/view/${id}`}
+                    variant='text'
+                  >
+                    View
+                  </LinkButton>
+                  {' '}
+                </DataTableCell>
+              </DataTableRow>
+            )
+          )
+        }
+      </DataTable>
     </Fragment>
   );
 }
 
-export default memo(ClubsList);
+ClubsList.propTypes = {
+  club: PropTypes.shape({
+    clubs: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
+    })),
+    nextToken: PropTypes.string
+  }).isRequired,
+  getClubsHandler: PropTypes.func.isRequired,
+  nextClubsHandler: PropTypes.func.isRequired
+};
+
+function mapStateToProps ({club}) {
+  return {
+    club
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    getClubsHandler (limit) {
+      return dispatch(getClubs(limit));
+    },
+    nextClubsHandler (limit, next) {
+      return dispatch(nextClubs(limit, next));
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(memo(ClubsList));

@@ -4,10 +4,10 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {Route} from 'react-router-dom';
 import Layout from './containers/Layout';
+import history from './history';
 import Clubs from './pages/Clubs';
 import Dashboard from './pages/Dashboard';
-import store, {history} from './store';
-
+import store from './store';
 
 function App () {
   return (
