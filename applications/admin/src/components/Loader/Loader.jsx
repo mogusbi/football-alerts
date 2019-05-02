@@ -4,8 +4,10 @@ import React, {memo} from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background-color: #3f51b5;
-  height: 4px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 `;
 
 function Loader ({loading}) {
