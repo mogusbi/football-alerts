@@ -40,6 +40,37 @@ export function createClub (input) {
   };
 }
 
+export function deleteClub (id) {
+  return async function (dispatch) {
+    const mutation =`mutation DeleteClub($id: ID!) {
+      deleteClub(id: $id) {
+        name
+      }
+    }`;
+
+    dispatch(loadingStart());
+
+    try {
+      const {data: {deleteClub: {name}}} = await API.graphql(graphqlOperation(mutation, {
+        id
+      }));
+
+      dispatch(setMessage({
+        message: `${name} has been deleted!`
+      }));
+
+      history.push('/clubs');
+    } catch (e) {
+      dispatch(setAlert({
+        message: e.errors.map(({message}) => message),
+        title: 'Unable to delete club'
+      }));
+    }
+
+    dispatch(loadingComplete());
+  }
+}
+
 export function getClubs (limit) {
   return async function (dispatch) {
     const query = `query GetClubs($limit: Int, $nextToken: String) {

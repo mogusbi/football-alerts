@@ -5,6 +5,7 @@ import {getClubs, nextClubs} from '../../actions/ClubActions';
 import DataTable from '../../components/DataTable';
 import DataTableCell from '../../components/DataTableCell';
 import DataTableRow from '../../components/DataTableRow';
+import FormButtonBar from '../../components/FormButtonBar';
 import LinkButton from '../../components/LinkButton';
 
 function ClubsList ({club, getClubsHandler, nextClubsHandler}) {
@@ -18,9 +19,11 @@ function ClubsList ({club, getClubsHandler, nextClubsHandler}) {
 
   return (
     <Fragment>
-      <LinkButton to='/clubs/add'>
-        Add new club
-      </LinkButton>
+      <FormButtonBar>
+        <LinkButton to='/clubs/add'>
+          Add new club
+        </LinkButton>
+      </FormButtonBar>
 
       <DataTable
         headings={[

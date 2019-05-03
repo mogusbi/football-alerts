@@ -14,14 +14,10 @@ const schema = Yup.object().shape({
   website: Yup.string().url('Invalid URL')
 });
 
-function ClubsForm ({name, onSubmit, twitterHandle, website}) {
+function ClubsForm ({club, deleteHandler, onSubmit}) {
   return (
     <Formik
-      initialValues={{
-        name,
-        twitterHandle,
-        website
-      }}
+      initialValues={club}
       onSubmit={onSubmit}
       validationSchema={schema}
     >
@@ -96,6 +92,29 @@ function ClubsForm ({name, onSubmit, twitterHandle, website}) {
               </Grid>
             </Grid>
           </FormButtonBar>
+
+          {
+            deleteHandler && (
+              <FormButtonBar>
+                <Grid container>
+                  <Grid
+                    item
+                    xs={12}
+                  >
+                    <Button
+                      color='secondary'
+                      onClick={deleteHandler}
+                      variant='contained'
+                    >
+                      Delete
+                      {' '}
+                      {club.name}
+                    </Button>
+                  </Grid>
+                </Grid>
+              </FormButtonBar>
+            )
+          }
         </Form>
       )}
     </Formik>
@@ -103,16 +122,22 @@ function ClubsForm ({name, onSubmit, twitterHandle, website}) {
 }
 
 ClubsForm.propTypes = {
-  name: PropTypes.string,
-  onSubmit: PropTypes.func.isRequired,
-  twitterHandle: PropTypes.string,
-  website: PropTypes.string
+  club: PropTypes.shape({
+    name: PropTypes.string,
+    twitterHandle: PropTypes.string,
+    website: PropTypes.string
+  }),
+  deleteHandler: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired
 };
 
 ClubsForm.defaultProps = {
-  name: '',
-  twitterHandle: '',
-  website: ''
+  club: {
+    name: '',
+    twitterHandle: '',
+    website: ''
+  },
+  deleteHandler: null
 };
 
 export default ClubsForm;

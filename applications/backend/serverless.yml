@@ -43,6 +43,12 @@ custom:
         -
           dataSource: Clubs
           type: Mutation
+          field: deleteClub
+          request: clubs/Mutation.deleteClub.req.vtl
+          response: clubs/Mutation.deleteClub.res.vtl
+        -
+          dataSource: Clubs
+          type: Mutation
           field: updateClub
           request: clubs/Mutation.updateClub.req.vtl
           response: clubs/Mutation.updateClub.res.vtl

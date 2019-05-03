@@ -22,6 +22,7 @@ input ClubInput {
 type Mutation {
   # Clubs
   createClub(input: ClubInput!): Club!
+  deleteClub(id: ID!): Club!
   updateClub(id: ID!, input: ClubInput!): Club!
 }
 

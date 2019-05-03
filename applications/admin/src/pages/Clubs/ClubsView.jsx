@@ -3,10 +3,11 @@ import {graphqlOperation} from 'aws-amplify';
 import PropTypes from 'prop-types';
 import React, {memo} from 'react';
 import {connect} from 'react-redux';
-import {updateClub} from '../../actions/ClubActions';
+import {deleteClub, updateClub} from '../../actions/ClubActions';
+import Loader from '../../components/Loader';
 import ClubsForm from './ClubsForm';
 
-function ClubsView ({match: {params: {id}}, submitHandler}) {
+function ClubsView ({deleteHandler, match: {params: {id}}, submitHandler}) {
   const query = `query GetClub($id: ID!) {
     getClub(id: $id) {
       id
@@ -15,6 +16,7 @@ function ClubsView ({match: {params: {id}}, submitHandler}) {
       website
     }
   }`;
+
   return (
     <Connect
       query={graphqlOperation(query, {
@@ -22,20 +24,28 @@ function ClubsView ({match: {params: {id}}, submitHandler}) {
       })}
     >
       {
-        ({data: {getClub}}) => getClub && (
-          <ClubsForm
-            name={getClub.name}
-            onSubmit={(input) => submitHandler(id, input)}
-            twitterHandle={getClub.twitterHandle}
-            website={getClub.website}
-          />
-        )
+        ({data: {getClub}, loading}) => {
+          if (loading) {
+            return (
+              <Loader loading={loading} />
+            );
+          }
+
+          return (
+            <ClubsForm
+              club={getClub}
+              deleteHandler={() => deleteHandler(id)}
+              onSubmit={(input) => submitHandler(id, input)}
+            />
+          );
+        }
       }
     </Connect>
   );
 }
 
 ClubsView.propTypes = {
+  deleteHandler: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired
@@ -46,6 +56,9 @@ ClubsView.propTypes = {
 
 function mapDispatchToProps (dispatch) {
   return {
+    deleteHandler (id) {
+      return dispatch(deleteClub(id));
+    },
     submitHandler (id, input) {
       return dispatch(updateClub(id, input));
     }
