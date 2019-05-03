@@ -44,7 +44,7 @@
     "remove": "lerna run remove --scope @football-alerts/backend --stream",
     "start": "lerna run start  --stream",
     "test": "lerna run test --stream",
-    "test:ci": "lerna run test:ci"
+    "test:ci": "lerna run test:ci --stream"
   },
   "husky": {
     "hooks": {

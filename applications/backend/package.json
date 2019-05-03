@@ -13,7 +13,9 @@
   "scripts": {
     "deploy": "serverless deploy --verbose",
     "lint": "tslint -c ../../tslint.json -p tsconfig.json",
-    "remove": "serverless remove --verbose"
+    "remove": "serverless remove --verbose",
+    "test": "jest",
+    "test:ci": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.18.0",
