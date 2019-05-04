@@ -1,4 +1,6 @@
 import {API, graphqlOperation} from 'aws-amplify';
+import * as mutations from '../graphql/mutations';
+import * as queries from '../graphql/queries';
 import history from '../history';
 import {setAlert} from './AlertActions';
 import {setMessage} from './MessageActions';
@@ -11,16 +13,10 @@ export const ClubActionTypes = {
 
 export function createClub (input) {
   return async function (dispatch) {
-    const mutation = `mutation CreateClub($input: ClubInput!) {
-      createClub(input: $input) {
-        name
-      }
-    }`;
-
     dispatch(loadingStart());
 
     try {
-      const {data: {createClub: {name}}} = await API.graphql(graphqlOperation(mutation, {
+      const {data: {createClub: {name}}} = await API.graphql(graphqlOperation(mutations.createClub, {
         input
       }));
 
@@ -42,16 +38,10 @@ export function createClub (input) {
 
 export function deleteClub (id) {
   return async function (dispatch) {
-    const mutation =`mutation DeleteClub($id: ID!) {
-      deleteClub(id: $id) {
-        name
-      }
-    }`;
-
     dispatch(loadingStart());
 
     try {
-      const {data: {deleteClub: {name}}} = await API.graphql(graphqlOperation(mutation, {
+      const {data: {deleteClub: {name}}} = await API.graphql(graphqlOperation(mutations.deleteClub, {
         id
       }));
 
@@ -73,20 +63,10 @@ export function deleteClub (id) {
 
 export function getClubs (limit) {
   return async function (dispatch) {
-    const query = `query GetClubs($limit: Int, $nextToken: String) {
-      getClubs(limit: $limit, nextToken: $nextToken) {
-        clubs {
-          id
-          name
-        }
-        nextToken
-      }
-    }`;
-
     dispatch(loadingStart());
 
     try {
-      const {data: {getClubs: {clubs, nextToken}}} = await API.graphql(graphqlOperation(query, {
+      const {data: {getClubs: {clubs, nextToken}}} = await API.graphql(graphqlOperation(queries.getClubs, {
         limit
       }));
 
@@ -114,20 +94,10 @@ export function getClubsReceived (payload) {
 
 export function nextClubs (limit, next) {
   return async function (dispatch) {
-    const query = `query GetClubs($limit: Int, $nextToken: String) {
-      getClubs(limit: $limit, nextToken: $nextToken) {
-        clubs {
-          id
-          name
-        }
-        nextToken
-      }
-    }`;
-
     dispatch(loadingStart());
 
     try {
-      const {data: {getClubs: {clubs, nextToken}}} = await API.graphql(graphqlOperation(query, {
+      const {data: {getClubs: {clubs, nextToken}}} = await API.graphql(graphqlOperation(queries.getClubs, {
         limit,
         nextToken: next
       }));
@@ -156,16 +126,10 @@ export function nextClubsReceived (payload) {
 
 export function updateClub (id, input) {
   return async function (dispatch) {
-    const mutation = `mutation UpdateClub($id: ID!, $input: ClubInput!) {
-      updateClub(id: $id, input: $input) {
-        name
-      }
-    }`;
-
     dispatch(loadingStart());
 
     try {
-      const {data: {updateClub: {name}}} = await API.graphql(graphqlOperation(mutation, {
+      const {data: {updateClub: {name}}} = await API.graphql(graphqlOperation(mutations.updateClub, {
         id,
         input
       }));

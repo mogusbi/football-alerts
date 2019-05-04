@@ -5,21 +5,15 @@ import React, {memo} from 'react';
 import {connect} from 'react-redux';
 import {deleteClub, updateClub} from '../../actions/ClubActions';
 import Loader from '../../components/Loader';
+import {getClub} from '../../graphql/queries';
 import ClubsForm from './ClubsForm';
 
 function ClubsView ({deleteHandler, match: {params: {id}}, submitHandler}) {
-  const query = `query GetClub($id: ID!) {
-    getClub(id: $id) {
-      id
-      name
-      twitterHandle
-      website
-    }
-  }`;
+
 
   return (
     <Connect
-      query={graphqlOperation(query, {
+      query={graphqlOperation(getClub, {
         id
       })}
     >
