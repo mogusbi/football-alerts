@@ -23,7 +23,7 @@ function Alert ({closeHandler, message, open, title}) {
         <List dense={false}>
           {
             message.map((item) => (
-              <ListItem key>
+              <ListItem key={item}>
                 <ListItemText>
                   {item}
                 </ListItemText>

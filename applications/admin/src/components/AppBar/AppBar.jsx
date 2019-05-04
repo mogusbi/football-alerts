@@ -68,6 +68,7 @@ function AppBar ({handleDrawer, handleSignOut}) {
               <div>
                 <IconButton
                   aria-haspopup='true'
+                  aria-label='My account'
                   aria-owns={open ? 'menu-appbar' : undefined}
                   color='inherit'
                   onClick={handleMenu}
@@ -89,7 +90,12 @@ function AppBar ({handleDrawer, handleSignOut}) {
                     vertical: 'top'
                   }}
                 >
-                  <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
+                  <MenuItem
+                    id='sign-out-button'
+                    onClick={handleSignOut}
+                  >
+                    Sign out
+                  </MenuItem>
                 </Menu>
               </div>
             )
