@@ -90,13 +90,10 @@ export function getClubs (limit) {
         limit
       }));
 
-      dispatch({
-        payload: {
-          clubs,
-          nextToken
-        },
-        type: ClubActionTypes.GET
-      })
+      dispatch(getClubsReceived({
+        clubs,
+        nextToken
+      }));
     } catch (e) {
       dispatch(setAlert({
         message: e.errors.map(({message}) => message),
@@ -106,6 +103,13 @@ export function getClubs (limit) {
 
     dispatch(loadingComplete());
   }
+}
+
+export function getClubsReceived (payload) {
+  return {
+    payload,
+    type: ClubActionTypes.GET
+  };
 }
 
 export function nextClubs (limit, next) {
@@ -128,13 +132,10 @@ export function nextClubs (limit, next) {
         nextToken: next
       }));
 
-      dispatch({
-        payload: {
-          clubs,
-          nextToken
-        },
-        type: ClubActionTypes.NEXT
-      })
+      dispatch(nextClubsReceived({
+        clubs,
+        nextToken
+      }));
     } catch (e) {
       dispatch(setAlert({
         message: e.errors.map(({message}) => message),
@@ -144,6 +145,13 @@ export function nextClubs (limit, next) {
 
     dispatch(loadingComplete());
   }
+}
+
+export function nextClubsReceived (payload) {
+  return {
+    payload,
+    type: ClubActionTypes.NEXT
+  };
 }
 
 export function updateClub (id, input) {

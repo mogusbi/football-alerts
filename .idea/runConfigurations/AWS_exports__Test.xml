@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test: AWS exports" type="JavaScriptTestRunnerJest" factoryName="Jest">
+  <configuration default="false" name="AWS exports: Test" type="JavaScriptTestRunnerJest" factoryName="Jest">
     <config-file value="$PROJECT_DIR$/packages/serverless-aws-exports/package.json" />
     <node-interpreter value="project" />
     <node-options value="" />
