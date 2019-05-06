@@ -2,7 +2,7 @@ import {connectRouter} from 'connected-react-router';
 import {combineReducers} from 'redux';
 import {alertReducer} from '../alert';
 import {clubReducer} from '../club';
-import {drawerReducer} from '../drawer';
+import {layoutReducer} from '../layout';
 import {loaderReducer} from '../loader';
 import {messageReducer} from '../message';
 import root from '../root';
@@ -26,7 +26,7 @@ describe('root', () => {
     expect(combineReducers).toHaveBeenCalledWith({
       alert: alertReducer,
       club: clubReducer,
-      drawer: drawerReducer,
+      layout: layoutReducer,
       loader: loaderReducer,
       message: messageReducer,
       router: connectRouter(history)

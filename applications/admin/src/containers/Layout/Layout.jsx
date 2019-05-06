@@ -6,7 +6,7 @@ import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import {clearAlert} from '../../actions/AlertActions';
-import {closeDrawer, openDrawer} from '../../actions/DrawerActions';
+import {closeAccountMenu, closeDrawer, openAccountMenu, openDrawer} from '../../actions/LayoutActions';
 import {clearMessage} from '../../actions/MessageActions';
 import AppBar from '../../components/AppBar';
 import AppDrawer from '../../components/AppDrawer';
@@ -33,12 +33,14 @@ async function signOutHandler () {
 function Layout ({
    alert,
    children,
+   closeAccountMenuHandler,
    closeDialogHandler,
    closeDrawerHandler,
    closeMessageHandler,
-   drawer,
+   layout,
    loader,
    message,
+   openAccountMenuHandler,
    openDrawerHandler
 }) {
   return (
@@ -48,12 +50,15 @@ function Layout ({
       <Loader loading={loader.loading} />
 
       <AppBar
+        anchorEl={layout.accountMenu}
+        handleAccountMenuClose={closeAccountMenuHandler}
+        handleAccountMenuOpen={openAccountMenuHandler}
         handleDrawer={openDrawerHandler}
         handleSignOut={signOutHandler}
       />
 
       <AppDrawer
-        isOpen={drawer.open}
+        isOpen={layout.drawer}
         closeDrawer={closeDrawerHandler}
         openDrawer={openDrawerHandler}
       />
@@ -89,11 +94,13 @@ Layout.propTypes = {
     title: PropTypes.string.isRequired
   }).isRequired,
   children: PropTypes.node.isRequired,
+  closeAccountMenuHandler: PropTypes.func.isRequired,
   closeDialogHandler: PropTypes.func.isRequired,
   closeDrawerHandler: PropTypes.func.isRequired,
   closeMessageHandler: PropTypes.func.isRequired,
-  drawer: PropTypes.shape({
-    open: PropTypes.bool.isRequired
+  layout: PropTypes.shape({
+    accountMenu: PropTypes.object,
+    drawer: PropTypes.bool.isRequired
   }).isRequired,
   loader: PropTypes.shape({
     loading: PropTypes.bool.isRequired
@@ -102,13 +109,14 @@ Layout.propTypes = {
     message: PropTypes.string.isRequired,
     open: PropTypes.bool.isRequired
   }).isRequired,
+  openAccountMenuHandler: PropTypes.func.isRequired,
   openDrawerHandler: PropTypes.func.isRequired
 };
 
-function mapStateToProps ({alert, drawer, loader, message}) {
+function mapStateToProps ({alert, layout, loader, message}) {
   return {
     alert,
-    drawer,
+    layout,
     loader,
     message
   };
@@ -116,6 +124,9 @@ function mapStateToProps ({alert, drawer, loader, message}) {
 
 function mapDispatchToProps (dispatch) {
   return {
+    closeAccountMenuHandler () {
+      return dispatch(closeAccountMenu());
+    },
     closeDialogHandler () {
       return dispatch(clearAlert());
     },
@@ -124,6 +135,9 @@ function mapDispatchToProps (dispatch) {
     },
     closeMessageHandler () {
       return dispatch(clearMessage());
+    },
+    openAccountMenuHandler (e) {
+      return dispatch(openAccountMenu(e.currentTarget));
     },
     openDrawerHandler () {
       return dispatch(openDrawer());

@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
-import React, {memo, useState} from 'react';
+import React, {memo} from 'react';
 import styled from 'styled-components';
 
 const Bar = styled(ApplicationBar)`
@@ -26,17 +26,8 @@ const Title = styled(Typography)`
   flex-grow: 1;
 `;
 
-function AppBar ({handleDrawer, handleSignOut}) {
-  const [anchorEl, setAnchorEl] = useState(null);
+function AppBar ({anchorEl, handleAccountMenuClose, handleAccountMenuOpen, handleDrawer, handleSignOut}) {
   const open = Boolean(anchorEl);
-
-  function handleClose () {
-    setAnchorEl(null);
-  }
-
-  function handleMenu (e) {
-    setAnchorEl(e.currentTarget);
-  }
 
   return (
     <Root>
@@ -71,7 +62,7 @@ function AppBar ({handleDrawer, handleSignOut}) {
                   aria-label='My account'
                   aria-owns={open ? 'menu-appbar' : undefined}
                   color='inherit'
-                  onClick={handleMenu}
+                  onClick={handleAccountMenuOpen}
                 >
                   <AccountCircle />
                 </IconButton>
@@ -83,7 +74,7 @@ function AppBar ({handleDrawer, handleSignOut}) {
                     horizontal: 'right',
                     vertical: 'top'
                   }}
-                  onClose={handleClose}
+                  onClose={handleAccountMenuClose}
                   open={open}
                   transformOrigin={{
                     horizontal: 'right',
@@ -107,8 +98,16 @@ function AppBar ({handleDrawer, handleSignOut}) {
 }
 
 AppBar.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  anchorEl: PropTypes.object,
+  handleAccountMenuClose: PropTypes.func.isRequired,
+  handleAccountMenuOpen: PropTypes.func.isRequired,
   handleDrawer: PropTypes.func.isRequired,
   handleSignOut: PropTypes.func.isRequired
+};
+
+AppBar.defaultProps = {
+  anchorEl: null
 };
 
 export default memo(AppBar);
