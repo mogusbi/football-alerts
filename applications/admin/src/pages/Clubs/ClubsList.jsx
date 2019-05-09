@@ -20,7 +20,11 @@ function ClubsList ({club, getClubsHandler, nextClubsHandler}) {
   return (
     <Fragment>
       <FormButtonBar>
-        <LinkButton to='/clubs/add'>
+        <LinkButton
+          color='primary'
+          to='/clubs/add'
+          variant='contained'
+        >
           Add new club
         </LinkButton>
       </FormButtonBar>

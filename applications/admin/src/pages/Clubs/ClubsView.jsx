@@ -9,8 +9,6 @@ import {getClub} from '../../graphql/queries';
 import ClubsForm from './ClubsForm';
 
 function ClubsView ({deleteHandler, match: {params: {id}}, submitHandler}) {
-
-
   return (
     <Connect
       query={graphqlOperation(getClub, {

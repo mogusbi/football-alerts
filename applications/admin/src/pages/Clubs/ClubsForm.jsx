@@ -75,6 +75,7 @@ function ClubsForm ({club, deleteHandler, onSubmit}) {
                 <LinkButton
                   color='secondary'
                   to='/clubs'
+                  variant='contained'
                 >
                   Cancel
                 </LinkButton>

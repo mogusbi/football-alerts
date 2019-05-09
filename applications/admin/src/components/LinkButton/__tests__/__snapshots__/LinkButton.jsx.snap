@@ -28,11 +28,8 @@ exports[`LinkButton should render component 1`] = `
       to="/somewhere"
     >
       <WithStyles(Button)
-        color="primary"
         component={[Function]}
-        size="medium"
         to="/somewhere"
-        variant="contained"
       >
         <Button
           classes={
@@ -65,7 +62,7 @@ exports[`LinkButton should render component 1`] = `
               "textSecondary": "MuiButton-textSecondary-5",
             }
           }
-          color="primary"
+          color="default"
           component={[Function]}
           disableFocusRipple={false}
           disabled={false}
@@ -74,10 +71,10 @@ exports[`LinkButton should render component 1`] = `
           size="medium"
           to="/somewhere"
           type="button"
-          variant="contained"
+          variant="text"
         >
           <WithStyles(ButtonBase)
-            className="MuiButton-root-1 MuiButton-contained-12 MuiButton-containedPrimary-13 MuiButton-raised-15 MuiButton-raisedPrimary-16"
+            className="MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
             component={[Function]}
             disabled={false}
             focusRipple={true}
@@ -87,7 +84,7 @@ exports[`LinkButton should render component 1`] = `
           >
             <ButtonBase
               centerRipple={false}
-              className="MuiButton-root-1 MuiButton-contained-12 MuiButton-containedPrimary-13 MuiButton-raised-15 MuiButton-raisedPrimary-16"
+              className="MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
               classes={
                 Object {
                   "disabled": "MuiButtonBase-disabled-28",
@@ -106,7 +103,7 @@ exports[`LinkButton should render component 1`] = `
               type="button"
             >
               <Link
-                className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-contained-12 MuiButton-containedPrimary-13 MuiButton-raised-15 MuiButton-raisedPrimary-16"
+                className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onFocus={[Function]}
@@ -123,7 +120,7 @@ exports[`LinkButton should render component 1`] = `
                 to="/somewhere"
               >
                 <a
-                  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-contained-12 MuiButton-containedPrimary-13 MuiButton-raised-15 MuiButton-raisedPrimary-16"
+                  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
                   href=""
                   onBlur={[Function]}
                   onClick={[Function]}
