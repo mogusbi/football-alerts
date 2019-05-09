@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader should not render component when loading 1`] = `
+.c0 {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+<Loader
+  loading={false}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      />
+    </StyledComponent>
+  </styled.div>
+</Loader>
+`;
+
+exports[`Loader should render component when loading 1`] = `
+.c0 {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+<Loader
+  loading={true}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      >
+        <WithStyles(LinearProgress)
+          color="secondary"
+        >
+          <LinearProgress
+            classes={
+              Object {
+                "bar": "MuiLinearProgress-bar-11",
+                "bar1Buffer": "MuiLinearProgress-bar1Buffer-16",
+                "bar1Determinate": "MuiLinearProgress-bar1Determinate-15",
+                "bar1Indeterminate": "MuiLinearProgress-bar1Indeterminate-14",
+                "bar2Buffer": "MuiLinearProgress-bar2Buffer-18",
+                "bar2Indeterminate": "MuiLinearProgress-bar2Indeterminate-17",
+                "barColorPrimary": "MuiLinearProgress-barColorPrimary-12",
+                "barColorSecondary": "MuiLinearProgress-barColorSecondary-13",
+                "buffer": "MuiLinearProgress-buffer-6",
+                "colorPrimary": "MuiLinearProgress-colorPrimary-2",
+                "colorSecondary": "MuiLinearProgress-colorSecondary-3",
+                "dashed": "MuiLinearProgress-dashed-8",
+                "dashedColorPrimary": "MuiLinearProgress-dashedColorPrimary-9",
+                "dashedColorSecondary": "MuiLinearProgress-dashedColorSecondary-10",
+                "determinate": "MuiLinearProgress-determinate-4",
+                "indeterminate": "MuiLinearProgress-indeterminate-5",
+                "query": "MuiLinearProgress-query-7",
+                "root": "MuiLinearProgress-root-1",
+              }
+            }
+            color="secondary"
+            variant="indeterminate"
+          >
+            <div
+              className="MuiLinearProgress-root-1 MuiLinearProgress-colorSecondary-3 MuiLinearProgress-indeterminate-5"
+              role="progressbar"
+            >
+              <div
+                className="MuiLinearProgress-bar-11 MuiLinearProgress-barColorSecondary-13 MuiLinearProgress-bar1Indeterminate-14"
+                style={Object {}}
+              />
+              <div
+                className="MuiLinearProgress-bar-11 MuiLinearProgress-barColorSecondary-13 MuiLinearProgress-bar2Indeterminate-17"
+                style={Object {}}
+              />
+            </div>
+          </LinearProgress>
+        </WithStyles(LinearProgress)>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Loader>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTableRow should render component 1`] = `
+<table>
+  <tbody>
+    <DataTableRow>
+      <WithStyles(TableRow)>
+        <TableRow
+          classes={
+            Object {
+              "footer": "MuiTableRow-footer-5",
+              "head": "MuiTableRow-head-4",
+              "hover": "MuiTableRow-hover-3",
+              "root": "MuiTableRow-root-1",
+              "selected": "MuiTableRow-selected-2",
+            }
+          }
+          component="tr"
+          hover={false}
+          selected={false}
+        >
+          <tr
+            className="MuiTableRow-root-1"
+          />
+        </TableRow>
+      </WithStyles(TableRow)>
+    </DataTableRow>
+  </tbody>
+</table>
+`;

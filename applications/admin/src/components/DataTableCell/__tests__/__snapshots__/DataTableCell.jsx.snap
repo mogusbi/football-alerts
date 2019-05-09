@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTableCell should render component 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <DataTableCell>
+        <WithStyles(TableCell)>
+          <TableCell
+            align="inherit"
+            classes={
+              Object {
+                "alignCenter": "MuiTableCell-alignCenter-10",
+                "alignJustify": "MuiTableCell-alignJustify-12",
+                "alignLeft": "MuiTableCell-alignLeft-9",
+                "alignRight": "MuiTableCell-alignRight-11",
+                "body": "MuiTableCell-body-3",
+                "footer": "MuiTableCell-footer-4",
+                "head": "MuiTableCell-head-2",
+                "numeric": "MuiTableCell-numeric-5",
+                "paddingCheckbox": "MuiTableCell-paddingCheckbox-7",
+                "paddingDense": "MuiTableCell-paddingDense-6",
+                "paddingNone": "MuiTableCell-paddingNone-8",
+                "root": "MuiTableCell-root-1",
+              }
+            }
+          >
+            <td
+              aria-sort={null}
+              className="MuiTableCell-root-1"
+            />
+          </TableCell>
+        </WithStyles(TableCell)>
+      </DataTableCell>
+    </tr>
+  </tbody>
+</table>
+`;
