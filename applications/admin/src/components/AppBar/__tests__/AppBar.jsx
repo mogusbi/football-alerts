@@ -32,11 +32,6 @@ describe('AppBar', () => {
     );
   });
 
-  // TODO: Find out why snapshots are not working
-  it.skip('should render component', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should call handleDrawer when hamburger button is clicked', () => {
     const hamburgerButton = wrapper.find('button[aria-label="Menu"]');
 
