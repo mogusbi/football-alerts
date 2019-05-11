@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert when closed should render component 1`] = `
+<Alert
+  closeHandler={[MockFunction]}
+  message={
+    Array [
+      "This is the first message",
+      "This is the second message",
+    ]
+  }
+  open={false}
+  title="Test alert"
+>
+  <WithStyles(Dialog)
+    aria-labelledby="alert-dialog-title"
+    onClose={[MockFunction]}
+    open={false}
+  >
+    <Dialog
+      PaperComponent={[Function]}
+      TransitionComponent={[Function]}
+      aria-labelledby="alert-dialog-title"
+      classes={
+        Object {
+          "container": "MuiDialog-container-4",
+          "paper": "MuiDialog-paper-5",
+          "paperFullScreen": "MuiDialog-paperFullScreen-14",
+          "paperFullWidth": "MuiDialog-paperFullWidth-13",
+          "paperScrollBody": "MuiDialog-paperScrollBody-7",
+          "paperScrollPaper": "MuiDialog-paperScrollPaper-6",
+          "paperWidthLg": "MuiDialog-paperWidthLg-11",
+          "paperWidthMd": "MuiDialog-paperWidthMd-10",
+          "paperWidthSm": "MuiDialog-paperWidthSm-9",
+          "paperWidthXl": "MuiDialog-paperWidthXl-12",
+          "paperWidthXs": "MuiDialog-paperWidthXs-8",
+          "root": "MuiDialog-root-1",
+          "scrollBody": "MuiDialog-scrollBody-3",
+          "scrollPaper": "MuiDialog-scrollPaper-2",
+        }
+      }
+      disableBackdropClick={false}
+      disableEscapeKeyDown={false}
+      fullScreen={false}
+      fullWidth={false}
+      maxWidth="sm"
+      onClose={[MockFunction]}
+      open={false}
+      scroll="paper"
+      transitionDuration={
+        Object {
+          "enter": 225,
+          "exit": 195,
+        }
+      }
+    >
+      <WithStyles(Modal)
+        BackdropProps={
+          Object {
+            "transitionDuration": Object {
+              "enter": 225,
+              "exit": 195,
+            },
+          }
+        }
+        aria-labelledby="alert-dialog-title"
+        className="MuiDialog-root-1"
+        closeAfterTransition={true}
+        disableBackdropClick={false}
+        disableEscapeKeyDown={false}
+        onClose={[MockFunction]}
+        open={false}
+        role="dialog"
+      >
+        <Modal
+          BackdropComponent={[Function]}
+          BackdropProps={
+            Object {
+              "transitionDuration": Object {
+                "enter": 225,
+                "exit": 195,
+              },
+            }
+          }
+          aria-labelledby="alert-dialog-title"
+          className="MuiDialog-root-1"
+          classes={
+            Object {
+              "hidden": "MuiModal-hidden-16",
+              "root": "MuiModal-root-15",
+            }
+          }
+          closeAfterTransition={true}
+          disableAutoFocus={false}
+          disableBackdropClick={false}
+          disableEnforceFocus={false}
+          disableEscapeKeyDown={false}
+          disablePortal={false}
+          disableRestoreFocus={false}
+          hideBackdrop={false}
+          keepMounted={false}
+          manager={
+            ModalManager {
+              "data": Array [],
+              "handleContainerOverflow": true,
+              "hideSiblingNodes": true,
+              "modals": Array [],
+            }
+          }
+          onClose={[MockFunction]}
+          open={false}
+          role="dialog"
+        />
+      </WithStyles(Modal)>
+    </Dialog>
+  </WithStyles(Dialog)>
+</Alert>
+`;
+
+exports[`Alert when open should render component 1`] = `
+<Dialog
+  PaperComponent={[Function]}
+  TransitionComponent={[Function]}
+  aria-labelledby="alert-dialog-title"
+  classes={
+    Object {
+      "container": "MuiDialog-container-4",
+      "paper": "MuiDialog-paper-5",
+      "paperFullScreen": "MuiDialog-paperFullScreen-14",
+      "paperFullWidth": "MuiDialog-paperFullWidth-13",
+      "paperScrollBody": "MuiDialog-paperScrollBody-7",
+      "paperScrollPaper": "MuiDialog-paperScrollPaper-6",
+      "paperWidthLg": "MuiDialog-paperWidthLg-11",
+      "paperWidthMd": "MuiDialog-paperWidthMd-10",
+      "paperWidthSm": "MuiDialog-paperWidthSm-9",
+      "paperWidthXl": "MuiDialog-paperWidthXl-12",
+      "paperWidthXs": "MuiDialog-paperWidthXs-8",
+      "root": "MuiDialog-root-1",
+      "scrollBody": "MuiDialog-scrollBody-3",
+      "scrollPaper": "MuiDialog-scrollPaper-2",
+    }
+  }
+  disableBackdropClick={false}
+  disableEscapeKeyDown={false}
+  fullScreen={false}
+  fullWidth={false}
+  maxWidth="sm"
+  onClose={[MockFunction]}
+  open={true}
+  scroll="paper"
+  transitionDuration={
+    Object {
+      "enter": 225,
+      "exit": 195,
+    }
+  }
+>
+  <WithStyles(DialogTitle)
+    id="alert-dialog-title"
+  >
+    Test alert
+  </WithStyles(DialogTitle)>
+  <WithStyles(DialogContent)>
+    <WithStyles(List)
+      dense={false}
+    >
+      <WithStyles(ListItem)
+        key="This is the first message"
+      >
+        <WithStyles(ListItemText)>
+          This is the first message
+        </WithStyles(ListItemText)>
+      </WithStyles(ListItem)>
+      <WithStyles(ListItem)
+        key="This is the second message"
+      >
+        <WithStyles(ListItemText)>
+          This is the second message
+        </WithStyles(ListItemText)>
+      </WithStyles(ListItem)>
+    </WithStyles(List)>
+  </WithStyles(DialogContent)>
+  <WithStyles(DialogActions)>
+    <WithStyles(Button)
+      color="primary"
+      onClick={[MockFunction]}
+    >
+      Close
+    </WithStyles(Button)>
+  </WithStyles(DialogActions)>
+</Dialog>
+`;

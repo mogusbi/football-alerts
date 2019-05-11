@@ -6,15 +6,21 @@ import React, {memo} from 'react';
 import {Link} from 'react-router-dom';
 
 function ListItemLink ({icon, primary, to}) {
-  function renderLink (itemProps) {
+  function renderLink (props) {
     return (
-      <Link to={to} {...itemProps} />
+      <Link
+        to={to}
+        {...props}
+      />
     );
   }
 
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem
+        button
+        component={renderLink}
+      >
         <ListItemIcon>
           {icon}
         </ListItemIcon>
