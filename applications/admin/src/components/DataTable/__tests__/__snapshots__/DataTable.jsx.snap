@@ -1,0 +1,866 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTable with more data to load should render component 1`] = `
+.c0 {
+  margin: 24px 0 0;
+}
+
+<DataTable
+  headings={
+    Array [
+      "Column 1",
+      "Column 2",
+    ]
+  }
+  loadMore="load-more-key"
+  loadMoreHandler={[MockFunction]}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  margin: 24px 0 0;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      >
+        <WithStyles(Table)>
+          <Table
+            classes={
+              Object {
+                "root": "MuiTable-root-1",
+              }
+            }
+            component="table"
+            padding="default"
+          >
+            <table
+              className="MuiTable-root-1"
+            >
+              <WithStyles(TableHead)>
+                <TableHead
+                  classes={
+                    Object {
+                      "root": "MuiTableHead-root-2",
+                    }
+                  }
+                  component="thead"
+                >
+                  <thead
+                    className="MuiTableHead-root-2"
+                  >
+                    <DataTableRow>
+                      <WithStyles(TableRow)>
+                        <TableRow
+                          classes={
+                            Object {
+                              "footer": "MuiTableRow-footer-7",
+                              "head": "MuiTableRow-head-6",
+                              "hover": "MuiTableRow-hover-5",
+                              "root": "MuiTableRow-root-3",
+                              "selected": "MuiTableRow-selected-4",
+                            }
+                          }
+                          component="tr"
+                          hover={false}
+                          selected={false}
+                        >
+                          <tr
+                            className="MuiTableRow-root-3 MuiTableRow-head-6"
+                          >
+                            <DataTableCell
+                              key="Column 1"
+                            >
+                              <WithStyles(TableCell)>
+                                <TableCell
+                                  align="inherit"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTableCell-alignCenter-17",
+                                      "alignJustify": "MuiTableCell-alignJustify-19",
+                                      "alignLeft": "MuiTableCell-alignLeft-16",
+                                      "alignRight": "MuiTableCell-alignRight-18",
+                                      "body": "MuiTableCell-body-10",
+                                      "footer": "MuiTableCell-footer-11",
+                                      "head": "MuiTableCell-head-9",
+                                      "numeric": "MuiTableCell-numeric-12",
+                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                      "paddingDense": "MuiTableCell-paddingDense-13",
+                                      "paddingNone": "MuiTableCell-paddingNone-15",
+                                      "root": "MuiTableCell-root-8",
+                                    }
+                                  }
+                                >
+                                  <th
+                                    aria-sort={null}
+                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
+                                    scope="col"
+                                  >
+                                    Column 1
+                                  </th>
+                                </TableCell>
+                              </WithStyles(TableCell)>
+                            </DataTableCell>
+                            <DataTableCell
+                              key="Column 2"
+                            >
+                              <WithStyles(TableCell)>
+                                <TableCell
+                                  align="inherit"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTableCell-alignCenter-17",
+                                      "alignJustify": "MuiTableCell-alignJustify-19",
+                                      "alignLeft": "MuiTableCell-alignLeft-16",
+                                      "alignRight": "MuiTableCell-alignRight-18",
+                                      "body": "MuiTableCell-body-10",
+                                      "footer": "MuiTableCell-footer-11",
+                                      "head": "MuiTableCell-head-9",
+                                      "numeric": "MuiTableCell-numeric-12",
+                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                      "paddingDense": "MuiTableCell-paddingDense-13",
+                                      "paddingNone": "MuiTableCell-paddingNone-15",
+                                      "root": "MuiTableCell-root-8",
+                                    }
+                                  }
+                                >
+                                  <th
+                                    aria-sort={null}
+                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
+                                    scope="col"
+                                  >
+                                    Column 2
+                                  </th>
+                                </TableCell>
+                              </WithStyles(TableCell)>
+                            </DataTableCell>
+                          </tr>
+                        </TableRow>
+                      </WithStyles(TableRow)>
+                    </DataTableRow>
+                  </thead>
+                </TableHead>
+              </WithStyles(TableHead)>
+              <WithStyles(TableBody)>
+                <TableBody
+                  classes={
+                    Object {
+                      "root": "MuiTableBody-root-20",
+                    }
+                  }
+                  component="tbody"
+                >
+                  <tbody
+                    className="MuiTableBody-root-20"
+                  >
+                    <Children>
+                      <DataTableRow>
+                        <WithStyles(TableRow)>
+                          <TableRow
+                            classes={
+                              Object {
+                                "footer": "MuiTableRow-footer-7",
+                                "head": "MuiTableRow-head-6",
+                                "hover": "MuiTableRow-hover-5",
+                                "root": "MuiTableRow-root-3",
+                                "selected": "MuiTableRow-selected-4",
+                              }
+                            }
+                            component="tr"
+                            hover={false}
+                            selected={false}
+                          >
+                            <tr
+                              className="MuiTableRow-root-3"
+                            >
+                              <DataTableCell>
+                                <WithStyles(TableCell)>
+                                  <TableCell
+                                    align="inherit"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTableCell-alignCenter-17",
+                                        "alignJustify": "MuiTableCell-alignJustify-19",
+                                        "alignLeft": "MuiTableCell-alignLeft-16",
+                                        "alignRight": "MuiTableCell-alignRight-18",
+                                        "body": "MuiTableCell-body-10",
+                                        "footer": "MuiTableCell-footer-11",
+                                        "head": "MuiTableCell-head-9",
+                                        "numeric": "MuiTableCell-numeric-12",
+                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                        "paddingDense": "MuiTableCell-paddingDense-13",
+                                        "paddingNone": "MuiTableCell-paddingNone-15",
+                                        "root": "MuiTableCell-root-8",
+                                      }
+                                    }
+                                  >
+                                    <td
+                                      aria-sort={null}
+                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
+                                    >
+                                      Row 1, column 1
+                                    </td>
+                                  </TableCell>
+                                </WithStyles(TableCell)>
+                              </DataTableCell>
+                              <DataTableCell>
+                                <WithStyles(TableCell)>
+                                  <TableCell
+                                    align="inherit"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTableCell-alignCenter-17",
+                                        "alignJustify": "MuiTableCell-alignJustify-19",
+                                        "alignLeft": "MuiTableCell-alignLeft-16",
+                                        "alignRight": "MuiTableCell-alignRight-18",
+                                        "body": "MuiTableCell-body-10",
+                                        "footer": "MuiTableCell-footer-11",
+                                        "head": "MuiTableCell-head-9",
+                                        "numeric": "MuiTableCell-numeric-12",
+                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                        "paddingDense": "MuiTableCell-paddingDense-13",
+                                        "paddingNone": "MuiTableCell-paddingNone-15",
+                                        "root": "MuiTableCell-root-8",
+                                      }
+                                    }
+                                  >
+                                    <td
+                                      aria-sort={null}
+                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
+                                    >
+                                      Row 1, column 2
+                                    </td>
+                                  </TableCell>
+                                </WithStyles(TableCell)>
+                              </DataTableCell>
+                              <DataTableCell
+                                align="right"
+                              >
+                                <WithStyles(TableCell)
+                                  align="right"
+                                >
+                                  <TableCell
+                                    align="right"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTableCell-alignCenter-17",
+                                        "alignJustify": "MuiTableCell-alignJustify-19",
+                                        "alignLeft": "MuiTableCell-alignLeft-16",
+                                        "alignRight": "MuiTableCell-alignRight-18",
+                                        "body": "MuiTableCell-body-10",
+                                        "footer": "MuiTableCell-footer-11",
+                                        "head": "MuiTableCell-head-9",
+                                        "numeric": "MuiTableCell-numeric-12",
+                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                        "paddingDense": "MuiTableCell-paddingDense-13",
+                                        "paddingNone": "MuiTableCell-paddingNone-15",
+                                        "root": "MuiTableCell-root-8",
+                                      }
+                                    }
+                                  >
+                                    <td
+                                      aria-sort={null}
+                                      className="MuiTableCell-root-8 MuiTableCell-body-10 MuiTableCell-alignRight-18"
+                                    >
+                                      Row 1, action column
+                                    </td>
+                                  </TableCell>
+                                </WithStyles(TableCell)>
+                              </DataTableCell>
+                            </tr>
+                          </TableRow>
+                        </WithStyles(TableRow)>
+                      </DataTableRow>
+                    </Children>
+                  </tbody>
+                </TableBody>
+              </WithStyles(TableBody)>
+              <WithStyles(TableFooter)>
+                <TableFooter
+                  classes={
+                    Object {
+                      "root": "MuiTableFooter-root-21",
+                    }
+                  }
+                  component="tfoot"
+                >
+                  <tfoot
+                    className="MuiTableFooter-root-21"
+                  >
+                    <DataTableRow>
+                      <WithStyles(TableRow)>
+                        <TableRow
+                          classes={
+                            Object {
+                              "footer": "MuiTableRow-footer-7",
+                              "head": "MuiTableRow-head-6",
+                              "hover": "MuiTableRow-hover-5",
+                              "root": "MuiTableRow-root-3",
+                              "selected": "MuiTableRow-selected-4",
+                            }
+                          }
+                          component="tr"
+                          hover={false}
+                          selected={false}
+                        >
+                          <tr
+                            className="MuiTableRow-root-3 MuiTableRow-footer-7"
+                          >
+                            <DataTableCell
+                              align="center"
+                              colSpan={2}
+                            >
+                              <WithStyles(TableCell)
+                                align="center"
+                                colSpan={2}
+                              >
+                                <TableCell
+                                  align="center"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTableCell-alignCenter-17",
+                                      "alignJustify": "MuiTableCell-alignJustify-19",
+                                      "alignLeft": "MuiTableCell-alignLeft-16",
+                                      "alignRight": "MuiTableCell-alignRight-18",
+                                      "body": "MuiTableCell-body-10",
+                                      "footer": "MuiTableCell-footer-11",
+                                      "head": "MuiTableCell-head-9",
+                                      "numeric": "MuiTableCell-numeric-12",
+                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                      "paddingDense": "MuiTableCell-paddingDense-13",
+                                      "paddingNone": "MuiTableCell-paddingNone-15",
+                                      "root": "MuiTableCell-root-8",
+                                    }
+                                  }
+                                  colSpan={2}
+                                >
+                                  <td
+                                    aria-sort={null}
+                                    className="MuiTableCell-root-8 MuiTableCell-footer-11 MuiTableCell-alignCenter-17"
+                                    colSpan={2}
+                                  >
+                                    <styled.div>
+                                      <StyledComponent
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "sc-bdVaJa",
+                                              "isStatic": true,
+                                              "lastClassName": "c0",
+                                              "rules": Array [
+                                                "
+  margin: 24px 0 0;
+",
+                                              ],
+                                            },
+                                            "displayName": "styled.div",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "sc-bdVaJa",
+                                            "target": "div",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                      >
+                                        <div
+                                          className="c0"
+                                        >
+                                          <WithStyles(Button)
+                                            aria-label="Load more..."
+                                            color="primary"
+                                            onClick={[MockFunction]}
+                                            variant="contained"
+                                          >
+                                            <Button
+                                              aria-label="Load more..."
+                                              classes={
+                                                Object {
+                                                  "colorInherit": "MuiButton-colorInherit-43",
+                                                  "contained": "MuiButton-contained-33",
+                                                  "containedPrimary": "MuiButton-containedPrimary-34",
+                                                  "containedSecondary": "MuiButton-containedSecondary-35",
+                                                  "disabled": "MuiButton-disabled-42",
+                                                  "extendedFab": "MuiButton-extendedFab-40",
+                                                  "fab": "MuiButton-fab-39",
+                                                  "flat": "MuiButton-flat-27",
+                                                  "flatPrimary": "MuiButton-flatPrimary-28",
+                                                  "flatSecondary": "MuiButton-flatSecondary-29",
+                                                  "focusVisible": "MuiButton-focusVisible-41",
+                                                  "fullWidth": "MuiButton-fullWidth-47",
+                                                  "label": "MuiButton-label-23",
+                                                  "mini": "MuiButton-mini-44",
+                                                  "outlined": "MuiButton-outlined-30",
+                                                  "outlinedPrimary": "MuiButton-outlinedPrimary-31",
+                                                  "outlinedSecondary": "MuiButton-outlinedSecondary-32",
+                                                  "raised": "MuiButton-raised-36",
+                                                  "raisedPrimary": "MuiButton-raisedPrimary-37",
+                                                  "raisedSecondary": "MuiButton-raisedSecondary-38",
+                                                  "root": "MuiButton-root-22",
+                                                  "sizeLarge": "MuiButton-sizeLarge-46",
+                                                  "sizeSmall": "MuiButton-sizeSmall-45",
+                                                  "text": "MuiButton-text-24",
+                                                  "textPrimary": "MuiButton-textPrimary-25",
+                                                  "textSecondary": "MuiButton-textSecondary-26",
+                                                }
+                                              }
+                                              color="primary"
+                                              component="button"
+                                              disableFocusRipple={false}
+                                              disabled={false}
+                                              fullWidth={false}
+                                              mini={false}
+                                              onClick={[MockFunction]}
+                                              size="medium"
+                                              type="button"
+                                              variant="contained"
+                                            >
+                                              <WithStyles(ButtonBase)
+                                                aria-label="Load more..."
+                                                className="MuiButton-root-22 MuiButton-contained-33 MuiButton-containedPrimary-34 MuiButton-raised-36 MuiButton-raisedPrimary-37"
+                                                component="button"
+                                                disabled={false}
+                                                focusRipple={true}
+                                                focusVisibleClassName="MuiButton-focusVisible-41"
+                                                onClick={[MockFunction]}
+                                                type="button"
+                                              >
+                                                <ButtonBase
+                                                  aria-label="Load more..."
+                                                  centerRipple={false}
+                                                  className="MuiButton-root-22 MuiButton-contained-33 MuiButton-containedPrimary-34 MuiButton-raised-36 MuiButton-raisedPrimary-37"
+                                                  classes={
+                                                    Object {
+                                                      "disabled": "MuiButtonBase-disabled-49",
+                                                      "focusVisible": "MuiButtonBase-focusVisible-50",
+                                                      "root": "MuiButtonBase-root-48",
+                                                    }
+                                                  }
+                                                  component="button"
+                                                  disableRipple={false}
+                                                  disableTouchRipple={false}
+                                                  disabled={false}
+                                                  focusRipple={true}
+                                                  focusVisibleClassName="MuiButton-focusVisible-41"
+                                                  onClick={[MockFunction]}
+                                                  tabIndex="0"
+                                                  type="button"
+                                                >
+                                                  <button
+                                                    aria-label="Load more..."
+                                                    className="MuiButtonBase-root-48 MuiButton-root-22 MuiButton-contained-33 MuiButton-containedPrimary-34 MuiButton-raised-36 MuiButton-raisedPrimary-37"
+                                                    disabled={false}
+                                                    onBlur={[Function]}
+                                                    onClick={[MockFunction]}
+                                                    onContextMenu={[Function]}
+                                                    onFocus={[Function]}
+                                                    onKeyDown={[Function]}
+                                                    onKeyUp={[Function]}
+                                                    onMouseDown={[Function]}
+                                                    onMouseLeave={[Function]}
+                                                    onMouseUp={[Function]}
+                                                    onTouchEnd={[Function]}
+                                                    onTouchMove={[Function]}
+                                                    onTouchStart={[Function]}
+                                                    tabIndex="0"
+                                                    type="button"
+                                                  >
+                                                    <span
+                                                      className="MuiButton-label-23"
+                                                    >
+                                                      Load more
+                                                    </span>
+                                                    <NoSsr
+                                                      defer={false}
+                                                      fallback={null}
+                                                    >
+                                                      <WithStyles(TouchRipple)
+                                                        center={false}
+                                                        innerRef={[Function]}
+                                                      >
+                                                        <TouchRipple
+                                                          center={false}
+                                                          classes={
+                                                            Object {
+                                                              "child": "MuiTouchRipple-child-55",
+                                                              "childLeaving": "MuiTouchRipple-childLeaving-56",
+                                                              "childPulsate": "MuiTouchRipple-childPulsate-57",
+                                                              "ripple": "MuiTouchRipple-ripple-52",
+                                                              "ripplePulsate": "MuiTouchRipple-ripplePulsate-54",
+                                                              "rippleVisible": "MuiTouchRipple-rippleVisible-53",
+                                                              "root": "MuiTouchRipple-root-51",
+                                                            }
+                                                          }
+                                                        >
+                                                          <TransitionGroup
+                                                            childFactory={[Function]}
+                                                            className="MuiTouchRipple-root-51"
+                                                            component="span"
+                                                            enter={true}
+                                                            exit={true}
+                                                          >
+                                                            <span
+                                                              className="MuiTouchRipple-root-51"
+                                                            />
+                                                          </TransitionGroup>
+                                                        </TouchRipple>
+                                                      </WithStyles(TouchRipple)>
+                                                    </NoSsr>
+                                                  </button>
+                                                </ButtonBase>
+                                              </WithStyles(ButtonBase)>
+                                            </Button>
+                                          </WithStyles(Button)>
+                                        </div>
+                                      </StyledComponent>
+                                    </styled.div>
+                                  </td>
+                                </TableCell>
+                              </WithStyles(TableCell)>
+                            </DataTableCell>
+                          </tr>
+                        </TableRow>
+                      </WithStyles(TableRow)>
+                    </DataTableRow>
+                  </tfoot>
+                </TableFooter>
+              </WithStyles(TableFooter)>
+            </table>
+          </Table>
+        </WithStyles(Table)>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</DataTable>
+`;
+
+exports[`DataTable without more data to load should render component 1`] = `
+.c0 {
+  margin: 24px 0 0;
+}
+
+<DataTable
+  headings={
+    Array [
+      "Column 1",
+      "Column 2",
+    ]
+  }
+  loadMoreHandler={[MockFunction]}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  margin: 24px 0 0;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      >
+        <WithStyles(Table)>
+          <Table
+            classes={
+              Object {
+                "root": "MuiTable-root-1",
+              }
+            }
+            component="table"
+            padding="default"
+          >
+            <table
+              className="MuiTable-root-1"
+            >
+              <WithStyles(TableHead)>
+                <TableHead
+                  classes={
+                    Object {
+                      "root": "MuiTableHead-root-2",
+                    }
+                  }
+                  component="thead"
+                >
+                  <thead
+                    className="MuiTableHead-root-2"
+                  >
+                    <DataTableRow>
+                      <WithStyles(TableRow)>
+                        <TableRow
+                          classes={
+                            Object {
+                              "footer": "MuiTableRow-footer-7",
+                              "head": "MuiTableRow-head-6",
+                              "hover": "MuiTableRow-hover-5",
+                              "root": "MuiTableRow-root-3",
+                              "selected": "MuiTableRow-selected-4",
+                            }
+                          }
+                          component="tr"
+                          hover={false}
+                          selected={false}
+                        >
+                          <tr
+                            className="MuiTableRow-root-3 MuiTableRow-head-6"
+                          >
+                            <DataTableCell
+                              key="Column 1"
+                            >
+                              <WithStyles(TableCell)>
+                                <TableCell
+                                  align="inherit"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTableCell-alignCenter-17",
+                                      "alignJustify": "MuiTableCell-alignJustify-19",
+                                      "alignLeft": "MuiTableCell-alignLeft-16",
+                                      "alignRight": "MuiTableCell-alignRight-18",
+                                      "body": "MuiTableCell-body-10",
+                                      "footer": "MuiTableCell-footer-11",
+                                      "head": "MuiTableCell-head-9",
+                                      "numeric": "MuiTableCell-numeric-12",
+                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                      "paddingDense": "MuiTableCell-paddingDense-13",
+                                      "paddingNone": "MuiTableCell-paddingNone-15",
+                                      "root": "MuiTableCell-root-8",
+                                    }
+                                  }
+                                >
+                                  <th
+                                    aria-sort={null}
+                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
+                                    scope="col"
+                                  >
+                                    Column 1
+                                  </th>
+                                </TableCell>
+                              </WithStyles(TableCell)>
+                            </DataTableCell>
+                            <DataTableCell
+                              key="Column 2"
+                            >
+                              <WithStyles(TableCell)>
+                                <TableCell
+                                  align="inherit"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTableCell-alignCenter-17",
+                                      "alignJustify": "MuiTableCell-alignJustify-19",
+                                      "alignLeft": "MuiTableCell-alignLeft-16",
+                                      "alignRight": "MuiTableCell-alignRight-18",
+                                      "body": "MuiTableCell-body-10",
+                                      "footer": "MuiTableCell-footer-11",
+                                      "head": "MuiTableCell-head-9",
+                                      "numeric": "MuiTableCell-numeric-12",
+                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                      "paddingDense": "MuiTableCell-paddingDense-13",
+                                      "paddingNone": "MuiTableCell-paddingNone-15",
+                                      "root": "MuiTableCell-root-8",
+                                    }
+                                  }
+                                >
+                                  <th
+                                    aria-sort={null}
+                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
+                                    scope="col"
+                                  >
+                                    Column 2
+                                  </th>
+                                </TableCell>
+                              </WithStyles(TableCell)>
+                            </DataTableCell>
+                          </tr>
+                        </TableRow>
+                      </WithStyles(TableRow)>
+                    </DataTableRow>
+                  </thead>
+                </TableHead>
+              </WithStyles(TableHead)>
+              <WithStyles(TableBody)>
+                <TableBody
+                  classes={
+                    Object {
+                      "root": "MuiTableBody-root-20",
+                    }
+                  }
+                  component="tbody"
+                >
+                  <tbody
+                    className="MuiTableBody-root-20"
+                  >
+                    <Children>
+                      <DataTableRow>
+                        <WithStyles(TableRow)>
+                          <TableRow
+                            classes={
+                              Object {
+                                "footer": "MuiTableRow-footer-7",
+                                "head": "MuiTableRow-head-6",
+                                "hover": "MuiTableRow-hover-5",
+                                "root": "MuiTableRow-root-3",
+                                "selected": "MuiTableRow-selected-4",
+                              }
+                            }
+                            component="tr"
+                            hover={false}
+                            selected={false}
+                          >
+                            <tr
+                              className="MuiTableRow-root-3"
+                            >
+                              <DataTableCell>
+                                <WithStyles(TableCell)>
+                                  <TableCell
+                                    align="inherit"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTableCell-alignCenter-17",
+                                        "alignJustify": "MuiTableCell-alignJustify-19",
+                                        "alignLeft": "MuiTableCell-alignLeft-16",
+                                        "alignRight": "MuiTableCell-alignRight-18",
+                                        "body": "MuiTableCell-body-10",
+                                        "footer": "MuiTableCell-footer-11",
+                                        "head": "MuiTableCell-head-9",
+                                        "numeric": "MuiTableCell-numeric-12",
+                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                        "paddingDense": "MuiTableCell-paddingDense-13",
+                                        "paddingNone": "MuiTableCell-paddingNone-15",
+                                        "root": "MuiTableCell-root-8",
+                                      }
+                                    }
+                                  >
+                                    <td
+                                      aria-sort={null}
+                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
+                                    >
+                                      Row 1, column 1
+                                    </td>
+                                  </TableCell>
+                                </WithStyles(TableCell)>
+                              </DataTableCell>
+                              <DataTableCell>
+                                <WithStyles(TableCell)>
+                                  <TableCell
+                                    align="inherit"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTableCell-alignCenter-17",
+                                        "alignJustify": "MuiTableCell-alignJustify-19",
+                                        "alignLeft": "MuiTableCell-alignLeft-16",
+                                        "alignRight": "MuiTableCell-alignRight-18",
+                                        "body": "MuiTableCell-body-10",
+                                        "footer": "MuiTableCell-footer-11",
+                                        "head": "MuiTableCell-head-9",
+                                        "numeric": "MuiTableCell-numeric-12",
+                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                        "paddingDense": "MuiTableCell-paddingDense-13",
+                                        "paddingNone": "MuiTableCell-paddingNone-15",
+                                        "root": "MuiTableCell-root-8",
+                                      }
+                                    }
+                                  >
+                                    <td
+                                      aria-sort={null}
+                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
+                                    >
+                                      Row 1, column 2
+                                    </td>
+                                  </TableCell>
+                                </WithStyles(TableCell)>
+                              </DataTableCell>
+                              <DataTableCell
+                                align="right"
+                              >
+                                <WithStyles(TableCell)
+                                  align="right"
+                                >
+                                  <TableCell
+                                    align="right"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTableCell-alignCenter-17",
+                                        "alignJustify": "MuiTableCell-alignJustify-19",
+                                        "alignLeft": "MuiTableCell-alignLeft-16",
+                                        "alignRight": "MuiTableCell-alignRight-18",
+                                        "body": "MuiTableCell-body-10",
+                                        "footer": "MuiTableCell-footer-11",
+                                        "head": "MuiTableCell-head-9",
+                                        "numeric": "MuiTableCell-numeric-12",
+                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
+                                        "paddingDense": "MuiTableCell-paddingDense-13",
+                                        "paddingNone": "MuiTableCell-paddingNone-15",
+                                        "root": "MuiTableCell-root-8",
+                                      }
+                                    }
+                                  >
+                                    <td
+                                      aria-sort={null}
+                                      className="MuiTableCell-root-8 MuiTableCell-body-10 MuiTableCell-alignRight-18"
+                                    >
+                                      Row 1, action column
+                                    </td>
+                                  </TableCell>
+                                </WithStyles(TableCell)>
+                              </DataTableCell>
+                            </tr>
+                          </TableRow>
+                        </WithStyles(TableRow)>
+                      </DataTableRow>
+                    </Children>
+                  </tbody>
+                </TableBody>
+              </WithStyles(TableBody)>
+            </table>
+          </Table>
+        </WithStyles(Table)>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</DataTable>
+`;
