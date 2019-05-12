@@ -1,0 +1,2763 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form with cancel link should render component 1`] = `
+.c0 {
+  margin-top: 24px;
+}
+
+<MemoryRouter>
+  <Router
+    history={
+      Object {
+        "listen": [MockFunction] {
+          "calls": Array [
+            Array [
+              [Function],
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        },
+        "location": Object {
+          "pathname": "",
+        },
+      }
+    }
+  >
+    <Form
+      cancelLink="/back"
+      initialValues={
+        Object {
+          "name": "Test",
+        }
+      }
+      onSubmit={[MockFunction]}
+      validationSchema={
+        ObjectSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_defaultDefault": [Function],
+          "_deps": Array [],
+          "_excludedEdges": Array [],
+          "_exclusive": Object {},
+          "_mutate": undefined,
+          "_nodes": Array [
+            "name",
+          ],
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "object",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "fields": Object {
+            "name": StringSchema {
+              "_blacklist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_conditions": Array [],
+              "_deps": Array [],
+              "_exclusive": Object {
+                "required": true,
+              },
+              "_mutate": undefined,
+              "_options": Object {
+                "abortEarly": true,
+                "recursive": true,
+              },
+              "_type": "string",
+              "_typeError": [Function],
+              "_whitelist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "tests": Array [
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+            },
+          },
+          "tests": Array [],
+          "transforms": Array [
+            [Function],
+          ],
+        }
+      }
+    >
+      <Formik
+        enableReinitialize={false}
+        initialValues={
+          Object {
+            "name": "Test",
+          }
+        }
+        isInitialValid={false}
+        onSubmit={[MockFunction]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        validationSchema={
+          ObjectSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_defaultDefault": [Function],
+            "_deps": Array [],
+            "_excludedEdges": Array [],
+            "_exclusive": Object {},
+            "_mutate": undefined,
+            "_nodes": Array [
+              "name",
+            ],
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "object",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "fields": Object {
+              "name": StringSchema {
+                "_blacklist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "_conditions": Array [],
+                "_deps": Array [],
+                "_exclusive": Object {
+                  "required": true,
+                },
+                "_mutate": undefined,
+                "_options": Object {
+                  "abortEarly": true,
+                  "recursive": true,
+                },
+                "_type": "string",
+                "_typeError": [Function],
+                "_whitelist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "tests": Array [
+                  [Function],
+                ],
+                "transforms": Array [
+                  [Function],
+                ],
+              },
+            },
+            "tests": Array [],
+            "transforms": Array [
+              [Function],
+            ],
+          }
+        }
+      >
+        <Form
+          autoComplete="off"
+        >
+          <Component
+            autoComplete="off"
+            formik={
+              Object {
+                "dirty": false,
+                "errors": Object {},
+                "handleBlur": [Function],
+                "handleChange": [Function],
+                "handleReset": [Function],
+                "handleSubmit": [Function],
+                "initialValues": Object {
+                  "name": "Test",
+                },
+                "isSubmitting": false,
+                "isValid": false,
+                "isValidating": false,
+                "registerField": [Function],
+                "resetForm": [Function],
+                "setError": [Function],
+                "setErrors": [Function],
+                "setFieldError": [Function],
+                "setFieldTouched": [Function],
+                "setFieldValue": [Function],
+                "setFormikState": [Function],
+                "setStatus": [Function],
+                "setSubmitting": [Function],
+                "setTouched": [Function],
+                "setValues": [Function],
+                "status": undefined,
+                "submitCount": 0,
+                "submitForm": [Function],
+                "touched": Object {},
+                "unregisterField": [Function],
+                "validate": undefined,
+                "validateField": [Function],
+                "validateForm": [Function],
+                "validateOnBlur": true,
+                "validateOnChange": true,
+                "validationSchema": ObjectSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_defaultDefault": [Function],
+                  "_deps": Array [],
+                  "_excludedEdges": Array [],
+                  "_exclusive": Object {},
+                  "_mutate": undefined,
+                  "_nodes": Array [
+                    "name",
+                  ],
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "object",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "fields": Object {
+                    "name": StringSchema {
+                      "_blacklist": RefSet {
+                        "list": Set {},
+                        "refs": Map {},
+                      },
+                      "_conditions": Array [],
+                      "_deps": Array [],
+                      "_exclusive": Object {
+                        "required": true,
+                      },
+                      "_mutate": undefined,
+                      "_options": Object {
+                        "abortEarly": true,
+                        "recursive": true,
+                      },
+                      "_type": "string",
+                      "_typeError": [Function],
+                      "_whitelist": RefSet {
+                        "list": Set {},
+                        "refs": Map {},
+                      },
+                      "tests": Array [
+                        [Function],
+                      ],
+                      "transforms": Array [
+                        [Function],
+                      ],
+                    },
+                  },
+                  "tests": Array [],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+                "values": Object {
+                  "name": "Test",
+                },
+              }
+            }
+          >
+            <form
+              autoComplete="off"
+              onReset={[Function]}
+              onSubmit={[Function]}
+            >
+              <FormikTextField
+                fullWidth={true}
+                label="Name"
+                margin="normal"
+                name="name"
+              >
+                <FormikConnect(FieldInner)
+                  component={[Function]}
+                  fullWidth={true}
+                  label="Name"
+                  margin="normal"
+                  name="name"
+                >
+                  <FieldInner
+                    component={[Function]}
+                    formik={
+                      Object {
+                        "dirty": false,
+                        "errors": Object {},
+                        "handleBlur": [Function],
+                        "handleChange": [Function],
+                        "handleReset": [Function],
+                        "handleSubmit": [Function],
+                        "initialValues": Object {
+                          "name": "Test",
+                        },
+                        "isSubmitting": false,
+                        "isValid": false,
+                        "isValidating": false,
+                        "registerField": [Function],
+                        "resetForm": [Function],
+                        "setError": [Function],
+                        "setErrors": [Function],
+                        "setFieldError": [Function],
+                        "setFieldTouched": [Function],
+                        "setFieldValue": [Function],
+                        "setFormikState": [Function],
+                        "setStatus": [Function],
+                        "setSubmitting": [Function],
+                        "setTouched": [Function],
+                        "setValues": [Function],
+                        "status": undefined,
+                        "submitCount": 0,
+                        "submitForm": [Function],
+                        "touched": Object {},
+                        "unregisterField": [Function],
+                        "validate": undefined,
+                        "validateField": [Function],
+                        "validateForm": [Function],
+                        "validateOnBlur": true,
+                        "validateOnChange": true,
+                        "validationSchema": ObjectSchema {
+                          "_blacklist": RefSet {
+                            "list": Set {},
+                            "refs": Map {},
+                          },
+                          "_conditions": Array [],
+                          "_defaultDefault": [Function],
+                          "_deps": Array [],
+                          "_excludedEdges": Array [],
+                          "_exclusive": Object {},
+                          "_mutate": undefined,
+                          "_nodes": Array [
+                            "name",
+                          ],
+                          "_options": Object {
+                            "abortEarly": true,
+                            "recursive": true,
+                          },
+                          "_type": "object",
+                          "_typeError": [Function],
+                          "_whitelist": RefSet {
+                            "list": Set {},
+                            "refs": Map {},
+                          },
+                          "fields": Object {
+                            "name": StringSchema {
+                              "_blacklist": RefSet {
+                                "list": Set {},
+                                "refs": Map {},
+                              },
+                              "_conditions": Array [],
+                              "_deps": Array [],
+                              "_exclusive": Object {
+                                "required": true,
+                              },
+                              "_mutate": undefined,
+                              "_options": Object {
+                                "abortEarly": true,
+                                "recursive": true,
+                              },
+                              "_type": "string",
+                              "_typeError": [Function],
+                              "_whitelist": RefSet {
+                                "list": Set {},
+                                "refs": Map {},
+                              },
+                              "tests": Array [
+                                [Function],
+                              ],
+                              "transforms": Array [
+                                [Function],
+                              ],
+                            },
+                          },
+                          "tests": Array [],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "values": Object {
+                          "name": "Test",
+                        },
+                      }
+                    }
+                    fullWidth={true}
+                    label="Name"
+                    margin="normal"
+                    name="name"
+                  >
+                    <TextField
+                      field={
+                        Object {
+                          "name": "name",
+                          "onBlur": [Function],
+                          "onChange": [Function],
+                          "value": "Test",
+                        }
+                      }
+                      form={
+                        Object {
+                          "dirty": false,
+                          "errors": Object {},
+                          "handleBlur": [Function],
+                          "handleChange": [Function],
+                          "handleReset": [Function],
+                          "handleSubmit": [Function],
+                          "initialValues": Object {
+                            "name": "Test",
+                          },
+                          "isSubmitting": false,
+                          "isValid": false,
+                          "isValidating": false,
+                          "registerField": [Function],
+                          "resetForm": [Function],
+                          "setError": [Function],
+                          "setErrors": [Function],
+                          "setFieldError": [Function],
+                          "setFieldTouched": [Function],
+                          "setFieldValue": [Function],
+                          "setFormikState": [Function],
+                          "setStatus": [Function],
+                          "setSubmitting": [Function],
+                          "setTouched": [Function],
+                          "setValues": [Function],
+                          "status": undefined,
+                          "submitCount": 0,
+                          "submitForm": [Function],
+                          "touched": Object {},
+                          "unregisterField": [Function],
+                          "validateField": [Function],
+                          "validateForm": [Function],
+                          "validateOnBlur": true,
+                          "validateOnChange": true,
+                          "values": Object {
+                            "name": "Test",
+                          },
+                        }
+                      }
+                      fullWidth={true}
+                      label="Name"
+                      margin="normal"
+                    >
+                      <TextField
+                        error={false}
+                        fullWidth={true}
+                        label="Name"
+                        margin="normal"
+                        name="name"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        required={false}
+                        select={false}
+                        value="Test"
+                        variant="standard"
+                      >
+                        <WithStyles(FormControl)
+                          error={false}
+                          fullWidth={true}
+                          margin="normal"
+                          required={false}
+                          variant="standard"
+                        >
+                          <FormControl
+                            classes={
+                              Object {
+                                "fullWidth": "MuiFormControl-fullWidth-4",
+                                "marginDense": "MuiFormControl-marginDense-3",
+                                "marginNormal": "MuiFormControl-marginNormal-2",
+                                "root": "MuiFormControl-root-1",
+                              }
+                            }
+                            component="div"
+                            disabled={false}
+                            error={false}
+                            fullWidth={true}
+                            margin="normal"
+                            required={false}
+                            variant="standard"
+                          >
+                            <div
+                              className="MuiFormControl-root-1 MuiFormControl-marginNormal-2 MuiFormControl-fullWidth-4"
+                            >
+                              <WithStyles(WithFormControlContext(InputLabel))>
+                                <WithFormControlContext(InputLabel)
+                                  classes={
+                                    Object {
+                                      "animated": "MuiInputLabel-animated-13",
+                                      "disabled": "MuiInputLabel-disabled-7",
+                                      "error": "MuiInputLabel-error-8",
+                                      "filled": "MuiInputLabel-filled-14",
+                                      "focused": "MuiInputLabel-focused-6",
+                                      "formControl": "MuiInputLabel-formControl-10",
+                                      "marginDense": "MuiInputLabel-marginDense-11",
+                                      "outlined": "MuiInputLabel-outlined-15",
+                                      "required": "MuiInputLabel-required-9",
+                                      "root": "MuiInputLabel-root-5",
+                                      "shrink": "MuiInputLabel-shrink-12",
+                                    }
+                                  }
+                                >
+                                  <InputLabel
+                                    classes={
+                                      Object {
+                                        "animated": "MuiInputLabel-animated-13",
+                                        "disabled": "MuiInputLabel-disabled-7",
+                                        "error": "MuiInputLabel-error-8",
+                                        "filled": "MuiInputLabel-filled-14",
+                                        "focused": "MuiInputLabel-focused-6",
+                                        "formControl": "MuiInputLabel-formControl-10",
+                                        "marginDense": "MuiInputLabel-marginDense-11",
+                                        "outlined": "MuiInputLabel-outlined-15",
+                                        "required": "MuiInputLabel-required-9",
+                                        "root": "MuiInputLabel-root-5",
+                                        "shrink": "MuiInputLabel-shrink-12",
+                                      }
+                                    }
+                                    disableAnimation={false}
+                                    muiFormControl={
+                                      Object {
+                                        "adornedStart": false,
+                                        "disabled": false,
+                                        "error": false,
+                                        "filled": true,
+                                        "focused": false,
+                                        "margin": "normal",
+                                        "onBlur": [Function],
+                                        "onEmpty": [Function],
+                                        "onFilled": [Function],
+                                        "onFocus": [Function],
+                                        "required": false,
+                                        "variant": "standard",
+                                      }
+                                    }
+                                  >
+                                    <WithStyles(WithFormControlContext(FormLabel))
+                                      className="MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                      classes={
+                                        Object {
+                                          "disabled": "MuiInputLabel-disabled-7",
+                                          "error": "MuiInputLabel-error-8",
+                                          "focused": "MuiInputLabel-focused-6",
+                                          "required": "MuiInputLabel-required-9",
+                                        }
+                                      }
+                                      data-shrink={true}
+                                    >
+                                      <WithFormControlContext(FormLabel)
+                                        className="MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                        classes={
+                                          Object {
+                                            "asterisk": "MuiFormLabel-asterisk-22",
+                                            "disabled": "MuiFormLabel-disabled-18 MuiInputLabel-disabled-7",
+                                            "error": "MuiFormLabel-error-19 MuiInputLabel-error-8",
+                                            "filled": "MuiFormLabel-filled-20",
+                                            "focused": "MuiFormLabel-focused-17 MuiInputLabel-focused-6",
+                                            "required": "MuiFormLabel-required-21 MuiInputLabel-required-9",
+                                            "root": "MuiFormLabel-root-16",
+                                          }
+                                        }
+                                        data-shrink={true}
+                                      >
+                                        <FormLabel
+                                          className="MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                          classes={
+                                            Object {
+                                              "asterisk": "MuiFormLabel-asterisk-22",
+                                              "disabled": "MuiFormLabel-disabled-18 MuiInputLabel-disabled-7",
+                                              "error": "MuiFormLabel-error-19 MuiInputLabel-error-8",
+                                              "filled": "MuiFormLabel-filled-20",
+                                              "focused": "MuiFormLabel-focused-17 MuiInputLabel-focused-6",
+                                              "required": "MuiFormLabel-required-21 MuiInputLabel-required-9",
+                                              "root": "MuiFormLabel-root-16",
+                                            }
+                                          }
+                                          component="label"
+                                          data-shrink={true}
+                                          muiFormControl={
+                                            Object {
+                                              "adornedStart": false,
+                                              "disabled": false,
+                                              "error": false,
+                                              "filled": true,
+                                              "focused": false,
+                                              "margin": "normal",
+                                              "onBlur": [Function],
+                                              "onEmpty": [Function],
+                                              "onFilled": [Function],
+                                              "onFocus": [Function],
+                                              "required": false,
+                                              "variant": "standard",
+                                            }
+                                          }
+                                        >
+                                          <label
+                                            className="MuiFormLabel-root-16 MuiFormLabel-filled-20 MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                            data-shrink={true}
+                                          >
+                                            Name
+                                          </label>
+                                        </FormLabel>
+                                      </WithFormControlContext(FormLabel)>
+                                    </WithStyles(WithFormControlContext(FormLabel))>
+                                  </InputLabel>
+                                </WithFormControlContext(InputLabel)>
+                              </WithStyles(WithFormControlContext(InputLabel))>
+                              <WithStyles(Input)
+                                fullWidth={true}
+                                name="name"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                value="Test"
+                              >
+                                <Input
+                                  classes={
+                                    Object {
+                                      "disabled": "MuiInput-disabled-26",
+                                      "error": "MuiInput-error-28",
+                                      "focused": "MuiInput-focused-25",
+                                      "formControl": "MuiInput-formControl-24",
+                                      "fullWidth": "MuiInput-fullWidth-30",
+                                      "input": "MuiInput-input-31",
+                                      "inputMarginDense": "MuiInput-inputMarginDense-32",
+                                      "inputMultiline": "MuiInput-inputMultiline-33",
+                                      "inputType": "MuiInput-inputType-34",
+                                      "inputTypeSearch": "MuiInput-inputTypeSearch-35",
+                                      "multiline": "MuiInput-multiline-29",
+                                      "root": "MuiInput-root-23",
+                                      "underline": "MuiInput-underline-27",
+                                    }
+                                  }
+                                  fullWidth={true}
+                                  name="name"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  value="Test"
+                                >
+                                  <WithStyles(WithFormControlContext(InputBase))
+                                    classes={
+                                      Object {
+                                        "disabled": "MuiInput-disabled-26",
+                                        "error": "MuiInput-error-28",
+                                        "focused": "MuiInput-focused-25",
+                                        "formControl": "MuiInput-formControl-24",
+                                        "fullWidth": "MuiInput-fullWidth-30",
+                                        "input": "MuiInput-input-31",
+                                        "inputMarginDense": "MuiInput-inputMarginDense-32",
+                                        "inputMultiline": "MuiInput-inputMultiline-33",
+                                        "inputType": "MuiInput-inputType-34",
+                                        "inputTypeSearch": "MuiInput-inputTypeSearch-35",
+                                        "multiline": "MuiInput-multiline-29",
+                                        "root": "MuiInput-root-23 MuiInput-underline-27",
+                                        "underline": null,
+                                      }
+                                    }
+                                    fullWidth={true}
+                                    inputComponent="input"
+                                    multiline={false}
+                                    name="name"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    type="text"
+                                    value="Test"
+                                  >
+                                    <WithFormControlContext(InputBase)
+                                      classes={
+                                        Object {
+                                          "adornedEnd": "MuiInputBase-adornedEnd-41",
+                                          "adornedStart": "MuiInputBase-adornedStart-40",
+                                          "disabled": "MuiInputBase-disabled-39 MuiInput-disabled-26",
+                                          "error": "MuiInputBase-error-42 MuiInput-error-28",
+                                          "focused": "MuiInputBase-focused-38 MuiInput-focused-25",
+                                          "formControl": "MuiInputBase-formControl-37 MuiInput-formControl-24",
+                                          "fullWidth": "MuiInputBase-fullWidth-45 MuiInput-fullWidth-30",
+                                          "input": "MuiInputBase-input-46 MuiInput-input-31",
+                                          "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-52",
+                                          "inputAdornedStart": "MuiInputBase-inputAdornedStart-51",
+                                          "inputMarginDense": "MuiInputBase-inputMarginDense-47 MuiInput-inputMarginDense-32",
+                                          "inputMultiline": "MuiInputBase-inputMultiline-48 MuiInput-inputMultiline-33",
+                                          "inputType": "MuiInputBase-inputType-49 MuiInput-inputType-34",
+                                          "inputTypeSearch": "MuiInputBase-inputTypeSearch-50 MuiInput-inputTypeSearch-35",
+                                          "marginDense": "MuiInputBase-marginDense-43",
+                                          "multiline": "MuiInputBase-multiline-44 MuiInput-multiline-29",
+                                          "root": "MuiInputBase-root-36 MuiInput-root-23 MuiInput-underline-27",
+                                        }
+                                      }
+                                      fullWidth={true}
+                                      inputComponent="input"
+                                      multiline={false}
+                                      name="name"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      type="text"
+                                      value="Test"
+                                    >
+                                      <InputBase
+                                        classes={
+                                          Object {
+                                            "adornedEnd": "MuiInputBase-adornedEnd-41",
+                                            "adornedStart": "MuiInputBase-adornedStart-40",
+                                            "disabled": "MuiInputBase-disabled-39 MuiInput-disabled-26",
+                                            "error": "MuiInputBase-error-42 MuiInput-error-28",
+                                            "focused": "MuiInputBase-focused-38 MuiInput-focused-25",
+                                            "formControl": "MuiInputBase-formControl-37 MuiInput-formControl-24",
+                                            "fullWidth": "MuiInputBase-fullWidth-45 MuiInput-fullWidth-30",
+                                            "input": "MuiInputBase-input-46 MuiInput-input-31",
+                                            "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-52",
+                                            "inputAdornedStart": "MuiInputBase-inputAdornedStart-51",
+                                            "inputMarginDense": "MuiInputBase-inputMarginDense-47 MuiInput-inputMarginDense-32",
+                                            "inputMultiline": "MuiInputBase-inputMultiline-48 MuiInput-inputMultiline-33",
+                                            "inputType": "MuiInputBase-inputType-49 MuiInput-inputType-34",
+                                            "inputTypeSearch": "MuiInputBase-inputTypeSearch-50 MuiInput-inputTypeSearch-35",
+                                            "marginDense": "MuiInputBase-marginDense-43",
+                                            "multiline": "MuiInputBase-multiline-44 MuiInput-multiline-29",
+                                            "root": "MuiInputBase-root-36 MuiInput-root-23 MuiInput-underline-27",
+                                          }
+                                        }
+                                        fullWidth={true}
+                                        inputComponent="input"
+                                        muiFormControl={
+                                          Object {
+                                            "adornedStart": false,
+                                            "disabled": false,
+                                            "error": false,
+                                            "filled": true,
+                                            "focused": false,
+                                            "margin": "normal",
+                                            "onBlur": [Function],
+                                            "onEmpty": [Function],
+                                            "onFilled": [Function],
+                                            "onFocus": [Function],
+                                            "required": false,
+                                            "variant": "standard",
+                                          }
+                                        }
+                                        multiline={false}
+                                        name="name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        type="text"
+                                        value="Test"
+                                      >
+                                        <div
+                                          className="MuiInputBase-root-36 MuiInput-root-23 MuiInput-underline-27 MuiInputBase-fullWidth-45 MuiInput-fullWidth-30 MuiInputBase-formControl-37 MuiInput-formControl-24"
+                                          onClick={[Function]}
+                                        >
+                                          <input
+                                            aria-invalid={false}
+                                            className="MuiInputBase-input-46 MuiInput-input-31"
+                                            disabled={false}
+                                            name="name"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            onFocus={[Function]}
+                                            required={false}
+                                            type="text"
+                                            value="Test"
+                                          />
+                                        </div>
+                                      </InputBase>
+                                    </WithFormControlContext(InputBase)>
+                                  </WithStyles(WithFormControlContext(InputBase))>
+                                </Input>
+                              </WithStyles(Input)>
+                            </div>
+                          </FormControl>
+                        </WithStyles(FormControl)>
+                      </TextField>
+                    </TextField>
+                  </FieldInner>
+                </FormikConnect(FieldInner)>
+              </FormikTextField>
+              <FormButtonBar>
+                <styled.div>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": true,
+                          "lastClassName": "c0",
+                          "rules": Array [
+                            "
+  margin-top: 24px;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <div
+                      className="c0"
+                    >
+                      <WithStyles(Grid)
+                        container={true}
+                        justify="space-between"
+                      >
+                        <Grid
+                          alignContent="stretch"
+                          alignItems="stretch"
+                          classes={
+                            Object {
+                              "align-content-xs-center": "MuiGrid-align-content-xs-center-65",
+                              "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-67",
+                              "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-66",
+                              "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-69",
+                              "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-68",
+                              "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-64",
+                              "align-items-xs-center": "MuiGrid-align-items-xs-center-61",
+                              "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-63",
+                              "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-62",
+                              "container": "MuiGrid-container-53",
+                              "direction-xs-column": "MuiGrid-direction-xs-column-56",
+                              "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-57",
+                              "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-58",
+                              "grid-lg-1": "MuiGrid-grid-lg-1-124",
+                              "grid-lg-10": "MuiGrid-grid-lg-10-133",
+                              "grid-lg-11": "MuiGrid-grid-lg-11-134",
+                              "grid-lg-12": "MuiGrid-grid-lg-12-135",
+                              "grid-lg-2": "MuiGrid-grid-lg-2-125",
+                              "grid-lg-3": "MuiGrid-grid-lg-3-126",
+                              "grid-lg-4": "MuiGrid-grid-lg-4-127",
+                              "grid-lg-5": "MuiGrid-grid-lg-5-128",
+                              "grid-lg-6": "MuiGrid-grid-lg-6-129",
+                              "grid-lg-7": "MuiGrid-grid-lg-7-130",
+                              "grid-lg-8": "MuiGrid-grid-lg-8-131",
+                              "grid-lg-9": "MuiGrid-grid-lg-9-132",
+                              "grid-lg-auto": "MuiGrid-grid-lg-auto-122",
+                              "grid-lg-true": "MuiGrid-grid-lg-true-123",
+                              "grid-md-1": "MuiGrid-grid-md-1-110",
+                              "grid-md-10": "MuiGrid-grid-md-10-119",
+                              "grid-md-11": "MuiGrid-grid-md-11-120",
+                              "grid-md-12": "MuiGrid-grid-md-12-121",
+                              "grid-md-2": "MuiGrid-grid-md-2-111",
+                              "grid-md-3": "MuiGrid-grid-md-3-112",
+                              "grid-md-4": "MuiGrid-grid-md-4-113",
+                              "grid-md-5": "MuiGrid-grid-md-5-114",
+                              "grid-md-6": "MuiGrid-grid-md-6-115",
+                              "grid-md-7": "MuiGrid-grid-md-7-116",
+                              "grid-md-8": "MuiGrid-grid-md-8-117",
+                              "grid-md-9": "MuiGrid-grid-md-9-118",
+                              "grid-md-auto": "MuiGrid-grid-md-auto-108",
+                              "grid-md-true": "MuiGrid-grid-md-true-109",
+                              "grid-sm-1": "MuiGrid-grid-sm-1-96",
+                              "grid-sm-10": "MuiGrid-grid-sm-10-105",
+                              "grid-sm-11": "MuiGrid-grid-sm-11-106",
+                              "grid-sm-12": "MuiGrid-grid-sm-12-107",
+                              "grid-sm-2": "MuiGrid-grid-sm-2-97",
+                              "grid-sm-3": "MuiGrid-grid-sm-3-98",
+                              "grid-sm-4": "MuiGrid-grid-sm-4-99",
+                              "grid-sm-5": "MuiGrid-grid-sm-5-100",
+                              "grid-sm-6": "MuiGrid-grid-sm-6-101",
+                              "grid-sm-7": "MuiGrid-grid-sm-7-102",
+                              "grid-sm-8": "MuiGrid-grid-sm-8-103",
+                              "grid-sm-9": "MuiGrid-grid-sm-9-104",
+                              "grid-sm-auto": "MuiGrid-grid-sm-auto-94",
+                              "grid-sm-true": "MuiGrid-grid-sm-true-95",
+                              "grid-xl-1": "MuiGrid-grid-xl-1-138",
+                              "grid-xl-10": "MuiGrid-grid-xl-10-147",
+                              "grid-xl-11": "MuiGrid-grid-xl-11-148",
+                              "grid-xl-12": "MuiGrid-grid-xl-12-149",
+                              "grid-xl-2": "MuiGrid-grid-xl-2-139",
+                              "grid-xl-3": "MuiGrid-grid-xl-3-140",
+                              "grid-xl-4": "MuiGrid-grid-xl-4-141",
+                              "grid-xl-5": "MuiGrid-grid-xl-5-142",
+                              "grid-xl-6": "MuiGrid-grid-xl-6-143",
+                              "grid-xl-7": "MuiGrid-grid-xl-7-144",
+                              "grid-xl-8": "MuiGrid-grid-xl-8-145",
+                              "grid-xl-9": "MuiGrid-grid-xl-9-146",
+                              "grid-xl-auto": "MuiGrid-grid-xl-auto-136",
+                              "grid-xl-true": "MuiGrid-grid-xl-true-137",
+                              "grid-xs-1": "MuiGrid-grid-xs-1-82",
+                              "grid-xs-10": "MuiGrid-grid-xs-10-91",
+                              "grid-xs-11": "MuiGrid-grid-xs-11-92",
+                              "grid-xs-12": "MuiGrid-grid-xs-12-93",
+                              "grid-xs-2": "MuiGrid-grid-xs-2-83",
+                              "grid-xs-3": "MuiGrid-grid-xs-3-84",
+                              "grid-xs-4": "MuiGrid-grid-xs-4-85",
+                              "grid-xs-5": "MuiGrid-grid-xs-5-86",
+                              "grid-xs-6": "MuiGrid-grid-xs-6-87",
+                              "grid-xs-7": "MuiGrid-grid-xs-7-88",
+                              "grid-xs-8": "MuiGrid-grid-xs-8-89",
+                              "grid-xs-9": "MuiGrid-grid-xs-9-90",
+                              "grid-xs-auto": "MuiGrid-grid-xs-auto-80",
+                              "grid-xs-true": "MuiGrid-grid-xs-true-81",
+                              "item": "MuiGrid-item-54",
+                              "justify-xs-center": "MuiGrid-justify-xs-center-70",
+                              "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-71",
+                              "justify-xs-space-around": "MuiGrid-justify-xs-space-around-73",
+                              "justify-xs-space-between": "MuiGrid-justify-xs-space-between-72",
+                              "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-74",
+                              "spacing-xs-16": "MuiGrid-spacing-xs-16-76",
+                              "spacing-xs-24": "MuiGrid-spacing-xs-24-77",
+                              "spacing-xs-32": "MuiGrid-spacing-xs-32-78",
+                              "spacing-xs-40": "MuiGrid-spacing-xs-40-79",
+                              "spacing-xs-8": "MuiGrid-spacing-xs-8-75",
+                              "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-59",
+                              "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-60",
+                              "zeroMinWidth": "MuiGrid-zeroMinWidth-55",
+                            }
+                          }
+                          component="div"
+                          container={true}
+                          direction="row"
+                          item={false}
+                          justify="space-between"
+                          lg={false}
+                          md={false}
+                          sm={false}
+                          spacing={0}
+                          wrap="wrap"
+                          xl={false}
+                          xs={false}
+                          zeroMinWidth={false}
+                        >
+                          <div
+                            className="MuiGrid-container-53 MuiGrid-justify-xs-space-between-72"
+                          >
+                            <WithStyles(Grid)
+                              item={true}
+                            >
+                              <Grid
+                                alignContent="stretch"
+                                alignItems="stretch"
+                                classes={
+                                  Object {
+                                    "align-content-xs-center": "MuiGrid-align-content-xs-center-65",
+                                    "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-67",
+                                    "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-66",
+                                    "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-69",
+                                    "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-68",
+                                    "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-64",
+                                    "align-items-xs-center": "MuiGrid-align-items-xs-center-61",
+                                    "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-63",
+                                    "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-62",
+                                    "container": "MuiGrid-container-53",
+                                    "direction-xs-column": "MuiGrid-direction-xs-column-56",
+                                    "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-57",
+                                    "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-58",
+                                    "grid-lg-1": "MuiGrid-grid-lg-1-124",
+                                    "grid-lg-10": "MuiGrid-grid-lg-10-133",
+                                    "grid-lg-11": "MuiGrid-grid-lg-11-134",
+                                    "grid-lg-12": "MuiGrid-grid-lg-12-135",
+                                    "grid-lg-2": "MuiGrid-grid-lg-2-125",
+                                    "grid-lg-3": "MuiGrid-grid-lg-3-126",
+                                    "grid-lg-4": "MuiGrid-grid-lg-4-127",
+                                    "grid-lg-5": "MuiGrid-grid-lg-5-128",
+                                    "grid-lg-6": "MuiGrid-grid-lg-6-129",
+                                    "grid-lg-7": "MuiGrid-grid-lg-7-130",
+                                    "grid-lg-8": "MuiGrid-grid-lg-8-131",
+                                    "grid-lg-9": "MuiGrid-grid-lg-9-132",
+                                    "grid-lg-auto": "MuiGrid-grid-lg-auto-122",
+                                    "grid-lg-true": "MuiGrid-grid-lg-true-123",
+                                    "grid-md-1": "MuiGrid-grid-md-1-110",
+                                    "grid-md-10": "MuiGrid-grid-md-10-119",
+                                    "grid-md-11": "MuiGrid-grid-md-11-120",
+                                    "grid-md-12": "MuiGrid-grid-md-12-121",
+                                    "grid-md-2": "MuiGrid-grid-md-2-111",
+                                    "grid-md-3": "MuiGrid-grid-md-3-112",
+                                    "grid-md-4": "MuiGrid-grid-md-4-113",
+                                    "grid-md-5": "MuiGrid-grid-md-5-114",
+                                    "grid-md-6": "MuiGrid-grid-md-6-115",
+                                    "grid-md-7": "MuiGrid-grid-md-7-116",
+                                    "grid-md-8": "MuiGrid-grid-md-8-117",
+                                    "grid-md-9": "MuiGrid-grid-md-9-118",
+                                    "grid-md-auto": "MuiGrid-grid-md-auto-108",
+                                    "grid-md-true": "MuiGrid-grid-md-true-109",
+                                    "grid-sm-1": "MuiGrid-grid-sm-1-96",
+                                    "grid-sm-10": "MuiGrid-grid-sm-10-105",
+                                    "grid-sm-11": "MuiGrid-grid-sm-11-106",
+                                    "grid-sm-12": "MuiGrid-grid-sm-12-107",
+                                    "grid-sm-2": "MuiGrid-grid-sm-2-97",
+                                    "grid-sm-3": "MuiGrid-grid-sm-3-98",
+                                    "grid-sm-4": "MuiGrid-grid-sm-4-99",
+                                    "grid-sm-5": "MuiGrid-grid-sm-5-100",
+                                    "grid-sm-6": "MuiGrid-grid-sm-6-101",
+                                    "grid-sm-7": "MuiGrid-grid-sm-7-102",
+                                    "grid-sm-8": "MuiGrid-grid-sm-8-103",
+                                    "grid-sm-9": "MuiGrid-grid-sm-9-104",
+                                    "grid-sm-auto": "MuiGrid-grid-sm-auto-94",
+                                    "grid-sm-true": "MuiGrid-grid-sm-true-95",
+                                    "grid-xl-1": "MuiGrid-grid-xl-1-138",
+                                    "grid-xl-10": "MuiGrid-grid-xl-10-147",
+                                    "grid-xl-11": "MuiGrid-grid-xl-11-148",
+                                    "grid-xl-12": "MuiGrid-grid-xl-12-149",
+                                    "grid-xl-2": "MuiGrid-grid-xl-2-139",
+                                    "grid-xl-3": "MuiGrid-grid-xl-3-140",
+                                    "grid-xl-4": "MuiGrid-grid-xl-4-141",
+                                    "grid-xl-5": "MuiGrid-grid-xl-5-142",
+                                    "grid-xl-6": "MuiGrid-grid-xl-6-143",
+                                    "grid-xl-7": "MuiGrid-grid-xl-7-144",
+                                    "grid-xl-8": "MuiGrid-grid-xl-8-145",
+                                    "grid-xl-9": "MuiGrid-grid-xl-9-146",
+                                    "grid-xl-auto": "MuiGrid-grid-xl-auto-136",
+                                    "grid-xl-true": "MuiGrid-grid-xl-true-137",
+                                    "grid-xs-1": "MuiGrid-grid-xs-1-82",
+                                    "grid-xs-10": "MuiGrid-grid-xs-10-91",
+                                    "grid-xs-11": "MuiGrid-grid-xs-11-92",
+                                    "grid-xs-12": "MuiGrid-grid-xs-12-93",
+                                    "grid-xs-2": "MuiGrid-grid-xs-2-83",
+                                    "grid-xs-3": "MuiGrid-grid-xs-3-84",
+                                    "grid-xs-4": "MuiGrid-grid-xs-4-85",
+                                    "grid-xs-5": "MuiGrid-grid-xs-5-86",
+                                    "grid-xs-6": "MuiGrid-grid-xs-6-87",
+                                    "grid-xs-7": "MuiGrid-grid-xs-7-88",
+                                    "grid-xs-8": "MuiGrid-grid-xs-8-89",
+                                    "grid-xs-9": "MuiGrid-grid-xs-9-90",
+                                    "grid-xs-auto": "MuiGrid-grid-xs-auto-80",
+                                    "grid-xs-true": "MuiGrid-grid-xs-true-81",
+                                    "item": "MuiGrid-item-54",
+                                    "justify-xs-center": "MuiGrid-justify-xs-center-70",
+                                    "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-71",
+                                    "justify-xs-space-around": "MuiGrid-justify-xs-space-around-73",
+                                    "justify-xs-space-between": "MuiGrid-justify-xs-space-between-72",
+                                    "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-74",
+                                    "spacing-xs-16": "MuiGrid-spacing-xs-16-76",
+                                    "spacing-xs-24": "MuiGrid-spacing-xs-24-77",
+                                    "spacing-xs-32": "MuiGrid-spacing-xs-32-78",
+                                    "spacing-xs-40": "MuiGrid-spacing-xs-40-79",
+                                    "spacing-xs-8": "MuiGrid-spacing-xs-8-75",
+                                    "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-59",
+                                    "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-60",
+                                    "zeroMinWidth": "MuiGrid-zeroMinWidth-55",
+                                  }
+                                }
+                                component="div"
+                                container={false}
+                                direction="row"
+                                item={true}
+                                justify="flex-start"
+                                lg={false}
+                                md={false}
+                                sm={false}
+                                spacing={0}
+                                wrap="wrap"
+                                xl={false}
+                                xs={false}
+                                zeroMinWidth={false}
+                              >
+                                <div
+                                  className="MuiGrid-item-54"
+                                >
+                                  <LinkButton
+                                    color="secondary"
+                                    to="/back"
+                                    variant="contained"
+                                  >
+                                    <WithStyles(Button)
+                                      color="secondary"
+                                      component={[Function]}
+                                      to="/back"
+                                      variant="contained"
+                                    >
+                                      <Button
+                                        classes={
+                                          Object {
+                                            "colorInherit": "MuiButton-colorInherit-171",
+                                            "contained": "MuiButton-contained-161",
+                                            "containedPrimary": "MuiButton-containedPrimary-162",
+                                            "containedSecondary": "MuiButton-containedSecondary-163",
+                                            "disabled": "MuiButton-disabled-170",
+                                            "extendedFab": "MuiButton-extendedFab-168",
+                                            "fab": "MuiButton-fab-167",
+                                            "flat": "MuiButton-flat-155",
+                                            "flatPrimary": "MuiButton-flatPrimary-156",
+                                            "flatSecondary": "MuiButton-flatSecondary-157",
+                                            "focusVisible": "MuiButton-focusVisible-169",
+                                            "fullWidth": "MuiButton-fullWidth-175",
+                                            "label": "MuiButton-label-151",
+                                            "mini": "MuiButton-mini-172",
+                                            "outlined": "MuiButton-outlined-158",
+                                            "outlinedPrimary": "MuiButton-outlinedPrimary-159",
+                                            "outlinedSecondary": "MuiButton-outlinedSecondary-160",
+                                            "raised": "MuiButton-raised-164",
+                                            "raisedPrimary": "MuiButton-raisedPrimary-165",
+                                            "raisedSecondary": "MuiButton-raisedSecondary-166",
+                                            "root": "MuiButton-root-150",
+                                            "sizeLarge": "MuiButton-sizeLarge-174",
+                                            "sizeSmall": "MuiButton-sizeSmall-173",
+                                            "text": "MuiButton-text-152",
+                                            "textPrimary": "MuiButton-textPrimary-153",
+                                            "textSecondary": "MuiButton-textSecondary-154",
+                                          }
+                                        }
+                                        color="secondary"
+                                        component={[Function]}
+                                        disableFocusRipple={false}
+                                        disabled={false}
+                                        fullWidth={false}
+                                        mini={false}
+                                        size="medium"
+                                        to="/back"
+                                        type="button"
+                                        variant="contained"
+                                      >
+                                        <WithStyles(ButtonBase)
+                                          className="MuiButton-root-150 MuiButton-contained-161 MuiButton-containedSecondary-163 MuiButton-raised-164 MuiButton-raisedSecondary-166"
+                                          component={[Function]}
+                                          disabled={false}
+                                          focusRipple={true}
+                                          focusVisibleClassName="MuiButton-focusVisible-169"
+                                          to="/back"
+                                          type="button"
+                                        >
+                                          <ButtonBase
+                                            centerRipple={false}
+                                            className="MuiButton-root-150 MuiButton-contained-161 MuiButton-containedSecondary-163 MuiButton-raised-164 MuiButton-raisedSecondary-166"
+                                            classes={
+                                              Object {
+                                                "disabled": "MuiButtonBase-disabled-177",
+                                                "focusVisible": "MuiButtonBase-focusVisible-178",
+                                                "root": "MuiButtonBase-root-176",
+                                              }
+                                            }
+                                            component={[Function]}
+                                            disableRipple={false}
+                                            disableTouchRipple={false}
+                                            disabled={false}
+                                            focusRipple={true}
+                                            focusVisibleClassName="MuiButton-focusVisible-169"
+                                            tabIndex="0"
+                                            to="/back"
+                                            type="button"
+                                          >
+                                            <Link
+                                              className="MuiButtonBase-root-176 MuiButton-root-150 MuiButton-contained-161 MuiButton-containedSecondary-163 MuiButton-raised-164 MuiButton-raisedSecondary-166"
+                                              onBlur={[Function]}
+                                              onContextMenu={[Function]}
+                                              onFocus={[Function]}
+                                              onKeyDown={[Function]}
+                                              onKeyUp={[Function]}
+                                              onMouseDown={[Function]}
+                                              onMouseLeave={[Function]}
+                                              onMouseUp={[Function]}
+                                              onTouchEnd={[Function]}
+                                              onTouchMove={[Function]}
+                                              onTouchStart={[Function]}
+                                              role="button"
+                                              tabIndex="0"
+                                              to="/back"
+                                            >
+                                              <a
+                                                className="MuiButtonBase-root-176 MuiButton-root-150 MuiButton-contained-161 MuiButton-containedSecondary-163 MuiButton-raised-164 MuiButton-raisedSecondary-166"
+                                                href=""
+                                                onBlur={[Function]}
+                                                onClick={[Function]}
+                                                onContextMenu={[Function]}
+                                                onFocus={[Function]}
+                                                onKeyDown={[Function]}
+                                                onKeyUp={[Function]}
+                                                onMouseDown={[Function]}
+                                                onMouseLeave={[Function]}
+                                                onMouseUp={[Function]}
+                                                onTouchEnd={[Function]}
+                                                onTouchMove={[Function]}
+                                                onTouchStart={[Function]}
+                                                role="button"
+                                                tabIndex="0"
+                                              >
+                                                <span
+                                                  className="MuiButton-label-151"
+                                                >
+                                                  Cancel
+                                                </span>
+                                                <NoSsr
+                                                  defer={false}
+                                                  fallback={null}
+                                                >
+                                                  <WithStyles(TouchRipple)
+                                                    center={false}
+                                                    innerRef={[Function]}
+                                                  >
+                                                    <TouchRipple
+                                                      center={false}
+                                                      classes={
+                                                        Object {
+                                                          "child": "MuiTouchRipple-child-183",
+                                                          "childLeaving": "MuiTouchRipple-childLeaving-184",
+                                                          "childPulsate": "MuiTouchRipple-childPulsate-185",
+                                                          "ripple": "MuiTouchRipple-ripple-180",
+                                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-182",
+                                                          "rippleVisible": "MuiTouchRipple-rippleVisible-181",
+                                                          "root": "MuiTouchRipple-root-179",
+                                                        }
+                                                      }
+                                                    >
+                                                      <TransitionGroup
+                                                        childFactory={[Function]}
+                                                        className="MuiTouchRipple-root-179"
+                                                        component="span"
+                                                        enter={true}
+                                                        exit={true}
+                                                      >
+                                                        <span
+                                                          className="MuiTouchRipple-root-179"
+                                                        />
+                                                      </TransitionGroup>
+                                                    </TouchRipple>
+                                                  </WithStyles(TouchRipple)>
+                                                </NoSsr>
+                                              </a>
+                                            </Link>
+                                          </ButtonBase>
+                                        </WithStyles(ButtonBase)>
+                                      </Button>
+                                    </WithStyles(Button)>
+                                  </LinkButton>
+                                </div>
+                              </Grid>
+                            </WithStyles(Grid)>
+                            <WithStyles(Grid)
+                              item={true}
+                            >
+                              <Grid
+                                alignContent="stretch"
+                                alignItems="stretch"
+                                classes={
+                                  Object {
+                                    "align-content-xs-center": "MuiGrid-align-content-xs-center-65",
+                                    "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-67",
+                                    "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-66",
+                                    "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-69",
+                                    "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-68",
+                                    "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-64",
+                                    "align-items-xs-center": "MuiGrid-align-items-xs-center-61",
+                                    "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-63",
+                                    "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-62",
+                                    "container": "MuiGrid-container-53",
+                                    "direction-xs-column": "MuiGrid-direction-xs-column-56",
+                                    "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-57",
+                                    "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-58",
+                                    "grid-lg-1": "MuiGrid-grid-lg-1-124",
+                                    "grid-lg-10": "MuiGrid-grid-lg-10-133",
+                                    "grid-lg-11": "MuiGrid-grid-lg-11-134",
+                                    "grid-lg-12": "MuiGrid-grid-lg-12-135",
+                                    "grid-lg-2": "MuiGrid-grid-lg-2-125",
+                                    "grid-lg-3": "MuiGrid-grid-lg-3-126",
+                                    "grid-lg-4": "MuiGrid-grid-lg-4-127",
+                                    "grid-lg-5": "MuiGrid-grid-lg-5-128",
+                                    "grid-lg-6": "MuiGrid-grid-lg-6-129",
+                                    "grid-lg-7": "MuiGrid-grid-lg-7-130",
+                                    "grid-lg-8": "MuiGrid-grid-lg-8-131",
+                                    "grid-lg-9": "MuiGrid-grid-lg-9-132",
+                                    "grid-lg-auto": "MuiGrid-grid-lg-auto-122",
+                                    "grid-lg-true": "MuiGrid-grid-lg-true-123",
+                                    "grid-md-1": "MuiGrid-grid-md-1-110",
+                                    "grid-md-10": "MuiGrid-grid-md-10-119",
+                                    "grid-md-11": "MuiGrid-grid-md-11-120",
+                                    "grid-md-12": "MuiGrid-grid-md-12-121",
+                                    "grid-md-2": "MuiGrid-grid-md-2-111",
+                                    "grid-md-3": "MuiGrid-grid-md-3-112",
+                                    "grid-md-4": "MuiGrid-grid-md-4-113",
+                                    "grid-md-5": "MuiGrid-grid-md-5-114",
+                                    "grid-md-6": "MuiGrid-grid-md-6-115",
+                                    "grid-md-7": "MuiGrid-grid-md-7-116",
+                                    "grid-md-8": "MuiGrid-grid-md-8-117",
+                                    "grid-md-9": "MuiGrid-grid-md-9-118",
+                                    "grid-md-auto": "MuiGrid-grid-md-auto-108",
+                                    "grid-md-true": "MuiGrid-grid-md-true-109",
+                                    "grid-sm-1": "MuiGrid-grid-sm-1-96",
+                                    "grid-sm-10": "MuiGrid-grid-sm-10-105",
+                                    "grid-sm-11": "MuiGrid-grid-sm-11-106",
+                                    "grid-sm-12": "MuiGrid-grid-sm-12-107",
+                                    "grid-sm-2": "MuiGrid-grid-sm-2-97",
+                                    "grid-sm-3": "MuiGrid-grid-sm-3-98",
+                                    "grid-sm-4": "MuiGrid-grid-sm-4-99",
+                                    "grid-sm-5": "MuiGrid-grid-sm-5-100",
+                                    "grid-sm-6": "MuiGrid-grid-sm-6-101",
+                                    "grid-sm-7": "MuiGrid-grid-sm-7-102",
+                                    "grid-sm-8": "MuiGrid-grid-sm-8-103",
+                                    "grid-sm-9": "MuiGrid-grid-sm-9-104",
+                                    "grid-sm-auto": "MuiGrid-grid-sm-auto-94",
+                                    "grid-sm-true": "MuiGrid-grid-sm-true-95",
+                                    "grid-xl-1": "MuiGrid-grid-xl-1-138",
+                                    "grid-xl-10": "MuiGrid-grid-xl-10-147",
+                                    "grid-xl-11": "MuiGrid-grid-xl-11-148",
+                                    "grid-xl-12": "MuiGrid-grid-xl-12-149",
+                                    "grid-xl-2": "MuiGrid-grid-xl-2-139",
+                                    "grid-xl-3": "MuiGrid-grid-xl-3-140",
+                                    "grid-xl-4": "MuiGrid-grid-xl-4-141",
+                                    "grid-xl-5": "MuiGrid-grid-xl-5-142",
+                                    "grid-xl-6": "MuiGrid-grid-xl-6-143",
+                                    "grid-xl-7": "MuiGrid-grid-xl-7-144",
+                                    "grid-xl-8": "MuiGrid-grid-xl-8-145",
+                                    "grid-xl-9": "MuiGrid-grid-xl-9-146",
+                                    "grid-xl-auto": "MuiGrid-grid-xl-auto-136",
+                                    "grid-xl-true": "MuiGrid-grid-xl-true-137",
+                                    "grid-xs-1": "MuiGrid-grid-xs-1-82",
+                                    "grid-xs-10": "MuiGrid-grid-xs-10-91",
+                                    "grid-xs-11": "MuiGrid-grid-xs-11-92",
+                                    "grid-xs-12": "MuiGrid-grid-xs-12-93",
+                                    "grid-xs-2": "MuiGrid-grid-xs-2-83",
+                                    "grid-xs-3": "MuiGrid-grid-xs-3-84",
+                                    "grid-xs-4": "MuiGrid-grid-xs-4-85",
+                                    "grid-xs-5": "MuiGrid-grid-xs-5-86",
+                                    "grid-xs-6": "MuiGrid-grid-xs-6-87",
+                                    "grid-xs-7": "MuiGrid-grid-xs-7-88",
+                                    "grid-xs-8": "MuiGrid-grid-xs-8-89",
+                                    "grid-xs-9": "MuiGrid-grid-xs-9-90",
+                                    "grid-xs-auto": "MuiGrid-grid-xs-auto-80",
+                                    "grid-xs-true": "MuiGrid-grid-xs-true-81",
+                                    "item": "MuiGrid-item-54",
+                                    "justify-xs-center": "MuiGrid-justify-xs-center-70",
+                                    "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-71",
+                                    "justify-xs-space-around": "MuiGrid-justify-xs-space-around-73",
+                                    "justify-xs-space-between": "MuiGrid-justify-xs-space-between-72",
+                                    "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-74",
+                                    "spacing-xs-16": "MuiGrid-spacing-xs-16-76",
+                                    "spacing-xs-24": "MuiGrid-spacing-xs-24-77",
+                                    "spacing-xs-32": "MuiGrid-spacing-xs-32-78",
+                                    "spacing-xs-40": "MuiGrid-spacing-xs-40-79",
+                                    "spacing-xs-8": "MuiGrid-spacing-xs-8-75",
+                                    "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-59",
+                                    "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-60",
+                                    "zeroMinWidth": "MuiGrid-zeroMinWidth-55",
+                                  }
+                                }
+                                component="div"
+                                container={false}
+                                direction="row"
+                                item={true}
+                                justify="flex-start"
+                                lg={false}
+                                md={false}
+                                sm={false}
+                                spacing={0}
+                                wrap="wrap"
+                                xl={false}
+                                xs={false}
+                                zeroMinWidth={false}
+                              >
+                                <div
+                                  className="MuiGrid-item-54"
+                                >
+                                  <WithStyles(Button)
+                                    color="primary"
+                                    disabled={true}
+                                    type="submit"
+                                    variant="contained"
+                                  >
+                                    <Button
+                                      classes={
+                                        Object {
+                                          "colorInherit": "MuiButton-colorInherit-171",
+                                          "contained": "MuiButton-contained-161",
+                                          "containedPrimary": "MuiButton-containedPrimary-162",
+                                          "containedSecondary": "MuiButton-containedSecondary-163",
+                                          "disabled": "MuiButton-disabled-170",
+                                          "extendedFab": "MuiButton-extendedFab-168",
+                                          "fab": "MuiButton-fab-167",
+                                          "flat": "MuiButton-flat-155",
+                                          "flatPrimary": "MuiButton-flatPrimary-156",
+                                          "flatSecondary": "MuiButton-flatSecondary-157",
+                                          "focusVisible": "MuiButton-focusVisible-169",
+                                          "fullWidth": "MuiButton-fullWidth-175",
+                                          "label": "MuiButton-label-151",
+                                          "mini": "MuiButton-mini-172",
+                                          "outlined": "MuiButton-outlined-158",
+                                          "outlinedPrimary": "MuiButton-outlinedPrimary-159",
+                                          "outlinedSecondary": "MuiButton-outlinedSecondary-160",
+                                          "raised": "MuiButton-raised-164",
+                                          "raisedPrimary": "MuiButton-raisedPrimary-165",
+                                          "raisedSecondary": "MuiButton-raisedSecondary-166",
+                                          "root": "MuiButton-root-150",
+                                          "sizeLarge": "MuiButton-sizeLarge-174",
+                                          "sizeSmall": "MuiButton-sizeSmall-173",
+                                          "text": "MuiButton-text-152",
+                                          "textPrimary": "MuiButton-textPrimary-153",
+                                          "textSecondary": "MuiButton-textSecondary-154",
+                                        }
+                                      }
+                                      color="primary"
+                                      component="button"
+                                      disableFocusRipple={false}
+                                      disabled={true}
+                                      fullWidth={false}
+                                      mini={false}
+                                      size="medium"
+                                      type="submit"
+                                      variant="contained"
+                                    >
+                                      <WithStyles(ButtonBase)
+                                        className="MuiButton-root-150 MuiButton-contained-161 MuiButton-containedPrimary-162 MuiButton-raised-164 MuiButton-raisedPrimary-165 MuiButton-disabled-170"
+                                        component="button"
+                                        disabled={true}
+                                        focusRipple={true}
+                                        focusVisibleClassName="MuiButton-focusVisible-169"
+                                        type="submit"
+                                      >
+                                        <ButtonBase
+                                          centerRipple={false}
+                                          className="MuiButton-root-150 MuiButton-contained-161 MuiButton-containedPrimary-162 MuiButton-raised-164 MuiButton-raisedPrimary-165 MuiButton-disabled-170"
+                                          classes={
+                                            Object {
+                                              "disabled": "MuiButtonBase-disabled-177",
+                                              "focusVisible": "MuiButtonBase-focusVisible-178",
+                                              "root": "MuiButtonBase-root-176",
+                                            }
+                                          }
+                                          component="button"
+                                          disableRipple={false}
+                                          disableTouchRipple={false}
+                                          disabled={true}
+                                          focusRipple={true}
+                                          focusVisibleClassName="MuiButton-focusVisible-169"
+                                          tabIndex="0"
+                                          type="submit"
+                                        >
+                                          <button
+                                            className="MuiButtonBase-root-176 MuiButtonBase-disabled-177 MuiButton-root-150 MuiButton-contained-161 MuiButton-containedPrimary-162 MuiButton-raised-164 MuiButton-raisedPrimary-165 MuiButton-disabled-170"
+                                            disabled={true}
+                                            onBlur={[Function]}
+                                            onContextMenu={[Function]}
+                                            onFocus={[Function]}
+                                            onKeyDown={[Function]}
+                                            onKeyUp={[Function]}
+                                            onMouseDown={[Function]}
+                                            onMouseLeave={[Function]}
+                                            onMouseUp={[Function]}
+                                            onTouchEnd={[Function]}
+                                            onTouchMove={[Function]}
+                                            onTouchStart={[Function]}
+                                            tabIndex="-1"
+                                            type="submit"
+                                          >
+                                            <span
+                                              className="MuiButton-label-151"
+                                            >
+                                              Save
+                                            </span>
+                                          </button>
+                                        </ButtonBase>
+                                      </WithStyles(ButtonBase)>
+                                    </Button>
+                                  </WithStyles(Button)>
+                                </div>
+                              </Grid>
+                            </WithStyles(Grid)>
+                          </div>
+                        </Grid>
+                      </WithStyles(Grid)>
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </FormButtonBar>
+            </form>
+          </Component>
+        </Form>
+      </Formik>
+    </Form>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`Form without cancel link should render component 1`] = `
+.c0 {
+  margin-top: 24px;
+}
+
+<Form
+  initialValues={
+    Object {
+      "name": "Test",
+    }
+  }
+  onSubmit={[MockFunction]}
+  validationSchema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": undefined,
+      "_nodes": Array [
+        "name",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "fields": Object {
+        "name": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+    }
+  }
+>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "name": "Test",
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[MockFunction]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "name",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "name": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      }
+    }
+  >
+    <Form
+      autoComplete="off"
+    >
+      <Component
+        autoComplete="off"
+        formik={
+          Object {
+            "dirty": false,
+            "errors": Object {},
+            "handleBlur": [Function],
+            "handleChange": [Function],
+            "handleReset": [Function],
+            "handleSubmit": [Function],
+            "initialValues": Object {
+              "name": "Test",
+            },
+            "isSubmitting": false,
+            "isValid": false,
+            "isValidating": false,
+            "registerField": [Function],
+            "resetForm": [Function],
+            "setError": [Function],
+            "setErrors": [Function],
+            "setFieldError": [Function],
+            "setFieldTouched": [Function],
+            "setFieldValue": [Function],
+            "setFormikState": [Function],
+            "setStatus": [Function],
+            "setSubmitting": [Function],
+            "setTouched": [Function],
+            "setValues": [Function],
+            "status": undefined,
+            "submitCount": 0,
+            "submitForm": [Function],
+            "touched": Object {},
+            "unregisterField": [Function],
+            "validate": undefined,
+            "validateField": [Function],
+            "validateForm": [Function],
+            "validateOnBlur": true,
+            "validateOnChange": true,
+            "validationSchema": ObjectSchema {
+              "_blacklist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_conditions": Array [],
+              "_defaultDefault": [Function],
+              "_deps": Array [],
+              "_excludedEdges": Array [],
+              "_exclusive": Object {},
+              "_mutate": undefined,
+              "_nodes": Array [
+                "name",
+              ],
+              "_options": Object {
+                "abortEarly": true,
+                "recursive": true,
+              },
+              "_type": "object",
+              "_typeError": [Function],
+              "_whitelist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "fields": Object {
+                "name": StringSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {
+                    "required": true,
+                  },
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "string",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+              },
+              "tests": Array [],
+              "transforms": Array [
+                [Function],
+              ],
+            },
+            "values": Object {
+              "name": "Test",
+            },
+          }
+        }
+      >
+        <form
+          autoComplete="off"
+          onReset={[Function]}
+          onSubmit={[Function]}
+        >
+          <FormikTextField
+            fullWidth={true}
+            label="Name"
+            margin="normal"
+            name="name"
+          >
+            <FormikConnect(FieldInner)
+              component={[Function]}
+              fullWidth={true}
+              label="Name"
+              margin="normal"
+              name="name"
+            >
+              <FieldInner
+                component={[Function]}
+                formik={
+                  Object {
+                    "dirty": false,
+                    "errors": Object {},
+                    "handleBlur": [Function],
+                    "handleChange": [Function],
+                    "handleReset": [Function],
+                    "handleSubmit": [Function],
+                    "initialValues": Object {
+                      "name": "Test",
+                    },
+                    "isSubmitting": false,
+                    "isValid": false,
+                    "isValidating": false,
+                    "registerField": [Function],
+                    "resetForm": [Function],
+                    "setError": [Function],
+                    "setErrors": [Function],
+                    "setFieldError": [Function],
+                    "setFieldTouched": [Function],
+                    "setFieldValue": [Function],
+                    "setFormikState": [Function],
+                    "setStatus": [Function],
+                    "setSubmitting": [Function],
+                    "setTouched": [Function],
+                    "setValues": [Function],
+                    "status": undefined,
+                    "submitCount": 0,
+                    "submitForm": [Function],
+                    "touched": Object {},
+                    "unregisterField": [Function],
+                    "validate": undefined,
+                    "validateField": [Function],
+                    "validateForm": [Function],
+                    "validateOnBlur": true,
+                    "validateOnChange": true,
+                    "validationSchema": ObjectSchema {
+                      "_blacklist": RefSet {
+                        "list": Set {},
+                        "refs": Map {},
+                      },
+                      "_conditions": Array [],
+                      "_defaultDefault": [Function],
+                      "_deps": Array [],
+                      "_excludedEdges": Array [],
+                      "_exclusive": Object {},
+                      "_mutate": undefined,
+                      "_nodes": Array [
+                        "name",
+                      ],
+                      "_options": Object {
+                        "abortEarly": true,
+                        "recursive": true,
+                      },
+                      "_type": "object",
+                      "_typeError": [Function],
+                      "_whitelist": RefSet {
+                        "list": Set {},
+                        "refs": Map {},
+                      },
+                      "fields": Object {
+                        "name": StringSchema {
+                          "_blacklist": RefSet {
+                            "list": Set {},
+                            "refs": Map {},
+                          },
+                          "_conditions": Array [],
+                          "_deps": Array [],
+                          "_exclusive": Object {
+                            "required": true,
+                          },
+                          "_mutate": undefined,
+                          "_options": Object {
+                            "abortEarly": true,
+                            "recursive": true,
+                          },
+                          "_type": "string",
+                          "_typeError": [Function],
+                          "_whitelist": RefSet {
+                            "list": Set {},
+                            "refs": Map {},
+                          },
+                          "tests": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                      },
+                      "tests": Array [],
+                      "transforms": Array [
+                        [Function],
+                      ],
+                    },
+                    "values": Object {
+                      "name": "Test",
+                    },
+                  }
+                }
+                fullWidth={true}
+                label="Name"
+                margin="normal"
+                name="name"
+              >
+                <TextField
+                  field={
+                    Object {
+                      "name": "name",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "value": "Test",
+                    }
+                  }
+                  form={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialValues": Object {
+                        "name": "Test",
+                      },
+                      "isSubmitting": false,
+                      "isValid": false,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setError": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "status": undefined,
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "values": Object {
+                        "name": "Test",
+                      },
+                    }
+                  }
+                  fullWidth={true}
+                  label="Name"
+                  margin="normal"
+                >
+                  <TextField
+                    error={false}
+                    fullWidth={true}
+                    label="Name"
+                    margin="normal"
+                    name="name"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    required={false}
+                    select={false}
+                    value="Test"
+                    variant="standard"
+                  >
+                    <WithStyles(FormControl)
+                      error={false}
+                      fullWidth={true}
+                      margin="normal"
+                      required={false}
+                      variant="standard"
+                    >
+                      <FormControl
+                        classes={
+                          Object {
+                            "fullWidth": "MuiFormControl-fullWidth-4",
+                            "marginDense": "MuiFormControl-marginDense-3",
+                            "marginNormal": "MuiFormControl-marginNormal-2",
+                            "root": "MuiFormControl-root-1",
+                          }
+                        }
+                        component="div"
+                        disabled={false}
+                        error={false}
+                        fullWidth={true}
+                        margin="normal"
+                        required={false}
+                        variant="standard"
+                      >
+                        <div
+                          className="MuiFormControl-root-1 MuiFormControl-marginNormal-2 MuiFormControl-fullWidth-4"
+                        >
+                          <WithStyles(WithFormControlContext(InputLabel))>
+                            <WithFormControlContext(InputLabel)
+                              classes={
+                                Object {
+                                  "animated": "MuiInputLabel-animated-13",
+                                  "disabled": "MuiInputLabel-disabled-7",
+                                  "error": "MuiInputLabel-error-8",
+                                  "filled": "MuiInputLabel-filled-14",
+                                  "focused": "MuiInputLabel-focused-6",
+                                  "formControl": "MuiInputLabel-formControl-10",
+                                  "marginDense": "MuiInputLabel-marginDense-11",
+                                  "outlined": "MuiInputLabel-outlined-15",
+                                  "required": "MuiInputLabel-required-9",
+                                  "root": "MuiInputLabel-root-5",
+                                  "shrink": "MuiInputLabel-shrink-12",
+                                }
+                              }
+                            >
+                              <InputLabel
+                                classes={
+                                  Object {
+                                    "animated": "MuiInputLabel-animated-13",
+                                    "disabled": "MuiInputLabel-disabled-7",
+                                    "error": "MuiInputLabel-error-8",
+                                    "filled": "MuiInputLabel-filled-14",
+                                    "focused": "MuiInputLabel-focused-6",
+                                    "formControl": "MuiInputLabel-formControl-10",
+                                    "marginDense": "MuiInputLabel-marginDense-11",
+                                    "outlined": "MuiInputLabel-outlined-15",
+                                    "required": "MuiInputLabel-required-9",
+                                    "root": "MuiInputLabel-root-5",
+                                    "shrink": "MuiInputLabel-shrink-12",
+                                  }
+                                }
+                                disableAnimation={false}
+                                muiFormControl={
+                                  Object {
+                                    "adornedStart": false,
+                                    "disabled": false,
+                                    "error": false,
+                                    "filled": true,
+                                    "focused": false,
+                                    "margin": "normal",
+                                    "onBlur": [Function],
+                                    "onEmpty": [Function],
+                                    "onFilled": [Function],
+                                    "onFocus": [Function],
+                                    "required": false,
+                                    "variant": "standard",
+                                  }
+                                }
+                              >
+                                <WithStyles(WithFormControlContext(FormLabel))
+                                  className="MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                  classes={
+                                    Object {
+                                      "disabled": "MuiInputLabel-disabled-7",
+                                      "error": "MuiInputLabel-error-8",
+                                      "focused": "MuiInputLabel-focused-6",
+                                      "required": "MuiInputLabel-required-9",
+                                    }
+                                  }
+                                  data-shrink={true}
+                                >
+                                  <WithFormControlContext(FormLabel)
+                                    className="MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                    classes={
+                                      Object {
+                                        "asterisk": "MuiFormLabel-asterisk-22",
+                                        "disabled": "MuiFormLabel-disabled-18 MuiInputLabel-disabled-7",
+                                        "error": "MuiFormLabel-error-19 MuiInputLabel-error-8",
+                                        "filled": "MuiFormLabel-filled-20",
+                                        "focused": "MuiFormLabel-focused-17 MuiInputLabel-focused-6",
+                                        "required": "MuiFormLabel-required-21 MuiInputLabel-required-9",
+                                        "root": "MuiFormLabel-root-16",
+                                      }
+                                    }
+                                    data-shrink={true}
+                                  >
+                                    <FormLabel
+                                      className="MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                      classes={
+                                        Object {
+                                          "asterisk": "MuiFormLabel-asterisk-22",
+                                          "disabled": "MuiFormLabel-disabled-18 MuiInputLabel-disabled-7",
+                                          "error": "MuiFormLabel-error-19 MuiInputLabel-error-8",
+                                          "filled": "MuiFormLabel-filled-20",
+                                          "focused": "MuiFormLabel-focused-17 MuiInputLabel-focused-6",
+                                          "required": "MuiFormLabel-required-21 MuiInputLabel-required-9",
+                                          "root": "MuiFormLabel-root-16",
+                                        }
+                                      }
+                                      component="label"
+                                      data-shrink={true}
+                                      muiFormControl={
+                                        Object {
+                                          "adornedStart": false,
+                                          "disabled": false,
+                                          "error": false,
+                                          "filled": true,
+                                          "focused": false,
+                                          "margin": "normal",
+                                          "onBlur": [Function],
+                                          "onEmpty": [Function],
+                                          "onFilled": [Function],
+                                          "onFocus": [Function],
+                                          "required": false,
+                                          "variant": "standard",
+                                        }
+                                      }
+                                    >
+                                      <label
+                                        className="MuiFormLabel-root-16 MuiFormLabel-filled-20 MuiInputLabel-root-5 MuiInputLabel-formControl-10 MuiInputLabel-animated-13 MuiInputLabel-shrink-12"
+                                        data-shrink={true}
+                                      >
+                                        Name
+                                      </label>
+                                    </FormLabel>
+                                  </WithFormControlContext(FormLabel)>
+                                </WithStyles(WithFormControlContext(FormLabel))>
+                              </InputLabel>
+                            </WithFormControlContext(InputLabel)>
+                          </WithStyles(WithFormControlContext(InputLabel))>
+                          <WithStyles(Input)
+                            fullWidth={true}
+                            name="name"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value="Test"
+                          >
+                            <Input
+                              classes={
+                                Object {
+                                  "disabled": "MuiInput-disabled-26",
+                                  "error": "MuiInput-error-28",
+                                  "focused": "MuiInput-focused-25",
+                                  "formControl": "MuiInput-formControl-24",
+                                  "fullWidth": "MuiInput-fullWidth-30",
+                                  "input": "MuiInput-input-31",
+                                  "inputMarginDense": "MuiInput-inputMarginDense-32",
+                                  "inputMultiline": "MuiInput-inputMultiline-33",
+                                  "inputType": "MuiInput-inputType-34",
+                                  "inputTypeSearch": "MuiInput-inputTypeSearch-35",
+                                  "multiline": "MuiInput-multiline-29",
+                                  "root": "MuiInput-root-23",
+                                  "underline": "MuiInput-underline-27",
+                                }
+                              }
+                              fullWidth={true}
+                              name="name"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              value="Test"
+                            >
+                              <WithStyles(WithFormControlContext(InputBase))
+                                classes={
+                                  Object {
+                                    "disabled": "MuiInput-disabled-26",
+                                    "error": "MuiInput-error-28",
+                                    "focused": "MuiInput-focused-25",
+                                    "formControl": "MuiInput-formControl-24",
+                                    "fullWidth": "MuiInput-fullWidth-30",
+                                    "input": "MuiInput-input-31",
+                                    "inputMarginDense": "MuiInput-inputMarginDense-32",
+                                    "inputMultiline": "MuiInput-inputMultiline-33",
+                                    "inputType": "MuiInput-inputType-34",
+                                    "inputTypeSearch": "MuiInput-inputTypeSearch-35",
+                                    "multiline": "MuiInput-multiline-29",
+                                    "root": "MuiInput-root-23 MuiInput-underline-27",
+                                    "underline": null,
+                                  }
+                                }
+                                fullWidth={true}
+                                inputComponent="input"
+                                multiline={false}
+                                name="name"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                type="text"
+                                value="Test"
+                              >
+                                <WithFormControlContext(InputBase)
+                                  classes={
+                                    Object {
+                                      "adornedEnd": "MuiInputBase-adornedEnd-41",
+                                      "adornedStart": "MuiInputBase-adornedStart-40",
+                                      "disabled": "MuiInputBase-disabled-39 MuiInput-disabled-26",
+                                      "error": "MuiInputBase-error-42 MuiInput-error-28",
+                                      "focused": "MuiInputBase-focused-38 MuiInput-focused-25",
+                                      "formControl": "MuiInputBase-formControl-37 MuiInput-formControl-24",
+                                      "fullWidth": "MuiInputBase-fullWidth-45 MuiInput-fullWidth-30",
+                                      "input": "MuiInputBase-input-46 MuiInput-input-31",
+                                      "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-52",
+                                      "inputAdornedStart": "MuiInputBase-inputAdornedStart-51",
+                                      "inputMarginDense": "MuiInputBase-inputMarginDense-47 MuiInput-inputMarginDense-32",
+                                      "inputMultiline": "MuiInputBase-inputMultiline-48 MuiInput-inputMultiline-33",
+                                      "inputType": "MuiInputBase-inputType-49 MuiInput-inputType-34",
+                                      "inputTypeSearch": "MuiInputBase-inputTypeSearch-50 MuiInput-inputTypeSearch-35",
+                                      "marginDense": "MuiInputBase-marginDense-43",
+                                      "multiline": "MuiInputBase-multiline-44 MuiInput-multiline-29",
+                                      "root": "MuiInputBase-root-36 MuiInput-root-23 MuiInput-underline-27",
+                                    }
+                                  }
+                                  fullWidth={true}
+                                  inputComponent="input"
+                                  multiline={false}
+                                  name="name"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  type="text"
+                                  value="Test"
+                                >
+                                  <InputBase
+                                    classes={
+                                      Object {
+                                        "adornedEnd": "MuiInputBase-adornedEnd-41",
+                                        "adornedStart": "MuiInputBase-adornedStart-40",
+                                        "disabled": "MuiInputBase-disabled-39 MuiInput-disabled-26",
+                                        "error": "MuiInputBase-error-42 MuiInput-error-28",
+                                        "focused": "MuiInputBase-focused-38 MuiInput-focused-25",
+                                        "formControl": "MuiInputBase-formControl-37 MuiInput-formControl-24",
+                                        "fullWidth": "MuiInputBase-fullWidth-45 MuiInput-fullWidth-30",
+                                        "input": "MuiInputBase-input-46 MuiInput-input-31",
+                                        "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-52",
+                                        "inputAdornedStart": "MuiInputBase-inputAdornedStart-51",
+                                        "inputMarginDense": "MuiInputBase-inputMarginDense-47 MuiInput-inputMarginDense-32",
+                                        "inputMultiline": "MuiInputBase-inputMultiline-48 MuiInput-inputMultiline-33",
+                                        "inputType": "MuiInputBase-inputType-49 MuiInput-inputType-34",
+                                        "inputTypeSearch": "MuiInputBase-inputTypeSearch-50 MuiInput-inputTypeSearch-35",
+                                        "marginDense": "MuiInputBase-marginDense-43",
+                                        "multiline": "MuiInputBase-multiline-44 MuiInput-multiline-29",
+                                        "root": "MuiInputBase-root-36 MuiInput-root-23 MuiInput-underline-27",
+                                      }
+                                    }
+                                    fullWidth={true}
+                                    inputComponent="input"
+                                    muiFormControl={
+                                      Object {
+                                        "adornedStart": false,
+                                        "disabled": false,
+                                        "error": false,
+                                        "filled": true,
+                                        "focused": false,
+                                        "margin": "normal",
+                                        "onBlur": [Function],
+                                        "onEmpty": [Function],
+                                        "onFilled": [Function],
+                                        "onFocus": [Function],
+                                        "required": false,
+                                        "variant": "standard",
+                                      }
+                                    }
+                                    multiline={false}
+                                    name="name"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    type="text"
+                                    value="Test"
+                                  >
+                                    <div
+                                      className="MuiInputBase-root-36 MuiInput-root-23 MuiInput-underline-27 MuiInputBase-fullWidth-45 MuiInput-fullWidth-30 MuiInputBase-formControl-37 MuiInput-formControl-24"
+                                      onClick={[Function]}
+                                    >
+                                      <input
+                                        aria-invalid={false}
+                                        className="MuiInputBase-input-46 MuiInput-input-31"
+                                        disabled={false}
+                                        name="name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        required={false}
+                                        type="text"
+                                        value="Test"
+                                      />
+                                    </div>
+                                  </InputBase>
+                                </WithFormControlContext(InputBase)>
+                              </WithStyles(WithFormControlContext(InputBase))>
+                            </Input>
+                          </WithStyles(Input)>
+                        </div>
+                      </FormControl>
+                    </WithStyles(FormControl)>
+                  </TextField>
+                </TextField>
+              </FieldInner>
+            </FormikConnect(FieldInner)>
+          </FormikTextField>
+          <FormButtonBar>
+            <styled.div>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bdVaJa",
+                      "isStatic": true,
+                      "lastClassName": "c0",
+                      "rules": Array [
+                        "
+  margin-top: 24px;
+",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bdVaJa",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="c0"
+                >
+                  <WithStyles(Grid)
+                    container={true}
+                    justify="space-between"
+                  >
+                    <Grid
+                      alignContent="stretch"
+                      alignItems="stretch"
+                      classes={
+                        Object {
+                          "align-content-xs-center": "MuiGrid-align-content-xs-center-65",
+                          "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-67",
+                          "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-66",
+                          "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-69",
+                          "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-68",
+                          "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-64",
+                          "align-items-xs-center": "MuiGrid-align-items-xs-center-61",
+                          "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-63",
+                          "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-62",
+                          "container": "MuiGrid-container-53",
+                          "direction-xs-column": "MuiGrid-direction-xs-column-56",
+                          "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-57",
+                          "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-58",
+                          "grid-lg-1": "MuiGrid-grid-lg-1-124",
+                          "grid-lg-10": "MuiGrid-grid-lg-10-133",
+                          "grid-lg-11": "MuiGrid-grid-lg-11-134",
+                          "grid-lg-12": "MuiGrid-grid-lg-12-135",
+                          "grid-lg-2": "MuiGrid-grid-lg-2-125",
+                          "grid-lg-3": "MuiGrid-grid-lg-3-126",
+                          "grid-lg-4": "MuiGrid-grid-lg-4-127",
+                          "grid-lg-5": "MuiGrid-grid-lg-5-128",
+                          "grid-lg-6": "MuiGrid-grid-lg-6-129",
+                          "grid-lg-7": "MuiGrid-grid-lg-7-130",
+                          "grid-lg-8": "MuiGrid-grid-lg-8-131",
+                          "grid-lg-9": "MuiGrid-grid-lg-9-132",
+                          "grid-lg-auto": "MuiGrid-grid-lg-auto-122",
+                          "grid-lg-true": "MuiGrid-grid-lg-true-123",
+                          "grid-md-1": "MuiGrid-grid-md-1-110",
+                          "grid-md-10": "MuiGrid-grid-md-10-119",
+                          "grid-md-11": "MuiGrid-grid-md-11-120",
+                          "grid-md-12": "MuiGrid-grid-md-12-121",
+                          "grid-md-2": "MuiGrid-grid-md-2-111",
+                          "grid-md-3": "MuiGrid-grid-md-3-112",
+                          "grid-md-4": "MuiGrid-grid-md-4-113",
+                          "grid-md-5": "MuiGrid-grid-md-5-114",
+                          "grid-md-6": "MuiGrid-grid-md-6-115",
+                          "grid-md-7": "MuiGrid-grid-md-7-116",
+                          "grid-md-8": "MuiGrid-grid-md-8-117",
+                          "grid-md-9": "MuiGrid-grid-md-9-118",
+                          "grid-md-auto": "MuiGrid-grid-md-auto-108",
+                          "grid-md-true": "MuiGrid-grid-md-true-109",
+                          "grid-sm-1": "MuiGrid-grid-sm-1-96",
+                          "grid-sm-10": "MuiGrid-grid-sm-10-105",
+                          "grid-sm-11": "MuiGrid-grid-sm-11-106",
+                          "grid-sm-12": "MuiGrid-grid-sm-12-107",
+                          "grid-sm-2": "MuiGrid-grid-sm-2-97",
+                          "grid-sm-3": "MuiGrid-grid-sm-3-98",
+                          "grid-sm-4": "MuiGrid-grid-sm-4-99",
+                          "grid-sm-5": "MuiGrid-grid-sm-5-100",
+                          "grid-sm-6": "MuiGrid-grid-sm-6-101",
+                          "grid-sm-7": "MuiGrid-grid-sm-7-102",
+                          "grid-sm-8": "MuiGrid-grid-sm-8-103",
+                          "grid-sm-9": "MuiGrid-grid-sm-9-104",
+                          "grid-sm-auto": "MuiGrid-grid-sm-auto-94",
+                          "grid-sm-true": "MuiGrid-grid-sm-true-95",
+                          "grid-xl-1": "MuiGrid-grid-xl-1-138",
+                          "grid-xl-10": "MuiGrid-grid-xl-10-147",
+                          "grid-xl-11": "MuiGrid-grid-xl-11-148",
+                          "grid-xl-12": "MuiGrid-grid-xl-12-149",
+                          "grid-xl-2": "MuiGrid-grid-xl-2-139",
+                          "grid-xl-3": "MuiGrid-grid-xl-3-140",
+                          "grid-xl-4": "MuiGrid-grid-xl-4-141",
+                          "grid-xl-5": "MuiGrid-grid-xl-5-142",
+                          "grid-xl-6": "MuiGrid-grid-xl-6-143",
+                          "grid-xl-7": "MuiGrid-grid-xl-7-144",
+                          "grid-xl-8": "MuiGrid-grid-xl-8-145",
+                          "grid-xl-9": "MuiGrid-grid-xl-9-146",
+                          "grid-xl-auto": "MuiGrid-grid-xl-auto-136",
+                          "grid-xl-true": "MuiGrid-grid-xl-true-137",
+                          "grid-xs-1": "MuiGrid-grid-xs-1-82",
+                          "grid-xs-10": "MuiGrid-grid-xs-10-91",
+                          "grid-xs-11": "MuiGrid-grid-xs-11-92",
+                          "grid-xs-12": "MuiGrid-grid-xs-12-93",
+                          "grid-xs-2": "MuiGrid-grid-xs-2-83",
+                          "grid-xs-3": "MuiGrid-grid-xs-3-84",
+                          "grid-xs-4": "MuiGrid-grid-xs-4-85",
+                          "grid-xs-5": "MuiGrid-grid-xs-5-86",
+                          "grid-xs-6": "MuiGrid-grid-xs-6-87",
+                          "grid-xs-7": "MuiGrid-grid-xs-7-88",
+                          "grid-xs-8": "MuiGrid-grid-xs-8-89",
+                          "grid-xs-9": "MuiGrid-grid-xs-9-90",
+                          "grid-xs-auto": "MuiGrid-grid-xs-auto-80",
+                          "grid-xs-true": "MuiGrid-grid-xs-true-81",
+                          "item": "MuiGrid-item-54",
+                          "justify-xs-center": "MuiGrid-justify-xs-center-70",
+                          "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-71",
+                          "justify-xs-space-around": "MuiGrid-justify-xs-space-around-73",
+                          "justify-xs-space-between": "MuiGrid-justify-xs-space-between-72",
+                          "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-74",
+                          "spacing-xs-16": "MuiGrid-spacing-xs-16-76",
+                          "spacing-xs-24": "MuiGrid-spacing-xs-24-77",
+                          "spacing-xs-32": "MuiGrid-spacing-xs-32-78",
+                          "spacing-xs-40": "MuiGrid-spacing-xs-40-79",
+                          "spacing-xs-8": "MuiGrid-spacing-xs-8-75",
+                          "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-59",
+                          "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-60",
+                          "zeroMinWidth": "MuiGrid-zeroMinWidth-55",
+                        }
+                      }
+                      component="div"
+                      container={true}
+                      direction="row"
+                      item={false}
+                      justify="space-between"
+                      lg={false}
+                      md={false}
+                      sm={false}
+                      spacing={0}
+                      wrap="wrap"
+                      xl={false}
+                      xs={false}
+                      zeroMinWidth={false}
+                    >
+                      <div
+                        className="MuiGrid-container-53 MuiGrid-justify-xs-space-between-72"
+                      >
+                        <WithStyles(Grid)
+                          item={true}
+                        >
+                          <Grid
+                            alignContent="stretch"
+                            alignItems="stretch"
+                            classes={
+                              Object {
+                                "align-content-xs-center": "MuiGrid-align-content-xs-center-65",
+                                "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-67",
+                                "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-66",
+                                "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-69",
+                                "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-68",
+                                "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-64",
+                                "align-items-xs-center": "MuiGrid-align-items-xs-center-61",
+                                "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-63",
+                                "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-62",
+                                "container": "MuiGrid-container-53",
+                                "direction-xs-column": "MuiGrid-direction-xs-column-56",
+                                "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-57",
+                                "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-58",
+                                "grid-lg-1": "MuiGrid-grid-lg-1-124",
+                                "grid-lg-10": "MuiGrid-grid-lg-10-133",
+                                "grid-lg-11": "MuiGrid-grid-lg-11-134",
+                                "grid-lg-12": "MuiGrid-grid-lg-12-135",
+                                "grid-lg-2": "MuiGrid-grid-lg-2-125",
+                                "grid-lg-3": "MuiGrid-grid-lg-3-126",
+                                "grid-lg-4": "MuiGrid-grid-lg-4-127",
+                                "grid-lg-5": "MuiGrid-grid-lg-5-128",
+                                "grid-lg-6": "MuiGrid-grid-lg-6-129",
+                                "grid-lg-7": "MuiGrid-grid-lg-7-130",
+                                "grid-lg-8": "MuiGrid-grid-lg-8-131",
+                                "grid-lg-9": "MuiGrid-grid-lg-9-132",
+                                "grid-lg-auto": "MuiGrid-grid-lg-auto-122",
+                                "grid-lg-true": "MuiGrid-grid-lg-true-123",
+                                "grid-md-1": "MuiGrid-grid-md-1-110",
+                                "grid-md-10": "MuiGrid-grid-md-10-119",
+                                "grid-md-11": "MuiGrid-grid-md-11-120",
+                                "grid-md-12": "MuiGrid-grid-md-12-121",
+                                "grid-md-2": "MuiGrid-grid-md-2-111",
+                                "grid-md-3": "MuiGrid-grid-md-3-112",
+                                "grid-md-4": "MuiGrid-grid-md-4-113",
+                                "grid-md-5": "MuiGrid-grid-md-5-114",
+                                "grid-md-6": "MuiGrid-grid-md-6-115",
+                                "grid-md-7": "MuiGrid-grid-md-7-116",
+                                "grid-md-8": "MuiGrid-grid-md-8-117",
+                                "grid-md-9": "MuiGrid-grid-md-9-118",
+                                "grid-md-auto": "MuiGrid-grid-md-auto-108",
+                                "grid-md-true": "MuiGrid-grid-md-true-109",
+                                "grid-sm-1": "MuiGrid-grid-sm-1-96",
+                                "grid-sm-10": "MuiGrid-grid-sm-10-105",
+                                "grid-sm-11": "MuiGrid-grid-sm-11-106",
+                                "grid-sm-12": "MuiGrid-grid-sm-12-107",
+                                "grid-sm-2": "MuiGrid-grid-sm-2-97",
+                                "grid-sm-3": "MuiGrid-grid-sm-3-98",
+                                "grid-sm-4": "MuiGrid-grid-sm-4-99",
+                                "grid-sm-5": "MuiGrid-grid-sm-5-100",
+                                "grid-sm-6": "MuiGrid-grid-sm-6-101",
+                                "grid-sm-7": "MuiGrid-grid-sm-7-102",
+                                "grid-sm-8": "MuiGrid-grid-sm-8-103",
+                                "grid-sm-9": "MuiGrid-grid-sm-9-104",
+                                "grid-sm-auto": "MuiGrid-grid-sm-auto-94",
+                                "grid-sm-true": "MuiGrid-grid-sm-true-95",
+                                "grid-xl-1": "MuiGrid-grid-xl-1-138",
+                                "grid-xl-10": "MuiGrid-grid-xl-10-147",
+                                "grid-xl-11": "MuiGrid-grid-xl-11-148",
+                                "grid-xl-12": "MuiGrid-grid-xl-12-149",
+                                "grid-xl-2": "MuiGrid-grid-xl-2-139",
+                                "grid-xl-3": "MuiGrid-grid-xl-3-140",
+                                "grid-xl-4": "MuiGrid-grid-xl-4-141",
+                                "grid-xl-5": "MuiGrid-grid-xl-5-142",
+                                "grid-xl-6": "MuiGrid-grid-xl-6-143",
+                                "grid-xl-7": "MuiGrid-grid-xl-7-144",
+                                "grid-xl-8": "MuiGrid-grid-xl-8-145",
+                                "grid-xl-9": "MuiGrid-grid-xl-9-146",
+                                "grid-xl-auto": "MuiGrid-grid-xl-auto-136",
+                                "grid-xl-true": "MuiGrid-grid-xl-true-137",
+                                "grid-xs-1": "MuiGrid-grid-xs-1-82",
+                                "grid-xs-10": "MuiGrid-grid-xs-10-91",
+                                "grid-xs-11": "MuiGrid-grid-xs-11-92",
+                                "grid-xs-12": "MuiGrid-grid-xs-12-93",
+                                "grid-xs-2": "MuiGrid-grid-xs-2-83",
+                                "grid-xs-3": "MuiGrid-grid-xs-3-84",
+                                "grid-xs-4": "MuiGrid-grid-xs-4-85",
+                                "grid-xs-5": "MuiGrid-grid-xs-5-86",
+                                "grid-xs-6": "MuiGrid-grid-xs-6-87",
+                                "grid-xs-7": "MuiGrid-grid-xs-7-88",
+                                "grid-xs-8": "MuiGrid-grid-xs-8-89",
+                                "grid-xs-9": "MuiGrid-grid-xs-9-90",
+                                "grid-xs-auto": "MuiGrid-grid-xs-auto-80",
+                                "grid-xs-true": "MuiGrid-grid-xs-true-81",
+                                "item": "MuiGrid-item-54",
+                                "justify-xs-center": "MuiGrid-justify-xs-center-70",
+                                "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-71",
+                                "justify-xs-space-around": "MuiGrid-justify-xs-space-around-73",
+                                "justify-xs-space-between": "MuiGrid-justify-xs-space-between-72",
+                                "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-74",
+                                "spacing-xs-16": "MuiGrid-spacing-xs-16-76",
+                                "spacing-xs-24": "MuiGrid-spacing-xs-24-77",
+                                "spacing-xs-32": "MuiGrid-spacing-xs-32-78",
+                                "spacing-xs-40": "MuiGrid-spacing-xs-40-79",
+                                "spacing-xs-8": "MuiGrid-spacing-xs-8-75",
+                                "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-59",
+                                "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-60",
+                                "zeroMinWidth": "MuiGrid-zeroMinWidth-55",
+                              }
+                            }
+                            component="div"
+                            container={false}
+                            direction="row"
+                            item={true}
+                            justify="flex-start"
+                            lg={false}
+                            md={false}
+                            sm={false}
+                            spacing={0}
+                            wrap="wrap"
+                            xl={false}
+                            xs={false}
+                            zeroMinWidth={false}
+                          >
+                            <div
+                              className="MuiGrid-item-54"
+                            />
+                          </Grid>
+                        </WithStyles(Grid)>
+                        <WithStyles(Grid)
+                          item={true}
+                        >
+                          <Grid
+                            alignContent="stretch"
+                            alignItems="stretch"
+                            classes={
+                              Object {
+                                "align-content-xs-center": "MuiGrid-align-content-xs-center-65",
+                                "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-67",
+                                "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-66",
+                                "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-69",
+                                "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-68",
+                                "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-64",
+                                "align-items-xs-center": "MuiGrid-align-items-xs-center-61",
+                                "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-63",
+                                "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-62",
+                                "container": "MuiGrid-container-53",
+                                "direction-xs-column": "MuiGrid-direction-xs-column-56",
+                                "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-57",
+                                "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-58",
+                                "grid-lg-1": "MuiGrid-grid-lg-1-124",
+                                "grid-lg-10": "MuiGrid-grid-lg-10-133",
+                                "grid-lg-11": "MuiGrid-grid-lg-11-134",
+                                "grid-lg-12": "MuiGrid-grid-lg-12-135",
+                                "grid-lg-2": "MuiGrid-grid-lg-2-125",
+                                "grid-lg-3": "MuiGrid-grid-lg-3-126",
+                                "grid-lg-4": "MuiGrid-grid-lg-4-127",
+                                "grid-lg-5": "MuiGrid-grid-lg-5-128",
+                                "grid-lg-6": "MuiGrid-grid-lg-6-129",
+                                "grid-lg-7": "MuiGrid-grid-lg-7-130",
+                                "grid-lg-8": "MuiGrid-grid-lg-8-131",
+                                "grid-lg-9": "MuiGrid-grid-lg-9-132",
+                                "grid-lg-auto": "MuiGrid-grid-lg-auto-122",
+                                "grid-lg-true": "MuiGrid-grid-lg-true-123",
+                                "grid-md-1": "MuiGrid-grid-md-1-110",
+                                "grid-md-10": "MuiGrid-grid-md-10-119",
+                                "grid-md-11": "MuiGrid-grid-md-11-120",
+                                "grid-md-12": "MuiGrid-grid-md-12-121",
+                                "grid-md-2": "MuiGrid-grid-md-2-111",
+                                "grid-md-3": "MuiGrid-grid-md-3-112",
+                                "grid-md-4": "MuiGrid-grid-md-4-113",
+                                "grid-md-5": "MuiGrid-grid-md-5-114",
+                                "grid-md-6": "MuiGrid-grid-md-6-115",
+                                "grid-md-7": "MuiGrid-grid-md-7-116",
+                                "grid-md-8": "MuiGrid-grid-md-8-117",
+                                "grid-md-9": "MuiGrid-grid-md-9-118",
+                                "grid-md-auto": "MuiGrid-grid-md-auto-108",
+                                "grid-md-true": "MuiGrid-grid-md-true-109",
+                                "grid-sm-1": "MuiGrid-grid-sm-1-96",
+                                "grid-sm-10": "MuiGrid-grid-sm-10-105",
+                                "grid-sm-11": "MuiGrid-grid-sm-11-106",
+                                "grid-sm-12": "MuiGrid-grid-sm-12-107",
+                                "grid-sm-2": "MuiGrid-grid-sm-2-97",
+                                "grid-sm-3": "MuiGrid-grid-sm-3-98",
+                                "grid-sm-4": "MuiGrid-grid-sm-4-99",
+                                "grid-sm-5": "MuiGrid-grid-sm-5-100",
+                                "grid-sm-6": "MuiGrid-grid-sm-6-101",
+                                "grid-sm-7": "MuiGrid-grid-sm-7-102",
+                                "grid-sm-8": "MuiGrid-grid-sm-8-103",
+                                "grid-sm-9": "MuiGrid-grid-sm-9-104",
+                                "grid-sm-auto": "MuiGrid-grid-sm-auto-94",
+                                "grid-sm-true": "MuiGrid-grid-sm-true-95",
+                                "grid-xl-1": "MuiGrid-grid-xl-1-138",
+                                "grid-xl-10": "MuiGrid-grid-xl-10-147",
+                                "grid-xl-11": "MuiGrid-grid-xl-11-148",
+                                "grid-xl-12": "MuiGrid-grid-xl-12-149",
+                                "grid-xl-2": "MuiGrid-grid-xl-2-139",
+                                "grid-xl-3": "MuiGrid-grid-xl-3-140",
+                                "grid-xl-4": "MuiGrid-grid-xl-4-141",
+                                "grid-xl-5": "MuiGrid-grid-xl-5-142",
+                                "grid-xl-6": "MuiGrid-grid-xl-6-143",
+                                "grid-xl-7": "MuiGrid-grid-xl-7-144",
+                                "grid-xl-8": "MuiGrid-grid-xl-8-145",
+                                "grid-xl-9": "MuiGrid-grid-xl-9-146",
+                                "grid-xl-auto": "MuiGrid-grid-xl-auto-136",
+                                "grid-xl-true": "MuiGrid-grid-xl-true-137",
+                                "grid-xs-1": "MuiGrid-grid-xs-1-82",
+                                "grid-xs-10": "MuiGrid-grid-xs-10-91",
+                                "grid-xs-11": "MuiGrid-grid-xs-11-92",
+                                "grid-xs-12": "MuiGrid-grid-xs-12-93",
+                                "grid-xs-2": "MuiGrid-grid-xs-2-83",
+                                "grid-xs-3": "MuiGrid-grid-xs-3-84",
+                                "grid-xs-4": "MuiGrid-grid-xs-4-85",
+                                "grid-xs-5": "MuiGrid-grid-xs-5-86",
+                                "grid-xs-6": "MuiGrid-grid-xs-6-87",
+                                "grid-xs-7": "MuiGrid-grid-xs-7-88",
+                                "grid-xs-8": "MuiGrid-grid-xs-8-89",
+                                "grid-xs-9": "MuiGrid-grid-xs-9-90",
+                                "grid-xs-auto": "MuiGrid-grid-xs-auto-80",
+                                "grid-xs-true": "MuiGrid-grid-xs-true-81",
+                                "item": "MuiGrid-item-54",
+                                "justify-xs-center": "MuiGrid-justify-xs-center-70",
+                                "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-71",
+                                "justify-xs-space-around": "MuiGrid-justify-xs-space-around-73",
+                                "justify-xs-space-between": "MuiGrid-justify-xs-space-between-72",
+                                "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-74",
+                                "spacing-xs-16": "MuiGrid-spacing-xs-16-76",
+                                "spacing-xs-24": "MuiGrid-spacing-xs-24-77",
+                                "spacing-xs-32": "MuiGrid-spacing-xs-32-78",
+                                "spacing-xs-40": "MuiGrid-spacing-xs-40-79",
+                                "spacing-xs-8": "MuiGrid-spacing-xs-8-75",
+                                "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-59",
+                                "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-60",
+                                "zeroMinWidth": "MuiGrid-zeroMinWidth-55",
+                              }
+                            }
+                            component="div"
+                            container={false}
+                            direction="row"
+                            item={true}
+                            justify="flex-start"
+                            lg={false}
+                            md={false}
+                            sm={false}
+                            spacing={0}
+                            wrap="wrap"
+                            xl={false}
+                            xs={false}
+                            zeroMinWidth={false}
+                          >
+                            <div
+                              className="MuiGrid-item-54"
+                            >
+                              <WithStyles(Button)
+                                color="primary"
+                                disabled={true}
+                                type="submit"
+                                variant="contained"
+                              >
+                                <Button
+                                  classes={
+                                    Object {
+                                      "colorInherit": "MuiButton-colorInherit-171",
+                                      "contained": "MuiButton-contained-161",
+                                      "containedPrimary": "MuiButton-containedPrimary-162",
+                                      "containedSecondary": "MuiButton-containedSecondary-163",
+                                      "disabled": "MuiButton-disabled-170",
+                                      "extendedFab": "MuiButton-extendedFab-168",
+                                      "fab": "MuiButton-fab-167",
+                                      "flat": "MuiButton-flat-155",
+                                      "flatPrimary": "MuiButton-flatPrimary-156",
+                                      "flatSecondary": "MuiButton-flatSecondary-157",
+                                      "focusVisible": "MuiButton-focusVisible-169",
+                                      "fullWidth": "MuiButton-fullWidth-175",
+                                      "label": "MuiButton-label-151",
+                                      "mini": "MuiButton-mini-172",
+                                      "outlined": "MuiButton-outlined-158",
+                                      "outlinedPrimary": "MuiButton-outlinedPrimary-159",
+                                      "outlinedSecondary": "MuiButton-outlinedSecondary-160",
+                                      "raised": "MuiButton-raised-164",
+                                      "raisedPrimary": "MuiButton-raisedPrimary-165",
+                                      "raisedSecondary": "MuiButton-raisedSecondary-166",
+                                      "root": "MuiButton-root-150",
+                                      "sizeLarge": "MuiButton-sizeLarge-174",
+                                      "sizeSmall": "MuiButton-sizeSmall-173",
+                                      "text": "MuiButton-text-152",
+                                      "textPrimary": "MuiButton-textPrimary-153",
+                                      "textSecondary": "MuiButton-textSecondary-154",
+                                    }
+                                  }
+                                  color="primary"
+                                  component="button"
+                                  disableFocusRipple={false}
+                                  disabled={true}
+                                  fullWidth={false}
+                                  mini={false}
+                                  size="medium"
+                                  type="submit"
+                                  variant="contained"
+                                >
+                                  <WithStyles(ButtonBase)
+                                    className="MuiButton-root-150 MuiButton-contained-161 MuiButton-containedPrimary-162 MuiButton-raised-164 MuiButton-raisedPrimary-165 MuiButton-disabled-170"
+                                    component="button"
+                                    disabled={true}
+                                    focusRipple={true}
+                                    focusVisibleClassName="MuiButton-focusVisible-169"
+                                    type="submit"
+                                  >
+                                    <ButtonBase
+                                      centerRipple={false}
+                                      className="MuiButton-root-150 MuiButton-contained-161 MuiButton-containedPrimary-162 MuiButton-raised-164 MuiButton-raisedPrimary-165 MuiButton-disabled-170"
+                                      classes={
+                                        Object {
+                                          "disabled": "MuiButtonBase-disabled-177",
+                                          "focusVisible": "MuiButtonBase-focusVisible-178",
+                                          "root": "MuiButtonBase-root-176",
+                                        }
+                                      }
+                                      component="button"
+                                      disableRipple={false}
+                                      disableTouchRipple={false}
+                                      disabled={true}
+                                      focusRipple={true}
+                                      focusVisibleClassName="MuiButton-focusVisible-169"
+                                      tabIndex="0"
+                                      type="submit"
+                                    >
+                                      <button
+                                        className="MuiButtonBase-root-176 MuiButtonBase-disabled-177 MuiButton-root-150 MuiButton-contained-161 MuiButton-containedPrimary-162 MuiButton-raised-164 MuiButton-raisedPrimary-165 MuiButton-disabled-170"
+                                        disabled={true}
+                                        onBlur={[Function]}
+                                        onContextMenu={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseUp={[Function]}
+                                        onTouchEnd={[Function]}
+                                        onTouchMove={[Function]}
+                                        onTouchStart={[Function]}
+                                        tabIndex="-1"
+                                        type="submit"
+                                      >
+                                        <span
+                                          className="MuiButton-label-151"
+                                        >
+                                          Save
+                                        </span>
+                                      </button>
+                                    </ButtonBase>
+                                  </WithStyles(ButtonBase)>
+                                </Button>
+                              </WithStyles(Button)>
+                            </div>
+                          </Grid>
+                        </WithStyles(Grid)>
+                      </div>
+                    </Grid>
+                  </WithStyles(Grid)>
+                </div>
+              </StyledComponent>
+            </styled.div>
+          </FormButtonBar>
+        </form>
+      </Component>
+    </Form>
+  </Formik>
+</Form>
+`;

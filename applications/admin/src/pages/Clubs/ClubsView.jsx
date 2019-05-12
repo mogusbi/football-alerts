@@ -26,8 +26,8 @@ function ClubsView ({deleteHandler, match: {params: {id}}, submitHandler}) {
           return (
             <ClubsForm
               club={getClub}
-              deleteHandler={() => deleteHandler(id)}
-              onSubmit={(input) => submitHandler(id, input)}
+              deleteHandler={deleteHandler}
+              onSubmit={(input) => submitHandler(input)}
             />
           );
         }
@@ -46,12 +46,12 @@ ClubsView.propTypes = {
   submitHandler: PropTypes.func.isRequired
 };
 
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps (dispatch, {match: {params: {id}}}) {
   return {
-    deleteHandler (id) {
+    deleteHandler () {
       return dispatch(deleteClub(id));
     },
-    submitHandler (id, input) {
+    submitHandler (input) {
       return dispatch(updateClub(id, input));
     }
   };

@@ -1,7 +1,6 @@
 export const getClub = `
   query GetClub($id: ID!) {
     getClub(id: $id) {
-      id
       name
       twitterHandle
       website

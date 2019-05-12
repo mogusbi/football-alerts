@@ -1,12 +1,11 @@
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import {Form, Formik} from 'formik';
 import {FormikTextField} from 'formik-material-fields';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {Fragment} from 'react';
 import * as Yup from 'yup';
+import Form from '../../components/Form';
 import FormButtonBar from '../../components/FormButtonBar';
-import LinkButton from '../../components/LinkButton';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Club name is required'),
@@ -16,109 +15,79 @@ const schema = Yup.object().shape({
 
 function ClubsForm ({club, deleteHandler, onSubmit}) {
   return (
-    <Formik
-      initialValues={club}
-      onSubmit={onSubmit}
-      validationSchema={schema}
-    >
-      {({isValid}) => (
-        <Form autoComplete='off'>
+    <Fragment>
+      <Form
+        cancelLink='/clubs'
+        initialValues={club}
+        onSubmit={onSubmit}
+        validationSchema={schema}
+      >
+        <Grid
+          container
+          spacing={24}
+        >
           <Grid
-            container
-            spacing={24}
+            item
+            xs={12}
           >
-            <Grid
-              item
-              xs={12}
-            >
-              <FormikTextField
-                fullWidth
-                label='Name'
-                margin='normal'
-                name='name'
-              />
-            </Grid>
-
-            <Grid
-              item
-              sm={6}
-              xs={12}
-            >
-              <FormikTextField
-                fullWidth
-                label='Website'
-                margin='normal'
-                name='website'
-              />
-            </Grid>
-
-            <Grid
-              item
-              sm={6}
-              xs={12}
-            >
-              <FormikTextField
-                fullWidth
-                label='Twitter handle'
-                margin='normal'
-                name='twitterHandle'
-              />
-            </Grid>
+            <FormikTextField
+              fullWidth
+              label='Name'
+              margin='normal'
+              name='name'
+            />
           </Grid>
 
-          <FormButtonBar>
-            <Grid
-              container
-              justify='space-between'
-            >
-              <Grid item>
-                <LinkButton
-                  color='secondary'
-                  to='/clubs'
-                  variant='contained'
-                >
-                  Cancel
-                </LinkButton>
-              </Grid>
+          <Grid
+            item
+            sm={6}
+            xs={12}
+          >
+            <FormikTextField
+              fullWidth
+              label='Website'
+              margin='normal'
+              name='website'
+            />
+          </Grid>
 
-              <Grid item>
+          <Grid
+            item
+            sm={6}
+            xs={12}
+          >
+            <FormikTextField
+              fullWidth
+              label='Twitter handle'
+              margin='normal'
+              name='twitterHandle'
+            />
+          </Grid>
+        </Grid>
+      </Form>
+      {
+        deleteHandler && (
+          <FormButtonBar>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
+              >
                 <Button
-                  color='primary'
-                  disabled={!isValid}
-                  type='submit'
+                  color='secondary'
+                  onClick={deleteHandler}
                   variant='contained'
                 >
-                  Save
+                  Delete
+                  {' '}
+                  {club.name}
                 </Button>
               </Grid>
             </Grid>
           </FormButtonBar>
-
-          {
-            deleteHandler && (
-              <FormButtonBar>
-                <Grid container>
-                  <Grid
-                    item
-                    xs={12}
-                  >
-                    <Button
-                      color='secondary'
-                      onClick={deleteHandler}
-                      variant='contained'
-                    >
-                      Delete
-                      {' '}
-                      {club.name}
-                    </Button>
-                  </Grid>
-                </Grid>
-              </FormButtonBar>
-            )
-          }
-        </Form>
-      )}
-    </Formik>
+        )
+      }
+    </Fragment>
   );
 }
 
