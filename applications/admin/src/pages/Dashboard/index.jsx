@@ -1,12 +1,8 @@
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo} from 'react';
-import LinkButton from '../../components/LinkButton';
 import PageTitle from '../../components/PageTitle';
+import DashboardPod from './DashboardPod';
 
 function Index ({match: {params: {clubId}}}) {
   return (
@@ -23,30 +19,24 @@ function Index ({match: {params: {clubId}}}) {
           sm={6}
           xs={12}
         >
-          <Card>
-            <CardContent>
-              <Typography
-                component='h3'
-                gutterBottom
-                variant='h5'
-              >
-                Articles
-              </Typography>
+          <DashboardPod
+            content='View and manage imported articles'
+            link={`/clubs/${clubId}/articles`}
+            title='Articles'
+          />
+        </Grid>
 
-              <Typography component='p'>
-                View and manage imported articles
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <LinkButton
-                color='primary'
-                size='small'
-                to={`/clubs/${clubId}/articles`}
-              >
-                Go to articles
-              </LinkButton>
-            </CardActions>
-          </Card>
+        <Grid
+          item
+          md={4}
+          sm={6}
+          xs={12}
+        >
+          <DashboardPod
+            content='View and manage club alert sources '
+            link={`/clubs/${clubId}/sources`}
+            title='Sources'
+          />
         </Grid>
       </Grid>
     </Fragment>
