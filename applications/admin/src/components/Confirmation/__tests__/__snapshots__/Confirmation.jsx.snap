@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation when closed should render component 1`] = `
+<Confirmation
+  closeHandler={[MockFunction]}
+  confirmHandler={[MockFunction]}
+  message="This is a message"
+  open={false}
+  title="Test confirmation"
+>
+  <WithStyles(Dialog)
+    aria-describedby="confirmation-dialog-description"
+    aria-labelledby="confirmation-dialog-title"
+    onClose={[MockFunction]}
+    open={false}
+  >
+    <Dialog
+      PaperComponent={[Function]}
+      TransitionComponent={[Function]}
+      aria-describedby="confirmation-dialog-description"
+      aria-labelledby="confirmation-dialog-title"
+      classes={
+        Object {
+          "container": "MuiDialog-container-4",
+          "paper": "MuiDialog-paper-5",
+          "paperFullScreen": "MuiDialog-paperFullScreen-14",
+          "paperFullWidth": "MuiDialog-paperFullWidth-13",
+          "paperScrollBody": "MuiDialog-paperScrollBody-7",
+          "paperScrollPaper": "MuiDialog-paperScrollPaper-6",
+          "paperWidthLg": "MuiDialog-paperWidthLg-11",
+          "paperWidthMd": "MuiDialog-paperWidthMd-10",
+          "paperWidthSm": "MuiDialog-paperWidthSm-9",
+          "paperWidthXl": "MuiDialog-paperWidthXl-12",
+          "paperWidthXs": "MuiDialog-paperWidthXs-8",
+          "root": "MuiDialog-root-1",
+          "scrollBody": "MuiDialog-scrollBody-3",
+          "scrollPaper": "MuiDialog-scrollPaper-2",
+        }
+      }
+      disableBackdropClick={false}
+      disableEscapeKeyDown={false}
+      fullScreen={false}
+      fullWidth={false}
+      maxWidth="sm"
+      onClose={[MockFunction]}
+      open={false}
+      scroll="paper"
+      transitionDuration={
+        Object {
+          "enter": 225,
+          "exit": 195,
+        }
+      }
+    >
+      <WithStyles(Modal)
+        BackdropProps={
+          Object {
+            "transitionDuration": Object {
+              "enter": 225,
+              "exit": 195,
+            },
+          }
+        }
+        aria-describedby="confirmation-dialog-description"
+        aria-labelledby="confirmation-dialog-title"
+        className="MuiDialog-root-1"
+        closeAfterTransition={true}
+        disableBackdropClick={false}
+        disableEscapeKeyDown={false}
+        onClose={[MockFunction]}
+        open={false}
+        role="dialog"
+      >
+        <Modal
+          BackdropComponent={[Function]}
+          BackdropProps={
+            Object {
+              "transitionDuration": Object {
+                "enter": 225,
+                "exit": 195,
+              },
+            }
+          }
+          aria-describedby="confirmation-dialog-description"
+          aria-labelledby="confirmation-dialog-title"
+          className="MuiDialog-root-1"
+          classes={
+            Object {
+              "hidden": "MuiModal-hidden-16",
+              "root": "MuiModal-root-15",
+            }
+          }
+          closeAfterTransition={true}
+          disableAutoFocus={false}
+          disableBackdropClick={false}
+          disableEnforceFocus={false}
+          disableEscapeKeyDown={false}
+          disablePortal={false}
+          disableRestoreFocus={false}
+          hideBackdrop={false}
+          keepMounted={false}
+          manager={
+            ModalManager {
+              "data": Array [],
+              "handleContainerOverflow": true,
+              "hideSiblingNodes": true,
+              "modals": Array [],
+            }
+          }
+          onClose={[MockFunction]}
+          open={false}
+          role="dialog"
+        />
+      </WithStyles(Modal)>
+    </Dialog>
+  </WithStyles(Dialog)>
+</Confirmation>
+`;
+
+exports[`Confirmation when open should render component 1`] = `
+<Dialog
+  PaperComponent={[Function]}
+  TransitionComponent={[Function]}
+  aria-describedby="confirmation-dialog-description"
+  aria-labelledby="confirmation-dialog-title"
+  classes={
+    Object {
+      "container": "MuiDialog-container-4",
+      "paper": "MuiDialog-paper-5",
+      "paperFullScreen": "MuiDialog-paperFullScreen-14",
+      "paperFullWidth": "MuiDialog-paperFullWidth-13",
+      "paperScrollBody": "MuiDialog-paperScrollBody-7",
+      "paperScrollPaper": "MuiDialog-paperScrollPaper-6",
+      "paperWidthLg": "MuiDialog-paperWidthLg-11",
+      "paperWidthMd": "MuiDialog-paperWidthMd-10",
+      "paperWidthSm": "MuiDialog-paperWidthSm-9",
+      "paperWidthXl": "MuiDialog-paperWidthXl-12",
+      "paperWidthXs": "MuiDialog-paperWidthXs-8",
+      "root": "MuiDialog-root-1",
+      "scrollBody": "MuiDialog-scrollBody-3",
+      "scrollPaper": "MuiDialog-scrollPaper-2",
+    }
+  }
+  disableBackdropClick={false}
+  disableEscapeKeyDown={false}
+  fullScreen={false}
+  fullWidth={false}
+  maxWidth="sm"
+  onClose={[MockFunction]}
+  open={true}
+  scroll="paper"
+  transitionDuration={
+    Object {
+      "enter": 225,
+      "exit": 195,
+    }
+  }
+>
+  <WithStyles(DialogTitle)
+    id="confirmation-dialog-title"
+  >
+    Test confirmation
+  </WithStyles(DialogTitle)>
+  <WithStyles(DialogContent)>
+    <WithStyles(DialogContentText)
+      id="confirmation-dialog-description"
+    >
+      This is a message
+    </WithStyles(DialogContentText)>
+  </WithStyles(DialogContent)>
+  <WithStyles(DialogActions)>
+    <WithStyles(Button)
+      color="primary"
+      id="confirmation-dialog-cancel"
+      onClick={[MockFunction]}
+    >
+      Cancel
+    </WithStyles(Button)>
+    <WithStyles(Button)
+      color="primary"
+      id="confirmation-dialog-yes"
+      onClick={[MockFunction]}
+    >
+      Yes
+    </WithStyles(Button)>
+  </WithStyles(DialogActions)>
+</Dialog>
+`;

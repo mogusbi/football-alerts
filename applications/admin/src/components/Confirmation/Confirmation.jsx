@@ -27,12 +27,14 @@ function Confirmation ({closeHandler, confirmHandler, message, open, title}) {
         <Button
           color='primary'
           onClick={closeHandler}
+          id='confirmation-dialog-cancel'
         >
           Cancel
         </Button>
         <Button
           color='primary'
           onClick={confirmHandler}
+          id='confirmation-dialog-yes'
         >
           Yes
         </Button>
