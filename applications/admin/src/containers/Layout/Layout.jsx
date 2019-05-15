@@ -1,6 +1,5 @@
 import Auth from '@aws-amplify/auth';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
@@ -16,12 +15,6 @@ import Loader from '../../components/Loader';
 import Message from '../../components/Message';
 
 const Main = styled.main`
-  flex-grow: 1;
-  overflow: auto;
-  padding: 24px;
-`;
-
-const Outline = styled.main`
   flex-grow: 1;
   overflow: auto;
   padding: 24px;
@@ -70,13 +63,9 @@ function Layout ({
         openDrawer={openDrawerHandler}
       />
 
-      <Outline>
-        <Paper>
-          <Main>
-            {children}
-          </Main>
-        </Paper>
-      </Outline>
+      <Main>
+        {children}
+      </Main>
 
       <Alert
         closeHandler={closeDialogHandler}

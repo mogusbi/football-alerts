@@ -15,11 +15,12 @@ exports[`DataTable with more data to load should render component 1`] = `
   loadMore="load-more-key"
   loadMoreHandler={[MockFunction]}
 >
-  <styled.div>
+  <Styled(WithStyles(Paper))>
     <StyledComponent
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
+          "Naked": [Function],
           "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
@@ -31,11 +32,374 @@ exports[`DataTable with more data to load should render component 1`] = `
 ",
             ],
           },
-          "displayName": "styled.div",
+          "displayName": "Styled(WithStyles(Paper))",
           "foldedComponentIds": Array [],
+          "options": Object {
+            "defaultTheme": Object {
+              "breakpoints": Object {
+                "between": [Function],
+                "down": [Function],
+                "keys": Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ],
+                "only": [Function],
+                "up": [Function],
+                "values": Object {
+                  "lg": 1280,
+                  "md": 960,
+                  "sm": 600,
+                  "xl": 1920,
+                  "xs": 0,
+                },
+                "width": [Function],
+              },
+              "direction": "ltr",
+              "mixins": Object {
+                "gutters": [Function],
+                "toolbar": Object {
+                  "@media (min-width:0px) and (orientation: landscape)": Object {
+                    "minHeight": 48,
+                  },
+                  "@media (min-width:600px)": Object {
+                    "minHeight": 64,
+                  },
+                  "minHeight": 56,
+                },
+              },
+              "overrides": Object {},
+              "palette": Object {
+                "action": Object {
+                  "active": "rgba(0, 0, 0, 0.54)",
+                  "disabled": "rgba(0, 0, 0, 0.26)",
+                  "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                  "hover": "rgba(0, 0, 0, 0.08)",
+                  "hoverOpacity": 0.08,
+                  "selected": "rgba(0, 0, 0, 0.14)",
+                },
+                "augmentColor": [Function],
+                "background": Object {
+                  "default": "#fafafa",
+                  "paper": "#fff",
+                },
+                "common": Object {
+                  "black": "#000",
+                  "white": "#fff",
+                },
+                "contrastThreshold": 3,
+                "divider": "rgba(0, 0, 0, 0.12)",
+                "error": Object {
+                  "contrastText": "#fff",
+                  "dark": "#d32f2f",
+                  "light": "#e57373",
+                  "main": "#f44336",
+                },
+                "getContrastText": [Function],
+                "grey": Object {
+                  "100": "#f5f5f5",
+                  "200": "#eeeeee",
+                  "300": "#e0e0e0",
+                  "400": "#bdbdbd",
+                  "50": "#fafafa",
+                  "500": "#9e9e9e",
+                  "600": "#757575",
+                  "700": "#616161",
+                  "800": "#424242",
+                  "900": "#212121",
+                  "A100": "#d5d5d5",
+                  "A200": "#aaaaaa",
+                  "A400": "#303030",
+                  "A700": "#616161",
+                },
+                "primary": Object {
+                  "contrastText": "#fff",
+                  "dark": "#303f9f",
+                  "light": "#7986cb",
+                  "main": "#3f51b5",
+                },
+                "secondary": Object {
+                  "contrastText": "#fff",
+                  "dark": "#c51162",
+                  "light": "#ff4081",
+                  "main": "#f50057",
+                },
+                "text": Object {
+                  "disabled": "rgba(0, 0, 0, 0.38)",
+                  "hint": "rgba(0, 0, 0, 0.38)",
+                  "primary": "rgba(0, 0, 0, 0.87)",
+                  "secondary": "rgba(0, 0, 0, 0.54)",
+                },
+                "tonalOffset": 0.2,
+                "type": "light",
+              },
+              "props": Object {},
+              "shadows": Array [
+                "none",
+                "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+              ],
+              "shape": Object {
+                "borderRadius": 4,
+              },
+              "spacing": Object {
+                "unit": 8,
+              },
+              "transitions": Object {
+                "create": [Function],
+                "duration": Object {
+                  "complex": 375,
+                  "enteringScreen": 225,
+                  "leavingScreen": 195,
+                  "short": 250,
+                  "shorter": 200,
+                  "shortest": 150,
+                  "standard": 300,
+                },
+                "easing": Object {
+                  "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                  "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                  "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                  "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                },
+                "getAutoHeightDuration": [Function],
+              },
+              "typography": Object {
+                "body1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.46429em",
+                },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
+                "body2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
+                },
+                "button": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.75,
+                  "textTransform": "uppercase",
+                },
+                "caption": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
+                },
+                "display1": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.20588em",
+                },
+                "display2": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.8125rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.13333em",
+                  "marginLeft": "-.02em",
+                },
+                "display3": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "-.02em",
+                  "lineHeight": "1.30357em",
+                  "marginLeft": "-.02em",
+                },
+                "display4": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "7rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-.04em",
+                  "lineHeight": "1.14286em",
+                  "marginLeft": "-.04em",
+                },
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": 14,
+                "fontWeightLight": 300,
+                "fontWeightMedium": 500,
+                "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
+                "headline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
+                },
+                "pxToRem": [Function],
+                "round": [Function],
+                "subheading": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.5em",
+                },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
+                "title": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.3125rem",
+                  "fontWeight": 500,
+                  "lineHeight": "1.16667em",
+                },
+                "useNextVariants": false,
+              },
+              "zIndex": Object {
+                "appBar": 1100,
+                "drawer": 1200,
+                "mobileStepper": 1000,
+                "modal": 1300,
+                "snackbar": 1400,
+                "tooltip": 1500,
+              },
+            },
+            "name": "MuiPaper",
+          },
           "render": [Function],
           "styledComponentId": "sc-bdVaJa",
-          "target": "div",
+          "target": [Function],
           "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
@@ -43,520 +407,968 @@ exports[`DataTable with more data to load should render component 1`] = `
       }
       forwardedRef={null}
     >
-      <div
+      <WithStyles(Paper)
         className="c0"
       >
-        <WithStyles(Table)>
-          <Table
-            classes={
-              Object {
-                "root": "MuiTable-root-1",
-              }
+        <Paper
+          className="c0"
+          classes={
+            Object {
+              "elevation0": "MuiPaper-elevation0-3",
+              "elevation1": "MuiPaper-elevation1-4",
+              "elevation10": "MuiPaper-elevation10-13",
+              "elevation11": "MuiPaper-elevation11-14",
+              "elevation12": "MuiPaper-elevation12-15",
+              "elevation13": "MuiPaper-elevation13-16",
+              "elevation14": "MuiPaper-elevation14-17",
+              "elevation15": "MuiPaper-elevation15-18",
+              "elevation16": "MuiPaper-elevation16-19",
+              "elevation17": "MuiPaper-elevation17-20",
+              "elevation18": "MuiPaper-elevation18-21",
+              "elevation19": "MuiPaper-elevation19-22",
+              "elevation2": "MuiPaper-elevation2-5",
+              "elevation20": "MuiPaper-elevation20-23",
+              "elevation21": "MuiPaper-elevation21-24",
+              "elevation22": "MuiPaper-elevation22-25",
+              "elevation23": "MuiPaper-elevation23-26",
+              "elevation24": "MuiPaper-elevation24-27",
+              "elevation3": "MuiPaper-elevation3-6",
+              "elevation4": "MuiPaper-elevation4-7",
+              "elevation5": "MuiPaper-elevation5-8",
+              "elevation6": "MuiPaper-elevation6-9",
+              "elevation7": "MuiPaper-elevation7-10",
+              "elevation8": "MuiPaper-elevation8-11",
+              "elevation9": "MuiPaper-elevation9-12",
+              "root": "MuiPaper-root-1",
+              "rounded": "MuiPaper-rounded-2",
             }
-            component="table"
-            padding="default"
+          }
+          component="div"
+          elevation={2}
+          square={false}
+        >
+          <div
+            className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2 c0"
           >
-            <table
-              className="MuiTable-root-1"
-            >
-              <WithStyles(TableHead)>
-                <TableHead
-                  classes={
-                    Object {
-                      "root": "MuiTableHead-root-2",
-                    }
+            <WithStyles(Table)>
+              <Table
+                classes={
+                  Object {
+                    "root": "MuiTable-root-28",
                   }
-                  component="thead"
+                }
+                component="table"
+                padding="default"
+              >
+                <table
+                  className="MuiTable-root-28"
                 >
-                  <thead
-                    className="MuiTableHead-root-2"
-                  >
-                    <DataTableRow>
-                      <WithStyles(TableRow)>
-                        <TableRow
-                          classes={
-                            Object {
-                              "footer": "MuiTableRow-footer-7",
-                              "head": "MuiTableRow-head-6",
-                              "hover": "MuiTableRow-hover-5",
-                              "root": "MuiTableRow-root-3",
-                              "selected": "MuiTableRow-selected-4",
-                            }
-                          }
-                          component="tr"
-                          hover={false}
-                          selected={false}
-                        >
-                          <tr
-                            className="MuiTableRow-root-3 MuiTableRow-head-6"
-                          >
-                            <DataTableCell
-                              key="Column 1"
-                            >
-                              <WithStyles(TableCell)>
-                                <TableCell
-                                  align="inherit"
-                                  classes={
-                                    Object {
-                                      "alignCenter": "MuiTableCell-alignCenter-17",
-                                      "alignJustify": "MuiTableCell-alignJustify-19",
-                                      "alignLeft": "MuiTableCell-alignLeft-16",
-                                      "alignRight": "MuiTableCell-alignRight-18",
-                                      "body": "MuiTableCell-body-10",
-                                      "footer": "MuiTableCell-footer-11",
-                                      "head": "MuiTableCell-head-9",
-                                      "numeric": "MuiTableCell-numeric-12",
-                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                      "paddingDense": "MuiTableCell-paddingDense-13",
-                                      "paddingNone": "MuiTableCell-paddingNone-15",
-                                      "root": "MuiTableCell-root-8",
-                                    }
-                                  }
-                                >
-                                  <th
-                                    aria-sort={null}
-                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
-                                    scope="col"
-                                  >
-                                    Column 1
-                                  </th>
-                                </TableCell>
-                              </WithStyles(TableCell)>
-                            </DataTableCell>
-                            <DataTableCell
-                              key="Column 2"
-                            >
-                              <WithStyles(TableCell)>
-                                <TableCell
-                                  align="inherit"
-                                  classes={
-                                    Object {
-                                      "alignCenter": "MuiTableCell-alignCenter-17",
-                                      "alignJustify": "MuiTableCell-alignJustify-19",
-                                      "alignLeft": "MuiTableCell-alignLeft-16",
-                                      "alignRight": "MuiTableCell-alignRight-18",
-                                      "body": "MuiTableCell-body-10",
-                                      "footer": "MuiTableCell-footer-11",
-                                      "head": "MuiTableCell-head-9",
-                                      "numeric": "MuiTableCell-numeric-12",
-                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                      "paddingDense": "MuiTableCell-paddingDense-13",
-                                      "paddingNone": "MuiTableCell-paddingNone-15",
-                                      "root": "MuiTableCell-root-8",
-                                    }
-                                  }
-                                >
-                                  <th
-                                    aria-sort={null}
-                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
-                                    scope="col"
-                                  >
-                                    Column 2
-                                  </th>
-                                </TableCell>
-                              </WithStyles(TableCell)>
-                            </DataTableCell>
-                          </tr>
-                        </TableRow>
-                      </WithStyles(TableRow)>
-                    </DataTableRow>
-                  </thead>
-                </TableHead>
-              </WithStyles(TableHead)>
-              <WithStyles(TableBody)>
-                <TableBody
-                  classes={
-                    Object {
-                      "root": "MuiTableBody-root-20",
-                    }
-                  }
-                  component="tbody"
-                >
-                  <tbody
-                    className="MuiTableBody-root-20"
-                  >
-                    <Children>
-                      <DataTableRow>
-                        <WithStyles(TableRow)>
-                          <TableRow
-                            classes={
-                              Object {
-                                "footer": "MuiTableRow-footer-7",
-                                "head": "MuiTableRow-head-6",
-                                "hover": "MuiTableRow-hover-5",
-                                "root": "MuiTableRow-root-3",
-                                "selected": "MuiTableRow-selected-4",
+                  <WithStyles(TableHead)>
+                    <TableHead
+                      classes={
+                        Object {
+                          "root": "MuiTableHead-root-29",
+                        }
+                      }
+                      component="thead"
+                    >
+                      <thead
+                        className="MuiTableHead-root-29"
+                      >
+                        <DataTableRow>
+                          <WithStyles(TableRow)>
+                            <TableRow
+                              classes={
+                                Object {
+                                  "footer": "MuiTableRow-footer-34",
+                                  "head": "MuiTableRow-head-33",
+                                  "hover": "MuiTableRow-hover-32",
+                                  "root": "MuiTableRow-root-30",
+                                  "selected": "MuiTableRow-selected-31",
+                                }
                               }
-                            }
-                            component="tr"
-                            hover={false}
-                            selected={false}
-                          >
-                            <tr
-                              className="MuiTableRow-root-3"
+                              component="tr"
+                              hover={false}
+                              selected={false}
                             >
-                              <DataTableCell>
-                                <WithStyles(TableCell)>
-                                  <TableCell
-                                    align="inherit"
-                                    classes={
-                                      Object {
-                                        "alignCenter": "MuiTableCell-alignCenter-17",
-                                        "alignJustify": "MuiTableCell-alignJustify-19",
-                                        "alignLeft": "MuiTableCell-alignLeft-16",
-                                        "alignRight": "MuiTableCell-alignRight-18",
-                                        "body": "MuiTableCell-body-10",
-                                        "footer": "MuiTableCell-footer-11",
-                                        "head": "MuiTableCell-head-9",
-                                        "numeric": "MuiTableCell-numeric-12",
-                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                        "paddingDense": "MuiTableCell-paddingDense-13",
-                                        "paddingNone": "MuiTableCell-paddingNone-15",
-                                        "root": "MuiTableCell-root-8",
-                                      }
-                                    }
-                                  >
-                                    <td
-                                      aria-sort={null}
-                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
-                                    >
-                                      Row 1, column 1
-                                    </td>
-                                  </TableCell>
-                                </WithStyles(TableCell)>
-                              </DataTableCell>
-                              <DataTableCell>
-                                <WithStyles(TableCell)>
-                                  <TableCell
-                                    align="inherit"
-                                    classes={
-                                      Object {
-                                        "alignCenter": "MuiTableCell-alignCenter-17",
-                                        "alignJustify": "MuiTableCell-alignJustify-19",
-                                        "alignLeft": "MuiTableCell-alignLeft-16",
-                                        "alignRight": "MuiTableCell-alignRight-18",
-                                        "body": "MuiTableCell-body-10",
-                                        "footer": "MuiTableCell-footer-11",
-                                        "head": "MuiTableCell-head-9",
-                                        "numeric": "MuiTableCell-numeric-12",
-                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                        "paddingDense": "MuiTableCell-paddingDense-13",
-                                        "paddingNone": "MuiTableCell-paddingNone-15",
-                                        "root": "MuiTableCell-root-8",
-                                      }
-                                    }
-                                  >
-                                    <td
-                                      aria-sort={null}
-                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
-                                    >
-                                      Row 1, column 2
-                                    </td>
-                                  </TableCell>
-                                </WithStyles(TableCell)>
-                              </DataTableCell>
-                              <DataTableCell
-                                align="right"
+                              <tr
+                                className="MuiTableRow-root-30 MuiTableRow-head-33"
                               >
-                                <WithStyles(TableCell)
-                                  align="right"
+                                <DataTableCell
+                                  key="Column 1"
                                 >
-                                  <TableCell
-                                    align="right"
-                                    classes={
-                                      Object {
-                                        "alignCenter": "MuiTableCell-alignCenter-17",
-                                        "alignJustify": "MuiTableCell-alignJustify-19",
-                                        "alignLeft": "MuiTableCell-alignLeft-16",
-                                        "alignRight": "MuiTableCell-alignRight-18",
-                                        "body": "MuiTableCell-body-10",
-                                        "footer": "MuiTableCell-footer-11",
-                                        "head": "MuiTableCell-head-9",
-                                        "numeric": "MuiTableCell-numeric-12",
-                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                        "paddingDense": "MuiTableCell-paddingDense-13",
-                                        "paddingNone": "MuiTableCell-paddingNone-15",
-                                        "root": "MuiTableCell-root-8",
+                                  <WithStyles(TableCell)>
+                                    <TableCell
+                                      align="inherit"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTableCell-alignCenter-44",
+                                          "alignJustify": "MuiTableCell-alignJustify-46",
+                                          "alignLeft": "MuiTableCell-alignLeft-43",
+                                          "alignRight": "MuiTableCell-alignRight-45",
+                                          "body": "MuiTableCell-body-37",
+                                          "footer": "MuiTableCell-footer-38",
+                                          "head": "MuiTableCell-head-36",
+                                          "numeric": "MuiTableCell-numeric-39",
+                                          "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                          "paddingDense": "MuiTableCell-paddingDense-40",
+                                          "paddingNone": "MuiTableCell-paddingNone-42",
+                                          "root": "MuiTableCell-root-35",
+                                        }
                                       }
-                                    }
-                                  >
-                                    <td
-                                      aria-sort={null}
-                                      className="MuiTableCell-root-8 MuiTableCell-body-10 MuiTableCell-alignRight-18"
                                     >
-                                      Row 1, action column
-                                    </td>
-                                  </TableCell>
-                                </WithStyles(TableCell)>
-                              </DataTableCell>
-                            </tr>
-                          </TableRow>
-                        </WithStyles(TableRow)>
-                      </DataTableRow>
-                    </Children>
-                  </tbody>
-                </TableBody>
-              </WithStyles(TableBody)>
-              <WithStyles(TableFooter)>
-                <TableFooter
-                  classes={
-                    Object {
-                      "root": "MuiTableFooter-root-21",
-                    }
-                  }
-                  component="tfoot"
-                >
-                  <tfoot
-                    className="MuiTableFooter-root-21"
-                  >
-                    <DataTableRow>
-                      <WithStyles(TableRow)>
-                        <TableRow
-                          classes={
-                            Object {
-                              "footer": "MuiTableRow-footer-7",
-                              "head": "MuiTableRow-head-6",
-                              "hover": "MuiTableRow-hover-5",
-                              "root": "MuiTableRow-root-3",
-                              "selected": "MuiTableRow-selected-4",
-                            }
-                          }
-                          component="tr"
-                          hover={false}
-                          selected={false}
-                        >
-                          <tr
-                            className="MuiTableRow-root-3 MuiTableRow-footer-7"
-                          >
-                            <DataTableCell
-                              align="center"
-                              colSpan={2}
-                            >
-                              <WithStyles(TableCell)
-                                align="center"
-                                colSpan={2}
-                              >
-                                <TableCell
-                                  align="center"
-                                  classes={
-                                    Object {
-                                      "alignCenter": "MuiTableCell-alignCenter-17",
-                                      "alignJustify": "MuiTableCell-alignJustify-19",
-                                      "alignLeft": "MuiTableCell-alignLeft-16",
-                                      "alignRight": "MuiTableCell-alignRight-18",
-                                      "body": "MuiTableCell-body-10",
-                                      "footer": "MuiTableCell-footer-11",
-                                      "head": "MuiTableCell-head-9",
-                                      "numeric": "MuiTableCell-numeric-12",
-                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                      "paddingDense": "MuiTableCell-paddingDense-13",
-                                      "paddingNone": "MuiTableCell-paddingNone-15",
-                                      "root": "MuiTableCell-root-8",
-                                    }
+                                      <th
+                                        aria-sort={null}
+                                        className="MuiTableCell-root-35 MuiTableCell-head-36"
+                                        scope="col"
+                                      >
+                                        Column 1
+                                      </th>
+                                    </TableCell>
+                                  </WithStyles(TableCell)>
+                                </DataTableCell>
+                                <DataTableCell
+                                  key="Column 2"
+                                >
+                                  <WithStyles(TableCell)>
+                                    <TableCell
+                                      align="inherit"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTableCell-alignCenter-44",
+                                          "alignJustify": "MuiTableCell-alignJustify-46",
+                                          "alignLeft": "MuiTableCell-alignLeft-43",
+                                          "alignRight": "MuiTableCell-alignRight-45",
+                                          "body": "MuiTableCell-body-37",
+                                          "footer": "MuiTableCell-footer-38",
+                                          "head": "MuiTableCell-head-36",
+                                          "numeric": "MuiTableCell-numeric-39",
+                                          "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                          "paddingDense": "MuiTableCell-paddingDense-40",
+                                          "paddingNone": "MuiTableCell-paddingNone-42",
+                                          "root": "MuiTableCell-root-35",
+                                        }
+                                      }
+                                    >
+                                      <th
+                                        aria-sort={null}
+                                        className="MuiTableCell-root-35 MuiTableCell-head-36"
+                                        scope="col"
+                                      >
+                                        Column 2
+                                      </th>
+                                    </TableCell>
+                                  </WithStyles(TableCell)>
+                                </DataTableCell>
+                              </tr>
+                            </TableRow>
+                          </WithStyles(TableRow)>
+                        </DataTableRow>
+                      </thead>
+                    </TableHead>
+                  </WithStyles(TableHead)>
+                  <WithStyles(TableBody)>
+                    <TableBody
+                      classes={
+                        Object {
+                          "root": "MuiTableBody-root-47",
+                        }
+                      }
+                      component="tbody"
+                    >
+                      <tbody
+                        className="MuiTableBody-root-47"
+                      >
+                        <Children>
+                          <DataTableRow>
+                            <WithStyles(TableRow)>
+                              <TableRow
+                                classes={
+                                  Object {
+                                    "footer": "MuiTableRow-footer-34",
+                                    "head": "MuiTableRow-head-33",
+                                    "hover": "MuiTableRow-hover-32",
+                                    "root": "MuiTableRow-root-30",
+                                    "selected": "MuiTableRow-selected-31",
                                   }
-                                  colSpan={2}
+                                }
+                                component="tr"
+                                hover={false}
+                                selected={false}
+                              >
+                                <tr
+                                  className="MuiTableRow-root-30"
                                 >
-                                  <td
-                                    aria-sort={null}
-                                    className="MuiTableCell-root-8 MuiTableCell-footer-11 MuiTableCell-alignCenter-17"
-                                    colSpan={2}
-                                  >
-                                    <styled.div>
-                                      <StyledComponent
-                                        forwardedComponent={
+                                  <DataTableCell>
+                                    <WithStyles(TableCell)>
+                                      <TableCell
+                                        align="inherit"
+                                        classes={
                                           Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": Array [],
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-bdVaJa",
-                                              "isStatic": true,
-                                              "lastClassName": "c0",
-                                              "rules": Array [
-                                                "
-  margin: 24px 0 0;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.div",
-                                            "foldedComponentIds": Array [],
-                                            "render": [Function],
-                                            "styledComponentId": "sc-bdVaJa",
-                                            "target": "div",
-                                            "toString": [Function],
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
+                                            "alignCenter": "MuiTableCell-alignCenter-44",
+                                            "alignJustify": "MuiTableCell-alignJustify-46",
+                                            "alignLeft": "MuiTableCell-alignLeft-43",
+                                            "alignRight": "MuiTableCell-alignRight-45",
+                                            "body": "MuiTableCell-body-37",
+                                            "footer": "MuiTableCell-footer-38",
+                                            "head": "MuiTableCell-head-36",
+                                            "numeric": "MuiTableCell-numeric-39",
+                                            "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                            "paddingDense": "MuiTableCell-paddingDense-40",
+                                            "paddingNone": "MuiTableCell-paddingNone-42",
+                                            "root": "MuiTableCell-root-35",
                                           }
                                         }
-                                        forwardedRef={null}
                                       >
-                                        <div
-                                          className="c0"
+                                        <td
+                                          aria-sort={null}
+                                          className="MuiTableCell-root-35 MuiTableCell-body-37"
                                         >
-                                          <WithStyles(Button)
-                                            aria-label="Load more..."
-                                            color="primary"
-                                            onClick={[MockFunction]}
-                                            variant="contained"
-                                          >
-                                            <Button
-                                              aria-label="Load more..."
-                                              classes={
-                                                Object {
-                                                  "colorInherit": "MuiButton-colorInherit-43",
-                                                  "contained": "MuiButton-contained-33",
-                                                  "containedPrimary": "MuiButton-containedPrimary-34",
-                                                  "containedSecondary": "MuiButton-containedSecondary-35",
-                                                  "disabled": "MuiButton-disabled-42",
-                                                  "extendedFab": "MuiButton-extendedFab-40",
-                                                  "fab": "MuiButton-fab-39",
-                                                  "flat": "MuiButton-flat-27",
-                                                  "flatPrimary": "MuiButton-flatPrimary-28",
-                                                  "flatSecondary": "MuiButton-flatSecondary-29",
-                                                  "focusVisible": "MuiButton-focusVisible-41",
-                                                  "fullWidth": "MuiButton-fullWidth-47",
-                                                  "label": "MuiButton-label-23",
-                                                  "mini": "MuiButton-mini-44",
-                                                  "outlined": "MuiButton-outlined-30",
-                                                  "outlinedPrimary": "MuiButton-outlinedPrimary-31",
-                                                  "outlinedSecondary": "MuiButton-outlinedSecondary-32",
-                                                  "raised": "MuiButton-raised-36",
-                                                  "raisedPrimary": "MuiButton-raisedPrimary-37",
-                                                  "raisedSecondary": "MuiButton-raisedSecondary-38",
-                                                  "root": "MuiButton-root-22",
-                                                  "sizeLarge": "MuiButton-sizeLarge-46",
-                                                  "sizeSmall": "MuiButton-sizeSmall-45",
-                                                  "text": "MuiButton-text-24",
-                                                  "textPrimary": "MuiButton-textPrimary-25",
-                                                  "textSecondary": "MuiButton-textSecondary-26",
-                                                }
+                                          Row 1, column 1
+                                        </td>
+                                      </TableCell>
+                                    </WithStyles(TableCell)>
+                                  </DataTableCell>
+                                  <DataTableCell>
+                                    <WithStyles(TableCell)>
+                                      <TableCell
+                                        align="inherit"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTableCell-alignCenter-44",
+                                            "alignJustify": "MuiTableCell-alignJustify-46",
+                                            "alignLeft": "MuiTableCell-alignLeft-43",
+                                            "alignRight": "MuiTableCell-alignRight-45",
+                                            "body": "MuiTableCell-body-37",
+                                            "footer": "MuiTableCell-footer-38",
+                                            "head": "MuiTableCell-head-36",
+                                            "numeric": "MuiTableCell-numeric-39",
+                                            "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                            "paddingDense": "MuiTableCell-paddingDense-40",
+                                            "paddingNone": "MuiTableCell-paddingNone-42",
+                                            "root": "MuiTableCell-root-35",
+                                          }
+                                        }
+                                      >
+                                        <td
+                                          aria-sort={null}
+                                          className="MuiTableCell-root-35 MuiTableCell-body-37"
+                                        >
+                                          Row 1, column 2
+                                        </td>
+                                      </TableCell>
+                                    </WithStyles(TableCell)>
+                                  </DataTableCell>
+                                  <DataTableCell
+                                    align="right"
+                                  >
+                                    <WithStyles(TableCell)
+                                      align="right"
+                                    >
+                                      <TableCell
+                                        align="right"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTableCell-alignCenter-44",
+                                            "alignJustify": "MuiTableCell-alignJustify-46",
+                                            "alignLeft": "MuiTableCell-alignLeft-43",
+                                            "alignRight": "MuiTableCell-alignRight-45",
+                                            "body": "MuiTableCell-body-37",
+                                            "footer": "MuiTableCell-footer-38",
+                                            "head": "MuiTableCell-head-36",
+                                            "numeric": "MuiTableCell-numeric-39",
+                                            "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                            "paddingDense": "MuiTableCell-paddingDense-40",
+                                            "paddingNone": "MuiTableCell-paddingNone-42",
+                                            "root": "MuiTableCell-root-35",
+                                          }
+                                        }
+                                      >
+                                        <td
+                                          aria-sort={null}
+                                          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-alignRight-45"
+                                        >
+                                          Row 1, action column
+                                        </td>
+                                      </TableCell>
+                                    </WithStyles(TableCell)>
+                                  </DataTableCell>
+                                </tr>
+                              </TableRow>
+                            </WithStyles(TableRow)>
+                          </DataTableRow>
+                        </Children>
+                      </tbody>
+                    </TableBody>
+                  </WithStyles(TableBody)>
+                  <WithStyles(TableFooter)>
+                    <TableFooter
+                      classes={
+                        Object {
+                          "root": "MuiTableFooter-root-48",
+                        }
+                      }
+                      component="tfoot"
+                    >
+                      <tfoot
+                        className="MuiTableFooter-root-48"
+                      >
+                        <DataTableRow>
+                          <WithStyles(TableRow)>
+                            <TableRow
+                              classes={
+                                Object {
+                                  "footer": "MuiTableRow-footer-34",
+                                  "head": "MuiTableRow-head-33",
+                                  "hover": "MuiTableRow-hover-32",
+                                  "root": "MuiTableRow-root-30",
+                                  "selected": "MuiTableRow-selected-31",
+                                }
+                              }
+                              component="tr"
+                              hover={false}
+                              selected={false}
+                            >
+                              <tr
+                                className="MuiTableRow-root-30 MuiTableRow-footer-34"
+                              >
+                                <DataTableCell
+                                  align="center"
+                                  colSpan={2}
+                                >
+                                  <WithStyles(TableCell)
+                                    align="center"
+                                    colSpan={2}
+                                  >
+                                    <TableCell
+                                      align="center"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTableCell-alignCenter-44",
+                                          "alignJustify": "MuiTableCell-alignJustify-46",
+                                          "alignLeft": "MuiTableCell-alignLeft-43",
+                                          "alignRight": "MuiTableCell-alignRight-45",
+                                          "body": "MuiTableCell-body-37",
+                                          "footer": "MuiTableCell-footer-38",
+                                          "head": "MuiTableCell-head-36",
+                                          "numeric": "MuiTableCell-numeric-39",
+                                          "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                          "paddingDense": "MuiTableCell-paddingDense-40",
+                                          "paddingNone": "MuiTableCell-paddingNone-42",
+                                          "root": "MuiTableCell-root-35",
+                                        }
+                                      }
+                                      colSpan={2}
+                                    >
+                                      <td
+                                        aria-sort={null}
+                                        className="MuiTableCell-root-35 MuiTableCell-footer-38 MuiTableCell-alignCenter-44"
+                                        colSpan={2}
+                                      >
+                                        <Styled(WithStyles(Paper))>
+                                          <StyledComponent
+                                            forwardedComponent={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "Naked": [Function],
+                                                "attrs": Array [],
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-bdVaJa",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c0",
+                                                  "rules": Array [
+                                                    "
+  margin: 24px 0 0;
+",
+                                                  ],
+                                                },
+                                                "displayName": "Styled(WithStyles(Paper))",
+                                                "foldedComponentIds": Array [],
+                                                "options": Object {
+                                                  "defaultTheme": Object {
+                                                    "breakpoints": Object {
+                                                      "between": [Function],
+                                                      "down": [Function],
+                                                      "keys": Array [
+                                                        "xs",
+                                                        "sm",
+                                                        "md",
+                                                        "lg",
+                                                        "xl",
+                                                      ],
+                                                      "only": [Function],
+                                                      "up": [Function],
+                                                      "values": Object {
+                                                        "lg": 1280,
+                                                        "md": 960,
+                                                        "sm": 600,
+                                                        "xl": 1920,
+                                                        "xs": 0,
+                                                      },
+                                                      "width": [Function],
+                                                    },
+                                                    "direction": "ltr",
+                                                    "mixins": Object {
+                                                      "gutters": [Function],
+                                                      "toolbar": Object {
+                                                        "@media (min-width:0px) and (orientation: landscape)": Object {
+                                                          "minHeight": 48,
+                                                        },
+                                                        "@media (min-width:600px)": Object {
+                                                          "minHeight": 64,
+                                                        },
+                                                        "minHeight": 56,
+                                                      },
+                                                    },
+                                                    "overrides": Object {},
+                                                    "palette": Object {
+                                                      "action": Object {
+                                                        "active": "rgba(0, 0, 0, 0.54)",
+                                                        "disabled": "rgba(0, 0, 0, 0.26)",
+                                                        "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                                        "hover": "rgba(0, 0, 0, 0.08)",
+                                                        "hoverOpacity": 0.08,
+                                                        "selected": "rgba(0, 0, 0, 0.14)",
+                                                      },
+                                                      "augmentColor": [Function],
+                                                      "background": Object {
+                                                        "default": "#fafafa",
+                                                        "paper": "#fff",
+                                                      },
+                                                      "common": Object {
+                                                        "black": "#000",
+                                                        "white": "#fff",
+                                                      },
+                                                      "contrastThreshold": 3,
+                                                      "divider": "rgba(0, 0, 0, 0.12)",
+                                                      "error": Object {
+                                                        "contrastText": "#fff",
+                                                        "dark": "#d32f2f",
+                                                        "light": "#e57373",
+                                                        "main": "#f44336",
+                                                      },
+                                                      "getContrastText": [Function],
+                                                      "grey": Object {
+                                                        "100": "#f5f5f5",
+                                                        "200": "#eeeeee",
+                                                        "300": "#e0e0e0",
+                                                        "400": "#bdbdbd",
+                                                        "50": "#fafafa",
+                                                        "500": "#9e9e9e",
+                                                        "600": "#757575",
+                                                        "700": "#616161",
+                                                        "800": "#424242",
+                                                        "900": "#212121",
+                                                        "A100": "#d5d5d5",
+                                                        "A200": "#aaaaaa",
+                                                        "A400": "#303030",
+                                                        "A700": "#616161",
+                                                      },
+                                                      "primary": Object {
+                                                        "contrastText": "#fff",
+                                                        "dark": "#303f9f",
+                                                        "light": "#7986cb",
+                                                        "main": "#3f51b5",
+                                                      },
+                                                      "secondary": Object {
+                                                        "contrastText": "#fff",
+                                                        "dark": "#c51162",
+                                                        "light": "#ff4081",
+                                                        "main": "#f50057",
+                                                      },
+                                                      "text": Object {
+                                                        "disabled": "rgba(0, 0, 0, 0.38)",
+                                                        "hint": "rgba(0, 0, 0, 0.38)",
+                                                        "primary": "rgba(0, 0, 0, 0.87)",
+                                                        "secondary": "rgba(0, 0, 0, 0.54)",
+                                                      },
+                                                      "tonalOffset": 0.2,
+                                                      "type": "light",
+                                                    },
+                                                    "props": Object {},
+                                                    "shadows": Array [
+                                                      "none",
+                                                      "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                                                      "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                                                      "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                                                      "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                                      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                                      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                                      "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                                      "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                                      "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                                      "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                                      "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                                      "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                                      "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                                      "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                                      "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                                      "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                                      "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                                      "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                                      "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                                      "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                                      "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                                      "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                                      "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                                      "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                                    ],
+                                                    "shape": Object {
+                                                      "borderRadius": 4,
+                                                    },
+                                                    "spacing": Object {
+                                                      "unit": 8,
+                                                    },
+                                                    "transitions": Object {
+                                                      "create": [Function],
+                                                      "duration": Object {
+                                                        "complex": 375,
+                                                        "enteringScreen": 225,
+                                                        "leavingScreen": 195,
+                                                        "short": 250,
+                                                        "shorter": 200,
+                                                        "shortest": 150,
+                                                        "standard": 300,
+                                                      },
+                                                      "easing": Object {
+                                                        "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                                        "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                                        "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                                        "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                                      },
+                                                      "getAutoHeightDuration": [Function],
+                                                    },
+                                                    "typography": Object {
+                                                      "body1": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.875rem",
+                                                        "fontWeight": 400,
+                                                        "lineHeight": "1.46429em",
+                                                      },
+                                                      "body1Next": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "1rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0.00938em",
+                                                        "lineHeight": 1.5,
+                                                      },
+                                                      "body2": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.875rem",
+                                                        "fontWeight": 500,
+                                                        "lineHeight": "1.71429em",
+                                                      },
+                                                      "body2Next": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.875rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0.01071em",
+                                                        "lineHeight": 1.5,
+                                                      },
+                                                      "button": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.875rem",
+                                                        "fontWeight": 500,
+                                                        "textTransform": "uppercase",
+                                                      },
+                                                      "buttonNext": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.875rem",
+                                                        "fontWeight": 500,
+                                                        "letterSpacing": "0.02857em",
+                                                        "lineHeight": 1.75,
+                                                        "textTransform": "uppercase",
+                                                      },
+                                                      "caption": Object {
+                                                        "color": "rgba(0, 0, 0, 0.54)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.75rem",
+                                                        "fontWeight": 400,
+                                                        "lineHeight": "1.375em",
+                                                      },
+                                                      "captionNext": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.75rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0.03333em",
+                                                        "lineHeight": 1.66,
+                                                      },
+                                                      "display1": Object {
+                                                        "color": "rgba(0, 0, 0, 0.54)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "2.125rem",
+                                                        "fontWeight": 400,
+                                                        "lineHeight": "1.20588em",
+                                                      },
+                                                      "display2": Object {
+                                                        "color": "rgba(0, 0, 0, 0.54)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "2.8125rem",
+                                                        "fontWeight": 400,
+                                                        "lineHeight": "1.13333em",
+                                                        "marginLeft": "-.02em",
+                                                      },
+                                                      "display3": Object {
+                                                        "color": "rgba(0, 0, 0, 0.54)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "3.5rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "-.02em",
+                                                        "lineHeight": "1.30357em",
+                                                        "marginLeft": "-.02em",
+                                                      },
+                                                      "display4": Object {
+                                                        "color": "rgba(0, 0, 0, 0.54)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "7rem",
+                                                        "fontWeight": 300,
+                                                        "letterSpacing": "-.04em",
+                                                        "lineHeight": "1.14286em",
+                                                        "marginLeft": "-.04em",
+                                                      },
+                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                      "fontSize": 14,
+                                                      "fontWeightLight": 300,
+                                                      "fontWeightMedium": 500,
+                                                      "fontWeightRegular": 400,
+                                                      "h1": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "6rem",
+                                                        "fontWeight": 300,
+                                                        "letterSpacing": "-0.01562em",
+                                                        "lineHeight": 1,
+                                                      },
+                                                      "h2": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "3.75rem",
+                                                        "fontWeight": 300,
+                                                        "letterSpacing": "-0.00833em",
+                                                        "lineHeight": 1,
+                                                      },
+                                                      "h3": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "3rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0em",
+                                                        "lineHeight": 1.04,
+                                                      },
+                                                      "h4": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "2.125rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0.00735em",
+                                                        "lineHeight": 1.17,
+                                                      },
+                                                      "h5": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "1.5rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0em",
+                                                        "lineHeight": 1.33,
+                                                      },
+                                                      "h6": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "1.25rem",
+                                                        "fontWeight": 500,
+                                                        "letterSpacing": "0.0075em",
+                                                        "lineHeight": 1.6,
+                                                      },
+                                                      "headline": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "1.5rem",
+                                                        "fontWeight": 400,
+                                                        "lineHeight": "1.35417em",
+                                                      },
+                                                      "overline": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.75rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0.08333em",
+                                                        "lineHeight": 2.66,
+                                                        "textTransform": "uppercase",
+                                                      },
+                                                      "pxToRem": [Function],
+                                                      "round": [Function],
+                                                      "subheading": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "1rem",
+                                                        "fontWeight": 400,
+                                                        "lineHeight": "1.5em",
+                                                      },
+                                                      "subtitle1": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "1rem",
+                                                        "fontWeight": 400,
+                                                        "letterSpacing": "0.00938em",
+                                                        "lineHeight": 1.75,
+                                                      },
+                                                      "subtitle2": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "0.875rem",
+                                                        "fontWeight": 500,
+                                                        "letterSpacing": "0.00714em",
+                                                        "lineHeight": 1.57,
+                                                      },
+                                                      "title": Object {
+                                                        "color": "rgba(0, 0, 0, 0.87)",
+                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                        "fontSize": "1.3125rem",
+                                                        "fontWeight": 500,
+                                                        "lineHeight": "1.16667em",
+                                                      },
+                                                      "useNextVariants": false,
+                                                    },
+                                                    "zIndex": Object {
+                                                      "appBar": 1100,
+                                                      "drawer": 1200,
+                                                      "mobileStepper": 1000,
+                                                      "modal": 1300,
+                                                      "snackbar": 1400,
+                                                      "tooltip": 1500,
+                                                    },
+                                                  },
+                                                  "name": "MuiPaper",
+                                                },
+                                                "render": [Function],
+                                                "styledComponentId": "sc-bdVaJa",
+                                                "target": [Function],
+                                                "toString": [Function],
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
                                               }
-                                              color="primary"
-                                              component="button"
-                                              disableFocusRipple={false}
-                                              disabled={false}
-                                              fullWidth={false}
-                                              mini={false}
-                                              onClick={[MockFunction]}
-                                              size="medium"
-                                              type="button"
-                                              variant="contained"
+                                            }
+                                            forwardedRef={null}
+                                          >
+                                            <WithStyles(Paper)
+                                              className="c0"
                                             >
-                                              <WithStyles(ButtonBase)
-                                                aria-label="Load more..."
-                                                className="MuiButton-root-22 MuiButton-contained-33 MuiButton-containedPrimary-34 MuiButton-raised-36 MuiButton-raisedPrimary-37"
-                                                component="button"
-                                                disabled={false}
-                                                focusRipple={true}
-                                                focusVisibleClassName="MuiButton-focusVisible-41"
-                                                onClick={[MockFunction]}
-                                                type="button"
-                                              >
-                                                <ButtonBase
-                                                  aria-label="Load more..."
-                                                  centerRipple={false}
-                                                  className="MuiButton-root-22 MuiButton-contained-33 MuiButton-containedPrimary-34 MuiButton-raised-36 MuiButton-raisedPrimary-37"
-                                                  classes={
-                                                    Object {
-                                                      "disabled": "MuiButtonBase-disabled-49",
-                                                      "focusVisible": "MuiButtonBase-focusVisible-50",
-                                                      "root": "MuiButtonBase-root-48",
-                                                    }
+                                              <Paper
+                                                className="c0"
+                                                classes={
+                                                  Object {
+                                                    "elevation0": "MuiPaper-elevation0-3",
+                                                    "elevation1": "MuiPaper-elevation1-4",
+                                                    "elevation10": "MuiPaper-elevation10-13",
+                                                    "elevation11": "MuiPaper-elevation11-14",
+                                                    "elevation12": "MuiPaper-elevation12-15",
+                                                    "elevation13": "MuiPaper-elevation13-16",
+                                                    "elevation14": "MuiPaper-elevation14-17",
+                                                    "elevation15": "MuiPaper-elevation15-18",
+                                                    "elevation16": "MuiPaper-elevation16-19",
+                                                    "elevation17": "MuiPaper-elevation17-20",
+                                                    "elevation18": "MuiPaper-elevation18-21",
+                                                    "elevation19": "MuiPaper-elevation19-22",
+                                                    "elevation2": "MuiPaper-elevation2-5",
+                                                    "elevation20": "MuiPaper-elevation20-23",
+                                                    "elevation21": "MuiPaper-elevation21-24",
+                                                    "elevation22": "MuiPaper-elevation22-25",
+                                                    "elevation23": "MuiPaper-elevation23-26",
+                                                    "elevation24": "MuiPaper-elevation24-27",
+                                                    "elevation3": "MuiPaper-elevation3-6",
+                                                    "elevation4": "MuiPaper-elevation4-7",
+                                                    "elevation5": "MuiPaper-elevation5-8",
+                                                    "elevation6": "MuiPaper-elevation6-9",
+                                                    "elevation7": "MuiPaper-elevation7-10",
+                                                    "elevation8": "MuiPaper-elevation8-11",
+                                                    "elevation9": "MuiPaper-elevation9-12",
+                                                    "root": "MuiPaper-root-1",
+                                                    "rounded": "MuiPaper-rounded-2",
                                                   }
-                                                  component="button"
-                                                  disableRipple={false}
-                                                  disableTouchRipple={false}
-                                                  disabled={false}
-                                                  focusRipple={true}
-                                                  focusVisibleClassName="MuiButton-focusVisible-41"
-                                                  onClick={[MockFunction]}
-                                                  tabIndex="0"
-                                                  type="button"
+                                                }
+                                                component="div"
+                                                elevation={2}
+                                                square={false}
+                                              >
+                                                <div
+                                                  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2 c0"
                                                 >
-                                                  <button
+                                                  <WithStyles(Button)
                                                     aria-label="Load more..."
-                                                    className="MuiButtonBase-root-48 MuiButton-root-22 MuiButton-contained-33 MuiButton-containedPrimary-34 MuiButton-raised-36 MuiButton-raisedPrimary-37"
-                                                    disabled={false}
-                                                    onBlur={[Function]}
+                                                    color="primary"
                                                     onClick={[MockFunction]}
-                                                    onContextMenu={[Function]}
-                                                    onFocus={[Function]}
-                                                    onKeyDown={[Function]}
-                                                    onKeyUp={[Function]}
-                                                    onMouseDown={[Function]}
-                                                    onMouseLeave={[Function]}
-                                                    onMouseUp={[Function]}
-                                                    onTouchEnd={[Function]}
-                                                    onTouchMove={[Function]}
-                                                    onTouchStart={[Function]}
-                                                    tabIndex="0"
-                                                    type="button"
+                                                    variant="contained"
                                                   >
-                                                    <span
-                                                      className="MuiButton-label-23"
+                                                    <Button
+                                                      aria-label="Load more..."
+                                                      classes={
+                                                        Object {
+                                                          "colorInherit": "MuiButton-colorInherit-70",
+                                                          "contained": "MuiButton-contained-60",
+                                                          "containedPrimary": "MuiButton-containedPrimary-61",
+                                                          "containedSecondary": "MuiButton-containedSecondary-62",
+                                                          "disabled": "MuiButton-disabled-69",
+                                                          "extendedFab": "MuiButton-extendedFab-67",
+                                                          "fab": "MuiButton-fab-66",
+                                                          "flat": "MuiButton-flat-54",
+                                                          "flatPrimary": "MuiButton-flatPrimary-55",
+                                                          "flatSecondary": "MuiButton-flatSecondary-56",
+                                                          "focusVisible": "MuiButton-focusVisible-68",
+                                                          "fullWidth": "MuiButton-fullWidth-74",
+                                                          "label": "MuiButton-label-50",
+                                                          "mini": "MuiButton-mini-71",
+                                                          "outlined": "MuiButton-outlined-57",
+                                                          "outlinedPrimary": "MuiButton-outlinedPrimary-58",
+                                                          "outlinedSecondary": "MuiButton-outlinedSecondary-59",
+                                                          "raised": "MuiButton-raised-63",
+                                                          "raisedPrimary": "MuiButton-raisedPrimary-64",
+                                                          "raisedSecondary": "MuiButton-raisedSecondary-65",
+                                                          "root": "MuiButton-root-49",
+                                                          "sizeLarge": "MuiButton-sizeLarge-73",
+                                                          "sizeSmall": "MuiButton-sizeSmall-72",
+                                                          "text": "MuiButton-text-51",
+                                                          "textPrimary": "MuiButton-textPrimary-52",
+                                                          "textSecondary": "MuiButton-textSecondary-53",
+                                                        }
+                                                      }
+                                                      color="primary"
+                                                      component="button"
+                                                      disableFocusRipple={false}
+                                                      disabled={false}
+                                                      fullWidth={false}
+                                                      mini={false}
+                                                      onClick={[MockFunction]}
+                                                      size="medium"
+                                                      type="button"
+                                                      variant="contained"
                                                     >
-                                                      Load more
-                                                    </span>
-                                                    <NoSsr
-                                                      defer={false}
-                                                      fallback={null}
-                                                    >
-                                                      <WithStyles(TouchRipple)
-                                                        center={false}
-                                                        innerRef={[Function]}
+                                                      <WithStyles(ButtonBase)
+                                                        aria-label="Load more..."
+                                                        className="MuiButton-root-49 MuiButton-contained-60 MuiButton-containedPrimary-61 MuiButton-raised-63 MuiButton-raisedPrimary-64"
+                                                        component="button"
+                                                        disabled={false}
+                                                        focusRipple={true}
+                                                        focusVisibleClassName="MuiButton-focusVisible-68"
+                                                        onClick={[MockFunction]}
+                                                        type="button"
                                                       >
-                                                        <TouchRipple
-                                                          center={false}
+                                                        <ButtonBase
+                                                          aria-label="Load more..."
+                                                          centerRipple={false}
+                                                          className="MuiButton-root-49 MuiButton-contained-60 MuiButton-containedPrimary-61 MuiButton-raised-63 MuiButton-raisedPrimary-64"
                                                           classes={
                                                             Object {
-                                                              "child": "MuiTouchRipple-child-55",
-                                                              "childLeaving": "MuiTouchRipple-childLeaving-56",
-                                                              "childPulsate": "MuiTouchRipple-childPulsate-57",
-                                                              "ripple": "MuiTouchRipple-ripple-52",
-                                                              "ripplePulsate": "MuiTouchRipple-ripplePulsate-54",
-                                                              "rippleVisible": "MuiTouchRipple-rippleVisible-53",
-                                                              "root": "MuiTouchRipple-root-51",
+                                                              "disabled": "MuiButtonBase-disabled-76",
+                                                              "focusVisible": "MuiButtonBase-focusVisible-77",
+                                                              "root": "MuiButtonBase-root-75",
                                                             }
                                                           }
+                                                          component="button"
+                                                          disableRipple={false}
+                                                          disableTouchRipple={false}
+                                                          disabled={false}
+                                                          focusRipple={true}
+                                                          focusVisibleClassName="MuiButton-focusVisible-68"
+                                                          onClick={[MockFunction]}
+                                                          tabIndex="0"
+                                                          type="button"
                                                         >
-                                                          <TransitionGroup
-                                                            childFactory={[Function]}
-                                                            className="MuiTouchRipple-root-51"
-                                                            component="span"
-                                                            enter={true}
-                                                            exit={true}
+                                                          <button
+                                                            aria-label="Load more..."
+                                                            className="MuiButtonBase-root-75 MuiButton-root-49 MuiButton-contained-60 MuiButton-containedPrimary-61 MuiButton-raised-63 MuiButton-raisedPrimary-64"
+                                                            disabled={false}
+                                                            onBlur={[Function]}
+                                                            onClick={[MockFunction]}
+                                                            onContextMenu={[Function]}
+                                                            onFocus={[Function]}
+                                                            onKeyDown={[Function]}
+                                                            onKeyUp={[Function]}
+                                                            onMouseDown={[Function]}
+                                                            onMouseLeave={[Function]}
+                                                            onMouseUp={[Function]}
+                                                            onTouchEnd={[Function]}
+                                                            onTouchMove={[Function]}
+                                                            onTouchStart={[Function]}
+                                                            tabIndex="0"
+                                                            type="button"
                                                           >
                                                             <span
-                                                              className="MuiTouchRipple-root-51"
-                                                            />
-                                                          </TransitionGroup>
-                                                        </TouchRipple>
-                                                      </WithStyles(TouchRipple)>
-                                                    </NoSsr>
-                                                  </button>
-                                                </ButtonBase>
-                                              </WithStyles(ButtonBase)>
-                                            </Button>
-                                          </WithStyles(Button)>
-                                        </div>
-                                      </StyledComponent>
-                                    </styled.div>
-                                  </td>
-                                </TableCell>
-                              </WithStyles(TableCell)>
-                            </DataTableCell>
-                          </tr>
-                        </TableRow>
-                      </WithStyles(TableRow)>
-                    </DataTableRow>
-                  </tfoot>
-                </TableFooter>
-              </WithStyles(TableFooter)>
-            </table>
-          </Table>
-        </WithStyles(Table)>
-      </div>
+                                                              className="MuiButton-label-50"
+                                                            >
+                                                              Load more
+                                                            </span>
+                                                            <NoSsr
+                                                              defer={false}
+                                                              fallback={null}
+                                                            >
+                                                              <WithStyles(TouchRipple)
+                                                                center={false}
+                                                                innerRef={[Function]}
+                                                              >
+                                                                <TouchRipple
+                                                                  center={false}
+                                                                  classes={
+                                                                    Object {
+                                                                      "child": "MuiTouchRipple-child-82",
+                                                                      "childLeaving": "MuiTouchRipple-childLeaving-83",
+                                                                      "childPulsate": "MuiTouchRipple-childPulsate-84",
+                                                                      "ripple": "MuiTouchRipple-ripple-79",
+                                                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-81",
+                                                                      "rippleVisible": "MuiTouchRipple-rippleVisible-80",
+                                                                      "root": "MuiTouchRipple-root-78",
+                                                                    }
+                                                                  }
+                                                                >
+                                                                  <TransitionGroup
+                                                                    childFactory={[Function]}
+                                                                    className="MuiTouchRipple-root-78"
+                                                                    component="span"
+                                                                    enter={true}
+                                                                    exit={true}
+                                                                  >
+                                                                    <span
+                                                                      className="MuiTouchRipple-root-78"
+                                                                    />
+                                                                  </TransitionGroup>
+                                                                </TouchRipple>
+                                                              </WithStyles(TouchRipple)>
+                                                            </NoSsr>
+                                                          </button>
+                                                        </ButtonBase>
+                                                      </WithStyles(ButtonBase)>
+                                                    </Button>
+                                                  </WithStyles(Button)>
+                                                </div>
+                                              </Paper>
+                                            </WithStyles(Paper)>
+                                          </StyledComponent>
+                                        </Styled(WithStyles(Paper))>
+                                      </td>
+                                    </TableCell>
+                                  </WithStyles(TableCell)>
+                                </DataTableCell>
+                              </tr>
+                            </TableRow>
+                          </WithStyles(TableRow)>
+                        </DataTableRow>
+                      </tfoot>
+                    </TableFooter>
+                  </WithStyles(TableFooter)>
+                </table>
+              </Table>
+            </WithStyles(Table)>
+          </div>
+        </Paper>
+      </WithStyles(Paper)>
     </StyledComponent>
-  </styled.div>
+  </Styled(WithStyles(Paper))>
 </DataTable>
 `;
 
@@ -574,11 +1386,12 @@ exports[`DataTable without more data to load should render component 1`] = `
   }
   loadMoreHandler={[MockFunction]}
 >
-  <styled.div>
+  <Styled(WithStyles(Paper))>
     <StyledComponent
       forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
+          "Naked": [Function],
           "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
@@ -590,11 +1403,374 @@ exports[`DataTable without more data to load should render component 1`] = `
 ",
             ],
           },
-          "displayName": "styled.div",
+          "displayName": "Styled(WithStyles(Paper))",
           "foldedComponentIds": Array [],
+          "options": Object {
+            "defaultTheme": Object {
+              "breakpoints": Object {
+                "between": [Function],
+                "down": [Function],
+                "keys": Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ],
+                "only": [Function],
+                "up": [Function],
+                "values": Object {
+                  "lg": 1280,
+                  "md": 960,
+                  "sm": 600,
+                  "xl": 1920,
+                  "xs": 0,
+                },
+                "width": [Function],
+              },
+              "direction": "ltr",
+              "mixins": Object {
+                "gutters": [Function],
+                "toolbar": Object {
+                  "@media (min-width:0px) and (orientation: landscape)": Object {
+                    "minHeight": 48,
+                  },
+                  "@media (min-width:600px)": Object {
+                    "minHeight": 64,
+                  },
+                  "minHeight": 56,
+                },
+              },
+              "overrides": Object {},
+              "palette": Object {
+                "action": Object {
+                  "active": "rgba(0, 0, 0, 0.54)",
+                  "disabled": "rgba(0, 0, 0, 0.26)",
+                  "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                  "hover": "rgba(0, 0, 0, 0.08)",
+                  "hoverOpacity": 0.08,
+                  "selected": "rgba(0, 0, 0, 0.14)",
+                },
+                "augmentColor": [Function],
+                "background": Object {
+                  "default": "#fafafa",
+                  "paper": "#fff",
+                },
+                "common": Object {
+                  "black": "#000",
+                  "white": "#fff",
+                },
+                "contrastThreshold": 3,
+                "divider": "rgba(0, 0, 0, 0.12)",
+                "error": Object {
+                  "contrastText": "#fff",
+                  "dark": "#d32f2f",
+                  "light": "#e57373",
+                  "main": "#f44336",
+                },
+                "getContrastText": [Function],
+                "grey": Object {
+                  "100": "#f5f5f5",
+                  "200": "#eeeeee",
+                  "300": "#e0e0e0",
+                  "400": "#bdbdbd",
+                  "50": "#fafafa",
+                  "500": "#9e9e9e",
+                  "600": "#757575",
+                  "700": "#616161",
+                  "800": "#424242",
+                  "900": "#212121",
+                  "A100": "#d5d5d5",
+                  "A200": "#aaaaaa",
+                  "A400": "#303030",
+                  "A700": "#616161",
+                },
+                "primary": Object {
+                  "contrastText": "#fff",
+                  "dark": "#303f9f",
+                  "light": "#7986cb",
+                  "main": "#3f51b5",
+                },
+                "secondary": Object {
+                  "contrastText": "#fff",
+                  "dark": "#c51162",
+                  "light": "#ff4081",
+                  "main": "#f50057",
+                },
+                "text": Object {
+                  "disabled": "rgba(0, 0, 0, 0.38)",
+                  "hint": "rgba(0, 0, 0, 0.38)",
+                  "primary": "rgba(0, 0, 0, 0.87)",
+                  "secondary": "rgba(0, 0, 0, 0.54)",
+                },
+                "tonalOffset": 0.2,
+                "type": "light",
+              },
+              "props": Object {},
+              "shadows": Array [
+                "none",
+                "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+              ],
+              "shape": Object {
+                "borderRadius": 4,
+              },
+              "spacing": Object {
+                "unit": 8,
+              },
+              "transitions": Object {
+                "create": [Function],
+                "duration": Object {
+                  "complex": 375,
+                  "enteringScreen": 225,
+                  "leavingScreen": 195,
+                  "short": 250,
+                  "shorter": 200,
+                  "shortest": 150,
+                  "standard": 300,
+                },
+                "easing": Object {
+                  "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                  "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                  "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                  "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                },
+                "getAutoHeightDuration": [Function],
+              },
+              "typography": Object {
+                "body1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.46429em",
+                },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
+                "body2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
+                },
+                "button": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.75,
+                  "textTransform": "uppercase",
+                },
+                "caption": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
+                },
+                "display1": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.20588em",
+                },
+                "display2": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.8125rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.13333em",
+                  "marginLeft": "-.02em",
+                },
+                "display3": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "-.02em",
+                  "lineHeight": "1.30357em",
+                  "marginLeft": "-.02em",
+                },
+                "display4": Object {
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "7rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-.04em",
+                  "lineHeight": "1.14286em",
+                  "marginLeft": "-.04em",
+                },
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": 14,
+                "fontWeightLight": 300,
+                "fontWeightMedium": 500,
+                "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
+                "headline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
+                },
+                "pxToRem": [Function],
+                "round": [Function],
+                "subheading": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "lineHeight": "1.5em",
+                },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
+                "title": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.3125rem",
+                  "fontWeight": 500,
+                  "lineHeight": "1.16667em",
+                },
+                "useNextVariants": false,
+              },
+              "zIndex": Object {
+                "appBar": 1100,
+                "drawer": 1200,
+                "mobileStepper": 1000,
+                "modal": 1300,
+                "snackbar": 1400,
+                "tooltip": 1500,
+              },
+            },
+            "name": "MuiPaper",
+          },
           "render": [Function],
           "styledComponentId": "sc-bdVaJa",
-          "target": "div",
+          "target": [Function],
           "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
@@ -602,265 +1778,307 @@ exports[`DataTable without more data to load should render component 1`] = `
       }
       forwardedRef={null}
     >
-      <div
+      <WithStyles(Paper)
         className="c0"
       >
-        <WithStyles(Table)>
-          <Table
-            classes={
-              Object {
-                "root": "MuiTable-root-1",
-              }
+        <Paper
+          className="c0"
+          classes={
+            Object {
+              "elevation0": "MuiPaper-elevation0-3",
+              "elevation1": "MuiPaper-elevation1-4",
+              "elevation10": "MuiPaper-elevation10-13",
+              "elevation11": "MuiPaper-elevation11-14",
+              "elevation12": "MuiPaper-elevation12-15",
+              "elevation13": "MuiPaper-elevation13-16",
+              "elevation14": "MuiPaper-elevation14-17",
+              "elevation15": "MuiPaper-elevation15-18",
+              "elevation16": "MuiPaper-elevation16-19",
+              "elevation17": "MuiPaper-elevation17-20",
+              "elevation18": "MuiPaper-elevation18-21",
+              "elevation19": "MuiPaper-elevation19-22",
+              "elevation2": "MuiPaper-elevation2-5",
+              "elevation20": "MuiPaper-elevation20-23",
+              "elevation21": "MuiPaper-elevation21-24",
+              "elevation22": "MuiPaper-elevation22-25",
+              "elevation23": "MuiPaper-elevation23-26",
+              "elevation24": "MuiPaper-elevation24-27",
+              "elevation3": "MuiPaper-elevation3-6",
+              "elevation4": "MuiPaper-elevation4-7",
+              "elevation5": "MuiPaper-elevation5-8",
+              "elevation6": "MuiPaper-elevation6-9",
+              "elevation7": "MuiPaper-elevation7-10",
+              "elevation8": "MuiPaper-elevation8-11",
+              "elevation9": "MuiPaper-elevation9-12",
+              "root": "MuiPaper-root-1",
+              "rounded": "MuiPaper-rounded-2",
             }
-            component="table"
-            padding="default"
+          }
+          component="div"
+          elevation={2}
+          square={false}
+        >
+          <div
+            className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2 c0"
           >
-            <table
-              className="MuiTable-root-1"
-            >
-              <WithStyles(TableHead)>
-                <TableHead
-                  classes={
-                    Object {
-                      "root": "MuiTableHead-root-2",
-                    }
+            <WithStyles(Table)>
+              <Table
+                classes={
+                  Object {
+                    "root": "MuiTable-root-28",
                   }
-                  component="thead"
+                }
+                component="table"
+                padding="default"
+              >
+                <table
+                  className="MuiTable-root-28"
                 >
-                  <thead
-                    className="MuiTableHead-root-2"
-                  >
-                    <DataTableRow>
-                      <WithStyles(TableRow)>
-                        <TableRow
-                          classes={
-                            Object {
-                              "footer": "MuiTableRow-footer-7",
-                              "head": "MuiTableRow-head-6",
-                              "hover": "MuiTableRow-hover-5",
-                              "root": "MuiTableRow-root-3",
-                              "selected": "MuiTableRow-selected-4",
-                            }
-                          }
-                          component="tr"
-                          hover={false}
-                          selected={false}
-                        >
-                          <tr
-                            className="MuiTableRow-root-3 MuiTableRow-head-6"
-                          >
-                            <DataTableCell
-                              key="Column 1"
-                            >
-                              <WithStyles(TableCell)>
-                                <TableCell
-                                  align="inherit"
-                                  classes={
-                                    Object {
-                                      "alignCenter": "MuiTableCell-alignCenter-17",
-                                      "alignJustify": "MuiTableCell-alignJustify-19",
-                                      "alignLeft": "MuiTableCell-alignLeft-16",
-                                      "alignRight": "MuiTableCell-alignRight-18",
-                                      "body": "MuiTableCell-body-10",
-                                      "footer": "MuiTableCell-footer-11",
-                                      "head": "MuiTableCell-head-9",
-                                      "numeric": "MuiTableCell-numeric-12",
-                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                      "paddingDense": "MuiTableCell-paddingDense-13",
-                                      "paddingNone": "MuiTableCell-paddingNone-15",
-                                      "root": "MuiTableCell-root-8",
-                                    }
-                                  }
-                                >
-                                  <th
-                                    aria-sort={null}
-                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
-                                    scope="col"
-                                  >
-                                    Column 1
-                                  </th>
-                                </TableCell>
-                              </WithStyles(TableCell)>
-                            </DataTableCell>
-                            <DataTableCell
-                              key="Column 2"
-                            >
-                              <WithStyles(TableCell)>
-                                <TableCell
-                                  align="inherit"
-                                  classes={
-                                    Object {
-                                      "alignCenter": "MuiTableCell-alignCenter-17",
-                                      "alignJustify": "MuiTableCell-alignJustify-19",
-                                      "alignLeft": "MuiTableCell-alignLeft-16",
-                                      "alignRight": "MuiTableCell-alignRight-18",
-                                      "body": "MuiTableCell-body-10",
-                                      "footer": "MuiTableCell-footer-11",
-                                      "head": "MuiTableCell-head-9",
-                                      "numeric": "MuiTableCell-numeric-12",
-                                      "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                      "paddingDense": "MuiTableCell-paddingDense-13",
-                                      "paddingNone": "MuiTableCell-paddingNone-15",
-                                      "root": "MuiTableCell-root-8",
-                                    }
-                                  }
-                                >
-                                  <th
-                                    aria-sort={null}
-                                    className="MuiTableCell-root-8 MuiTableCell-head-9"
-                                    scope="col"
-                                  >
-                                    Column 2
-                                  </th>
-                                </TableCell>
-                              </WithStyles(TableCell)>
-                            </DataTableCell>
-                          </tr>
-                        </TableRow>
-                      </WithStyles(TableRow)>
-                    </DataTableRow>
-                  </thead>
-                </TableHead>
-              </WithStyles(TableHead)>
-              <WithStyles(TableBody)>
-                <TableBody
-                  classes={
-                    Object {
-                      "root": "MuiTableBody-root-20",
-                    }
-                  }
-                  component="tbody"
-                >
-                  <tbody
-                    className="MuiTableBody-root-20"
-                  >
-                    <Children>
-                      <DataTableRow>
-                        <WithStyles(TableRow)>
-                          <TableRow
-                            classes={
-                              Object {
-                                "footer": "MuiTableRow-footer-7",
-                                "head": "MuiTableRow-head-6",
-                                "hover": "MuiTableRow-hover-5",
-                                "root": "MuiTableRow-root-3",
-                                "selected": "MuiTableRow-selected-4",
+                  <WithStyles(TableHead)>
+                    <TableHead
+                      classes={
+                        Object {
+                          "root": "MuiTableHead-root-29",
+                        }
+                      }
+                      component="thead"
+                    >
+                      <thead
+                        className="MuiTableHead-root-29"
+                      >
+                        <DataTableRow>
+                          <WithStyles(TableRow)>
+                            <TableRow
+                              classes={
+                                Object {
+                                  "footer": "MuiTableRow-footer-34",
+                                  "head": "MuiTableRow-head-33",
+                                  "hover": "MuiTableRow-hover-32",
+                                  "root": "MuiTableRow-root-30",
+                                  "selected": "MuiTableRow-selected-31",
+                                }
                               }
-                            }
-                            component="tr"
-                            hover={false}
-                            selected={false}
-                          >
-                            <tr
-                              className="MuiTableRow-root-3"
+                              component="tr"
+                              hover={false}
+                              selected={false}
                             >
-                              <DataTableCell>
-                                <WithStyles(TableCell)>
-                                  <TableCell
-                                    align="inherit"
-                                    classes={
-                                      Object {
-                                        "alignCenter": "MuiTableCell-alignCenter-17",
-                                        "alignJustify": "MuiTableCell-alignJustify-19",
-                                        "alignLeft": "MuiTableCell-alignLeft-16",
-                                        "alignRight": "MuiTableCell-alignRight-18",
-                                        "body": "MuiTableCell-body-10",
-                                        "footer": "MuiTableCell-footer-11",
-                                        "head": "MuiTableCell-head-9",
-                                        "numeric": "MuiTableCell-numeric-12",
-                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                        "paddingDense": "MuiTableCell-paddingDense-13",
-                                        "paddingNone": "MuiTableCell-paddingNone-15",
-                                        "root": "MuiTableCell-root-8",
-                                      }
-                                    }
-                                  >
-                                    <td
-                                      aria-sort={null}
-                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
-                                    >
-                                      Row 1, column 1
-                                    </td>
-                                  </TableCell>
-                                </WithStyles(TableCell)>
-                              </DataTableCell>
-                              <DataTableCell>
-                                <WithStyles(TableCell)>
-                                  <TableCell
-                                    align="inherit"
-                                    classes={
-                                      Object {
-                                        "alignCenter": "MuiTableCell-alignCenter-17",
-                                        "alignJustify": "MuiTableCell-alignJustify-19",
-                                        "alignLeft": "MuiTableCell-alignLeft-16",
-                                        "alignRight": "MuiTableCell-alignRight-18",
-                                        "body": "MuiTableCell-body-10",
-                                        "footer": "MuiTableCell-footer-11",
-                                        "head": "MuiTableCell-head-9",
-                                        "numeric": "MuiTableCell-numeric-12",
-                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                        "paddingDense": "MuiTableCell-paddingDense-13",
-                                        "paddingNone": "MuiTableCell-paddingNone-15",
-                                        "root": "MuiTableCell-root-8",
-                                      }
-                                    }
-                                  >
-                                    <td
-                                      aria-sort={null}
-                                      className="MuiTableCell-root-8 MuiTableCell-body-10"
-                                    >
-                                      Row 1, column 2
-                                    </td>
-                                  </TableCell>
-                                </WithStyles(TableCell)>
-                              </DataTableCell>
-                              <DataTableCell
-                                align="right"
+                              <tr
+                                className="MuiTableRow-root-30 MuiTableRow-head-33"
                               >
-                                <WithStyles(TableCell)
-                                  align="right"
+                                <DataTableCell
+                                  key="Column 1"
                                 >
-                                  <TableCell
-                                    align="right"
-                                    classes={
-                                      Object {
-                                        "alignCenter": "MuiTableCell-alignCenter-17",
-                                        "alignJustify": "MuiTableCell-alignJustify-19",
-                                        "alignLeft": "MuiTableCell-alignLeft-16",
-                                        "alignRight": "MuiTableCell-alignRight-18",
-                                        "body": "MuiTableCell-body-10",
-                                        "footer": "MuiTableCell-footer-11",
-                                        "head": "MuiTableCell-head-9",
-                                        "numeric": "MuiTableCell-numeric-12",
-                                        "paddingCheckbox": "MuiTableCell-paddingCheckbox-14",
-                                        "paddingDense": "MuiTableCell-paddingDense-13",
-                                        "paddingNone": "MuiTableCell-paddingNone-15",
-                                        "root": "MuiTableCell-root-8",
+                                  <WithStyles(TableCell)>
+                                    <TableCell
+                                      align="inherit"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTableCell-alignCenter-44",
+                                          "alignJustify": "MuiTableCell-alignJustify-46",
+                                          "alignLeft": "MuiTableCell-alignLeft-43",
+                                          "alignRight": "MuiTableCell-alignRight-45",
+                                          "body": "MuiTableCell-body-37",
+                                          "footer": "MuiTableCell-footer-38",
+                                          "head": "MuiTableCell-head-36",
+                                          "numeric": "MuiTableCell-numeric-39",
+                                          "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                          "paddingDense": "MuiTableCell-paddingDense-40",
+                                          "paddingNone": "MuiTableCell-paddingNone-42",
+                                          "root": "MuiTableCell-root-35",
+                                        }
                                       }
-                                    }
-                                  >
-                                    <td
-                                      aria-sort={null}
-                                      className="MuiTableCell-root-8 MuiTableCell-body-10 MuiTableCell-alignRight-18"
                                     >
-                                      Row 1, action column
-                                    </td>
-                                  </TableCell>
-                                </WithStyles(TableCell)>
-                              </DataTableCell>
-                            </tr>
-                          </TableRow>
-                        </WithStyles(TableRow)>
-                      </DataTableRow>
-                    </Children>
-                  </tbody>
-                </TableBody>
-              </WithStyles(TableBody)>
-            </table>
-          </Table>
-        </WithStyles(Table)>
-      </div>
+                                      <th
+                                        aria-sort={null}
+                                        className="MuiTableCell-root-35 MuiTableCell-head-36"
+                                        scope="col"
+                                      >
+                                        Column 1
+                                      </th>
+                                    </TableCell>
+                                  </WithStyles(TableCell)>
+                                </DataTableCell>
+                                <DataTableCell
+                                  key="Column 2"
+                                >
+                                  <WithStyles(TableCell)>
+                                    <TableCell
+                                      align="inherit"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTableCell-alignCenter-44",
+                                          "alignJustify": "MuiTableCell-alignJustify-46",
+                                          "alignLeft": "MuiTableCell-alignLeft-43",
+                                          "alignRight": "MuiTableCell-alignRight-45",
+                                          "body": "MuiTableCell-body-37",
+                                          "footer": "MuiTableCell-footer-38",
+                                          "head": "MuiTableCell-head-36",
+                                          "numeric": "MuiTableCell-numeric-39",
+                                          "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                          "paddingDense": "MuiTableCell-paddingDense-40",
+                                          "paddingNone": "MuiTableCell-paddingNone-42",
+                                          "root": "MuiTableCell-root-35",
+                                        }
+                                      }
+                                    >
+                                      <th
+                                        aria-sort={null}
+                                        className="MuiTableCell-root-35 MuiTableCell-head-36"
+                                        scope="col"
+                                      >
+                                        Column 2
+                                      </th>
+                                    </TableCell>
+                                  </WithStyles(TableCell)>
+                                </DataTableCell>
+                              </tr>
+                            </TableRow>
+                          </WithStyles(TableRow)>
+                        </DataTableRow>
+                      </thead>
+                    </TableHead>
+                  </WithStyles(TableHead)>
+                  <WithStyles(TableBody)>
+                    <TableBody
+                      classes={
+                        Object {
+                          "root": "MuiTableBody-root-47",
+                        }
+                      }
+                      component="tbody"
+                    >
+                      <tbody
+                        className="MuiTableBody-root-47"
+                      >
+                        <Children>
+                          <DataTableRow>
+                            <WithStyles(TableRow)>
+                              <TableRow
+                                classes={
+                                  Object {
+                                    "footer": "MuiTableRow-footer-34",
+                                    "head": "MuiTableRow-head-33",
+                                    "hover": "MuiTableRow-hover-32",
+                                    "root": "MuiTableRow-root-30",
+                                    "selected": "MuiTableRow-selected-31",
+                                  }
+                                }
+                                component="tr"
+                                hover={false}
+                                selected={false}
+                              >
+                                <tr
+                                  className="MuiTableRow-root-30"
+                                >
+                                  <DataTableCell>
+                                    <WithStyles(TableCell)>
+                                      <TableCell
+                                        align="inherit"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTableCell-alignCenter-44",
+                                            "alignJustify": "MuiTableCell-alignJustify-46",
+                                            "alignLeft": "MuiTableCell-alignLeft-43",
+                                            "alignRight": "MuiTableCell-alignRight-45",
+                                            "body": "MuiTableCell-body-37",
+                                            "footer": "MuiTableCell-footer-38",
+                                            "head": "MuiTableCell-head-36",
+                                            "numeric": "MuiTableCell-numeric-39",
+                                            "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                            "paddingDense": "MuiTableCell-paddingDense-40",
+                                            "paddingNone": "MuiTableCell-paddingNone-42",
+                                            "root": "MuiTableCell-root-35",
+                                          }
+                                        }
+                                      >
+                                        <td
+                                          aria-sort={null}
+                                          className="MuiTableCell-root-35 MuiTableCell-body-37"
+                                        >
+                                          Row 1, column 1
+                                        </td>
+                                      </TableCell>
+                                    </WithStyles(TableCell)>
+                                  </DataTableCell>
+                                  <DataTableCell>
+                                    <WithStyles(TableCell)>
+                                      <TableCell
+                                        align="inherit"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTableCell-alignCenter-44",
+                                            "alignJustify": "MuiTableCell-alignJustify-46",
+                                            "alignLeft": "MuiTableCell-alignLeft-43",
+                                            "alignRight": "MuiTableCell-alignRight-45",
+                                            "body": "MuiTableCell-body-37",
+                                            "footer": "MuiTableCell-footer-38",
+                                            "head": "MuiTableCell-head-36",
+                                            "numeric": "MuiTableCell-numeric-39",
+                                            "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                            "paddingDense": "MuiTableCell-paddingDense-40",
+                                            "paddingNone": "MuiTableCell-paddingNone-42",
+                                            "root": "MuiTableCell-root-35",
+                                          }
+                                        }
+                                      >
+                                        <td
+                                          aria-sort={null}
+                                          className="MuiTableCell-root-35 MuiTableCell-body-37"
+                                        >
+                                          Row 1, column 2
+                                        </td>
+                                      </TableCell>
+                                    </WithStyles(TableCell)>
+                                  </DataTableCell>
+                                  <DataTableCell
+                                    align="right"
+                                  >
+                                    <WithStyles(TableCell)
+                                      align="right"
+                                    >
+                                      <TableCell
+                                        align="right"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTableCell-alignCenter-44",
+                                            "alignJustify": "MuiTableCell-alignJustify-46",
+                                            "alignLeft": "MuiTableCell-alignLeft-43",
+                                            "alignRight": "MuiTableCell-alignRight-45",
+                                            "body": "MuiTableCell-body-37",
+                                            "footer": "MuiTableCell-footer-38",
+                                            "head": "MuiTableCell-head-36",
+                                            "numeric": "MuiTableCell-numeric-39",
+                                            "paddingCheckbox": "MuiTableCell-paddingCheckbox-41",
+                                            "paddingDense": "MuiTableCell-paddingDense-40",
+                                            "paddingNone": "MuiTableCell-paddingNone-42",
+                                            "root": "MuiTableCell-root-35",
+                                          }
+                                        }
+                                      >
+                                        <td
+                                          aria-sort={null}
+                                          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-alignRight-45"
+                                        >
+                                          Row 1, action column
+                                        </td>
+                                      </TableCell>
+                                    </WithStyles(TableCell)>
+                                  </DataTableCell>
+                                </tr>
+                              </TableRow>
+                            </WithStyles(TableRow)>
+                          </DataTableRow>
+                        </Children>
+                      </tbody>
+                    </TableBody>
+                  </WithStyles(TableBody)>
+                </table>
+              </Table>
+            </WithStyles(Table)>
+          </div>
+        </Paper>
+      </WithStyles(Paper)>
     </StyledComponent>
-  </styled.div>
+  </Styled(WithStyles(Paper))>
 </DataTable>
 `;

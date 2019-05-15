@@ -1,4 +1,5 @@
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableFooter from '@material-ui/core/TableFooter';
@@ -9,7 +10,7 @@ import styled from 'styled-components';
 import DataTableCell from '../DataTableCell';
 import DataTableRow from '../DataTableRow';
 
-const Wrapper = styled.div`
+const Wrapper = styled(Paper)`
   margin: 24px 0 0;
 `;
 
