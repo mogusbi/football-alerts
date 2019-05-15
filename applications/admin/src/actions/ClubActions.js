@@ -24,7 +24,7 @@ export function createClub (input) {
         message: `${name} has been added!`
       }));
 
-      history.push('/clubs');
+      history.push('/');
     } catch (e) {
       dispatch(setAlert({
         message: e.errors.map(({message}) => message),
@@ -49,7 +49,7 @@ export function deleteClub (id) {
         message: `${name} has been deleted!`
       }));
 
-      history.push('/clubs');
+      history.push('/');
     } catch (e) {
       dispatch(setAlert({
         message: e.errors.map(({message}) => message),
@@ -138,7 +138,7 @@ export function updateClub (id, input) {
         message: `${name} has been updated!`
       }));
 
-      history.push('/clubs');
+      history.push('/');
     } catch (e) {
       dispatch(setAlert({
         message: e.errors.map(({message}) => message),

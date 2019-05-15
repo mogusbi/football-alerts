@@ -1,14 +1,29 @@
 import {Connect} from 'aws-amplify-react';
 import {graphqlOperation} from 'aws-amplify';
 import PropTypes from 'prop-types';
-import React, {memo} from 'react';
+import React, {Fragment, memo, useState} from 'react';
 import {connect} from 'react-redux';
 import {deleteClub, updateClub} from '../../actions/ClubActions';
 import Loader from '../../components/Loader';
+import Confirmation from '../../components/Confirmation';
 import {getClub} from '../../graphql/queries';
 import ClubsForm from './ClubsForm';
 
-function ClubsView ({deleteHandler, match: {params: {id}}, submitHandler}) {
+function ClubsEdit ({deleteHandler, match: {params: {id}}, submitHandler}) {
+  const [confirmation, setConfirmation] = useState(false);
+
+  function beginDelete () {
+    setConfirmation(true);
+  }
+
+  function cancelDelete () {
+    setConfirmation(false);
+  }
+
+  function submit (input) {
+    submitHandler(input);
+  }
+
   return (
     <Connect
       query={graphqlOperation(getClub, {
@@ -24,11 +39,21 @@ function ClubsView ({deleteHandler, match: {params: {id}}, submitHandler}) {
           }
 
           return (
-            <ClubsForm
-              club={getClub}
-              deleteHandler={deleteHandler}
-              onSubmit={(input) => submitHandler(input)}
-            />
+            <Fragment>
+              <ClubsForm
+                club={getClub}
+                deleteHandler={beginDelete}
+                onSubmit={submit}
+              />
+
+              <Confirmation
+                closeHandler={cancelDelete}
+                confirmHandler={deleteHandler}
+                message={`Are you sure you want to delete ${getClub.name}?`}
+                open={confirmation}
+                title='Delete club'
+              />
+            </Fragment>
           );
         }
       }
@@ -36,7 +61,7 @@ function ClubsView ({deleteHandler, match: {params: {id}}, submitHandler}) {
   );
 }
 
-ClubsView.propTypes = {
+ClubsEdit.propTypes = {
   deleteHandler: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -57,4 +82,4 @@ function mapDispatchToProps (dispatch, {match: {params: {id}}}) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(memo(ClubsView));
+export default connect(null, mapDispatchToProps)(memo(ClubsEdit));

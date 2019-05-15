@@ -1,12 +1,10 @@
 import {withAuthenticator} from 'aws-amplify-react';
 import {ConnectedRouter} from 'connected-react-router';
-import React from 'react';
+import React, {memo} from 'react';
 import {Provider} from 'react-redux';
-import {Route} from 'react-router-dom';
 import Layout from './containers/Layout';
 import history from './history';
-import Clubs from './pages/Clubs';
-import Dashboard from './pages/Dashboard';
+import Routes from './pages/Routes';
 import store from './store';
 
 function App () {
@@ -14,12 +12,11 @@ function App () {
     <Provider store={store()}>
       <ConnectedRouter history={history}>
         <Layout>
-          <Route exact path='/' component={Dashboard} />
-          <Route path='/clubs' component={Clubs} />
+          <Routes />
         </Layout>
       </ConnectedRouter>
     </Provider>
   );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(memo(App));

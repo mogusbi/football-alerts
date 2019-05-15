@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, {memo} from 'react';
 import AppDrawerList from '../AppDrawerList';
 
-function AppDrawer ({closeDrawer, isOpen, openDrawer}) {
+function AppDrawer ({closeDrawer, clubId, isOpen, openDrawer}) {
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   return (
@@ -20,7 +20,7 @@ function AppDrawer ({closeDrawer, isOpen, openDrawer}) {
         role='button'
         tabIndex={0}
       >
-        <AppDrawerList />
+        <AppDrawerList clubId={clubId} />
       </div>
     </SwipeableDrawer>
   );
@@ -28,11 +28,13 @@ function AppDrawer ({closeDrawer, isOpen, openDrawer}) {
 
 AppDrawer.propTypes = {
   closeDrawer: PropTypes.func.isRequired,
+  clubId: PropTypes.string,
   isOpen: PropTypes.bool,
   openDrawer: PropTypes.func.isRequired
 };
 
 AppDrawer.defaultProps = {
+  clubId: null,
   isOpen: false
 };
 

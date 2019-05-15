@@ -65,7 +65,7 @@ describe('ClubActions', () => {
       it('should redirect to the correct page', async () => {
         await action(dispatch);
 
-        expect(history.push).toHaveBeenCalledWith('/clubs');
+        expect(history.push).toHaveBeenCalledWith('/');
       });
 
       it('should stop the loader', async () => {
@@ -158,7 +158,7 @@ describe('ClubActions', () => {
       it('should redirect to the correct page', async () => {
         await action(dispatch);
 
-        expect(history.push).toHaveBeenCalledWith('/clubs');
+        expect(history.push).toHaveBeenCalledWith('/');
       });
 
       it('should stop the loader', async () => {
@@ -463,7 +463,7 @@ describe('ClubActions', () => {
       it('should redirect to the correct page', async () => {
         await action(dispatch);
 
-        expect(history.push).toHaveBeenCalledWith('/clubs');
+        expect(history.push).toHaveBeenCalledWith('/');
       });
 
       it('should stop the loader', async () => {

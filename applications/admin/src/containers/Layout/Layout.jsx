@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
+import {matchPath, withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 import {clearAlert} from '../../actions/AlertActions';
 import {closeAccountMenu, closeDrawer, openAccountMenu, openDrawer} from '../../actions/LayoutActions';
@@ -31,18 +32,23 @@ async function signOutHandler () {
 }
 
 function Layout ({
-   alert,
-   children,
-   closeAccountMenuHandler,
-   closeDialogHandler,
-   closeDrawerHandler,
-   closeMessageHandler,
-   layout,
-   loader,
-   message,
-   openAccountMenuHandler,
-   openDrawerHandler
+  alert,
+  children,
+  closeAccountMenuHandler,
+  closeDialogHandler,
+  closeDrawerHandler,
+  closeMessageHandler,
+  history,
+  layout,
+  loader,
+  message,
+  openAccountMenuHandler,
+  openDrawerHandler
 }) {
+  const match = matchPath(history.location.pathname, {
+    path: '/clubs/:clubId'
+  });
+
   return (
     <Fragment>
       <CssBaseline />
@@ -58,8 +64,9 @@ function Layout ({
       />
 
       <AppDrawer
-        isOpen={layout.drawer}
         closeDrawer={closeDrawerHandler}
+        clubId={match && match.params.clubId}
+        isOpen={layout.drawer}
         openDrawer={openDrawerHandler}
       />
 
@@ -98,6 +105,11 @@ Layout.propTypes = {
   closeDialogHandler: PropTypes.func.isRequired,
   closeDrawerHandler: PropTypes.func.isRequired,
   closeMessageHandler: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    location: PropTypes.shape({
+      pathname: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired,
   layout: PropTypes.shape({
     accountMenu: PropTypes.object,
     drawer: PropTypes.bool.isRequired
@@ -145,4 +157,4 @@ function mapDispatchToProps (dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Layout));

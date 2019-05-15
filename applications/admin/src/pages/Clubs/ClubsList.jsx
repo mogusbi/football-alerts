@@ -22,7 +22,7 @@ function ClubsList ({club, getClubsHandler, nextClubsHandler}) {
       <FormButtonBar>
         <LinkButton
           color='primary'
-          to='/clubs/add'
+          to='/add'
           variant='contained'
         >
           Add new club
@@ -48,12 +48,20 @@ function ClubsList ({club, getClubsHandler, nextClubsHandler}) {
                   <LinkButton
                     color='primary'
                     size='small'
-                    to={`/clubs/view/${id}`}
-                    variant='text'
+                    to={`/clubs/${id}/dashboard`}
+                    variant='contained'
                   >
-                    View
+                    Select
                   </LinkButton>
                   {' '}
+                  <LinkButton
+                    color='primary'
+                    size='small'
+                    to={`/clubs/${id}/edit`}
+                    variant='text'
+                  >
+                    Edit
+                  </LinkButton>
                 </DataTableCell>
               </DataTableRow>
             )

@@ -17,7 +17,7 @@ function ClubsForm ({club, deleteHandler, onSubmit}) {
   return (
     <Fragment>
       <Form
-        cancelLink='/clubs'
+        cancelLink='/'
         initialValues={club}
         onSubmit={onSubmit}
         validationSchema={schema}
