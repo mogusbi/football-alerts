@@ -1,0 +1,24 @@
+{
+  "version": "2017-02-28",
+  "operation": "UpdateItem",
+  "key" : {
+    "clubId": $util.dynamodb.toDynamoDBJson($ctx.args.clubId),
+    "id": $util.dynamodb.toDynamoDBJson($ctx.args.id)
+  },
+  "update": {
+    "expression": "SET description = :description, feed = :feed, image = :image, link = :link, #name = :name, publishDate = :publishDate, title = :title, updatedAt = :updatedAt",
+    "expressionNames": {
+      "#name": "name"
+    },
+    "expressionValues": {
+      ":description": $util.dynamodb.toDynamoDBJson($ctx.args.input.description),
+      ":feed": $util.dynamodb.toDynamoDBJson($ctx.args.input.feed),
+      ":image": $util.dynamodb.toDynamoDBJson($ctx.args.input.image),
+      ":link": $util.dynamodb.toDynamoDBJson($ctx.args.input.link),
+      ":name": $util.dynamodb.toDynamoDBJson($ctx.args.input.name),
+      ":publishDate": $util.dynamodb.toDynamoDBJson($ctx.args.input.publishDate),
+      ":title": $util.dynamodb.toDynamoDBJson($ctx.args.input.title),
+      ":updatedAt": $util.dynamodb.toDynamoDBJson($util.time.nowISO8601())
+    }
+  }
+}

@@ -74,6 +74,24 @@ custom:
           response: sources/Mutation.createSource.res.vtl
         -
           dataSource: Sources
+          type: Mutation
+          field: deleteSource
+          request: sources/Mutation.deleteSource.req.vtl
+          response: sources/Mutation.deleteSource.res.vtl
+        -
+          dataSource: Sources
+          type: Mutation
+          field: updateSource
+          request: sources/Mutation.updateSource.req.vtl
+          response: sources/Mutation.updateSource.res.vtl
+        -
+          dataSource: Sources
+          type: Query
+          field: getSource
+          request: sources/Query.getSource.req.vtl
+          response: sources/Query.getSource.res.vtl
+        -
+          dataSource: Sources
           type: Query
           field: getSources
           request: sources/Query.getSources.req.vtl
