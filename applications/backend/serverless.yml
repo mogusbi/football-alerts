@@ -72,6 +72,12 @@ custom:
           field: createSource
           request: sources/Mutation.createSource.req.vtl
           response: sources/Mutation.createSource.res.vtl
+        -
+          dataSource: Sources
+          type: Query
+          field: getSources
+          request: sources/Query.getSources.req.vtl
+          response: sources/Query.getSources.res.vtl
       dataSources:
         -
           type: AMAZON_DYNAMODB
