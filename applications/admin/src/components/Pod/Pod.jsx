@@ -4,9 +4,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import React, {memo} from 'react';
-import LinkButton from '../../components/LinkButton';
+import LinkButton from '../LinkButton';
 
-function DashboardPod ({content, link, title}) {
+function Pod ({content, link, title}) {
   return (
     <Card>
       <CardContent>
@@ -35,10 +35,10 @@ function DashboardPod ({content, link, title}) {
   );
 }
 
-DashboardPod.propTypes = {
+Pod.propTypes = {
   content: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 };
 
-export default memo(DashboardPod);
+export default memo(Pod);

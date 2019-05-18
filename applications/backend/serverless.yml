@@ -93,9 +93,9 @@ custom:
         -
           dataSource: Settings
           type: Query
-          field: getSetting
-          request: settings/Query.getSetting.req.vtl
-          response: settings/Query.getSetting.res.vtl
+          field: getSettings
+          request: settings/Query.getSettings.req.vtl
+          response: settings/Query.getSettings.res.vtl
 
         # Sources
         -

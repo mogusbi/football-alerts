@@ -5,6 +5,7 @@ import {clubReducer} from './club';
 import {layoutReducer} from './layout';
 import {loaderReducer} from './loader';
 import {messageReducer} from './message';
+import {settingReducer} from './setting';
 import {sourceReducer} from './source';
 
 function root (history) {
@@ -15,6 +16,7 @@ function root (history) {
     loader: loaderReducer,
     message: messageReducer,
     router: connectRouter(history),
+    setting: settingReducer,
     source: sourceReducer
   });
 }

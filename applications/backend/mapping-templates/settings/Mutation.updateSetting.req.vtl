@@ -6,9 +6,10 @@
     "type": $util.dynamodb.toDynamoDBJson($ctx.args.type)
   },
   "update": {
-    "expression": "SET #name = :name, updatedAt = :updatedAt, value = :value",
+    "expression": "SET #name = :name, updatedAt = :updatedAt, #value = :value",
     "expressionNames": {
-      "#name": "name"
+      "#name": "name",
+      "#value": "value"
     },
     "expressionValues": {
       ":name": $util.dynamodb.toDynamoDBJson($ctx.args.input.name),

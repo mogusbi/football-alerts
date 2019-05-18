@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import React, {Fragment, memo} from 'react';
 import Loader from '../../components/Loader';
 import PageTitle from '../../components/PageTitle';
+import Pod from '../../components/Pod';
 import * as queries from '../../graphql/queries';
-import DashboardPod from './DashboardPod';
 
 function Index ({match: {params: {clubId}}}) {
   return (
@@ -32,7 +32,7 @@ function Index ({match: {params: {clubId}}}) {
                 sm={6}
                 xs={12}
               >
-                <DashboardPod
+                <Pod
                   content='View and edit club details'
                   link={`/clubs/${clubId}/edit`}
                   title={getClub.name}
@@ -45,7 +45,7 @@ function Index ({match: {params: {clubId}}}) {
                 sm={6}
                 xs={12}
               >
-                <DashboardPod
+                <Pod
                   content='View and manage club alert sources '
                   link={`/clubs/${clubId}/sources`}
                   title='Sources'
@@ -58,7 +58,7 @@ function Index ({match: {params: {clubId}}}) {
                 sm={6}
                 xs={12}
               >
-                <DashboardPod
+                <Pod
                   content='View and manage imported articles'
                   link={`/clubs/${clubId}/articles`}
                   title='Articles'

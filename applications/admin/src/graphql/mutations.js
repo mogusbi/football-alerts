@@ -6,6 +6,14 @@ export const createClub = `
   }
 `;
 
+export const createSetting = `
+  mutation CreateSetting($type: String!, $input: SettingInput!) {
+    createSetting(type: $type, input: $input) {
+      name
+    }
+  }
+`;
+
 export const createSource = `
   mutation CreateSource($clubId: ID!, $input: SourceInput!) {
     createSource(clubId: $clubId, input: $input) {
@@ -22,6 +30,14 @@ export const deleteClub =`
   }
 `;
 
+export const deleteSetting =`
+  mutation DeleteSetting($id: ID!, $type: String!) {
+    deleteSetting(id: $id, type: $type) {
+      name
+    }
+  }
+`;
+
 export const deleteSource =`
   mutation DeleteSource($id: ID!, $clubId: ID!) {
     deleteSource(id: $id, clubId: $clubId) {
@@ -33,6 +49,14 @@ export const deleteSource =`
 export const updateClub = `
   mutation UpdateClub($id: ID!, $input: ClubInput!) {
     updateClub(id: $id, input: $input) {
+      name
+    }
+  }
+`;
+
+export const updateSetting = `
+  mutation UpdateSetting($id: ID!, $type: String!, $input: SettingInput!) {
+    updateSetting(id: $id, type: $type, input: $input) {
       name
     }
   }

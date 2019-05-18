@@ -28,6 +28,27 @@ export const getClubs = `
   }
 `;
 
+export const getSetting = `
+  query GetSetting($id: ID!, $type: String!) {
+    getSetting(id: $id, type: $type) {
+      name
+      value
+    }
+  }
+`;
+
+export const getSettings = `
+  query GetSettings($type: String!, $limit: Int, $nextToken: String) {
+    getSettings(type: $type, limit: $limit, nextToken: $nextToken) {
+      nextToken
+      settings {
+        id
+        name
+      }
+    }
+  }
+`;
+
 export const getSource = `
   query GetSource($id: ID!, $clubId: ID!) {
     getSource(id: $id, clubId: $clubId) {
