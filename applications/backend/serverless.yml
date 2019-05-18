@@ -65,6 +65,38 @@ custom:
           request: clubs/Query.getClubs.req.vtl
           response: clubs/Query.getClubs.res.vtl
 
+        # Settings
+        -
+          dataSource: Settings
+          type: Mutation
+          field: createSetting
+          request: settings/Mutation.createSetting.req.vtl
+          response: settings/Mutation.createSetting.res.vtl
+        -
+          dataSource: Settings
+          type: Mutation
+          field: deleteSetting
+          request: settings/Mutation.deleteSetting.req.vtl
+          response: settings/Mutation.deleteSetting.res.vtl
+        -
+          dataSource: Settings
+          type: Mutation
+          field: updateSetting
+          request: settings/Mutation.updateSetting.req.vtl
+          response: settings/Mutation.updateSetting.res.vtl
+        -
+          dataSource: Settings
+          type: Query
+          field: getSetting
+          request: settings/Query.getSetting.req.vtl
+          response: settings/Query.getSetting.res.vtl
+        -
+          dataSource: Settings
+          type: Query
+          field: getSetting
+          request: settings/Query.getSetting.req.vtl
+          response: settings/Query.getSetting.res.vtl
+
         # Sources
         -
           dataSource: Sources
@@ -103,6 +135,13 @@ custom:
           description: Clubs table
           config:
             tableName: !Ref ClubsTable
+            serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
+        -
+          type: AMAZON_DYNAMODB
+          name: Settings
+          description: Settings table
+          config:
+            tableName: !Ref SettingsTable
             serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
         -
           type: AMAZON_DYNAMODB
@@ -279,6 +318,28 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
 
+    SettingsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.prefix}-settings
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+          -
+            AttributeName: type
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+          -
+            AttributeName: type
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
     SourcesTable:
       Type: AWS::DynamoDB::Table
       Properties:
@@ -349,6 +410,7 @@ resources:
                     - dynamodb:UpdateItem
                   Resource:
                     - !GetAtt ClubsTable.Arn
+                    - !GetAtt SettingsTable.Arn
                     - !GetAtt SourcesTable.Arn
 
     UsersRegisterLambdaFunctionInvokePermission:

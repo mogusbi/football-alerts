@@ -3,6 +3,9 @@
     <TypeScriptCodeStyleSettings version="0">
       <option name="USE_DOUBLE_QUOTES" value="false" />
     </TypeScriptCodeStyleSettings>
+    <yaml>
+      <option name="AUTOINSERT_SEQUENCE_MARKER" value="false" />
+    </yaml>
     <codeStyleSettings language="TypeScript">
       <option name="RIGHT_MARGIN" value="140" />
       <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
