@@ -5,6 +5,7 @@ import {clubReducer} from '../club';
 import {layoutReducer} from '../layout';
 import {loaderReducer} from '../loader';
 import {messageReducer} from '../message';
+import {sourceReducer} from '../source';
 import root from '../root';
 
 describe('root', () => {
@@ -29,7 +30,8 @@ describe('root', () => {
       layout: layoutReducer,
       loader: loaderReducer,
       message: messageReducer,
-      router: connectRouter(history)
+      router: connectRouter(history),
+      source: sourceReducer
     });
   });
 });

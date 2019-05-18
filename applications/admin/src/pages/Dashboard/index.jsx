@@ -20,9 +20,9 @@ function Index ({match: {params: {clubId}}}) {
           xs={12}
         >
           <DashboardPod
-            content='View and manage imported articles'
-            link={`/clubs/${clubId}/articles`}
-            title='Articles'
+            content='View and manage club alert sources '
+            link={`/clubs/${clubId}/sources`}
+            title='Sources'
           />
         </Grid>
 
@@ -33,9 +33,9 @@ function Index ({match: {params: {clubId}}}) {
           xs={12}
         >
           <DashboardPod
-            content='View and manage club alert sources '
-            link={`/clubs/${clubId}/sources`}
-            title='Sources'
+            content='View and manage imported articles'
+            link={`/clubs/${clubId}/articles`}
+            title='Articles'
           />
         </Grid>
       </Grid>

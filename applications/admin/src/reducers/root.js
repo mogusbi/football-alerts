@@ -5,6 +5,7 @@ import {clubReducer} from './club';
 import {layoutReducer} from './layout';
 import {loaderReducer} from './loader';
 import {messageReducer} from './message';
+import {sourceReducer} from './source';
 
 function root (history) {
   return combineReducers({
@@ -13,7 +14,8 @@ function root (history) {
     layout: layoutReducer,
     loader: loaderReducer,
     message: messageReducer,
-    router: connectRouter(history)
+    router: connectRouter(history),
+    source: sourceReducer
   });
 }
 

@@ -388,7 +388,9 @@ exports[`AppDrawer when closed should render component 1`] = `
     role="button"
     tabIndex={0}
   >
-    <AppDrawerList />
+    <AppDrawerList
+      clubId={null}
+    />
   </div>
 </SwipeableDrawer>
 `;
@@ -781,7 +783,9 @@ exports[`AppDrawer when open should render component 1`] = `
     role="button"
     tabIndex={0}
   >
-    <AppDrawerList />
+    <AppDrawerList
+      clubId={null}
+    />
   </div>
 </SwipeableDrawer>
 `;

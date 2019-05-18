@@ -2,16 +2,26 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import {FormikTextField} from 'formik-material-fields';
 import PropTypes from 'prop-types';
-import React, {Fragment} from 'react';
+import React, {Fragment, memo} from 'react';
 import * as Yup from 'yup';
 import Form from '../../components/Form';
 import FormButtonBar from '../../components/FormButtonBar';
 
-const schema = Yup.object().shape({
-  name: Yup.string().required('Club name is required'),
-  twitterHandle: Yup.string().matches(/^[A-Za-z0-9_]{1,15}$/, 'Invalid Twitter handle'),
-  website: Yup.string().url('Invalid URL')
-});
+const schema = Yup
+  .object()
+  .shape({
+    name: Yup
+      .string()
+      .required('Club name is required'),
+    twitterHandle: Yup
+      .string()
+      .matches(/^[A-Za-z0-9_]{1,15}$/, 'Invalid Twitter handle')
+      .required('Twitter handle is required'),
+    website: Yup
+      .string()
+      .url('Invalid URL')
+      .required('Website is required')
+  });
 
 function ClubsForm ({club, deleteHandler, onSubmit}) {
   return (
@@ -110,4 +120,4 @@ ClubsForm.defaultProps = {
   deleteHandler: null
 };
 
-export default ClubsForm;
+export default memo(ClubsForm);

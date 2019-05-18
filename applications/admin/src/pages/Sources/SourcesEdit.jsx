@@ -3,13 +3,13 @@ import {graphqlOperation} from 'aws-amplify';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo, useState} from 'react';
 import {connect} from 'react-redux';
-import {deleteClub, updateClub} from '../../actions/ClubActions';
+import {deleteSource, updateSource} from '../../actions/SourceActions';
 import Loader from '../../components/Loader';
 import Confirmation from '../../components/Confirmation';
 import * as queries from '../../graphql/queries';
-import ClubsForm from './ClubsForm';
+import SourcesForm from './SourcesForm';
 
-function ClubsEdit ({deleteHandler, match: {params: {id}}, submitHandler}) {
+function SourcesEdit ({deleteHandler, match: {params: {clubId, id}}, submitHandler}) {
   const [confirmation, setConfirmation] = useState(false);
 
   function beginDelete () {
@@ -26,12 +26,13 @@ function ClubsEdit ({deleteHandler, match: {params: {id}}, submitHandler}) {
 
   return (
     <Connect
-      query={graphqlOperation(queries.getClub, {
+      query={graphqlOperation(queries.getSource, {
+        clubId,
         id
       })}
     >
       {
-        ({data: {getClub}, loading}) => {
+        ({data: {getSource}, loading}) => {
           if (loading) {
             return (
               <Loader loading={loading} />
@@ -40,18 +41,19 @@ function ClubsEdit ({deleteHandler, match: {params: {id}}, submitHandler}) {
 
           return (
             <Fragment>
-              <ClubsForm
-                club={getClub}
+              <SourcesForm
+                clubId={clubId}
                 deleteHandler={beginDelete}
                 onSubmit={submit}
+                source={getSource}
               />
 
               <Confirmation
                 closeHandler={cancelDelete}
                 confirmHandler={deleteHandler}
-                message={`Are you sure you want to delete ${getClub.name}?`}
+                message={`Are you sure you want to delete ${getSource.name}?`}
                 open={confirmation}
-                title='Delete club'
+                title='Delete source'
               />
             </Fragment>
           );
@@ -61,25 +63,26 @@ function ClubsEdit ({deleteHandler, match: {params: {id}}, submitHandler}) {
   );
 }
 
-ClubsEdit.propTypes = {
+SourcesEdit.propTypes = {
   deleteHandler: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
+      clubId: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
   submitHandler: PropTypes.func.isRequired
 };
 
-function mapDispatchToProps (dispatch, {match: {params: {id}}}) {
+function mapDispatchToProps (dispatch, {match: {params: {clubId, id}}}) {
   return {
     deleteHandler () {
-      return dispatch(deleteClub(id));
+      return dispatch(deleteSource(id, clubId));
     },
     submitHandler (input) {
-      return dispatch(updateClub(id, input));
+      return dispatch(updateSource(id, clubId, input));
     }
   };
 }
 
-export default connect(null, mapDispatchToProps)(memo(ClubsEdit));
+export default connect(null, mapDispatchToProps)(memo(SourcesEdit));
