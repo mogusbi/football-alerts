@@ -4,7 +4,7 @@ service:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   region: ${opt:region, 'eu-west-1'}
   stage: ${opt:stage, 'local'}
   environment:
@@ -64,6 +64,14 @@ custom:
           field: getClubs
           request: clubs/Query.getClubs.req.vtl
           response: clubs/Query.getClubs.res.vtl
+
+        # Sources
+        -
+          dataSource: Sources
+          type: Mutation
+          field: createSource
+          request: sources/Mutation.createSource.req.vtl
+          response: sources/Mutation.createSource.res.vtl
       dataSources:
         -
           type: AMAZON_DYNAMODB
@@ -71,6 +79,13 @@ custom:
           description: Clubs table
           config:
             tableName: !Ref ClubsTable
+            serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
+        -
+          type: AMAZON_DYNAMODB
+          name: Sources
+          description: Sources table
+          config:
+            tableName: !Ref SourcesTable
             serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
 
   cognito-transformations:
@@ -240,6 +255,28 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
 
+    SourcesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.prefix}-sources
+        AttributeDefinitions:
+          -
+            AttributeName: clubId
+            AttributeType: S
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+          -
+            AttributeName: clubId
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
     UsersTable:
       Type: AWS::DynamoDB::Table
       Properties:
@@ -288,6 +325,7 @@ resources:
                     - dynamodb:UpdateItem
                   Resource:
                     - !GetAtt ClubsTable.Arn
+                    - !GetAtt SourcesTable.Arn
 
     UsersRegisterLambdaFunctionInvokePermission:
       Type: AWS::Lambda::Permission

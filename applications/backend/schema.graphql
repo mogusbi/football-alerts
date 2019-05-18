@@ -15,8 +15,48 @@ type Clubs {
 
 input ClubInput {
   name: String!
-  twitterHandle: String
-  website: AWSURL
+  twitterHandle: String!
+  website: AWSURL!
+}
+
+# Sources
+type Source {
+  clubId: ID
+  createdAt: AWSDateTime
+  description: String
+  feed: AWSURL
+  id: ID
+  image: SourceImage
+  link: String
+  name: String
+  publishDate: String
+  title: String
+  updatedAt: AWSDateTime
+}
+
+type SourceImage {
+  property: String
+  value: String
+}
+
+type Sources {
+  sources: [Source]
+  nextToken: String
+}
+
+input SourceInput {
+  description: String!
+  feed: AWSURL!
+  image: SourceImageImput!
+  link: String!
+  name: String!
+  publishDate: String!
+  title: String!
+}
+
+input SourceImageImput {
+  property: String!
+  value: String!
 }
 
 type Mutation {
@@ -24,12 +64,21 @@ type Mutation {
   createClub(input: ClubInput!): Club!
   deleteClub(id: ID!): Club!
   updateClub(id: ID!, input: ClubInput!): Club!
+
+  # Sources
+  createSource(clubId: ID!, input: SourceInput!): Source!
+  deleteSource(id: ID!, clubId: ID!): Source!
+  updateSource(id: ID!, clubId: ID!, input: SourceInput!): Source!
 }
 
 type Query {
   # Clubs
   getClub(id: ID!): Club!
   getClubs(limit: Int, nextToken: String): Clubs!
+
+  # Sources
+  getSource(id: ID!, clubId: ID!): Source!
+  getSources(clubId: ID!, limit: Int, nextToken: String): Sources!
 }
 
 schema {
