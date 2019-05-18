@@ -31,6 +31,14 @@ function SettingsList ({getSettingsHandler, match: {params: {type}}, nextSetting
           {' '}
           setting
         </LinkButton>
+        {' '}
+        <LinkButton
+          color='secondary'
+          to='/settings'
+          variant='contained'
+        >
+          Settings
+        </LinkButton>
       </FormButtonBar>
 
       <DataTable
