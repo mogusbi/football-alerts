@@ -23,11 +23,11 @@ const schema = Yup
       .required('Website is required')
   });
 
-function ClubsForm ({club, deleteHandler, onSubmit}) {
+function ClubsForm ({club, clubId, deleteHandler, onSubmit}) {
   return (
     <Fragment>
       <Form
-        cancelLink='/'
+        cancelLink={clubId ? `/clubs/${clubId}/dashboard` : '/'}
         initialValues={club}
         onSubmit={onSubmit}
         validationSchema={schema}
@@ -107,6 +107,7 @@ ClubsForm.propTypes = {
     twitterHandle: PropTypes.string,
     website: PropTypes.string
   }),
+  clubId: PropTypes.string,
   deleteHandler: PropTypes.func,
   onSubmit: PropTypes.func.isRequired
 };
@@ -117,6 +118,7 @@ ClubsForm.defaultProps = {
     twitterHandle: '',
     website: ''
   },
+  clubId: null,
   deleteHandler: null
 };
 

@@ -4,6 +4,7 @@ import Dashboard from '@material-ui/icons/Dashboard';
 import DirectionsRun from '@material-ui/icons/DirectionsRun';
 import Inbox from '@material-ui/icons/Inbox';
 import RssFeed from '@material-ui/icons/RssFeed';
+import Settings from '@material-ui/icons/Settings';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo} from 'react';
 import styled from 'styled-components';
@@ -44,9 +45,19 @@ function AppDrawerList ({clubId}) {
 
       <List component='nav'>
         <ListItemLink
+          icon={<Settings />}
+          to='/settings'
+          primary='Settings'
+        />
+      </List>
+
+      <Divider />
+
+      <List component='nav'>
+        <ListItemLink
           icon={<DirectionsRun />}
           to='/'
-          primary='Clubs'
+          primary='Select club'
         />
       </List>
     </Wrapper>

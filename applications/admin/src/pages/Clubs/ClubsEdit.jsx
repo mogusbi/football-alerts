@@ -31,31 +31,26 @@ function ClubsEdit ({deleteHandler, match: {params: {id}}, submitHandler}) {
       })}
     >
       {
-        ({data: {getClub}, loading}) => {
-          if (loading) {
-            return (
-              <Loader loading={loading} />
-            );
-          }
+        ({data: {getClub}, loading}) => loading ? (
+          <Loader loading={loading} />
+        ) : (
+          <Fragment>
+            <ClubsForm
+              club={getClub}
+              clubId={id}
+              deleteHandler={beginDelete}
+              onSubmit={submit}
+            />
 
-          return (
-            <Fragment>
-              <ClubsForm
-                club={getClub}
-                deleteHandler={beginDelete}
-                onSubmit={submit}
-              />
-
-              <Confirmation
-                closeHandler={cancelDelete}
-                confirmHandler={deleteHandler}
-                message={`Are you sure you want to delete ${getClub.name}?`}
-                open={confirmation}
-                title='Delete club'
-              />
-            </Fragment>
-          );
-        }
+            <Confirmation
+              closeHandler={cancelDelete}
+              confirmHandler={deleteHandler}
+              message={`Are you sure you want to delete ${getClub.name}?`}
+              open={confirmation}
+              title='Delete club'
+            />
+          </Fragment>
+        )
       }
     </Connect>
   );

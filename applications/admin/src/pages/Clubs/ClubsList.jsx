@@ -49,18 +49,9 @@ function ClubsList ({club, getClubsHandler, nextClubsHandler}) {
                     color='primary'
                     size='small'
                     to={`/clubs/${id}/dashboard`}
-                    variant='contained'
-                  >
-                    Select
-                  </LinkButton>
-                  {' '}
-                  <LinkButton
-                    color='primary'
-                    size='small'
-                    to={`/clubs/${id}/edit`}
                     variant='text'
                   >
-                    Edit
+                    Select
                   </LinkButton>
                 </DataTableCell>
               </DataTableRow>

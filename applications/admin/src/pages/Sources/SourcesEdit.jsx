@@ -32,32 +32,26 @@ function SourcesEdit ({deleteHandler, match: {params: {clubId, id}}, submitHandl
       })}
     >
       {
-        ({data: {getSource}, loading}) => {
-          if (loading) {
-            return (
-              <Loader loading={loading} />
-            );
-          }
+        ({data: {getSource}, loading}) => loading ? (
+          <Loader loading={loading} />
+        ) : (
+          <Fragment>
+            <SourcesForm
+              clubId={clubId}
+              deleteHandler={beginDelete}
+              onSubmit={submit}
+              source={getSource}
+            />
 
-          return (
-            <Fragment>
-              <SourcesForm
-                clubId={clubId}
-                deleteHandler={beginDelete}
-                onSubmit={submit}
-                source={getSource}
-              />
-
-              <Confirmation
-                closeHandler={cancelDelete}
-                confirmHandler={deleteHandler}
-                message={`Are you sure you want to delete ${getSource.name}?`}
-                open={confirmation}
-                title='Delete source'
-              />
-            </Fragment>
-          );
-        }
+            <Confirmation
+              closeHandler={cancelDelete}
+              confirmHandler={deleteHandler}
+              message={`Are you sure you want to delete ${getSource.name}?`}
+              open={confirmation}
+              title='Delete source'
+            />
+          </Fragment>
+        )
       }
     </Connect>
   );

@@ -1,3 +1,11 @@
+export const dashboard = `
+  query Dashboard($id: ID!) {
+    getClub(id: $id) {
+      name
+    }
+  }
+`;
+
 export const getClub = `
   query GetClub($id: ID!) {
     getClub(id: $id) {
