@@ -171,6 +171,12 @@ custom:
     includeModules: true
 
 functions:
+  ImportDownloadImages:
+    handler: src/handlers/import/download-images.handler
+    role: ImportDownloadImagesRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+
   ImportGetArticles:
     handler: src/handlers/import/get-articles.handler
     role: ImportGetArticlesRole
@@ -246,6 +252,25 @@ stepFunctions:
                 Variable: $.continue
                 BooleanEquals: false
                 Next: RemoveDuplicates
+            Default: GetDownloadedArticlesForImages
+
+          GetDownloadedArticlesForImages:
+            Type: Task
+            Resource: !GetAtt ImportGetDownloadedArticlesLambdaFunction.Arn
+            Next: DownloadImages
+
+          DownloadImages:
+            Type: Task
+            Resource: !GetAtt ImportDownloadImagesLambdaFunction.Arn
+            Next: IsDownloadImagesComplete
+
+          IsDownloadImagesComplete:
+            Type: Choice
+            Choices:
+              -
+                Variable: $.continue
+                BooleanEquals: false
+                Next: DownloadImages
             Default: Done
 
           Done:
@@ -532,6 +557,37 @@ resources:
                     - !GetAtt ClubsTable.Arn
                     - !GetAtt SettingsTable.Arn
                     - !GetAtt SourcesTable.Arn
+
+    ImportDownloadImagesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-import-download-images-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: ${self:custom.prefix}-import-download-images-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                    - s3:PutObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
 
     ImportGetArticlesRole:
       Type: AWS::IAM::Role
