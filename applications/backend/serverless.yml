@@ -131,6 +131,13 @@ custom:
       dataSources:
         -
           type: AMAZON_DYNAMODB
+          name: Articles
+          description: Articles table
+          config:
+            tableName: !Ref ArticlesTable
+            serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
+        -
+          type: AMAZON_DYNAMODB
           name: Clubs
           description: Clubs table
           config:
@@ -164,8 +171,14 @@ custom:
     includeModules: true
 
 functions:
+  ImportSelectSources:
+    handler: src/handlers/import/select-sources.handler
+    role: ImportSelectSourcesRole
+    environment:
+      TABLE_NAME: !Ref SourcesTable
+
   UsersRegister:
-    handler: src/users/register.handler
+    handler: src/handlers/users/register.handler
     role: UsersRegisterRole
     environment:
       TABLE_NAME: !Ref UsersTable
@@ -302,6 +315,28 @@ resources:
                   Resource: '*'
 
     # DynamoDB
+    ArticlesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.prefix}-articles
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+          -
+            AttributeName: rangeKey
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+          -
+            AttributeName: rangeKey
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
     ClubsTable:
       Type: AWS::DynamoDB::Table
       Properties:
@@ -409,8 +444,33 @@ resources:
                     - dynamodb:Scan
                     - dynamodb:UpdateItem
                   Resource:
+                    - !GetAtt ArticlesTable.Arn
                     - !GetAtt ClubsTable.Arn
                     - !GetAtt SettingsTable.Arn
+                    - !GetAtt SourcesTable.Arn
+
+    ImportSelectSourcesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-import-select-sources-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          - PolicyName: ${self:custom.prefix}-import-select-sources-role
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - dynamodb:Scan
+                  Resource:
                     - !GetAtt SourcesTable.Arn
 
     UsersRegisterLambdaFunctionInvokePermission:
