@@ -15,7 +15,7 @@ package:
   individually: true
 
 plugins:
-#  - serverless-step-functions
+  - serverless-step-functions
   - serverless-pseudo-parameters
   - serverless-appsync-plugin
   - serverless-webpack
@@ -171,6 +171,12 @@ custom:
     includeModules: true
 
 functions:
+  ImportGetArticles:
+    handler: src/handlers/import/get-articles.handler
+    role: ImportGetArticlesRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+
   ImportSelectSources:
     handler: src/handlers/import/select-sources.handler
     role: ImportSelectSourcesRole
@@ -182,6 +188,37 @@ functions:
     role: UsersRegisterRole
     environment:
       TABLE_NAME: !Ref UsersTable
+
+stepFunctions:
+  stateMachines:
+    importArticles:
+      name: ${self:custom.prefix}-import-articles
+      definition:
+        Comment: Imports articles from RSS feeds
+        StartAt: SelectSources
+        States:
+          SelectSources:
+            Type: Task
+            Resource: !GetAtt ImportSelectSourcesLambdaFunction.Arn
+            Next: GetArticles
+
+          GetArticles:
+            Type: Task
+            Resource: !GetAtt ImportGetArticlesLambdaFunction.Arn
+            Next: IsImportComplete
+
+          IsImportComplete:
+            Type: Choice
+            Choices:
+              -
+                Variable: $.continue
+                BooleanEquals: false
+                Next: GetArticles
+            Default: Done
+
+          Done:
+            Type: Pass
+            End: true
 
 resources:
   Resources:
@@ -449,6 +486,33 @@ resources:
                     - !GetAtt SettingsTable.Arn
                     - !GetAtt SourcesTable.Arn
 
+    ImportGetArticlesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-import-get-articles-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          - PolicyName: ${self:custom.prefix}-import-get-articles-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - s3:PutObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
+
     ImportSelectSourcesRole:
       Type: AWS::IAM::Role
       Properties:
@@ -507,6 +571,12 @@ resources:
                     - dynamodb:UpdateItem
                   Resource:
                     - !GetAtt UsersTable.Arn
+
+    # S3
+    ArticleImportsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.prefix}-article-imports
 
   Outputs:
     IdentityPoolId:

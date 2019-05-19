@@ -35,7 +35,7 @@
     "serverless": "^1.40.0",
     "serverless-appsync-plugin": "^1.1.1",
     "serverless-pseudo-parameters": "^2.4.0",
-    "serverless-step-functions": "^1.17.0",
+    "serverless-step-functions": "^1.20.0",
     "serverless-webpack": "^5.2.0",
     "thread-loader": "^2.1.2",
     "ts-jest": "^24.0.2",
