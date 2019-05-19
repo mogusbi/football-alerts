@@ -183,6 +183,13 @@ functions:
     environment:
       BUCKET: !Ref ArticleImportsBucket
 
+  ImportRemoveDuplicates:
+    handler: src/handlers/import/remove-duplicates.handler
+    role: ImportRemoveDuplicatesRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+      TABLE_NAME: !Ref ArticlesTable
+
   ImportSelectSources:
     handler: src/handlers/import/select-sources.handler
     role: ImportSelectSourcesRole
@@ -220,6 +227,25 @@ stepFunctions:
                 Variable: $.continue
                 BooleanEquals: false
                 Next: GetArticles
+            Default: GetDownloadedArticlesForDuplicates
+
+          GetDownloadedArticlesForDuplicates:
+            Type: Task
+            Resource: !GetAtt ImportGetDownloadedArticlesLambdaFunction.Arn
+            Next: RemoveDuplicates
+
+          RemoveDuplicates:
+            Type: Task
+            Resource: !GetAtt ImportRemoveDuplicatesLambdaFunction.Arn
+            Next: IsDuplicateRemovalComplete
+
+          IsDuplicateRemovalComplete:
+            Type: Choice
+            Choices:
+              -
+                Variable: $.continue
+                BooleanEquals: false
+                Next: RemoveDuplicates
             Default: Done
 
           Done:
@@ -367,18 +393,33 @@ resources:
             AttributeName: id
             AttributeType: S
           -
+            AttributeName: link
+            AttributeType: S
+          -
             AttributeName: rangeKey
             AttributeType: S
         KeySchema:
           -
-            AttributeName: id
+            AttributeName: link
             KeyType: HASH
-          -
-            AttributeName: rangeKey
-            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+        GlobalSecondaryIndexes:
+          -
+            IndexName: id-rangeKey-index
+            KeySchema:
+              -
+                AttributeName: id
+                KeyType: HASH
+              -
+                AttributeName: rangeKey
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
 
     ClubsTable:
       Type: AWS::DynamoDB::Table
@@ -544,6 +585,42 @@ resources:
                     - s3:ListBucket
                   Resource:
                     - !GetAtt ArticleImportsBucket.Arn
+
+    ImportRemoveDuplicatesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-import-remove-duplicates-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: ${self:custom.prefix}-import-remove-duplicates-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:BatchGetItem
+                  Resource:
+                    - !GetAtt ArticlesTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                    - s3:PutObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
 
     ImportSelectSourcesRole:
       Type: AWS::IAM::Role

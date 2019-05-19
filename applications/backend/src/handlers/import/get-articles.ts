@@ -1,6 +1,7 @@
 import {Handler} from 'aws-lambda';
 import {S3} from 'aws-sdk';
 import Axios, {AxiosResponse} from 'axios';
+import {parse} from 'himalaya';
 import {get} from 'lodash';
 import moment from 'moment';
 import Parser, {Item, Output} from 'rss-parser';
@@ -37,7 +38,7 @@ export const handler: Handler = async (event: Iterator<Source>): Promise<Iterato
     .items
     .map((item: Item) => ({
       clubId: source.clubId,
-      description: item[source.description],
+      description: parse(item[source.description]),
       imageId: get(item[source.image.property], source.image.value),
       link: item[source.link],
       publishDate: moment(item[source.publishDate]).toISOString(),
