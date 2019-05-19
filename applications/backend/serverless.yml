@@ -177,6 +177,12 @@ functions:
     environment:
       BUCKET: !Ref ArticleImportsBucket
 
+  ImportGetDownloadedArticles:
+    handler: src/handlers/import/get-downloaded-articles.handler
+    role: ImportGetDownloadedArticlesRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+
   ImportSelectSources:
     handler: src/handlers/import/select-sources.handler
     role: ImportSelectSourcesRole
@@ -512,6 +518,32 @@ resources:
                       - ''
                       - - !GetAtt ArticleImportsBucket.Arn
                         - '/*'
+
+    ImportGetDownloadedArticlesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-import-get-downloaded-articles-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: ${self:custom.prefix}-import-get-downloaded-articles-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - s3:ListBucket
+                  Resource:
+                    - !GetAtt ArticleImportsBucket.Arn
 
     ImportSelectSourcesRole:
       Type: AWS::IAM::Role

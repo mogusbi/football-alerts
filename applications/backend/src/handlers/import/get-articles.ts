@@ -32,7 +32,7 @@ export const handler: Handler = async (event: Iterator<Source>): Promise<Iterato
   const output: Output = await parser.parseString(data);
   const now: Date = new Date();
   const {hostname}: URL = new URL(source.feed);
-  const Key: string = `${source.clubId}/${hostname}-import-${now.toISOString()}.json`;
+  const Key: string = `articles/${source.clubId}/${hostname}-import-${now.toISOString()}.json`;
   const articles: Article[] = output
     .items
     .map((item: Item) => ({
