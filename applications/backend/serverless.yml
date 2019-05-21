@@ -189,6 +189,13 @@ functions:
     environment:
       BUCKET: !Ref ArticleImportsBucket
 
+  ImportGetImages:
+    handler: src/handlers/import/get-images.handler
+    role: ImportGetImagesRole
+    environment:
+      BUCKET: !Ref ArticleImportsBucket
+      TABLE_NAME: !Ref SettingsTable
+
   ImportRemoveDuplicates:
     handler: src/handlers/import/remove-duplicates.handler
     role: ImportRemoveDuplicatesRole
@@ -271,7 +278,12 @@ stepFunctions:
                 Variable: $.continue
                 BooleanEquals: false
                 Next: DownloadImages
-            Default: Done
+            Default: ImportGetImages
+
+          ImportGetImages:
+            Type: Task
+            Resource: !GetAtt ImportGetImagesLambdaFunction.Arn
+            Next: Done
 
           Done:
             Type: Pass
@@ -636,7 +648,41 @@ resources:
             PolicyDocument:
               Version: '2012-10-17'
               Statement:
-                - Effect: Allow
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:ListBucket
+                  Resource:
+                    - !GetAtt ArticleImportsBucket.Arn
+
+    ImportGetImagesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-import-get-images-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: ${self:custom.prefix}-import-get-images-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:Scan
+                  Resource:
+                    - !GetAtt SettingsTable.Arn
+                -
+                  Effect: Allow
                   Action:
                     - s3:ListBucket
                   Resource:
@@ -685,18 +731,21 @@ resources:
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
           Statement:
-            - Effect: Allow
+            -
+              Effect: Allow
               Principal:
                 Service:
                   - lambda.amazonaws.com
               Action:
                 - sts:AssumeRole
         Policies:
-          - PolicyName: ${self:custom.prefix}-import-select-sources-role
+          -
+            PolicyName: ${self:custom.prefix}-import-select-sources-role-policy
             PolicyDocument:
               Version: '2012-10-17'
               Statement:
-                - Effect: Allow
+                -
+                  Effect: Allow
                   Action:
                     - dynamodb:Scan
                   Resource:
@@ -742,6 +791,11 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:custom.prefix}-article-imports
+
+    AssetsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.prefix}-assets
 
   Outputs:
     IdentityPoolId:

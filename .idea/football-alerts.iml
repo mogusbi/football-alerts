@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/applications/admin/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/applications/backend/.serverless" />
+      <excludeFolder url="file://$MODULE_DIR$/applications/backend/.webpack" />
       <excludeFolder url="file://$MODULE_DIR$/applications/backend/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.dynamodb" />
       <excludeFolder url="file://$MODULE_DIR$/packages/api/.serverless" />

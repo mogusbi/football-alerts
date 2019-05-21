@@ -31,3 +31,56 @@
   }
 ]
 ```
+
+### Events
+#### Image processing
+```json
+{
+  "continue": false,
+  "count": 4,
+  "current": 1,
+  "formats": [
+    {
+      "name": "small",
+      "value": {
+        "height": 100,
+        "width": 100
+      }
+    },
+    {
+      "name": "medium",
+      "value": {
+        "height": 500,
+        "width": 500
+      }
+    },
+    {
+      "name": "large",
+      "value": {
+        "height": 1000,
+        "width": 1000
+      }
+    }
+  ],
+  "Images": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": ":id",
+          "images": {
+            "small": "/media/img/small/id.jpg",
+            "medium": "/media/img/medium/id.jpg",
+            "large": "/media/img/large/id.jpg"
+          }
+        }
+      }
+    }
+  ],
+  "items": [
+    "/media/:clubId/image.jpg",
+    "/media/:clubId/image.jpg",
+    "/media/:clubId/image.jpg",
+    "/media/:clubId/image.jpg"
+  ]
+}
+```
