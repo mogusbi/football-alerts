@@ -84,12 +84,11 @@ workflows:
   build-test-deploy:
     jobs:
       - build
-#      -
-#        unit-test:
-#          requires:
-#            - build
+      -
+        unit-test:
+          requires:
+            - build
       -
         deploy:
           requires:
-            - build
-#            - unit-test
+            - unit-test

@@ -290,7 +290,21 @@ stepFunctions:
           ImportGetImages:
             Type: Task
             Resource: !GetAtt ImportGetImagesLambdaFunction.Arn
-            Next: Done
+            Next: ResizeImage
+
+          ResizeImage:
+            Type: Task
+            Resource: !GetAtt ImportResizeImageLambdaFunction.Arn
+            Next: IsImageResizeComplete
+
+          IsImageResizeComplete:
+            Type: Choice
+            Choices:
+              -
+                Variable: $.continue
+                BooleanEquals: false
+                Next: ResizeImage
+            Default: Done
 
           Done:
             Type: Pass
