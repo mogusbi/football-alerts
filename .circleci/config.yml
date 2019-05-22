@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 attach_workspace: &attach_workspace
   attach_workspace:
@@ -14,6 +14,9 @@ restore_cache: &restore_cache
     keys:
       - football-alerts-dependencies-v1-{{ checksum "/tmp/checksum.txt" }}
       - football-alerts-dependencies-v1-
+
+orbs:
+  aws-cli: circleci/aws-cli@0.1.13
 
 jobs:
   build:
@@ -58,7 +61,7 @@ jobs:
       - <<: *attach_workspace
       -
         run:
-          command: npm run deploy
+          command: npm run deploy -- -- -- --stage develop
           name: Deploy
 
   unit-test:
