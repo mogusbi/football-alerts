@@ -22,12 +22,6 @@ export const handler: Handler = async (event: ImageIterator): Promise<ImageItera
       }
     }
   };
-  const source: Readable = s3
-    .getObject({
-      Bucket: ImportBucket,
-      Key: file
-    })
-    .createReadStream();
 
   for (const format of event.formats) {
     const Key: string = join('/media/img', id, format.name + ext);
@@ -37,6 +31,12 @@ export const handler: Handler = async (event: ImageIterator): Promise<ImageItera
       .resize(width, height)
       .toFormat('jpg');
     const Body: PassThrough = new PassThrough();
+    const source: Readable = s3
+      .getObject({
+        Bucket: ImportBucket,
+        Key: file
+      })
+      .createReadStream();
 
     source
       .pipe(resize)
