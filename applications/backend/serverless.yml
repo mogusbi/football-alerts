@@ -756,13 +756,19 @@ resources:
                   Action:
                     - s3:GetObject
                   Resource:
-                    - !GetAtt ArticleImportsBucket.Arn
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
                 -
                   Effect: Allow
                   Action:
                     - s3:PutObject
                   Resource:
-                    - !GetAtt AssetsBucket.Arn
+                    - !Join
+                      - ''
+                      - - !GetAtt AssetsBucket.Arn
+                        - '/*'
 
     ImportSelectSourcesRole:
       Type: AWS::IAM::Role
