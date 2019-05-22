@@ -3,8 +3,8 @@ export interface IImagePutRequest {
 }
 
 export class ImageFormatSize {
-  public height: number;
-  public width: number;
+  public height: string;
+  public width: string;
 }
 
 export default class ImageFormat {

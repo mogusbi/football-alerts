@@ -31,8 +31,10 @@ export const handler: Handler = async (event: ImageIterator): Promise<ImageItera
 
   for (const format of event.formats) {
     const Key: string = join('/media/img', id, format.name + ext);
+    const height: number = parseInt(format.value.height, 10);
+    const width: number = parseInt(format.value.width, 10);
     const resize: Sharp = await sharp()
-      .resize(format.value.width, format.value.height)
+      .resize(width, height)
       .toFormat('jpg');
     const Body: PassThrough = new PassThrough();
 
