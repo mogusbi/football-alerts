@@ -207,8 +207,8 @@ functions:
     handler: src/handlers/import/resize-image.handler
     role: ImportResizeImageRole
     environment:
-      AssetBucket: !Ref AssetsBucket
-      ImportBucket: !Ref ArticleImportsBucket
+      ASSET_BUCKET: !Ref AssetsBucket
+      IMPORT_BUCKET: !Ref ArticleImportsBucket
 
   ImportSelectSources:
     handler: src/handlers/import/select-sources.handler
