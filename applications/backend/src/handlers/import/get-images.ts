@@ -2,8 +2,7 @@ import {Handler} from 'aws-lambda';
 import {S3} from 'aws-sdk';
 import {DocumentClient} from 'aws-sdk/clients/dynamodb';
 import {ListObjectsV2Output, Object} from 'aws-sdk/clients/s3';
-import {basename, extname, join} from 'path';
-import ImageFormat, {IImagePutRequest} from '../../models/ImageFormat';
+import ImageFormat from '../../models/ImageFormat';
 import ImageIterator from '../../models/ImageIterator';
 
 const Bucket: string = process.env.BUCKET;
@@ -35,26 +34,9 @@ export const handler: Handler = async (): Promise<ImageIterator> => {
     name,
     value
   }));
-  const Images: DocumentClient.WriteRequest[] = items.map((file: string) => {
-    const ext: string = extname(file);
-    const id: string = basename(file, ext);
-    const images: IImagePutRequest = formats.reduce((accumulator: IImagePutRequest, {name}: ImageFormat): IImagePutRequest => ({
-      ...accumulator,
-      [name]: join('/media/img', id, name + ext)
-    }), {});
-
-    return {
-      PutRequest: {
-        Item: {
-          id,
-          images
-        }
-      }
-    };
-  });
 
   return {
-    Images,
+    Images: [],
     continue: items.length === 0,
     count: items.length,
     current: 0,

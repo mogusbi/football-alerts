@@ -22,11 +22,13 @@
     "himalaya": "^1.1.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "rss-parser": "^3.7.0"
+    "rss-parser": "^3.7.0",
+    "sharp": "^0.22.1"
   },
   "devDependencies": {
     "@football-alerts/serverless-aws-exports": "^0.0.0",
-    "@types/lodash": "^4.14.123"
+    "@types/lodash": "^4.14.123",
+    "@types/sharp": "^0.22.2"
   },
   "jest": {
     "collectCoverageFrom": [
