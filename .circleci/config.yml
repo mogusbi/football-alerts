@@ -32,10 +32,6 @@ jobs:
           command: npm i
           name: Install dependencies
       -
-        run:
-          command: npm run lint
-          name: Lint code
-      -
         save_cache:
           key: football-alerts-dependencies-v1-{{ checksum "/tmp/checksum.txt" }}
           paths:
