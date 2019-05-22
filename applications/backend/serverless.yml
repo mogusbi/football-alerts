@@ -203,12 +203,12 @@ functions:
       BUCKET: !Ref ArticleImportsBucket
       TABLE_NAME: !Ref ArticlesTable
 
-#  ImportResizeImage:
-#    handler: src/handlers/import/resize-image.handler
-#    role: ImportResizeImageRole
-#    environment:
-#      ASSET_BUCKET: !Ref AssetsBucket
-#      IMPORT_BUCKET: !Ref ArticleImportsBucket
+  ImportResizeImage:
+    handler: src/handlers/import/resize-image.handler
+    role: ImportResizeImageRole
+    environment:
+      ASSET_BUCKET: !Ref AssetsBucket
+      IMPORT_BUCKET: !Ref ArticleImportsBucket
 
   ImportSelectSources:
     handler: src/handlers/import/select-sources.handler
