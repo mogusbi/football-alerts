@@ -5,8 +5,9 @@ import {clubReducer} from '../club';
 import {layoutReducer} from '../layout';
 import {loaderReducer} from '../loader';
 import {messageReducer} from '../message';
-import {sourceReducer} from '../source';
 import root from '../root';
+import {settingReducer} from '../setting';
+import {sourceReducer} from '../source';
 
 describe('root', () => {
   let history;
@@ -31,6 +32,7 @@ describe('root', () => {
       loader: loaderReducer,
       message: messageReducer,
       router: connectRouter(history),
+      setting: settingReducer,
       source: sourceReducer
     });
   });
