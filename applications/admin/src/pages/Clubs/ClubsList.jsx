@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React, {Fragment, memo, useEffect} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {getClubs, nextClubs} from '../../actions/ClubActions';
 import DataTable from '../../components/DataTable';
 import DataTableCell from '../../components/DataTableCell';

@@ -28,6 +28,20 @@ export const getClubs = `
   }
 `;
 
+export const getImages = `
+   query GetImages($limit: Int, $nextToken: String) {
+    getImages(limit: $limit, nextToken: $nextToken) {
+      images {
+        id
+        images {
+          name
+          path
+        }
+      }
+    }
+   }
+`;
+
 export const getSetting = `
   query GetSetting($id: ID!, $type: String!) {
     getSetting(id: $id, type: $type) {

@@ -2,6 +2,7 @@ import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import Dashboard from '@material-ui/icons/Dashboard';
 import DirectionsRun from '@material-ui/icons/DirectionsRun';
+import Image from '@material-ui/icons/Image';
 import Inbox from '@material-ui/icons/Inbox';
 import RssFeed from '@material-ui/icons/RssFeed';
 import Settings from '@material-ui/icons/Settings';
@@ -44,6 +45,11 @@ function AppDrawerList ({clubId}) {
       }
 
       <List component='nav'>
+        <ListItemLink
+          icon={<Image />}
+          to='/images'
+          primary='Images'
+        />
         <ListItemLink
           icon={<Settings />}
           to='/settings'

@@ -6,26 +6,11 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   context: __dirname,
+  devtool: 'source-map',
   entry: slsw.lib.entries,
   externals: [
     nodeExternals()
   ],
-  devtool: 'source-map',
-  resolve: {
-    extensions: [
-      '.js',
-      '.jsx',
-      '.json',
-      '.ts',
-      '.tsx'
-    ]
-  },
-  output: {
-    libraryTarget: 'commonjs',
-    path: join(__dirname, '.webpack'),
-    filename: '[name].js',
-  },
-  target: 'node',
   mode: slsw.lib.webpack.isLocal ? 'development': 'production',
   module: {
     rules: [
@@ -33,7 +18,7 @@ module.exports = {
         test: /\.ts(x?)$/,
         use: [
           {
-            loader: 'cache-loader',
+            loader: 'cache-loader'
           },
           {
             loader: 'thread-loader',
@@ -51,9 +36,24 @@ module.exports = {
       }
     ]
   },
+  output: {
+    filename: '[name].js',
+    libraryTarget: 'commonjs',
+    path: join(__dirname, '.webpack')
+  },
   plugins: [
     new ForkTsCheckerWebpackPlugin({
       checkSyntacticErrors: true
     })
-  ]
+  ],
+  resolve: {
+    extensions: [
+      '.js',
+      '.jsx',
+      '.json',
+      '.ts',
+      '.tsx'
+    ]
+  },
+  target: 'node'
 };

@@ -19,6 +19,22 @@ input ClubInput {
   website: AWSURL!
 }
 
+# Images
+type Image {
+  id: ID
+  images: [ImageType]
+}
+
+type ImageType {
+  name: String
+  path: String
+}
+
+type Images {
+  images: [Image]
+  nextToken: String
+}
+
 # Settings
 type Setting {
   createdAt: AWSDateTime
@@ -100,6 +116,9 @@ type Query {
   # Clubs
   getClub(id: ID!): Club!
   getClubs(limit: Int, nextToken: String): Clubs!
+
+  # Images
+  getImages(limit: Int, nextToken: String): Images!
 
   # Settings
   getSetting(id: ID!, type: String!): Setting!

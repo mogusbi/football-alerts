@@ -65,6 +65,14 @@ custom:
           request: clubs/Query.getClubs.req.vtl
           response: clubs/Query.getClubs.res.vtl
 
+        # Images
+        -
+          dataSource: Images
+          type: Query
+          field: getImages
+          request: images/Query.getImages.req.vtl
+          response: images/Query.getImages.res.vtl
+
         # Settings
         -
           dataSource: Settings
@@ -142,6 +150,13 @@ custom:
           description: Clubs table
           config:
             tableName: !Ref ClubsTable
+            serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
+        -
+          type: AMAZON_DYNAMODB
+          name: Images
+          description: Images table
+          config:
+            tableName: !Ref ImagesTable
             serviceRoleArn: !GetAtt AppSyncDynamoDbServiceRole.Arn
         -
           type: AMAZON_DYNAMODB
@@ -632,6 +647,7 @@ resources:
                   Resource:
                     - !GetAtt ArticlesTable.Arn
                     - !GetAtt ClubsTable.Arn
+                    - !GetAtt ImagesTable.Arn
                     - !GetAtt SettingsTable.Arn
                     - !GetAtt SourcesTable.Arn
 
