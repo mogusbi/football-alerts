@@ -450,6 +450,15 @@ resources:
                   Action:
                     - execute-api:Invoke
                   Resource: '*'
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt AssetsBucket.Arn
+                        - '/public/*'
 
     CognitoUnauthRole:
       Type: AWS::IAM::Role
@@ -483,6 +492,15 @@ resources:
                     - cognito-sync:*
                     - cognito-identity:*
                   Resource: '*'
+                -
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt AssetsBucket.Arn
+                        - '/public/*'
 
     # DynamoDB
     ArticlesTable:
