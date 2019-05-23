@@ -323,7 +323,7 @@ stepFunctions:
           SaveImages:
             Type: Task
             Resource: !GetAtt ImportSaveImagesLambdaFunction.Arn
-            Next: Done
+            Next: IsSaveImagesComplete
 
           IsSaveImagesComplete:
             Type: Choice
