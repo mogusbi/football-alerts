@@ -18,7 +18,7 @@ export const handler: Handler = async (event: ImageIterator): Promise<ImageItera
     PutRequest: {
       Item: {
         id,
-        images: {}
+        images: []
       }
     }
   };
@@ -51,7 +51,10 @@ export const handler: Handler = async (event: ImageIterator): Promise<ImageItera
       })
       .promise();
 
-    query.PutRequest.Item.images[format.name] = Key;
+    query.PutRequest.Item.images.push({
+      name: format.name,
+      path: Key
+    });
   }
 
   event.Images.push(query);
