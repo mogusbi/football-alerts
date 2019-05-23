@@ -1,11 +1,11 @@
-import {S3Image} from 'aws-amplify-react';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getImages, nextImages} from '../../actions/ImageActions';
+import Image from '../../components/Image';
 import PageTitle from '../../components/PageTitle';
 
-function Index ({getImagesHandler, nextImagesHandler}) {
+function Index ({getImagesHandler, image, nextImagesHandler}) {
   const limit = 10;
 
   useEffect(() => {
@@ -18,7 +18,15 @@ function Index ({getImagesHandler, nextImagesHandler}) {
     <Fragment>
       <PageTitle title='Images' />
 
-      <S3Image imgKey='media/img/311756ea-1271-40e5-b845-5549940bff7c/main.jpg' />
+      {
+        image.images.map((image) => (
+          <Image
+            image={image}
+            key={image.id}
+            size='thumbnail'
+          />
+        ))
+      }
 
       <button type='button' onClick={() => nextImagesHandler('')}>Load more</button>
     </Fragment>

@@ -23,6 +23,10 @@ rules:
     - never
   sort-keys:
     - error
+    - asc
+    -
+      caseSensitive: true
+      natural: false
   space-before-function-paren:
     - error
     - always
