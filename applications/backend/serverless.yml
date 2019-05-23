@@ -210,6 +210,12 @@ functions:
       ASSET_BUCKET: !Ref AssetsBucket
       IMPORT_BUCKET: !Ref ArticleImportsBucket
 
+  ImportSaveImages:
+    handler: src/handlers/import/save-images.handler
+    role: ImportSaveImagesRole
+    environment:
+      TABLE_NAME: !Ref ImagesTable
+
   ImportSelectSources:
     handler: src/handlers/import/select-sources.handler
     role: ImportSelectSourcesRole
@@ -304,7 +310,12 @@ stepFunctions:
                 Variable: $.continue
                 BooleanEquals: false
                 Next: ResizeImage
-            Default: Done
+            Default: ImportSaveImages
+
+          ImportSaveImages:
+            Type: Task
+            Resource: !GetAtt ImportSaveImagesLambdaFunction.Arn
+            Next: Done
 
           Done:
             Type: Pass
@@ -494,6 +505,22 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+
+    ImagesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.prefix}-clubs
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+          KeySchema:
+            -
+              AttributeName: id
+              KeyType: HASH
+          ProvisionedThroughput:
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
 
     SettingsTable:
       Type: AWS::DynamoDB::Table
@@ -744,6 +771,33 @@ resources:
                       - ''
                       - - !GetAtt ArticleImportsBucket.Arn
                         - '/*'
+
+    ImportSaveImagesRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.prefix}-import-save-images-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            -
+              Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Policies:
+          -
+            PolicyName: ${self:custom.prefix}-import-save-images-role-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - dynamodb:BatchWriteItem
+                  Resource:
+                    - !GetAtt ImagesTable.Arn
 
     ImportResizeImageRole:
       Type: AWS::IAM::Role
