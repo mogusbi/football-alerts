@@ -1,20 +1,28 @@
 import {Handler} from 'aws-lambda';
 import {DocumentClient} from 'aws-sdk/clients/dynamodb';
-import ImageIterator from '../../models/ImageIterator';
+import Iterator from '../../models/Iterator';
 
 const documentClient: DocumentClient = new DocumentClient();
 const TableName: string = process.env.TABLE_NAME;
 
-export const handler: Handler = async (event: ImageIterator): Promise<void> => {
-  if (event.count > 0) {
-    const batchWrite: DocumentClient.BatchWriteItemInput = {
-      RequestItems: {}
-    };
+export const handler: Handler = async (event: Iterator<DocumentClient.WriteRequest[]>): Promise<
+  Iterator<DocumentClient.WriteRequest[]>
+> => {
+  const batchWrite: DocumentClient.BatchWriteItemInput = {
+    RequestItems: {}
+  };
 
-    batchWrite.RequestItems[TableName] = event.Images;
+  batchWrite.RequestItems[TableName] = event.items[event.current];
 
-    await documentClient
-      .batchWrite(batchWrite)
-      .promise();
+  await documentClient
+    .batchWrite(batchWrite)
+    .promise();
+
+  const current: number = event.current += 1;
+
+  return {
+    ...event,
+    continue: event.current === event.count,
+    current
   }
 };

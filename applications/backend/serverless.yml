@@ -171,6 +171,9 @@ custom:
     includeModules: true
 
 functions:
+  ImportChunkImages:
+    handler: src/handlers/import/chunk-images.handler
+
   ImportDownloadImages:
     handler: src/handlers/import/download-images.handler
     role: ImportDownloadImagesRole
@@ -291,9 +294,9 @@ stepFunctions:
                 Variable: $.continue
                 BooleanEquals: false
                 Next: DownloadImages
-            Default: ImportGetImages
+            Default: GetImages
 
-          ImportGetImages:
+          GetImages:
             Type: Task
             Resource: !GetAtt ImportGetImagesLambdaFunction.Arn
             Next: ResizeImage
@@ -310,12 +313,26 @@ stepFunctions:
                 Variable: $.continue
                 BooleanEquals: false
                 Next: ResizeImage
-            Default: ImportSaveImages
+            Default: ChunkImages
 
-          ImportSaveImages:
+          ChunkImages:
+            Type: Task
+            Resource: !GetAtt ImportChunkImagesLambdaFunction.Arn
+            Next: SaveImages
+
+          SaveImages:
             Type: Task
             Resource: !GetAtt ImportSaveImagesLambdaFunction.Arn
             Next: Done
+
+          IsSaveImagesComplete:
+            Type: Choice
+            Choices:
+              -
+                Variable: $.continue
+                BooleanEquals: false
+                Next: SaveImages
+            Default: Done
 
           Done:
             Type: Pass
