@@ -945,6 +945,8 @@ resources:
         BucketName: ${self:custom.prefix}-assets
 
   Outputs:
+    AssetsBucket:
+      Value: !Ref AssetsBucket
     IdentityPoolId:
       Value: !Ref CognitoIdentityPool
     Region:

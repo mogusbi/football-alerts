@@ -104,6 +104,12 @@ class AwsExportsPlugin {
     userPoolId: '${data.UserPoolId}',
     userPoolWebClientId: '${data.UserPoolClientId}'
   },
+  Storage: {
+    AWSS3: {
+      bucket: '${data.AssetsBucket}',
+      region: '${data.Region}'
+    }
+  },
   aws_appsync_authenticationType: 'AMAZON_COGNITO_USER_POOLS',
   aws_appsync_graphqlEndpoint: '${data[this.output.graphQlApiUrlName]}',
   aws_appsync_region: '${data.Region}'

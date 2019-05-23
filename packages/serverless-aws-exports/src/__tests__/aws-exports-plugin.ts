@@ -26,6 +26,10 @@ describe('AwsExportsPlugin', (): void => {
             {
               Outputs: [
                 {
+                  OutputKey: 'AssetsBucket',
+                  OutputValue: 'football-alerts-assets'
+                },
+                {
                   OutputKey: 'GraphQlApiUrl',
                   OutputValue: 'https://y3kymhm2hnbsnbdgi37sxpfasy.appsync-api.eu-west-1.amazonaws.com/graphql'
                 },
@@ -121,6 +125,12 @@ describe('AwsExportsPlugin', (): void => {
     region: 'eu-west-1',
     userPoolId: 'eu-west-1_2sq18bIfD',
     userPoolWebClientId: '1cmkd9fad5qg2ej0pvnp9vd1dd'
+  },
+  Storage: {
+    AWSS3: {
+      bucket: 'football-alerts-assets',
+      region: 'eu-west-1'
+    }
   },
   aws_appsync_authenticationType: 'AMAZON_COGNITO_USER_POOLS',
   aws_appsync_graphqlEndpoint: 'https://y3kymhm2hnbsnbdgi37sxpfasy.appsync-api.eu-west-1.amazonaws.com/graphql',
