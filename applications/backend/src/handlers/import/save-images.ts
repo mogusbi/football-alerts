@@ -11,7 +11,7 @@ export const handler: Handler = async (event: ImageIterator): Promise<void> => {
       RequestItems: {}
     };
 
-    batchWrite[TableName] = event.Images;
+    batchWrite.RequestItems[TableName] = event.Images;
 
     await documentClient
       .batchWrite(batchWrite)
