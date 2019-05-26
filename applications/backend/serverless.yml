@@ -69,6 +69,12 @@ custom:
         -
           dataSource: Images
           type: Query
+          field: getImage
+          request: images/Query.getImage.req.vtl
+          response: images/Query.getImage.res.vtl
+        -
+          dataSource: Images
+          type: Query
           field: getImages
           request: images/Query.getImages.req.vtl
           response: images/Query.getImages.res.vtl

@@ -122,6 +122,7 @@ type Query {
   getClubs(limit: Int, nextToken: String): Clubs!
 
   # Images
+  getImage(id: ID!, clubId: ID!): Image!
   getImages(clubId: ID!, limit: Int, nextToken: String): Images!
 
   # Settings
