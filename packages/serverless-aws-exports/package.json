@@ -17,7 +17,7 @@
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "prepare": "npm run build",
     "test": "jest",
-    "test:ci": "jest --ci --coverage"
+    "test:ci": "jest --ci --runInBand --coverage"
   },
   "dependencies": {
     "assert": "^1.4.1"
