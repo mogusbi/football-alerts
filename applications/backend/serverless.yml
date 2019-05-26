@@ -603,7 +603,7 @@ resources:
     SourcesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-sources
+        TableName: ${self:custom.prefix}-sources-old
         AttributeDefinitions:
           -
             AttributeName: clubId
@@ -613,10 +613,10 @@ resources:
             AttributeType: S
         KeySchema:
           -
-            AttributeName: id
+            AttributeName: clubId
             KeyType: HASH
           -
-            AttributeName: clubId
+            AttributeName: id
             KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
