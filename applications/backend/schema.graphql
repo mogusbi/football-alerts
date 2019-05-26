@@ -91,6 +91,8 @@ input SourceInput {
 }
 
 input SourceImageImput {
+  array: Boolean!
+  arrayIndex: Int!
   property: String!
   value: String!
 }
