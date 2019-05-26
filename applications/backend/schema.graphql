@@ -71,6 +71,8 @@ type Source {
 }
 
 type SourceImage {
+  array: Boolean
+  arrayIndex: Int
   property: String
   value: String
 }
