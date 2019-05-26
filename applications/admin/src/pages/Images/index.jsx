@@ -1,12 +1,15 @@
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getImages, nextImages} from '../../actions/ImageActions';
 import Image from '../../components/Image';
+import ImageLink from '../../components/ImageLink';
 import PageTitle from '../../components/PageTitle';
 
 function Index ({getImagesHandler, image, nextImagesHandler}) {
-  const limit = 10;
+  const limit = 24;
 
   useEffect(() => {
     getImagesHandler(limit);
@@ -18,17 +21,49 @@ function Index ({getImagesHandler, image, nextImagesHandler}) {
     <Fragment>
       <PageTitle title='Images' />
 
-      {
-        image.images.map((image) => (
-          <Image
-            image={image}
-            key={image.id}
-            size='thumbnail'
-          />
-        ))
-      }
+      <Grid
+        container
+        spacing={24}
+      >
+        {
+          image.images.map((image) => (
+            <Grid
+              item
+              key={image.id}
+              md={2}
+              sm={3}
+              xs={6}
+            >
+              <ImageLink to={`/images/${image.id}/view`}>
+                <Image
+                  image={image}
+                  size='thumbnail'
+                  theme={{
+                    photoImg: {
+                      display: 'block',
+                      objectFit: 'cover',
+                      width: '100%'
+                    }
+                  }}
+                />
+              </ImageLink>
+            </Grid>
+          ))
+        }
+      </Grid>
 
-      <button type='button' onClick={() => nextImagesHandler('')}>Load more</button>
+      {
+        image.nextToken && (
+          <Button
+            aria-label='Load more...'
+            color='primary'
+            onClick={() => nextImagesHandler(limit, image.nextToken)}
+            variant='contained'
+          >
+            Load more
+          </Button>
+        )
+      }
     </Fragment>
   );
 }
