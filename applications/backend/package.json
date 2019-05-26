@@ -15,7 +15,7 @@
     "lint": "tslint -c ../../tslint.json -p tsconfig.json",
     "remove": "serverless remove --verbose",
     "test": "jest",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --ci --coverage"
   },
   "dependencies": {
     "axios": "^0.18.0",
