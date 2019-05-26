@@ -559,7 +559,7 @@ resources:
     ImagesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-images-old
+        TableName: ${self:custom.prefix}-images
         AttributeDefinitions:
           -
             AttributeName: clubId
