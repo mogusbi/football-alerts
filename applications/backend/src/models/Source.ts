@@ -1,4 +1,6 @@
 export class SourceImage {
+  public array: boolean;
+  public arrayIndex: number;
   public property: string;
   public value: string;
 }

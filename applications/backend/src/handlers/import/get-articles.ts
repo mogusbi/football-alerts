@@ -15,6 +15,7 @@ const s3: S3 = new S3();
 
 export const handler: Handler = async (event: Iterator<Source>): Promise<Iterator<Source>> => {
   const source: Source = event.items[event.current];
+
   const parser: Parser = new Parser({
     customFields: {
       item: [
@@ -24,7 +25,11 @@ export const handler: Handler = async (event: Iterator<Source>): Promise<Iterato
         ],
         [
           source.image.property,
-          source.image.property
+          source.image.property,
+          // @ts-ignore
+          {
+            keepArray: source.image.array
+          }
         ]
       ]
     }
@@ -39,7 +44,9 @@ export const handler: Handler = async (event: Iterator<Source>): Promise<Iterato
     .map((item: Item) => ({
       clubId: source.clubId,
       description: parse(item[source.description]),
-      imageId: get(item[source.image.property], source.image.value),
+      imageId: source.image.array ?
+        get(item[source.image.property][source.image.arrayIndex], source.image.value) :
+        get(item[source.image.property], source.image.value),
       link: item[source.link],
       publishDate: moment(item[source.publishDate]).toISOString(),
       rangeKey: null,

@@ -70,6 +70,8 @@ export const getSource = `
       description
       feed
       image {
+        array
+        arrayIndex
         property
         value
       }

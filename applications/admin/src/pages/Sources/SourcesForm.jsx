@@ -1,6 +1,6 @@
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import {FormikTextField} from 'formik-material-fields';
+import {FormikRadioGroupField, FormikTextField} from 'formik-material-fields';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo} from 'react';
 import * as Yup from 'yup';
@@ -20,6 +20,12 @@ const schema = Yup
     image: Yup
       .object()
       .shape({
+        array: Yup
+          .bool()
+          .required(),
+        arrayIndex: Yup
+          .number()
+          .required('Image array index is required'),
         property: Yup
           .string()
           .required('Image property is required'),
@@ -42,6 +48,8 @@ const schema = Yup
   });
 
 function SourcesForm ({clubId, deleteHandler, onSubmit, source}) {
+  source.image.array = source.image.array.toString();
+
   return (
     <Fragment>
       <Form
@@ -155,6 +163,42 @@ function SourcesForm ({clubId, deleteHandler, onSubmit, source}) {
               name='image.value'
             />
           </Grid>
+
+          <Grid
+            item
+            sm={6}
+            xs={12}
+          >
+            <FormikRadioGroupField
+              fullWidth
+              label='Is the image import property an array?'
+              name='image.array'
+              options={[
+                {
+                  label: 'No',
+                  value: 'false'
+                },
+                {
+                  label: 'Yes',
+                  value: 'true'
+                }
+              ]}
+              row
+            />
+          </Grid>
+
+          <Grid
+            item
+            sm={6}
+            xs={12}
+          >
+            <FormikTextField
+              fullWidth
+              label='Image array index'
+              margin='normal'
+              name='image.arrayIndex'
+            />
+          </Grid>
         </Grid>
       </Form>
       {
@@ -191,6 +235,8 @@ SourcesForm.propTypes = {
     description: PropTypes.string,
     feed: PropTypes.string,
     image: PropTypes.shape({
+      array: PropTypes.bool,
+      arrayIndex: PropTypes.number,
       property: PropTypes.string,
       value: PropTypes.string
     }),
@@ -207,6 +253,8 @@ SourcesForm.defaultProps = {
     description: '',
     feed: '',
     image: {
+      array: false,
+      arrayIndex: 0,
       property: '',
       value: ''
     },
