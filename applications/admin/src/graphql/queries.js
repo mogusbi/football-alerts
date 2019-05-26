@@ -28,6 +28,18 @@ export const getClubs = `
   }
 `;
 
+export const getImage = `
+  query GetImage($id: ID!, $clubId: ID!) {
+    getImage(id: $id, clubId: $clubId) {
+      id
+      images {
+        name
+        path
+      }
+    }
+  }
+`;
+
 export const getImages = `
    query GetImages($clubId: ID!, $limit: Int, $nextToken: String) {
     getImages(clubId: $clubId, limit: $limit, nextToken: $nextToken) {
