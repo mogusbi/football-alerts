@@ -559,7 +559,7 @@ resources:
     ImagesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-images
+        TableName: ${self:custom.prefix}-images-old
         AttributeDefinitions:
           -
             AttributeName: clubId
@@ -569,10 +569,10 @@ resources:
             AttributeType: S
         KeySchema:
           -
-            AttributeName: id
+            AttributeName: clubId
             KeyType: HASH
           -
-            AttributeName: clubId
+            AttributeName: id
             KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
