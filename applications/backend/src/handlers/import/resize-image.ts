@@ -13,10 +13,12 @@ const s3: S3 = new S3();
 export const handler: Handler = async (event: ImageIterator): Promise<ImageIterator> => {
   const file: string = event.items[event.current];
   const ext: string = extname(file);
+  const clubId: string = file.split('/')[1];
   const id: string = basename(file, ext);
   const query: DocumentClient.WriteRequest = {
     PutRequest: {
       Item: {
+        clubId,
         id,
         images: []
       }
