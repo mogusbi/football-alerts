@@ -8,12 +8,13 @@ export const ImageActionTypes = {
   NEXT: '[Image] Next'
 };
 
-export function getImages (limit) {
+export function getImages (clubId, limit) {
   return async function (dispatch) {
     dispatch(loadingStart());
 
     try {
       const {data: {getImages: {images, nextToken}}} = await API.graphql(graphqlOperation(queries.getImages, {
+        clubId,
         limit
       }));
 
@@ -39,12 +40,13 @@ export function getImagesReceived (payload) {
   };
 }
 
-export function nextImages (limit, next) {
+export function nextImages (clubId, limit, next) {
   return async function (dispatch) {
     dispatch(loadingStart());
 
     try {
       const {data: {getImages: {images, nextToken}}} = await API.graphql(graphqlOperation(queries.getImages, {
+        clubId,
         limit,
         nextToken: next
       }));

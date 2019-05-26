@@ -15,13 +15,12 @@ function Routes () {
         path='/clubs/:clubId/dashboard'
       />
       <Route
-        component={Sources}
-        path='/clubs/:clubId/sources'
+        component={Images}
+        path='/clubs/:clubId/images'
       />
       <Route
-        component={Images}
-        exact
-        path='/images'
+        component={Sources}
+        path='/clubs/:clubId/sources'
       />
       <Route
         component={Settings}

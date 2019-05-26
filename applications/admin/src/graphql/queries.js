@@ -29,8 +29,8 @@ export const getClubs = `
 `;
 
 export const getImages = `
-   query GetImages($limit: Int, $nextToken: String) {
-    getImages(limit: $limit, nextToken: $nextToken) {
+   query GetImages($clubId: ID!, $limit: Int, $nextToken: String) {
+    getImages(clubId: $clubId, limit: $limit, nextToken: $nextToken) {
       images {
         id
         images {

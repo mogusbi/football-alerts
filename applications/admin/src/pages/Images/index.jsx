@@ -3,12 +3,18 @@ import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo, useEffect} from 'react';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
 import {getImages, nextImages} from '../../actions/ImageActions';
 import Image from '../../components/Image';
 import ImageLink from '../../components/ImageLink';
 import PageTitle from '../../components/PageTitle';
 
-function Index ({getImagesHandler, image, nextImagesHandler}) {
+const ButtonBar = styled.div`
+  margin: 24px 0 0;
+  text-align: center;
+`;
+
+function Index ({getImagesHandler, image, match: {params: {clubId}}, nextImagesHandler}) {
   const limit = 24;
 
   useEffect(() => {
@@ -34,7 +40,7 @@ function Index ({getImagesHandler, image, nextImagesHandler}) {
               sm={3}
               xs={6}
             >
-              <ImageLink to={`/images/${image.id}/view`}>
+              <ImageLink to={`/clubs/${clubId}/images/${image.id}/view`}>
                 <Image
                   image={image}
                   size='thumbnail'
@@ -54,14 +60,16 @@ function Index ({getImagesHandler, image, nextImagesHandler}) {
 
       {
         image.nextToken && (
-          <Button
-            aria-label='Load more...'
-            color='primary'
-            onClick={() => nextImagesHandler(limit, image.nextToken)}
-            variant='contained'
-          >
-            Load more
-          </Button>
+          <ButtonBar>
+            <Button
+              aria-label='Load more...'
+              color='primary'
+              onClick={() => nextImagesHandler(limit, image.nextToken)}
+              variant='contained'
+            >
+              Load more
+            </Button>
+          </ButtonBar>
         )
       }
     </Fragment>
@@ -80,6 +88,11 @@ Index.propTypes = {
     })),
     nextToken: PropTypes.string
   }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      clubId: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired,
   nextImagesHandler: PropTypes.func.isRequired
 };
 
@@ -89,13 +102,13 @@ function mapStateToProps ({image}) {
   };
 }
 
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps (dispatch, {match: {params: {clubId}}}) {
   return {
     getImagesHandler (limit) {
-      return dispatch(getImages(limit));
+      return dispatch(getImages(clubId, limit));
     },
     nextImagesHandler (limit, next) {
-      return dispatch(nextImages(limit, next));
+      return dispatch(nextImages(clubId, limit, next));
     }
   };
 }

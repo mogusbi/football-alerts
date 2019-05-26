@@ -42,16 +42,14 @@ function DataTable ({children, headings, loadMore, loadMoreHandler}) {
                   align='center'
                   colSpan={headings.length}
                 >
-                  <Wrapper>
-                    <Button
-                      aria-label='Load more...'
-                      color='primary'
-                      onClick={loadMoreHandler}
-                      variant='contained'
-                    >
-                      Load more
-                    </Button>
-                  </Wrapper>
+                  <Button
+                    aria-label='Load more...'
+                    color='primary'
+                    onClick={loadMoreHandler}
+                    variant='contained'
+                  >
+                    Load more
+                  </Button>
                 </DataTableCell>
               </DataTableRow>
             </TableFooter>

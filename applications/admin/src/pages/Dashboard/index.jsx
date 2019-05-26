@@ -46,7 +46,7 @@ function Index ({match: {params: {clubId}}}) {
                 xs={12}
               >
                 <Pod
-                  content='View and manage club alert sources '
+                  content='View and manage club alert sources'
                   link={`/clubs/${clubId}/sources`}
                   title='Sources'
                 />
@@ -62,6 +62,19 @@ function Index ({match: {params: {clubId}}}) {
                   content='View and manage imported articles'
                   link={`/clubs/${clubId}/articles`}
                   title='Articles'
+                />
+              </Grid>
+
+              <Grid
+                item
+                md={4}
+                sm={6}
+                xs={12}
+              >
+                <Pod
+                  content='View and manage club media'
+                  link={`/clubs/${clubId}/images`}
+                  title='Images'
                 />
               </Grid>
             </Grid>

@@ -37,6 +37,11 @@ function AppDrawerList ({clubId}) {
                 to={`/clubs/${clubId}/articles`}
                 primary='Articles'
               />
+              <ListItemLink
+                icon={<Image />}
+                to={`/clubs/${clubId}/images`}
+                primary='Images'
+              />
             </List>
 
             <Divider />
@@ -45,11 +50,6 @@ function AppDrawerList ({clubId}) {
       }
 
       <List component='nav'>
-        <ListItemLink
-          icon={<Image />}
-          to='/images'
-          primary='Images'
-        />
         <ListItemLink
           icon={<Settings />}
           to='/settings'
