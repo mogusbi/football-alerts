@@ -603,7 +603,7 @@ resources:
     SourcesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-sources-old
+        TableName: ${self:custom.prefix}-sources
         AttributeDefinitions:
           -
             AttributeName: clubId
