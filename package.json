@@ -44,7 +44,7 @@
     "tslint": "^5.15.0",
     "tslint-microsoft-contrib": "^6.1.1",
     "typescript": "^3.4.5",
-    "webpack": "^4.32.2",
+    "webpack": "^4.29.6",
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
