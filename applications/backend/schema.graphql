@@ -5,6 +5,7 @@ type Article {
   description: String
   id: ID
   image: Image
+  imageId: String
   link: String
   publishDate: AWSDateTime
   sourceId: ID
@@ -16,6 +17,14 @@ type Article {
 type Articles {
   articles: [Article]
   nextToken: String
+}
+
+input ArticleInput {
+  description: String
+  imageId: String
+  link: String
+  status: String
+  title: String
 }
 
 # Clubs
