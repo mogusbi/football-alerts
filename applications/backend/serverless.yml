@@ -263,6 +263,11 @@ stepFunctions:
   stateMachines:
     importArticles:
       name: ${self:custom.prefix}-import-articles
+      events:
+        -
+          schedule:
+            rate: rate(6 hours)
+            enabled: true
       definition:
         Comment: Imports articles from RSS feeds
         StartAt: SelectSources
