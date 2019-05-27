@@ -1,4 +1,4 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const {cpus} = require('os');
 const {join} = require('path');
 const slsw = require('serverless-webpack');
@@ -44,12 +44,12 @@ module.exports = {
     libraryTarget: 'commonjs',
     path: join(__dirname, '.webpack')
   },
-  plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      checkSyntacticErrors: true,
-      memoryLimit: 4096
-    })
-  ],
+  // plugins: [
+  //   new ForkTsCheckerWebpackPlugin({
+  //     checkSyntacticErrors: true,
+  //     memoryLimit: 4096
+  //   })
+  // ],
   resolve: {
     extensions: [
       '.js',
