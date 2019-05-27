@@ -33,6 +33,25 @@ custom:
         defaultAction: ALLOW
         userPoolId: !Ref CognitoUserPool
       mappingTemplates:
+        # Articles
+        -
+          dataSource: Images
+          type: Article
+          field: image
+          request: articles/Article.image.req.vtl
+          response: articles/Article.image.res.vtl
+        -
+          dataSource: Articles
+          type: Query
+          field: getArticle
+          request: articles/Query.getArticle.req.vtl
+          response: articles/Query.getArticle.res.vtl
+        -
+          dataSource: Articles
+          type: Query
+          field: getArticles
+          request: articles/Query.getArticles.req.vtl
+          response: articles/Query.getArticles.res.vtl
         # Clubs
         -
           dataSource: Clubs

@@ -1,3 +1,23 @@
+# Articles
+type Article {
+  clubId: ID
+  createdAt: AWSDateTime
+  description: String
+  id: ID
+  image: Image
+  link: String
+  publishDate: AWSDateTime
+  sourceId: ID
+  status: String
+  title: String
+  updatedAt: AWSDateTime
+}
+
+type Articles {
+  articles: [Article]
+  nextToken: String
+}
+
 # Clubs
 type Club {
   createdAt: AWSDateTime
@@ -117,6 +137,10 @@ type Mutation {
 }
 
 type Query {
+  # Articles
+  getArticle(id: ID!, clubId: ID!): Article!
+  getArticles(clubId: ID!, limit: Int, nextToken: String): Articles!
+
   # Clubs
   getClub(id: ID!): Club!
   getClubs(limit: Int, nextToken: String): Clubs!
