@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Backend: Deploy" type="js.build_tools.npm" factoryName="npm">
+  <configuration default="false" name="Backend: Deploy" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
@@ -7,7 +7,9 @@
     </scripts>
     <arguments value="-- -- -- --aws-profile FOOTBALL-ALERTS --stage develop" />
     <node-interpreter value="project" />
-    <envs />
-    <method />
+    <envs>
+      <env name="NODE_OPTIONS" value="--max_old_space_size=4096" />
+    </envs>
+    <method v="2" />
   </configuration>
 </component>

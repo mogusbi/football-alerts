@@ -7,6 +7,15 @@ provider:
   runtime: nodejs10.x
   region: ${opt:region, 'eu-west-1'}
   stage: ${opt:stage, 'local'}
+  iamRoleStatements:
+    -
+      Effect: Allow
+      Action:
+        - logs:CreateLogGroup,
+        - logs:CreateLogStream,
+        - logs:PutLogEvents,
+        - logs:DescribeLogStreams
+      Resource: 'arn:aws:logs:*:*:*'
   environment:
     STAGE: ${self:provider.stage}
     NODE_ENV: ${env:NODE_ENV, 'production'}
