@@ -57,7 +57,7 @@ jobs:
       - <<: *attach_workspace
       -
         run:
-          command: npm run deploy -- -- -- --stage develop --force
+          command: npm run deploy -- -- -- --stage develop
           name: Deploy
 
   unit-test:
