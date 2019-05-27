@@ -42,7 +42,7 @@ export const handler: Handler = async (event: Iterator<Import>): Promise<Iterato
     }));
 
     // tslint:disable-next-line:no-console
-    console.log(batchWrite);
+    console.log(JSON.stringify(batchWrite));
 
     await documentClient
       .batchWrite(batchWrite)
