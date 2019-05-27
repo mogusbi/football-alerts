@@ -57,6 +57,11 @@ jobs:
       - <<: *attach_workspace
       -
         run:
+          command: |
+            echo 'export NODE_OPTIONS="--max_old_space_size=4096"' >> $BASH_ENV
+          name: Increase memory
+      -
+        run:
           command: npm run deploy -- -- -- --stage develop --force
           name: Deploy
 
