@@ -543,7 +543,7 @@ resources:
     ArticlesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-articles-1
+        TableName: ${self:custom.prefix}-articles
         AttributeDefinitions:
           -
             AttributeName: clubId
