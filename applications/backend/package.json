@@ -11,7 +11,7 @@
     "url": "https://github.com/mogusbi/football-alerts/issues"
   },
   "scripts": {
-    "deploy": "node --max-old-space-size=4096 ../../node_modules/serverless/bin/serverless deploy --verbose",
+    "deploy": "serverless deploy --verbose",
     "lint": "tslint -c ../../tslint.json -p tsconfig.json",
     "remove": "serverless remove --verbose",
     "test": "jest",
