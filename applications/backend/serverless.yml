@@ -543,10 +543,10 @@ resources:
     ArticlesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-articles
+        TableName: ${self:custom.prefix}-articles-1
         AttributeDefinitions:
           -
-            AttributeName: id
+            AttributeName: clubId
             AttributeType: S
           -
             AttributeName: link
@@ -563,10 +563,10 @@ resources:
           WriteCapacityUnits: 1
         GlobalSecondaryIndexes:
           -
-            IndexName: id-rangeKey-index
+            IndexName: clubId-rangeKey-index
             KeySchema:
               -
-                AttributeName: id
+                AttributeName: clubId
                 KeyType: HASH
               -
                 AttributeName: rangeKey
