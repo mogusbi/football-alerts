@@ -22,11 +22,6 @@ module.exports = {
           {
             loader: 'thread-loader',
             options: {
-              poolRespawn: true,
-              poolTimeout: Infinity,
-              workerNodeArgs: [
-                '--max-old-space-size=4096'
-              ],
               workers: cpus().length - 1
             }
           },
