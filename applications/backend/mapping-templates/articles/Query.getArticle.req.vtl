@@ -1,9 +1,12 @@
 {
   "version": "2017-02-28",
-  "operation": "GetItem",
+  "operation": "Query",
   "index": "clubId-id-index",
-  "key" : {
-    "clubId": $util.dynamodb.toDynamoDBJson($ctx.args.clubId),
-    "id": $util.dynamodb.toDynamoDBJson($ctx.args.id)
+  "query": {
+    "expression": "clubId = :clubId AND id = :id",
+    "expressionValues": {
+      ":clubId": $util.dynamodb.toDynamoDBJson($ctx.args.clubId),
+      ":id": $util.dynamodb.toDynamoDBJson($ctx.args.id)
+    }
   }
 }
