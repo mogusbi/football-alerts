@@ -57,8 +57,7 @@ jobs:
       - <<: *attach_workspace
       -
         run:
-          command: |
-            echo 'export NODE_OPTIONS="--max_old_space_size=4096"' >> $BASH_ENV
+          command: echo ${NODE_OPTIONS}
           name: Increase memory
       -
         run:
