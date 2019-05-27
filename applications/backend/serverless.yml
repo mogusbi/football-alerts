@@ -726,6 +726,10 @@ resources:
                     - dynamodb:UpdateItem
                   Resource:
                     - !GetAtt ArticlesTable.Arn
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticlesTable.Arn
+                        - '/index/*'
                     - !GetAtt ClubsTable.Arn
                     - !GetAtt ImagesTable.Arn
                     - !GetAtt SettingsTable.Arn
