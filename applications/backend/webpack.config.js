@@ -22,14 +22,14 @@ module.exports = {
           {
             loader: 'thread-loader',
             options: {
+              poolTimeout: Infinity,
               workers: cpus().length - 1
             }
           },
           {
             loader: 'ts-loader',
             options: {
-              happyPackMode: true,
-              transpileOnly: true
+              happyPackMode: true
             }
           }
         ]
