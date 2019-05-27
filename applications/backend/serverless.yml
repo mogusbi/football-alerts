@@ -1033,6 +1033,15 @@ resources:
                   Effect: Allow
                   Action:
                     - s3:DeleteObject
+                  Resource:
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticleImportsBucket.Arn
+                        - '/*'
+                -
+                  Effect: Allow
+                  Action:
+
                     - s3:PutObject
                   Resource:
                     - !Join
