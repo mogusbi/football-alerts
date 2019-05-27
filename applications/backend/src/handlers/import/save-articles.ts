@@ -22,9 +22,9 @@ export const handler: Handler = async (event: Iterator<Import>): Promise<Iterato
     })
     .promise();
   const articles: Article[] = JSON.parse(<string>Body);
-  const now: Moment = moment.utc();
 
   if (articles.length > 0) {
+    const now: Moment = moment.utc();
     const batchWrite: DocumentClient.BatchWriteItemInput = {
       RequestItems: {}
     };
@@ -40,6 +40,9 @@ export const handler: Handler = async (event: Iterator<Import>): Promise<Iterato
         }
       }
     }));
+
+    // tslint:disable-next-line:no-console
+    console.log(batchWrite);
 
     await documentClient
       .batchWrite(batchWrite)
