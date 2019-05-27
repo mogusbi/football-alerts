@@ -57,10 +57,6 @@ jobs:
       - <<: *attach_workspace
       -
         run:
-          command: echo ${NODE_OPTIONS}
-          name: Increase memory
-      -
-        run:
           command: npm run deploy -- -- -- --stage develop --force
           name: Deploy
 
