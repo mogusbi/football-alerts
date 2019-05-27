@@ -40,7 +40,7 @@ export const handler: Handler = async (event: Iterator<Source>): Promise<Iterato
   const Key: string = `articles/${source.clubId}/${hostname}-import-${now.toISOString()}.json`;
   const articles: Article[] = output
     .items
-    .map((item: Item) => ({
+    .map((item: Item): Article => ({
       clubId: source.clubId,
       description: item[source.description],
       imageId: source.image.array ?
@@ -48,7 +48,6 @@ export const handler: Handler = async (event: Iterator<Source>): Promise<Iterato
         get(item[source.image.property], source.image.value),
       link: item[source.link],
       publishDate: moment(item[source.publishDate]).toISOString(),
-      rangeKey: null,
       sourceId: source.id,
       status: 'PENDING',
       title: item[source.title]

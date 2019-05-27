@@ -543,16 +543,16 @@ resources:
     ArticlesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-articles
+        TableName: ${self:custom.prefix}-articles-1
         AttributeDefinitions:
           -
             AttributeName: clubId
             AttributeType: S
           -
-            AttributeName: link
+            AttributeName: id
             AttributeType: S
           -
-            AttributeName: rangeKey
+            AttributeName: link
             AttributeType: S
         KeySchema:
           -
@@ -569,7 +569,7 @@ resources:
                 AttributeName: clubId
                 KeyType: HASH
               -
-                AttributeName: rangeKey
+                AttributeName: id
                 KeyType: RANGE
             Projection:
               ProjectionType: ALL

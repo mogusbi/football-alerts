@@ -35,7 +35,6 @@ export const handler: Handler = async (event: Iterator<Import>): Promise<Iterato
           ...article,
           createdAt: now.toISOString(),
           id: v4(),
-          rangeKey: `${moment(article.publishDate).unix()}::${article.status}::${article.sourceId}::${article.clubId}`,
           updatedAt: now.toISOString()
         }
       }

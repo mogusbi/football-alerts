@@ -6,7 +6,6 @@ export default class Article {
   public imageId: string;
   public link: string;
   public publishDate: string;
-  public rangeKey: string;
   public sourceId: string;
   public status: ArticleStatus;
   public title: string;
