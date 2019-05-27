@@ -59,6 +59,13 @@ export const handler: Handler = async (event: ImageIterator): Promise<ImageItera
     });
   }
 
+  await s3
+    .deleteObject({
+      Bucket: ImportBucket,
+      Key: file
+    })
+    .promise();
+
   event.Images.push(query);
 
   const current: number = event.current += 1;

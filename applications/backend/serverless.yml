@@ -7,15 +7,6 @@ provider:
   runtime: nodejs10.x
   region: ${opt:region, 'eu-west-1'}
   stage: ${opt:stage, 'local'}
-  iamRoleStatements:
-    -
-      Effect: Allow
-      Action:
-        - logs:CreateLogGroup,
-        - logs:CreateLogStream,
-        - logs:PutLogEvents,
-        - logs:DescribeLogStreams
-      Resource: 'arn:aws:logs:*:*:*'
   environment:
     STAGE: ${self:provider.stage}
     NODE_ENV: ${env:NODE_ENV, 'production'}
@@ -739,6 +730,15 @@ resources:
                 -
                   Effect: Allow
                   Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
+                -
+                  Effect: Allow
+                  Action:
                     - s3:GetObject
                     - s3:PutObject
                   Resource:
@@ -754,18 +754,30 @@ resources:
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
           Statement:
-            - Effect: Allow
+            -
+              Effect: Allow
               Principal:
                 Service:
                   - lambda.amazonaws.com
               Action:
                 - sts:AssumeRole
         Policies:
-          - PolicyName: ${self:custom.prefix}-import-get-articles-role-policy
+          -
+            PolicyName: ${self:custom.prefix}-import-get-articles-role-policy
             PolicyDocument:
               Version: '2012-10-17'
               Statement:
-                - Effect: Allow
+                -
+                  Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
+                -
+                  Effect: Allow
                   Action:
                     - s3:PutObject
                   Resource:
@@ -794,6 +806,15 @@ resources:
             PolicyDocument:
               Version: '2012-10-17'
               Statement:
+                -
+                  Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
                 -
                   Effect: Allow
                   Action:
@@ -830,6 +851,15 @@ resources:
                 -
                   Effect: Allow
                   Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
+                -
+                  Effect: Allow
+                  Action:
                     - s3:ListBucket
                   Resource:
                     - !GetAtt ArticleImportsBucket.Arn
@@ -859,6 +889,15 @@ resources:
                     - dynamodb:BatchGetItem
                   Resource:
                     - !GetAtt ArticlesTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
                 -
                   Effect: Allow
                   Action:
@@ -899,6 +938,16 @@ resources:
               -
                 Effect: Allow
                 Action:
+                  - logs:CreateLogGroup,
+                  - logs:CreateLogStream,
+                  - logs:PutLogEvents,
+                  - logs:DescribeLogStreams
+                Resource:
+                  - 'arn:aws:logs:*:*:*'
+              -
+                Effect: Allow
+                Action:
+                  - s3:DeleteObject
                   - s3:GetObject
                 Resource:
                   - !Join
@@ -932,6 +981,15 @@ resources:
                     - dynamodb:BatchWriteItem
                   Resource:
                     - !GetAtt ImagesTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
 
     ImportResizeImageRole:
       Type: AWS::IAM::Role
@@ -956,6 +1014,15 @@ resources:
                 -
                   Effect: Allow
                   Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
+                -
+                  Effect: Allow
+                  Action:
                     - s3:GetObject
                   Resource:
                     - !Join
@@ -965,6 +1032,7 @@ resources:
                 -
                   Effect: Allow
                   Action:
+                    - s3:DeleteObject
                     - s3:PutObject
                   Resource:
                     - !Join
@@ -998,6 +1066,15 @@ resources:
                     - dynamodb:Scan
                   Resource:
                     - !GetAtt SourcesTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
 
     UsersRegisterLambdaFunctionInvokePermission:
       Type: AWS::Lambda::Permission
@@ -1033,6 +1110,15 @@ resources:
                     - dynamodb:UpdateItem
                   Resource:
                     - !GetAtt UsersTable.Arn
+                -
+                  Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup,
+                    - logs:CreateLogStream,
+                    - logs:PutLogEvents,
+                    - logs:DescribeLogStreams
+                  Resource:
+                    - 'arn:aws:logs:*:*:*'
 
     # S3
     ArticleImportsBucket:

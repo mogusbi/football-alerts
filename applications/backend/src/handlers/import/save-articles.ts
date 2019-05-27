@@ -44,6 +44,13 @@ export const handler: Handler = async (event: Iterator<Import>): Promise<Iterato
     await documentClient
       .batchWrite(batchWrite)
       .promise();
+
+    await s3
+      .deleteObject({
+        Bucket,
+        Key
+      })
+      .promise();
   }
 
   const current: number = event.current += 1;
