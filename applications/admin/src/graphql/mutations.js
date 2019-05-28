@@ -22,6 +22,14 @@ export const createSource = `
   }
 `;
 
+export const deleteArticle = `
+  mutation DeleteArticle($id: ID!, $clubId: ID!) {
+    deleteArticle(id: $id, clubId: $clubId) {
+      title
+    }
+  }
+`;
+
 export const deleteClub =`
   mutation DeleteClub($id: ID!) {
     deleteClub(id: $id) {
