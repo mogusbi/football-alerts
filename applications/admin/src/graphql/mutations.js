@@ -54,6 +54,14 @@ export const deleteSource =`
   }
 `;
 
+export const updateArticle = `
+  mutation UpdateArticle($id: ID!, $clubId: ID!, $input: ArticleInput!) {
+    updateArticle(id: $id, clubId: $clubId, input: $input) {
+      title
+    }
+  }
+`;
+
 export const updateClub = `
   mutation UpdateClub($id: ID!, $input: ClubInput!) {
     updateClub(id: $id, input: $input) {

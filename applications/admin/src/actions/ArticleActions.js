@@ -101,3 +101,30 @@ export function nextArticlesReceived (payload) {
     type: ArticleActionTypes.NEXT
   };
 }
+
+export function updateArticle (id, clubId, input) {
+  return async function (dispatch) {
+    dispatch(loadingStart());
+
+    try {
+      const {data: {updateArticle: {title}}} = await API.graphql(graphqlOperation(mutations.updateArticle, {
+        clubId,
+        id,
+        input
+      }));
+
+      dispatch(setMessage({
+        message: `${title} has been updated!`
+      }));
+
+      history.push(`/clubs/${clubId}/articles`);
+    } catch (e) {
+      dispatch(setAlert({
+        message: e.errors.map(({message}) => message),
+        title: 'Unable to update article'
+      }));
+    }
+
+    dispatch(loadingComplete());
+  };
+}

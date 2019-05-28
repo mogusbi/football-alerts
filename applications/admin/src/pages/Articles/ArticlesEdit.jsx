@@ -2,12 +2,14 @@ import {graphqlOperation} from 'aws-amplify';
 import {Connect} from 'aws-amplify-react';
 import PropTypes from 'prop-types';
 import React, {Fragment, memo, useState} from 'react';
+import {connect} from 'react-redux';
+import {deleteArticle, updateArticle} from '../../actions/ArticleActions';
 import Confirmation from '../../components/Confirmation';
 import Loader from '../../components/Loader';
 import * as queries from '../../graphql/queries';
 import ArticlesForm from './ArticlesForm';
 
-function ArticlesEdit ({deleteHandler, match: {params: {id, clubId}}}) {
+function ArticlesEdit ({deleteHandler, match: {params: {id, clubId}}, submitHandler}) {
   const [confirmation, setConfirmation] = useState(false);
 
   function beginDelete () {
@@ -18,7 +20,9 @@ function ArticlesEdit ({deleteHandler, match: {params: {id, clubId}}}) {
     setConfirmation(false);
   }
 
-  function submit () {}
+  function submit (input) {
+    submitHandler(input);
+  }
 
   return (
     <Connect
@@ -60,8 +64,19 @@ ArticlesEdit.propTypes = {
       clubId: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired
     }).isRequired
-  }).isRequired
-  // submitHandler: PropTypes.func.isRequired
+  }).isRequired,
+  submitHandler: PropTypes.func.isRequired
 };
 
-export default memo(ArticlesEdit);
+function mapDispatchToProps (dispatch, {match: {params: {clubId, id}}}) {
+  return {
+    deleteHandler () {
+      return dispatch(deleteArticle(id, clubId));
+    },
+    submitHandler (input) {
+      return dispatch(updateArticle(id, clubId, input));
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(memo(ArticlesEdit));

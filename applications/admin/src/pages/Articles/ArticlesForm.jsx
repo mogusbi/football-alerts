@@ -1,3 +1,4 @@
+import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import {FormikSelectField, FormikTextField} from 'formik-material-fields';
 import PropTypes from 'prop-types';
@@ -5,6 +6,7 @@ import React, {Fragment, memo} from 'react';
 import * as Yup from 'yup';
 import Editor from '../../components/Editor';
 import Form from '../../components/Form';
+import FormButtonBar from '../../components/FormButtonBar';
 
 const schema = Yup
   .object()
@@ -27,7 +29,7 @@ const schema = Yup
       .required('Title is required')
   });
 
-function ArticlesForm ({article, clubId, onSubmit}) {
+function ArticlesForm ({article, clubId, deleteHandler, onSubmit}) {
   return (
     <Fragment>
       <Form
@@ -96,6 +98,26 @@ function ArticlesForm ({article, clubId, onSubmit}) {
           </Grid>
         </Grid>
       </Form>
+      {
+        deleteHandler && (
+          <FormButtonBar>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
+              >
+                <Button
+                  color='secondary'
+                  onClick={deleteHandler}
+                  variant='contained'
+                >
+                  Delete article
+                </Button>
+              </Grid>
+            </Grid>
+          </FormButtonBar>
+        )
+      }
     </Fragment>
   );
 }
@@ -109,7 +131,7 @@ ArticlesForm.propTypes = {
     title: PropTypes.string
   }),
   clubId: PropTypes.string.isRequired,
-  // deleteHandler: PropTypes.func,
+  deleteHandler: PropTypes.func,
   onSubmit: PropTypes.func.isRequired
 };
 
@@ -120,8 +142,8 @@ ArticlesForm.defaultProps = {
     link: '',
     status: '',
     title: ''
-  }
-  // deleteHandler: null
+  },
+  deleteHandler: null
 };
 
 export default memo(ArticlesForm);
