@@ -2,7 +2,8 @@
   "version": "2017-02-28",
   "operation": "UpdateItem",
   "key" : {
-    "link": $util.dynamodb.toDynamoDBJson($ctx.args.link)
+    "clubId": $util.dynamodb.toDynamoDBJson($ctx.args.clubId),
+    "id": $util.dynamodb.toDynamoDBJson($ctx.args.id)
   },
   "update": {
     "expression": "SET description = :description, imageId = :imageId, link = :link, #status = :status, title = :title, updatedAt = :updatedAt",
