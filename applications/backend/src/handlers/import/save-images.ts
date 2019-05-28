@@ -8,6 +8,13 @@ const TableName: string = process.env.TABLE_NAME;
 export const handler: Handler = async (event: Iterator<DocumentClient.WriteRequest[]>): Promise<
   Iterator<DocumentClient.WriteRequest[]>
 > => {
+  if (event.count === 0) {
+    return {
+      ...event,
+      continue: true
+    };
+  }
+
   const batchWrite: DocumentClient.BatchWriteItemInput = {
     RequestItems: {}
   };

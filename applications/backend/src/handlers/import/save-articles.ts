@@ -14,6 +14,13 @@ const documentClient: DocumentClient = new DocumentClient();
 const s3: S3 = new S3();
 
 export const handler: Handler = async (event: Iterator<Import>): Promise<Iterator<Import>> => {
+  if (event.count === 0) {
+    return {
+      ...event,
+      continue: true
+    };
+  }
+
   const {Key}: Import = event.items[event.current];
   const {Body}: GetObjectOutput = await s3
     .getObject({
