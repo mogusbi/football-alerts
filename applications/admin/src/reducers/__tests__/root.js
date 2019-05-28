@@ -1,6 +1,7 @@
 import {connectRouter} from 'connected-react-router';
 import {combineReducers} from 'redux';
 import {alertReducer} from '../alert';
+import {articleReducer} from '../article';
 import {clubReducer} from '../club';
 import {imageReducer} from '../image';
 import {layoutReducer} from '../layout';
@@ -28,6 +29,7 @@ describe('root', () => {
 
     expect(combineReducers).toHaveBeenCalledWith({
       alert: alertReducer,
+      article: articleReducer,
       club: clubReducer,
       image: imageReducer,
       layout: layoutReducer,

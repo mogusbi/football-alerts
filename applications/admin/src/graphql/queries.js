@@ -6,6 +6,32 @@ export const dashboard = `
   }
 `;
 
+export const getArticle = `
+  query GetArticle($id: ID!, $clubId: ID!) {
+    getArticle(id: $id, clubId: $clubId) {
+      description
+      imageId
+      link
+      status
+      title
+    }
+  }
+`;
+
+export const getArticles = `
+  query GetArticles($clubId: ID!, $limit: Int, $nextToken: String) {
+    getArticles(clubId: $clubId, limit: $limit, nextToken: $nextToken) {
+      articles {
+        id
+        publishDate
+        status
+        title
+      }
+      nextToken
+    }
+  }
+`;
+
 export const getClub = `
   query GetClub($id: ID!) {
     getClub(id: $id) {
