@@ -14,13 +14,6 @@ const documentClient: DocumentClient = new DocumentClient();
 const s3: S3 = new S3();
 
 export const handler: Handler = async (event: Iterator<Import>): Promise<Iterator<Import>> => {
-  if (event.count === 0) {
-    return {
-      ...event,
-      continue: true
-    };
-  }
-
   const {Key}: Import = event.items[event.current];
   const {Body}: GetObjectOutput = await s3
     .getObject({
@@ -50,14 +43,14 @@ export const handler: Handler = async (event: Iterator<Import>): Promise<Iterato
     await documentClient
       .batchWrite(batchWrite)
       .promise();
-
-    await s3
-      .deleteObject({
-        Bucket,
-        Key
-      })
-      .promise();
   }
+
+  await s3
+    .deleteObject({
+      Bucket,
+      Key
+    })
+    .promise();
 
   const current: number = event.current += 1;
 
