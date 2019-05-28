@@ -20,21 +20,25 @@ export const handler: Handler = async (event: Iterator<Import>): Promise<Iterato
     })
     .promise();
   const articles: Article[] = JSON.parse(<string>Body);
-  const Keys: DocumentClient.KeyList = articles.map(({link}: Article): DocumentClient.Key => ({
-    link
-  }));
-  const batchGet: DocumentClient.BatchGetItemInput = {
-    RequestItems: {}
-  };
+  const existingLinks: string[] = [];
 
-  batchGet.RequestItems[TableName] = {
-    Keys
-  };
+  for (let {link} of articles) {
+    const result: DocumentClient.QueryOutput = await documentClient
+      .query({
+        ExpressionAttributeValues: {
+          ':link': link
+        },
+        IndexName: 'link-index',
+        KeyConditionExpression: 'link = :link',
+        TableName
+      })
+      .promise();
 
-  const {Responses}: DocumentClient.BatchGetItemOutput = await documentClient
-    .batchGet(batchGet)
-    .promise();
-  const existingLinks: string[] = Responses[TableName].map(({link}: Article): string => link);
+    if (result.Count > 0) {
+      existingLinks.push(link);
+    }
+  }
+
   const filtered: Article[] = articles.filter(({link}: Article): boolean => !existingLinks.includes(link));
 
   await s3
