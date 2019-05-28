@@ -926,7 +926,7 @@ resources:
                 -
                   Effect: Allow
                   Action:
-                    - dynamodb:BatchGetItem
+                    - dynamodb:Query
                   Resource:
                     - !GetAtt ArticlesTable.Arn
                 -
