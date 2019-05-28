@@ -738,10 +738,6 @@ resources:
                     - dynamodb:UpdateItem
                   Resource:
                     - !GetAtt ArticlesTable.Arn
-                    - !Join
-                      - ''
-                      - - !GetAtt ArticlesTable.Arn
-                        - '/index/*'
                     - !GetAtt ClubsTable.Arn
                     - !GetAtt ImagesTable.Arn
                     - !GetAtt SettingsTable.Arn
@@ -928,7 +924,10 @@ resources:
                   Action:
                     - dynamodb:Query
                   Resource:
-                    - !GetAtt ArticlesTable.Arn
+                    - !Join
+                      - ''
+                      - - !GetAtt ArticlesTable.Arn
+                        - '/index/*'
                 -
                   Effect: Allow
                   Action:
