@@ -42,6 +42,18 @@ custom:
           response: articles/Article.image.res.vtl
         -
           dataSource: Articles
+          type: Mutation
+          field: deleteArticle
+          request: articles/Mutation.deleteArticle.req.vtl
+          response: articles/Mutation.deleteArticle.res.vtl
+        -
+          dataSource: Articles
+          type: Mutation
+          field: updateArticle
+          request: articles/Mutation.updateArticle.req.vtl
+          response: articles/Mutation.updateArticle.res.vtl
+        -
+          dataSource: Articles
           type: Query
           field: getArticle
           request: articles/Query.getArticle.req.vtl
@@ -562,7 +574,7 @@ resources:
     ArticlesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.prefix}-articles
+        TableName: ${self:custom.prefix}-articles-old
         AttributeDefinitions:
           -
             AttributeName: clubId
@@ -575,23 +587,23 @@ resources:
             AttributeType: S
         KeySchema:
           -
-            AttributeName: link
+            AttributeName: clubId
             KeyType: HASH
+          -
+            AttributeName: id
+            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         GlobalSecondaryIndexes:
           -
-            IndexName: clubId-id-index
+            IndexName: link-index
             KeySchema:
               -
-                AttributeName: clubId
+                AttributeName: link
                 KeyType: HASH
-              -
-                AttributeName: id
-                KeyType: RANGE
             Projection:
-              ProjectionType: ALL
+              ProjectionType: KEYS_ONLY
             ProvisionedThroughput:
               ReadCapacityUnits: 1
               WriteCapacityUnits: 1

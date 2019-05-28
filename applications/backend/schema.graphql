@@ -129,6 +129,10 @@ input SourceImageImput {
 }
 
 type Mutation {
+  # Articles
+  deleteArticle(id: ID!, clubId: ID!): Article!
+  updateArticle(id: ID!, clubId: ID!, input: ArticleInput!): Article!
+
   # Clubs
   createClub(input: ClubInput!): Club!
   deleteClub(id: ID!): Club!
