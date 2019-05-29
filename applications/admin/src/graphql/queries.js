@@ -19,8 +19,8 @@ export const getArticle = `
 `;
 
 export const getArticles = `
-  query GetArticles($clubId: ID!, $limit: Int, $nextToken: String) {
-    getArticles(clubId: $clubId, limit: $limit, nextToken: $nextToken) {
+  query GetArticles($clubId: ID!, $status: String!, $limit: Int, $nextToken: String) {
+    getArticles(clubId: $clubId, status: $status, limit: $limit, nextToken: $nextToken) {
       articles {
         id
         publishDate

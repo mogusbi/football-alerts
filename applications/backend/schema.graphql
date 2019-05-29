@@ -152,7 +152,7 @@ type Mutation {
 type Query {
   # Articles
   getArticle(id: ID!, clubId: ID!): Article!
-  getArticles(clubId: ID!, limit: Int, nextToken: String): Articles!
+  getArticles(clubId: ID!, status: String!, limit: Int, nextToken: String): Articles!
 
   # Clubs
   getClub(id: ID!): Club!

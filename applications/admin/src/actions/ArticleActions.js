@@ -37,14 +37,15 @@ export function deleteArticle (id, clubId) {
   }
 }
 
-export function getArticles (clubId, limit) {
+export function getArticles (clubId, status, limit) {
   return async function (dispatch) {
     dispatch(loadingStart());
 
     try {
       const {data: {getArticles: {articles, nextToken}}} = await API.graphql(graphqlOperation(queries.getArticles, {
         clubId,
-        limit
+        limit,
+        status
       }));
 
       dispatch(getArticlesReceived({
@@ -69,7 +70,7 @@ export function getArticlesReceived (payload) {
   };
 }
 
-export function nextArticles (clubId, limit, next) {
+export function nextArticles (clubId, status, limit, next) {
   return async function (dispatch) {
     dispatch(loadingStart());
 
@@ -77,7 +78,8 @@ export function nextArticles (clubId, limit, next) {
       const {data: {getArticles: {articles, nextToken}}} = await API.graphql(graphqlOperation(queries.getArticles, {
         clubId,
         limit,
-        nextToken: next
+        nextToken: next,
+        status
       }));
 
       dispatch(nextArticlesReceived({

@@ -6,6 +6,15 @@
     "expressionValues": {
       ":clubId": $util.dynamodb.toDynamoDBJson($ctx.args.clubId)
     }
+  },
+  "filter": {
+    "expression": "#status = :status",
+    "expressionNames": {
+      "#status": "status"
+    },
+    "expressionValues": {
+      ":status": $util.dynamodb.toDynamoDBJson($ctx.args.status)
+    }
   }
   #if($ctx.args.limit)
     ,"limit": $ctx.args.limit
