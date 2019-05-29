@@ -45,7 +45,7 @@ export function getArticles (clubId, status, limit) {
       const {data: {getArticles: {articles, nextToken}}} = await API.graphql(graphqlOperation(queries.getArticles, {
         clubId,
         limit,
-        status
+        status: status.toUpperCase()
       }));
 
       dispatch(getArticlesReceived({
@@ -79,7 +79,7 @@ export function nextArticles (clubId, status, limit, next) {
         clubId,
         limit,
         nextToken: next,
-        status
+        status: status.toUpperCase()
       }));
 
       dispatch(nextArticlesReceived({
